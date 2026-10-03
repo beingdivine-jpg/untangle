@@ -37,7 +37,8 @@
       "note": "Reachability is not a practitioner content review."
     },
     "productionDependencyAdvisories": 0,
-    "build": "passed"
+    "build": "passed",
+    "productionPackaging": "Passed a clean build with docs omitted, matching the production ignore rules. AI test fixtures live under tests/fixtures."
   },
   "bundle": {
     "initialJavaScriptAsset": "index-9FilJGCC.js",

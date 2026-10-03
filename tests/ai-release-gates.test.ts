@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import fixtures from '../docs/quality/ai-evaluation-cases.json'
+import fixtures from './fixtures/ai-evaluation-cases.json'
 import { validateDraft, validateRequest } from '../src/features/companion/agentCore'
 
 describe('bilingual structural AI regression fixtures (not a live-model evaluation)', () => {
