@@ -4,9 +4,11 @@ The user prefers Codex to handle Git directly in this local repository, includin
 committing and pushing completed work to GitHub. GitHub Desktop is optional and
 should not be a required publishing step.
 
-- For user-requested implementation work, run the checks appropriate to the change,
-  commit the completed changes belonging to that task, and push them to the
-  configured `origin` remote before reporting completion.
+- Always push completed changes made for the user in this repository, including
+  code, documentation, configuration and assets. This is standing authorization;
+  do not ask for push confirmation each time. Run the checks appropriate to the
+  change, commit the changes belonging to the task, and push them to the configured
+  `origin` remote before reporting completion.
 - The normal publishing branch is `main`. Respect an explicit request for a
   different branch, pull request, local-only work, or no commit/push. Do not switch
   branches merely to satisfy this default when work is already in progress.
