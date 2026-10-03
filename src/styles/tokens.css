@@ -1,0 +1,35 @@
+:root {
+  --canvas: #F8F4EC;
+  --surface: #FFFCF7;
+  --peach: #F3E1D7;
+  --peach-wash: #FCF1E9;
+  --lavender-wash: #F0EBF3;
+  --lavender-line: #D5CBDC;
+  --ink: #30212E;
+  --muted: #685E6A;
+  --accent: #A94436;
+  --accent-hover: #8B342A;
+  --line: #DED6CC;
+  --control-line: #94858B;
+  --lavender: #E7E0EC;
+  --sage: #E6EDDC;
+  --sage-ink: #38513A;
+  --amber: #F3E7CE;
+  --amber-ink: #6D4C1A;
+  --radius-control: 14px;
+  --radius-panel: 24px;
+  --shadow-panel: 0 14px 45px rgb(48 33 46 / 5%);
+  --font-display: 'Fraunces Variable', Georgia, serif;
+  --font-body: 'Manrope Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  --content-width: 1184px;
+  --transition: 200ms ease;
+}

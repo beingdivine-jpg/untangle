@@ -1,0 +1,62 @@
+[
+  {
+    "width": 320,
+    "page": "home",
+    "violations": []
+  },
+  {
+    "width": 320,
+    "page": "plan",
+    "violations": []
+  },
+  {
+    "width": 320,
+    "page": "guide",
+    "violations": []
+  },
+  {
+    "width": 390,
+    "page": "home",
+    "violations": []
+  },
+  {
+    "width": 390,
+    "page": "plan",
+    "violations": []
+  },
+  {
+    "width": 390,
+    "page": "guide",
+    "violations": []
+  },
+  {
+    "width": 768,
+    "page": "home",
+    "violations": []
+  },
+  {
+    "width": 768,
+    "page": "plan",
+    "violations": []
+  },
+  {
+    "width": 768,
+    "page": "guide",
+    "violations": []
+  },
+  {
+    "width": 1440,
+    "page": "home",
+    "violations": []
+  },
+  {
+    "width": 1440,
+    "page": "plan",
+    "violations": []
+  },
+  {
+    "width": 1440,
+    "page": "guide",
+    "violations": []
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "checked": "2026-10-03",
+  "engine": "axe-core",
+  "pages": [
+    "home",
+    "review",
+    "connections",
+    "preview",
+    "followup"
+  ],
+  "violations": 0
+}

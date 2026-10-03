@@ -1,0 +1,104 @@
+{
+  "checked": "2026-10-03",
+  "method": "WCAG relative luminance, actual CSS tokens",
+  "results": [
+    {
+      "foreground": "ink",
+      "background": "canvas",
+      "ratio": 13.84,
+      "required": 4.5,
+      "pass": true
+    },
+    {
+      "foreground": "muted",
+      "background": "canvas",
+      "ratio": 5.63,
+      "required": 4.5,
+      "pass": true
+    },
+    {
+      "foreground": "muted",
+      "background": "surface",
+      "ratio": 6.04,
+      "required": 4.5,
+      "pass": true
+    },
+    {
+      "foreground": "muted",
+      "background": "lavender",
+      "ratio": 4.79,
+      "required": 4.5,
+      "pass": true
+    },
+    {
+      "foreground": "muted",
+      "background": "sage",
+      "ratio": 5.15,
+      "required": 4.5,
+      "pass": true
+    },
+    {
+      "foreground": "surface",
+      "background": "accent",
+      "ratio": 5.75,
+      "required": 4.5,
+      "pass": true
+    },
+    {
+      "foreground": "sage-ink",
+      "background": "sage",
+      "ratio": 7.28,
+      "required": 4.5,
+      "pass": true
+    },
+    {
+      "foreground": "amber-ink",
+      "background": "amber",
+      "ratio": 6.35,
+      "required": 4.5,
+      "pass": true
+    },
+    {
+      "foreground": "control-line",
+      "background": "surface",
+      "ratio": 3.43,
+      "required": 3,
+      "pass": true
+    },
+    {
+      "foreground": "control-line",
+      "background": "canvas",
+      "ratio": 3.2,
+      "required": 3,
+      "pass": true
+    },
+    {
+      "foreground": "muted",
+      "background": "lavender-wash",
+      "ratio": 5.26,
+      "required": 4.5,
+      "pass": true
+    },
+    {
+      "foreground": "muted",
+      "background": "peach-wash",
+      "ratio": 5.56,
+      "required": 4.5,
+      "pass": true
+    },
+    {
+      "foreground": "accent",
+      "background": "peach",
+      "ratio": 4.64,
+      "required": 4.5,
+      "pass": true
+    },
+    {
+      "foreground": "accent",
+      "background": "canvas",
+      "ratio": 5.37,
+      "required": 4.5,
+      "pass": true
+    }
+  ]
+}

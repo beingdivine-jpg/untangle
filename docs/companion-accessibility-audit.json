@@ -1,0 +1,82 @@
+[
+  {
+    "width": 320,
+    "state": "home",
+    "violations": []
+  },
+  {
+    "width": 320,
+    "state": "demo",
+    "violations": []
+  },
+  {
+    "width": 320,
+    "state": "preview",
+    "violations": []
+  },
+  {
+    "width": 320,
+    "state": "consent",
+    "violations": []
+  },
+  {
+    "width": 390,
+    "state": "home",
+    "violations": []
+  },
+  {
+    "width": 390,
+    "state": "demo",
+    "violations": []
+  },
+  {
+    "width": 390,
+    "state": "preview",
+    "violations": []
+  },
+  {
+    "width": 390,
+    "state": "consent",
+    "violations": []
+  },
+  {
+    "width": 768,
+    "state": "home",
+    "violations": []
+  },
+  {
+    "width": 768,
+    "state": "demo",
+    "violations": []
+  },
+  {
+    "width": 768,
+    "state": "preview",
+    "violations": []
+  },
+  {
+    "width": 768,
+    "state": "consent",
+    "violations": []
+  },
+  {
+    "width": 1440,
+    "state": "home",
+    "violations": []
+  },
+  {
+    "width": 1440,
+    "state": "demo",
+    "violations": []
+  },
+  {
+    "width": 1440,
+    "state": "preview",
+    "violations": []
+  },
+  {
+    "width": 1440,
+    "state": "consent",
+    "violations": []
+  }
+]

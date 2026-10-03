@@ -1,0 +1,30 @@
+{
+  "checked": "2026-10-03",
+  "engine": "axe-core",
+  "results": [
+    {
+      "view": "result",
+      "violations": 0
+    },
+    {
+      "view": "home",
+      "violations": 0
+    },
+    {
+      "view": "ready",
+      "violations": 0
+    },
+    {
+      "view": "open",
+      "violations": 0
+    },
+    {
+      "view": "find",
+      "violations": 0
+    },
+    {
+      "view": "read",
+      "violations": 0
+    }
+  ]
+}
