@@ -1,0 +1,327 @@
+[
+  {
+    "id": "recovery",
+    "url": "https://support.google.com/accounts/answer/183723?hl=en",
+    "sourceOwner": "Google: recovery phone and email",
+    "reviewOwnerRole": "Untangle content maintainer",
+    "namedOwnerAssigned": false,
+    "baselineAudit": "2026-10-03",
+    "reviewStatus": "Prototype guidance; practitioner review pending",
+    "reviewTriggers": [
+      "Provider interface or policy changes",
+      "Broken or redirected source",
+      "User reports a mismatch"
+    ],
+    "reviewChecklist": [
+      "Compare instructions and limitations with the current source",
+      "Check phone/computer and age/family restrictions",
+      "Verify Polish wording and destination language",
+      "Keep uncertainty and noticeability explicit"
+    ],
+    "lastAutomatedCheck": {
+      "date": "2026-10-04",
+      "status": 200,
+      "result": "reachable; content review still required"
+    }
+  },
+  {
+    "id": "devices",
+    "url": "https://support.google.com/accounts/answer/3067630?hl=en",
+    "sourceOwner": "Google: devices with account access",
+    "reviewOwnerRole": "Untangle content maintainer",
+    "namedOwnerAssigned": false,
+    "baselineAudit": "2026-10-03",
+    "reviewStatus": "Prototype guidance; practitioner review pending",
+    "reviewTriggers": [
+      "Provider interface or policy changes",
+      "Broken or redirected source",
+      "User reports a mismatch"
+    ],
+    "reviewChecklist": [
+      "Compare instructions and limitations with the current source",
+      "Check phone/computer and age/family restrictions",
+      "Verify Polish wording and destination language",
+      "Keep uncertainty and noticeability explicit"
+    ],
+    "lastAutomatedCheck": {
+      "date": "2026-10-04",
+      "status": 200,
+      "result": "reachable; content review still required"
+    }
+  },
+  {
+    "id": "password",
+    "url": "https://support.google.com/accounts/answer/41078?hl=en",
+    "sourceOwner": "Google: change or reset a password",
+    "reviewOwnerRole": "Untangle content maintainer",
+    "namedOwnerAssigned": false,
+    "baselineAudit": "2026-10-03",
+    "reviewStatus": "Prototype guidance; practitioner review pending",
+    "reviewTriggers": [
+      "Provider interface or policy changes",
+      "Broken or redirected source",
+      "User reports a mismatch"
+    ],
+    "reviewChecklist": [
+      "Compare instructions and limitations with the current source",
+      "Check phone/computer and age/family restrictions",
+      "Verify Polish wording and destination language",
+      "Keep uncertainty and noticeability explicit"
+    ],
+    "lastAutomatedCheck": {
+      "date": "2026-10-04",
+      "status": 200,
+      "result": "reachable; content review still required"
+    }
+  },
+  {
+    "id": "forwarding",
+    "url": "https://support.google.com/mail/answer/10957?hl=en",
+    "sourceOwner": "Google: automatic forwarding",
+    "reviewOwnerRole": "Untangle content maintainer",
+    "namedOwnerAssigned": false,
+    "baselineAudit": "2026-10-03",
+    "reviewStatus": "Prototype guidance; practitioner review pending",
+    "reviewTriggers": [
+      "Provider interface or policy changes",
+      "Broken or redirected source",
+      "User reports a mismatch"
+    ],
+    "reviewChecklist": [
+      "Compare instructions and limitations with the current source",
+      "Check phone/computer and age/family restrictions",
+      "Verify Polish wording and destination language",
+      "Keep uncertainty and noticeability explicit"
+    ],
+    "lastAutomatedCheck": {
+      "date": "2026-10-04",
+      "status": 200,
+      "result": "reachable; content review still required"
+    }
+  },
+  {
+    "id": "maps",
+    "url": "https://support.google.com/maps/answer/15437054?hl=en",
+    "sourceOwner": "Google Maps: Location Sharing",
+    "reviewOwnerRole": "Untangle content maintainer",
+    "namedOwnerAssigned": false,
+    "baselineAudit": "2026-10-03",
+    "reviewStatus": "Prototype guidance; practitioner review pending",
+    "reviewTriggers": [
+      "Provider interface or policy changes",
+      "Broken or redirected source",
+      "User reports a mismatch"
+    ],
+    "reviewChecklist": [
+      "Compare instructions and limitations with the current source",
+      "Check phone/computer and age/family restrictions",
+      "Verify Polish wording and destination language",
+      "Keep uncertainty and noticeability explicit"
+    ],
+    "lastAutomatedCheck": {
+      "date": "2026-10-04",
+      "status": 200,
+      "result": "reachable; content review still required"
+    }
+  },
+  {
+    "id": "apple",
+    "url": "https://support.apple.com/en-euro/guide/personal-safety/ips1c3310dd2/web",
+    "sourceOwner": "Apple: Safety Check",
+    "reviewOwnerRole": "Untangle content maintainer",
+    "namedOwnerAssigned": false,
+    "baselineAudit": "2026-10-03",
+    "reviewStatus": "Prototype guidance; practitioner review pending",
+    "reviewTriggers": [
+      "Provider interface or policy changes",
+      "Broken or redirected source",
+      "User reports a mismatch"
+    ],
+    "reviewChecklist": [
+      "Compare instructions and limitations with the current source",
+      "Check phone/computer and age/family restrictions",
+      "Verify Polish wording and destination language",
+      "Keep uncertainty and noticeability explicit"
+    ],
+    "lastAutomatedCheck": {
+      "date": "2026-10-04",
+      "status": 200,
+      "result": "reachable; content review still required"
+    }
+  },
+  {
+    "id": "keep",
+    "url": "https://www.techsafety.org/documentationtips",
+    "sourceOwner": "Safety Net: documentation tips",
+    "reviewOwnerRole": "Untangle content maintainer",
+    "namedOwnerAssigned": false,
+    "baselineAudit": "2026-10-03",
+    "reviewStatus": "Prototype guidance; practitioner review pending",
+    "reviewTriggers": [
+      "Provider interface or policy changes",
+      "Broken or redirected source",
+      "User reports a mismatch"
+    ],
+    "reviewChecklist": [
+      "Compare instructions and limitations with the current source",
+      "Check phone/computer and age/family restrictions",
+      "Verify Polish wording and destination language",
+      "Keep uncertainty and noticeability explicit"
+    ],
+    "lastAutomatedCheck": {
+      "date": "2026-10-04",
+      "status": 200,
+      "result": "reachable; content review still required"
+    }
+  },
+  {
+    "id": "photos",
+    "url": "https://support.google.com/photos/answer/7378858?hl=en",
+    "sourceOwner": "Google Photos: partner sharing",
+    "reviewOwnerRole": "Untangle content maintainer",
+    "namedOwnerAssigned": false,
+    "baselineAudit": "2026-10-03",
+    "reviewStatus": "Prototype guidance; practitioner review pending",
+    "reviewTriggers": [
+      "Provider interface or policy changes",
+      "Broken or redirected source",
+      "User reports a mismatch"
+    ],
+    "reviewChecklist": [
+      "Compare instructions and limitations with the current source",
+      "Check phone/computer and age/family restrictions",
+      "Verify Polish wording and destination language",
+      "Keep uncertainty and noticeability explicit"
+    ],
+    "lastAutomatedCheck": {
+      "date": "2026-10-04",
+      "status": 200,
+      "result": "reachable; content review still required"
+    }
+  },
+  {
+    "id": "whatsapp",
+    "url": "https://faq.whatsapp.com/1428782138011916/?cms_platform=web",
+    "sourceOwner": "WhatsApp: review linked devices",
+    "reviewOwnerRole": "Untangle content maintainer",
+    "namedOwnerAssigned": false,
+    "baselineAudit": "2026-10-03",
+    "reviewStatus": "Prototype guidance; practitioner review pending",
+    "reviewTriggers": [
+      "Provider interface or policy changes",
+      "Broken or redirected source",
+      "User reports a mismatch"
+    ],
+    "reviewChecklist": [
+      "Compare instructions and limitations with the current source",
+      "Check phone/computer and age/family restrictions",
+      "Verify Polish wording and destination language",
+      "Keep uncertainty and noticeability explicit"
+    ],
+    "lastAutomatedCheck": {
+      "date": "2026-10-04",
+      "status": 200,
+      "result": "reachable; content review still required"
+    }
+  },
+  {
+    "id": "family",
+    "url": "https://support.apple.com/en-euro/guide/personal-safety/ips75b3b794f/1.0/web/1.0",
+    "sourceOwner": "Apple: manage Family Sharing",
+    "reviewOwnerRole": "Untangle content maintainer",
+    "namedOwnerAssigned": false,
+    "baselineAudit": "2026-10-03",
+    "reviewStatus": "Prototype guidance; practitioner review pending",
+    "reviewTriggers": [
+      "Provider interface or policy changes",
+      "Broken or redirected source",
+      "User reports a mismatch"
+    ],
+    "reviewChecklist": [
+      "Compare instructions and limitations with the current source",
+      "Check phone/computer and age/family restrictions",
+      "Verify Polish wording and destination language",
+      "Keep uncertainty and noticeability explicit"
+    ],
+    "lastAutomatedCheck": {
+      "date": "2026-10-04",
+      "status": 200,
+      "result": "reachable; content review still required"
+    }
+  },
+  {
+    "id": "home",
+    "url": "https://refugetechsafety.org/",
+    "sourceOwner": "Refuge: tech safety guides",
+    "reviewOwnerRole": "Untangle content maintainer",
+    "namedOwnerAssigned": false,
+    "baselineAudit": "2026-10-03",
+    "reviewStatus": "Prototype guidance; practitioner review pending",
+    "reviewTriggers": [
+      "Provider interface or policy changes",
+      "Broken or redirected source",
+      "User reports a mismatch"
+    ],
+    "reviewChecklist": [
+      "Compare instructions and limitations with the current source",
+      "Check phone/computer and age/family restrictions",
+      "Verify Polish wording and destination language",
+      "Keep uncertainty and noticeability explicit"
+    ],
+    "lastAutomatedCheck": {
+      "date": "2026-10-04",
+      "status": 200,
+      "result": "reachable; content review still required"
+    }
+  },
+  {
+    "id": "images",
+    "url": "https://takeitdown.ncmec.org/",
+    "sourceOwner": "NCMEC: Take It Down",
+    "reviewOwnerRole": "Untangle content maintainer",
+    "namedOwnerAssigned": false,
+    "baselineAudit": "2026-10-03",
+    "reviewStatus": "Prototype guidance; practitioner review pending",
+    "reviewTriggers": [
+      "Provider interface or policy changes",
+      "Broken or redirected source",
+      "User reports a mismatch"
+    ],
+    "reviewChecklist": [
+      "Compare instructions and limitations with the current source",
+      "Check phone/computer and age/family restrictions",
+      "Verify Polish wording and destination language",
+      "Keep uncertainty and noticeability explicit"
+    ],
+    "lastAutomatedCheck": {
+      "date": "2026-10-04",
+      "status": 200,
+      "result": "reachable; content review still required"
+    }
+  },
+  {
+    "id": "support",
+    "url": "https://lila.help/",
+    "sourceOwner": "Lila.help: find support",
+    "reviewOwnerRole": "Untangle content maintainer",
+    "namedOwnerAssigned": false,
+    "baselineAudit": "2026-10-03",
+    "reviewStatus": "Prototype guidance; practitioner review pending",
+    "reviewTriggers": [
+      "Provider interface or policy changes",
+      "Broken or redirected source",
+      "User reports a mismatch"
+    ],
+    "reviewChecklist": [
+      "Compare instructions and limitations with the current source",
+      "Check phone/computer and age/family restrictions",
+      "Verify Polish wording and destination language",
+      "Keep uncertainty and noticeability explicit"
+    ],
+    "lastAutomatedCheck": {
+      "date": "2026-10-04",
+      "status": 200,
+      "result": "reachable; content review still required"
+    }
+  }
+]

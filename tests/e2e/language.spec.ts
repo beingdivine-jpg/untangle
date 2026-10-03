@@ -2,8 +2,8 @@ import { test, expect } from '@playwright/test'
 import AxeBuilder from '@axe-core/playwright'
 
 test('language switch keeps the draft, topics and exact personal notes, without browser storage', async ({ page }) => {
-  await page.goto('/')
-  await page.getByRole('button', { name: 'Start with my own situation' }).click()
+  await page.goto('/?view=assistant')
+  for (const name of ['Google, Gmail or Google Photos','WhatsApp','An iPhone or other Apple device']) await page.getByRole('button', { name, exact: true }).click()
   await page.getByRole('button', { name: 'Build a draft on this device' }).click()
   await page.getByRole('button', { name: 'Polski', exact: true }).click()
   await expect(page.locator('html')).toHaveAttribute('lang', 'pl')
@@ -21,11 +21,9 @@ test('language switch keeps the draft, topics and exact personal notes, without 
   await page.getByRole('button', { name: 'Polski', exact: true }).click()
   await page.getByRole('button', { name: 'Otwórz mój pełny plan' }).click()
   await expect(page.getByRole('heading', { name: 'Wystarczy po trochu.' })).toBeVisible()
-  await page.locator('.p-task-row').first().click()
-  await page.getByRole('button', { name: '3 Mój wpis' }).click()
-  await expect(page.getByLabel('Przypomnienie dla siebie')).toHaveValue(note)
+  await expect(page.getByLabel('Moja notatka o całej sytuacji')).toHaveValue(note)
   await page.getByRole('button', { name: 'English', exact: true }).click()
-  await expect(page.getByLabel('A reminder for yourself')).toHaveValue(note)
+  await expect(page.getByLabel('My note about the whole situation')).toHaveValue(note)
   expect(await page.evaluate(() => ({ local: localStorage.length, session: sessionStorage.length }))).toEqual({ local: 0, session: 0 })
 })
 
@@ -78,8 +76,8 @@ test('Polish AI request shows and sends the chosen response language only after 
     sent = route.request().postDataJSON()
     return route.fulfill({ contentType: 'application/x-ndjson', body: JSON.stringify({ stage: 'ready', message: 'Draft ready for your review. Accept, edit or discard it.', draft: { taskIds: ['devices'], editedText: 'Nie wiem, który laptop jest mój.' } }) + '\n' })
   })
-  await page.goto('/?lang=pl')
-  await page.getByRole('button', { name: 'Zacznij od mojej sytuacji' }).click()
+  await page.goto('/?view=assistant&lang=pl')
+  await page.getByRole('button', { name: 'Google, Gmail lub Zdjęcia Google', exact: true }).click()
   await page.getByRole('button', { name: 'Pomóż mi ubrać to w słowa' }).click()
   await page.getByLabel('Notatka dla siebie').fill('Nie wiem co z tym laptopem.')
   await page.getByRole('button', { name: 'Poproś AI o uproszczenie notatki' }).click()
@@ -109,6 +107,7 @@ test('Polish switch stays visible and accessible on phone and desktop', async ({
       if (state === 'plan') {
         await page.getByRole('button', { name: 'Zachowaj te kroki' }).click()
         await page.getByRole('button', { name: 'Otwórz mój pełny plan' }).click()
+        await expect(page.getByRole('heading', { name: 'Wystarczy po trochu.' })).toBeVisible()
       }
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `${width} ${state}`).toBe(true)
       expect((await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze()).violations).toEqual([])

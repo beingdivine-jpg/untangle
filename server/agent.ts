@@ -32,7 +32,7 @@ export function agentHandler(config: AgentConfig) {
       const input = validateRequest(JSON.parse(body))
       res.writeHead(200, { 'Content-Type':'application/x-ndjson', 'Cache-Control':'no-store', 'X-Content-Type-Options':'nosniff', 'X-Accel-Buffering':'no' }); streaming = true
       emit({ stage:'received', message: 'Checked the fields you approved. No account access requested.' })
-      const allowed = allowedFor(input.topics)
+      const allowed = allowedFor(input.topics, input.services)
       const catalog = allowed.map(id => ({ id, title: taskById[id].title, introduction: taskById[id].intro, preparation: taskById[id].prerequisites }))
       emit({ stage:'drafting', message: input.operation === 'edit' ? 'Asking the AI to simplify only the approved note.' : 'Asking the AI to select from the reviewed guide library.' })
       const result = await (config.fetcher ?? fetch)('https://api.openai.com/v1/responses', {

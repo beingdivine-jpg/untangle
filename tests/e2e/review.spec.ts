@@ -16,7 +16,7 @@ async function toConnections(page: Page) {
   await page.getByRole('button', { name: 'Show my summary' }).click()
 }
 async function shot(page: Page, name: string) {
-  await page.evaluate(() => document.fonts.ready)
+  await page.locator('.loading-page').waitFor({ state: 'detached' }); await page.evaluate(() => document.fonts.ready)
   await page.screenshot({ path: `docs/screenshots/${name}.png`, fullPage: true, animations: 'disabled' })
 }
 async function noOverflow(page: Page) {
@@ -182,7 +182,8 @@ test('restored page clears in-memory text and revokes image references', async (
   await page.evaluate(() => window.dispatchEvent(new PageTransitionEvent('pagehide', { persisted: true })))
   await expect(page.locator('#root')).toHaveCSS('visibility', 'hidden')
   await page.evaluate(() => window.dispatchEvent(new PageTransitionEvent('pageshow', { persisted: true })))
-  await expect(page.getByLabel('What would you like to review?')).toHaveValue('')
+  await expect(page.getByRole('button', { name: 'Start with my own situation', exact: true })).toBeVisible()
+  await expect(page.getByText('bfcache-private', { exact: true })).toHaveCount(0)
   await expect(page.getByAltText('Your local settings image reference')).toHaveCount(0)
   expect(await page.evaluate(() => (window as unknown as { revoked: string[] }).revoked.length)).toBeGreaterThan(0)
 })
@@ -254,6 +255,7 @@ test('responsive flow at 320, 390, 768, 1440 and 200% zoom-equivalent viewport',
 test('keyboard, reduced motion, contrast and automated accessibility', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' })
   await page.goto('/?view=walkthrough')
+  await expect(page.getByRole('link', { name: 'Skip to content' })).toBeAttached()
   await page.keyboard.press('Tab')
   await expect(page.getByRole('link', { name: 'Skip to content' })).toBeFocused()
   await page.keyboard.press('Tab')

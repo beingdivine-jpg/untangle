@@ -9,12 +9,12 @@ async function personal(page: Page) {
   await page.getByRole('button', { name: 'Make my own plan', exact: true }).click()
   await page.getByRole('button', { name: /Who can get into my accounts/ }).click()
   await page.getByRole('button', { name: /Can someone see where I am/ }).click()
-  await page.getByRole('button', { name: 'Continue', exact: true }).click()
   await page.getByRole('button', { name: /Google, Gmail or Google Photos/ }).click()
-  await page.getByRole('button', { name: 'Make my plan', exact: true }).click()
+  await page.getByRole('button', { name: 'Show my first step', exact: true }).click()
+  await page.getByRole('navigation', { name: 'Plan navigation' }).getByRole('button', { name: 'My plan 5', exact: true }).click()
 }
 const nav = (page: Page, name: string) => page.getByRole('navigation', { name: 'Plan navigation' }).getByRole('button', { name, exact: true })
-async function capture(page: Page, name: string) { await page.evaluate(() => document.fonts.ready); await page.screenshot({ path: `docs/screenshots/platform-${name}.png`, fullPage: true, animations: 'disabled' }) }
+async function capture(page: Page, name: string) { await page.locator('.loading-page').waitFor({ state: 'detached' }); await page.evaluate(() => document.fonts.ready); await page.screenshot({ path: `docs/screenshots/platform-${name}.png`, fullPage: true, animations: 'disabled' }) }
 
 test('personal concerns and apps build a relevant plan; preview does not mark checks reviewed', async ({ page }) => {
   await personal(page)
@@ -90,10 +90,10 @@ test('no silent persistence or third-party calls; pagehide and exit clear the wo
   expect(await page.evaluate(async () => ({ local: localStorage.length, session: sessionStorage.length, db: (await indexedDB.databases()).length, sw: (await navigator.serviceWorker.getRegistrations()).length }))).toEqual({ local: 0, session: 0, db: 0, sw: 0 })
   expect(externalRequests).toEqual([])
   await page.evaluate(() => { window.dispatchEvent(new PageTransitionEvent('pagehide')); window.dispatchEvent(new PageTransitionEvent('pageshow', { persisted: true })) })
-  await expect(page.getByRole('button', { name: 'Make my own plan', exact: true })).toBeVisible()
+  await expect(page.getByRole('button', { name: 'Start with my own situation', exact: true })).toBeVisible()
   await page.route('https://www.wikipedia.org/**', route => route.fulfill({ contentType: 'text/html', body: '<h1>Neutral test destination</h1>' }))
   await page.getByRole('link', { name: 'Leave this page' }).click()
-  await expect(page.getByRole('heading')).toHaveText('Neutral test destination')
+  await expect(page.getByRole('heading', { name: 'Neutral test destination' })).toBeVisible()
 })
 
 test('legacy walkthrough and help preserve the broader plan', async ({ page }) => {

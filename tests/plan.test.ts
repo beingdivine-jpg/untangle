@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { addTask, buildPlan, emptyPlan, examplePlan, nextTask, prerequisites, record, validatePlan } from '../src/features/plan/model'
-import { decryptPlan, encryptPlan } from '../src/features/plan/crypto'
+import { decryptPlan, encryptPlan, MAX_PLAN_FILE_BYTES } from '../src/features/plan/crypto'
 
 describe('personal plan and uncertainty', () => {
   it('adds preparation once and chooses it before dependent changes', () => {
@@ -64,7 +64,7 @@ describe('opt-in encrypted plan files', () => {
     await expect(decryptPlan(JSON.stringify(e), 'test phrase with several words')).rejects.toThrow()
     e.iterations = 999999999
     await expect(decryptPlan(JSON.stringify(e), 'test phrase with several words')).rejects.toThrow()
-    await expect(decryptPlan('a'.repeat(1000001), 'pass')).rejects.toThrow('too large')
+    await expect(decryptPlan('a'.repeat(MAX_PLAN_FILE_BYTES + 1), 'pass')).rejects.toThrow('too large')
     await expect(encryptPlan(emptyPlan(), 'short')).rejects.toThrow('12')
   })
 })

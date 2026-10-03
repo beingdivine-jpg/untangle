@@ -4,10 +4,10 @@ import fs from 'node:fs'
 const panel=(page:Page)=>page.locator('.u-working-panel')
 const tool=(page:Page,name:string)=>page.getByRole('navigation',{name:'Assistant tools'}).getByRole('button',{name,exact:true})
 async function demo(page:Page){await page.goto('/');await page.getByRole('button',{name:'Try Me',exact:true}).click()}
-async function personal(page:Page,available=false){await page.route('**/api/agent/status',route=>route.fulfill({json:{available,model:available?'test-model':null}}));await page.goto('/');await page.getByRole('button',{name:'Start with my own situation'}).click()}
+async function personal(page:Page,available=false){await page.route('**/api/agent/status',route=>route.fulfill({json:{available,model:available?'test-model':null}}));await page.goto('/?view=assistant');await page.getByRole('button',{name:'Google, Gmail or Google Photos',exact:true}).click();await page.getByRole('button',{name:'WhatsApp',exact:true}).click();await page.getByRole('button',{name:'An iPhone or other Apple device',exact:true}).click()}
 async function consent(page:Page){await page.getByRole('dialog').getByRole('checkbox').check();await page.getByRole('button',{name:'Send these fields'}).click()}
 function stream(draft:unknown){return [{stage:'received',message:'Test input checked.'},{stage:'drafting',message:'Test request started.'},{stage:'checking',message:'Test output checked.'},{stage:'ready',message:'Draft ready for approval.',draft}].map(e=>JSON.stringify(e)).join('\n')+'\n'}
-async function capture(page:Page,name:string){await page.evaluate(()=>document.fonts.ready);await page.screenshot({path:`docs/screenshots/companion-${name}.png`,fullPage:true,animations:'disabled'})}
+async function capture(page:Page,name:string){await page.locator('.loading-page').waitFor({state:'detached'});await page.evaluate(()=>document.fonts.ready);await page.screenshot({path:`docs/screenshots/companion-${name}.png`,fullPage:true,animations:'disabled'})}
 
 test('Try Me shows the work, keeps approval separate, and transfers a fictional plan',async({page})=>{
   const requests:string[]=[];page.on('request',r=>{if(r.method()==='POST'||!new URL(r.url()).hostname.match(/^(127\.0\.0\.1|localhost)$/)) requests.push(r.url())})
@@ -25,11 +25,13 @@ test('Try Me shows the work, keeps approval separate, and transfers a fictional 
   await expect(page.locator('.p-progress-count')).toContainText('0 / 6')
   await page.getByRole('button',{name:/Keep a way back into your account Google/}).click()
   await page.getByRole('button',{name:/My update/}).click()
-  await expect(page.getByLabel('A reminder for yourself')).toHaveValue(/I changed my password/)
+  await expect(page.getByLabel('A reminder for yourself')).toHaveValue('')
+  await page.getByRole('navigation',{name:'Plan navigation'}).getByRole('button',{name:'My plan 6'}).click()
+  await expect(page.getByLabel('My note about the whole situation')).toHaveValue(/I changed my password/)
   expect(requests).toEqual([])
   await page.evaluate(()=>{window.dispatchEvent(new PageTransitionEvent('pagehide'));window.dispatchEvent(new PageTransitionEvent('pageshow',{persisted:true}))})
-  await expect(page.locator('.p-example-banner')).toHaveCount(0)
-  await expect(page.getByRole('button',{name:'Make my own plan',exact:true})).toBeVisible()
+  await expect(page.locator('.p-example-banner')).not.toBeVisible()
+  await expect(page.getByRole('button',{name:'Start with my own situation',exact:true})).toBeVisible()
 })
 
 test('what-if exploration is source based and never marks a check done',async({page})=>{
@@ -67,8 +69,8 @@ test('editing has distinct preview, reject, accept and undo; all three stories w
 test('local fallback works honestly without an AI key and clears on lifecycle restore',async({page})=>{
   let posts=0;page.on('request',r=>{if(r.method()==='POST')posts++})
   await personal(page)
-  await expect(page.getByRole('button',{name:'Ask AI for a draft'})).toBeDisabled()
-  await expect(panel(page)).toContainText('Live AI is not connected')
+  await expect(page.getByRole('button',{name:'Ask AI for a draft'})).toHaveCount(0)
+  await expect(panel(page)).toContainText('Guided planning works here without AI')
   await page.getByRole('button',{name:'Build a draft on this device'}).click()
   await page.getByRole('button',{name:'Keep these steps'}).click()
   expect(await page.evaluate(()=>({local:localStorage.length,session:sessionStorage.length}))).toEqual({local:0,session:0})

@@ -16,6 +16,10 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   }
   useEffect(() => {
     document.documentElement.lang = locale
+    const description = locale === 'pl' ? 'Po rozstaniu nadal dzielisz konta, zdjęcia lub lokalizację? Wybierz, co Cię martwi, i znajdź jeden mały krok. Bez zakładania konta.' : 'Still sharing accounts, photos or location after a breakup? Choose a concern and find one small step. No sign-up.'
+    document.querySelector('meta[name="description"]')?.setAttribute('content', description)
+    document.querySelector('meta[property="og:description"]')?.setAttribute('content', description)
+    document.querySelector('meta[property="og:locale"]')?.setAttribute('content', locale === 'pl' ? 'pl_PL' : 'en_GB')
     document.title = locale === 'pl' ? 'Untangle — Twoje cyfrowe życie po rozstaniu' : 'Untangle — A little less tangled.'
   }, [locale])
   useEffect(() => {

@@ -1,9 +1,12 @@
 import { validatePlan } from './model'
 import type { Plan } from './model'
 const ITERATIONS = 310000
+// Covers the complete validated plan, including UTF-8, JSON escaping and base64.
+// One shared envelope budget is enforced on both sides of a round trip.
+export const MAX_PLAN_FILE_BYTES = 2_000_000
 const encode = (bytes: Uint8Array) => btoa(Array.from(bytes, n => String.fromCharCode(n)).join(''))
 function decode(value: unknown, size?: number): Uint8Array<ArrayBuffer> {
-  if (typeof value !== 'string' || value.length > 750000 || !/^[A-Za-z0-9+/]*={0,2}$/.test(value)) throw new Error('Invalid file')
+  if (typeof value !== 'string' || value.length > MAX_PLAN_FILE_BYTES || !/^[A-Za-z0-9+/]*={0,2}$/.test(value)) throw new Error('Invalid file')
   const bytes = Uint8Array.from(atob(value), c => c.charCodeAt(0))
   if (size && bytes.length !== size) throw new Error('Invalid file')
   return bytes
@@ -17,10 +20,12 @@ export async function encryptPlan(plan: Plan, passphrase: string): Promise<strin
   const salt = crypto.getRandomValues(new Uint8Array(16)), iv = crypto.getRandomValues(new Uint8Array(12))
   const key = await keyFor(passphrase, salt)
   const ciphertext = await crypto.subtle.encrypt({ name: 'AES-GCM', iv }, key, new TextEncoder().encode(JSON.stringify(validatePlan(plan))))
-  return JSON.stringify({ format: 'untangle-private-plan', version: 1, cipher: 'AES-GCM', kdf: 'PBKDF2-SHA256', iterations: ITERATIONS, salt: encode(salt), iv: encode(iv), data: encode(new Uint8Array(ciphertext)) })
+  const file = JSON.stringify({ format: 'untangle-private-plan', version: 1, cipher: 'AES-GCM', kdf: 'PBKDF2-SHA256', iterations: ITERATIONS, salt: encode(salt), iv: encode(iv), data: encode(new Uint8Array(ciphertext)) })
+  if (new TextEncoder().encode(file).length > MAX_PLAN_FILE_BYTES) throw new Error('This plan is too large to save. Shorten some notes before downloading.')
+  return file
 }
 export async function decryptPlan(file: string, passphrase: string): Promise<Plan> {
-  if (file.length > 1000000 || passphrase.length > 256) throw new Error('This file or passphrase is too large.')
+  if (new TextEncoder().encode(file).length > MAX_PLAN_FILE_BYTES || passphrase.length > 256) throw new Error('This file or passphrase is too large.')
   try {
     const e = JSON.parse(file)
     if (e.format !== 'untangle-private-plan' || e.version !== 1 || e.cipher !== 'AES-GCM' || e.kdf !== 'PBKDF2-SHA256' || e.iterations !== ITERATIONS) throw new Error('Invalid format')

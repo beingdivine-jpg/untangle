@@ -1,3 +1,5 @@
+import { services as serviceOptions } from '../plan/services.ts'
+import type { ServiceId } from '../plan/services.ts'
 import { taskById, tasks } from '../plan/content.ts'
 import type { TaskId, ConcernId } from '../plan/content.ts'
 import { addTask, buildPlan, emptyPlan } from '../plan/model.ts'
@@ -8,11 +10,11 @@ export const stories = [
   { id: 'memories', title: 'I want to keep what matters.', subtitle: 'Shared photos, family services, and your own next chapter.', topics: ['photos','shared'] as ConcernId[], facts: ['Maya uses Google Photos partner sharing.', 'She belongs to an Apple family group.', 'She wants to keep important photos and understand what she relies on.'], taskIds: ['keep','photos','family','support'] as TaskId[], note: 'I want to leave the shared stuff but keep my photos and the services I need.', rewrite: 'Before leaving shared services, I want to check which photos to keep and what access I would lose.', prediction: 'photos' as TaskId },
 ] as const
 export type StoryId = typeof stories[number]['id']
-export interface AgentRequest { locale?: 'en' | 'pl'; operation: 'plan' | 'edit'; topics: ConcernId[]; taskIds: TaskId[]; text: string; consent: true }
+export interface AgentRequest { services?: ServiceId[]; locale?: 'en' | 'pl'; operation: 'plan' | 'edit'; topics: ConcernId[]; taskIds: TaskId[]; text: string; consent: true }
 export interface AgentDraft { taskIds: TaskId[]; editedText: string }
 export interface RunEvent { stage: 'received' | 'drafting' | 'checking' | 'ready' | 'error'; message: string; draft?: AgentDraft }
 export const allowedTopics = ['accounts','location','photos','messages','shared','support'] as const
-export function allowedFor(topics: ConcernId[]): TaskId[] { return Object.keys(buildPlan(topics).entries) as TaskId[] }
+export function allowedFor(topics: ConcernId[], services?: ServiceId[]): TaskId[] { return Object.keys(buildPlan(topics, services).entries) as TaskId[] }
 export function validateRequest(value: unknown): AgentRequest {
   if (!value || typeof value !== 'object') throw new Error('Invalid request.')
   const v = value as Record<string, unknown>
@@ -25,13 +27,15 @@ export function validateRequest(value: unknown): AgentRequest {
   // A guard against common accidental disclosures, not a general PII detector.
   if (/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}|https?:\/\/|\bsk-[a-z0-9-]+|(?:\+?\d[\s().-]?){9,}|(?:password|passcode|api key|hasło|haslo|kod dostępu|klucz api)\s*(?:is|to|:|=)\s*\S+/i.test(v.text)) throw new Error('Remove contact details, links and credentials before sending. Use general labels instead.')
   const topics = [...new Set(v.topics)] as ConcernId[]
-  const allowed = allowedFor(topics)
+  if (v.services !== undefined && (!Array.isArray(v.services) || !v.services.length || v.services.length > 5 || v.services.some(id => !serviceOptions.some(s => s.id === id)))) throw new Error('Choose the apps you use.')
+  const services = v.services as ServiceId[] | undefined
+  const allowed = allowedFor(topics, services)
   if (v.taskIds.some(id => !allowed.includes(id as TaskId))) throw new Error('A check does not match the selected topics.')
-  return { ...(v.locale ? { locale: v.locale as 'en' | 'pl' } : {}), operation: v.operation as AgentRequest['operation'], topics, taskIds: [...new Set(v.taskIds)] as TaskId[], text: v.text.trim(), consent: true }
+  return { ...(services ? { services: [...new Set(services)] } : {}), ...(v.locale ? { locale: v.locale as 'en' | 'pl' } : {}), operation: v.operation as AgentRequest['operation'], topics, taskIds: [...new Set(v.taskIds)] as TaskId[], text: v.text.trim(), consent: true }
 }
 export function validateDraft(value: unknown, request: AgentRequest): AgentDraft {
   if (!value || typeof value !== 'object') throw new Error('The assistant did not return a usable draft.')
-  const d = value as Record<string, unknown>, allowed = allowedFor(request.topics)
+  const d = value as Record<string, unknown>, allowed = allowedFor(request.topics, request.services)
   if (!Array.isArray(d.taskIds) || d.taskIds.length > 13 || d.taskIds.some(x => !allowed.includes(x as TaskId)) || typeof d.editedText !== 'string' || d.editedText.length > 500) throw new Error('The draft included unsupported content. Your plan has not changed.')
   if (request.operation === 'plan' && !d.taskIds.length) throw new Error('No supported steps were returned. Try the local guide instead.')
   if (request.operation === 'edit' && !d.editedText.trim()) throw new Error('No edited note was returned.')

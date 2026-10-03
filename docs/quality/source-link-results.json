@@ -1,0 +1,108 @@
+{
+  "checkedAt": "2026-10-04",
+  "method": "Unauthenticated HTTP GET; no account sign-in",
+  "results": [
+    {
+      "url": "https://support.google.com/accounts/answer/183723?hl=en",
+      "status": 200,
+      "finalUrl": "https://support.google.com/accounts/answer/183723?hl=en",
+      "result": "reachable; content review still required"
+    },
+    {
+      "url": "https://support.google.com/accounts/answer/3067630?hl=en",
+      "status": 200,
+      "finalUrl": "https://support.google.com/accounts/answer/3067630?hl=en",
+      "result": "reachable; content review still required"
+    },
+    {
+      "url": "https://www.google.com/devices",
+      "status": 200,
+      "finalUrl": "https://accounts.google.com/ (provider sign-in)",
+      "result": "reachable; content review still required"
+    },
+    {
+      "url": "https://support.google.com/accounts/answer/41078?hl=en",
+      "status": 200,
+      "finalUrl": "https://support.google.com/accounts/answer/41078?hl=en",
+      "result": "reachable; content review still required"
+    },
+    {
+      "url": "https://support.google.com/mail/answer/10957?hl=en",
+      "status": 200,
+      "finalUrl": "https://support.google.com/mail/answer/10957?hl=en",
+      "result": "reachable; content review still required"
+    },
+    {
+      "url": "https://support.google.com/maps/answer/15437054?hl=en",
+      "status": 200,
+      "finalUrl": "https://support.google.com/maps/answer/15437054?hl=en",
+      "result": "reachable; content review still required"
+    },
+    {
+      "url": "https://support.apple.com/en-euro/guide/personal-safety/ips1c3310dd2/web",
+      "status": 200,
+      "finalUrl": "https://support.apple.com/en-euro/guide/personal-safety/ips1c3310dd2/web",
+      "result": "reachable; content review still required"
+    },
+    {
+      "url": "https://www.techsafety.org/documentationtips",
+      "status": 200,
+      "finalUrl": "https://www.techsafety.org/documentationtips",
+      "result": "reachable; content review still required"
+    },
+    {
+      "url": "https://support.google.com/photos/answer/7378858?hl=en",
+      "status": 200,
+      "finalUrl": "https://support.google.com/photos/answer/7378858?hl=en",
+      "result": "reachable; content review still required"
+    },
+    {
+      "url": "https://faq.whatsapp.com/1428782138011916/?cms_platform=web",
+      "status": 200,
+      "finalUrl": "https://faq.whatsapp.com/1428782138011916/?cms_platform=web",
+      "result": "reachable; content review still required"
+    },
+    {
+      "url": "https://support.apple.com/en-euro/guide/personal-safety/ips75b3b794f/1.0/web/1.0",
+      "status": 200,
+      "finalUrl": "https://support.apple.com/en-euro/guide/personal-safety/ips75b3b794f/1.0/web/1.0",
+      "result": "reachable; content review still required"
+    },
+    {
+      "url": "https://refugetechsafety.org/",
+      "status": 200,
+      "finalUrl": "https://refugetechsafety.org/",
+      "result": "reachable; content review still required"
+    },
+    {
+      "url": "https://takeitdown.ncmec.org/",
+      "status": 200,
+      "finalUrl": "https://takeitdown.ncmec.org/",
+      "result": "reachable; content review still required"
+    },
+    {
+      "url": "https://stopncii.org/how-it-works/",
+      "status": 200,
+      "finalUrl": "https://stopncii.org/how-it-works/",
+      "result": "reachable; content review still required"
+    },
+    {
+      "url": "https://lila.help/",
+      "status": 200,
+      "finalUrl": "https://lila.help/",
+      "result": "reachable; content review still required"
+    },
+    {
+      "url": "https://116111.pl/",
+      "status": 200,
+      "finalUrl": "https://116111.pl/",
+      "result": "reachable; content review still required"
+    },
+    {
+      "url": "https://www.niebieskalinia.pl/",
+      "status": 200,
+      "finalUrl": "https://www.niebieskalinia.pl/",
+      "result": "reachable; content review still required"
+    }
+  ]
+}

@@ -20,6 +20,9 @@ import { useLocalImage } from '../features/start/useLocalImage'
 import { ImageReference } from '../features/start/ImageReference'
 import { scenarios } from '../domain/scenarios'
 import type { ScenarioId, Step } from '../domain/types'
+import { navigate, useNavigation } from './navigation'
+import { resetSession } from './session'
+import { SessionStatus } from '../components/SessionStatus'
 
 const journey: { id: Step; label: string; description: string }[] = [
   { id: 'start', label: 'Start', description: 'Choose a starting point' },
@@ -32,9 +35,12 @@ const EXIT_DESTINATION = 'https://www.wikipedia.org/'
 
 export default function LegacyApp({ initialPlan, returnToIntro, clearSeed }: { initialPlan?: Plan; returnToIntro?: () => void; clearSeed?: () => void }) {
   const { translate, href: localizeLink } = useTranslation()
+  const route = useNavigation()
 
   const planRef = useRef<{ home: () => void }>(null)
-  const [workspace, setWorkspace] = useState(() => new URLSearchParams(window.location.search).get('view') !== 'walkthrough')
+  const workspace = route.area !== 'walkthrough'
+  const planRoute = useRef(route)
+  const setWorkspace = (value: boolean) => { if (!value) planRoute.current = route; navigate(value ? { ...planRoute.current, area: 'plan' } : { area: 'walkthrough' }) }
   const [workspaceVersion, setWorkspaceVersion] = useState(0)
   const [state, dispatch] = useReducer(reducer, undefined, initialState)
   const image = useLocalImage()
@@ -42,7 +48,7 @@ export default function LegacyApp({ initialPlan, returnToIntro, clearSeed }: { i
   const [info, setInfo] = useState<'how' | 'help' | 'about' | null>(null)
   const clearImage = image.clear
   const reset = useCallback(() => { clearImage(); dispatch({ type: 'RESET' }); setConfirmReset(false); setInfo(null) }, [clearImage])
-  const clearAll = useCallback(() => { reset(); clearSeed?.(); setWorkspaceVersion(v => v + 1) }, [reset, clearSeed])
+  const clearAll = useCallback(() => { reset(); resetSession(); clearSeed?.(); setWorkspaceVersion(v => v + 1) }, [reset, clearSeed])
   const resetAndFocus = () => { flushSync(reset); window.scrollTo({ top: 0, behavior: 'instant' }); document.querySelector<HTMLElement>('#hero-title')?.focus() }
   const exit = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault()
@@ -76,6 +82,7 @@ export default function LegacyApp({ initialPlan, returnToIntro, clearSeed }: { i
       {workspace && <button className="platform-help" aria-label={translate("Help & words")} onClick={() => setInfo(info === 'help' ? null : 'help')}><CircleHelp size={18} aria-hidden="true"/><span>{translate("Help & words")}</span></button>}
       <LanguageSwitch/><a className="exit-link" href={localizeLink(EXIT_DESTINATION)} onClick={exit} rel="noreferrer">{translate("Leave this page")}<MoveUpRight size={16} aria-hidden="true" /></a>
     </header></div>
+    <SessionStatus/>
     {!workspace && <nav className="app-tabs" aria-label={translate("Main navigation")}>
       <button className={!info ? 'active' : ''} aria-current={!info ? 'page' : undefined} onClick={closeInfo}><Home size={17} aria-hidden="true" />{translate(state.active ? 'My check' : 'Start here')}</button>
       {state.active && !state.guide && <button className={info === 'how' ? 'active' : ''} aria-current={info === 'how' ? 'page' : undefined} onClick={() => setInfo(info === 'how' ? null : 'how')}><BookOpen size={17} aria-hidden="true" />{translate("How it works")}</button>}

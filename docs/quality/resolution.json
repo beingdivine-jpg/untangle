@@ -1,0 +1,163 @@
+{
+  "date": "2026-10-04",
+  "baselineAuditCommit": "9b3269427b31d0702e72cbf9f4953c7d1bb0711a",
+  "site": "https://untangle-orpin.vercel.app/",
+  "findings": [
+    {
+      "id": "F01",
+      "priority": "P1",
+      "auditFinding": "Returning to the introduction silently destroys the full plan",
+      "status": "Implemented",
+      "implementation": "One memory-only application session keeps plans, outcomes, history, draft notes and file-copy status across introduction, Home, help and language navigation. Continue my plan is available on the introduction. Refresh, leave and explicit clear remain the privacy boundary."
+    },
+    {
+      "id": "F02",
+      "priority": "P1",
+      "auditFinding": "Keeping another draft replaces previously kept checks without explaining it",
+      "status": "Implemented",
+      "implementation": "Kept companion drafts merge with existing checks, preserving observations and notes. App-scope replacement previews removals and supports undo."
+    },
+    {
+      "id": "F03",
+      "priority": "P1",
+      "auditFinding": "A valid onboarding choice can return an unexplained empty result",
+      "status": "Implemented",
+      "implementation": "Every concern/app combination has a next step. Missing coverage keeps the concern, explains the limitation and opens support instead of an empty plan."
+    },
+    {
+      "id": "F04",
+      "priority": "P2",
+      "auditFinding": "Uncommitted notes and outcome selections disappear during ordinary navigation",
+      "status": "Implemented",
+      "implementation": "Unrecorded outcomes and notes live in the session and encrypted file. The interface distinguishes a draft from a recorded update and offers discard."
+    },
+    {
+      "id": "F05",
+      "priority": "P2",
+      "auditFinding": "An allowed large Unicode plan can be exported but cannot be reopened",
+      "status": "Implemented",
+      "implementation": "Export and import share a 2 MB envelope bound. Maximum validated histories, Unicode and JSON-escaped notes round-trip. Oversize files fail explicitly."
+    },
+    {
+      "id": "F06",
+      "priority": "P2",
+      "auditFinding": "The main AI promise leads to a disabled primary action on production",
+      "status": "Implemented for current mode",
+      "implementation": "The working guided planner is primary. Unavailable AI actions are omitted; the demo is labelled scripted. Live AI remains disabled, with an explicit production release gate."
+    },
+    {
+      "id": "F07",
+      "priority": "P2",
+      "auditFinding": "Account and saving state are accurate in help, but insufficiently visible in the journey",
+      "status": "Implemented; user comprehension review pending",
+      "implementation": "A visible tab/file-copy state explains temporary work, download started, checked copy and later edits. Setup explains no Untangle account. Walkthrough saving and provider sign-in are explicitly separate."
+    },
+    {
+      "id": "F08",
+      "priority": "P2",
+      "auditFinding": "The product asks a novice to learn several workspaces before receiving help",
+      "status": "Implemented; participant validation pending",
+      "implementation": "A single introduction leads to concern + apps + the first instruction. Setup hides the full workspace navigation. The companion and old detailed walkthrough are optional paths."
+    },
+    {
+      "id": "F09",
+      "priority": "P2",
+      "auditFinding": "The companion assumes apps the person has never selected",
+      "status": "Implemented",
+      "implementation": "Both setup and the optional companion expose app choice, including another app and uncertainty. Requests and replies are validated against that service scope."
+    },
+    {
+      "id": "F10",
+      "priority": "P2",
+      "auditFinding": "The picture labelled Your selected checks does not match the kept selection",
+      "status": "Implemented",
+      "implementation": "The diagram uses selected draft checks or the kept plan, includes required preparation, explains its limits and shows the additional-item count. Completion-looking check marks were removed."
+    },
+    {
+      "id": "F11",
+      "priority": "P2",
+      "auditFinding": "A general companion note is attached to an arbitrary first check",
+      "status": "Implemented",
+      "implementation": "The companion note is a plan-level note, separate from check observations. It survives navigation and file export without being attached to the first check."
+    },
+    {
+      "id": "F12",
+      "priority": "P2",
+      "auditFinding": "People can add checks but cannot easily correct the plan's scope",
+      "status": "Implemented",
+      "implementation": "Checks can be removed with dependency disclosure. Apps and concerns can be edited with a removal preview. Undo remains available across internal navigation and restores mode after imports."
+    },
+    {
+      "id": "F13",
+      "priority": "P2",
+      "auditFinding": "Most guides stop short of helping someone who cannot find the setting",
+      "status": "Implemented; practitioner review pending",
+      "implementation": "Every guide has one instruction at a time and contextual help for missing settings, sign-in and restricted options. Computer-only instructions explain the device boundary. Young/family-account users are directed to help rather than bypassing controls."
+    },
+    {
+      "id": "F14",
+      "priority": "P2",
+      "auditFinding": "Returning another day depends on a file workflow that may exceed the audience's skills",
+      "status": "Implemented; real-device validation pending",
+      "implementation": "File saving provides passphrase reveal, accurate download-start feedback, a find-and-reopen rehearsal, local preview and replacement choice. Drafts and the whole-plan note are included."
+    },
+    {
+      "id": "F15",
+      "priority": "P2",
+      "auditFinding": "The mobile page fits, but small text and action depth undermine simplicity",
+      "status": "Implemented",
+      "implementation": "Readable mobile navigation and diagram text, visible first-use action, fewer setup distractions, reduced notice clutter and a sticky exit header. The selected instruction receives focus and is brought into view."
+    },
+    {
+      "id": "F16",
+      "priority": "P2",
+      "auditFinding": "Human and age-appropriate support is useful but too far from the first decision",
+      "status": "Implemented",
+      "implementation": "Human support is available from the introduction and setup. Poland offers separate youth and adult referrals. Private-image support remains age-aware without image uploads; region is selected explicitly."
+    },
+    {
+      "id": "F17",
+      "priority": "P2",
+      "auditFinding": "Polish UI coverage is strong, but the whole help journey is not consistently localized",
+      "status": "Implemented; native-speaker review pending",
+      "implementation": "All added interface messages have Polish translations. A source-based coverage check catches missing literal strings and app labels. Known English-language destinations are identified. Personal text remains unchanged."
+    },
+    {
+      "id": "F18",
+      "priority": "P2",
+      "auditFinding": "Browser navigation does not follow the app's internal journey",
+      "status": "Implemented",
+      "implementation": "Browser Back traverses internal locations using opaque memory-only history keys. Notes and concerns are absent from URLs/history payloads. Page and guide headings receive focus after navigation."
+    },
+    {
+      "id": "F19",
+      "priority": "P2",
+      "auditFinding": "AI output checks validate structure, not preservation of the person's meaning",
+      "status": "Partially implemented; live-model evaluation pending",
+      "implementation": "Service-scoped validation, original/edit comparison, explicit acceptance, cancellation and undo are retained. Bilingual adversarial and semantic evaluation fixtures plus release criteria are provided. Structural tests are not presented as proof of meaning preservation; production AI stays off."
+    },
+    {
+      "id": "F20",
+      "priority": "P3",
+      "auditFinding": "A large initial bundle and limited page metadata create avoidable delivery work",
+      "status": "Implemented; physical-device performance review pending",
+      "implementation": "The full workspace is loaded on demand. Fonts ship only Latin and Latin Extended. Metadata supports both languages. Initial JavaScript is about 19% smaller uncompressed and 14% smaller gzipped than the audited baseline; real-device speed is not claimed."
+    },
+    {
+      "id": "F21",
+      "priority": "P3",
+      "auditFinding": "Security hardening and content maintenance need an explicit production baseline",
+      "status": "Implemented; content ownership/review pending",
+      "implementation": "Production CSP and Permissions-Policy are configured. Privacy text distinguishes app data from ordinary hosting connection logs. All 13 guides have source/review records; 17 referral/source URLs returned HTTP 200. CI checks coverage, tests and links on changes, without a scheduled monitor."
+    },
+    {
+      "id": "F22",
+      "priority": "P2",
+      "auditFinding": "Passing feature tests do not yet demonstrate success for the intended user",
+      "status": "Automated coverage implemented; human study pending",
+      "implementation": "Regression journeys cover entry, drafts, Back/Home, language, scope edits, example separation, saving/reopening, explicit clearing and import undo across Chromium, Firefox and WebKit. A ready-to-run beginner study and explicit validation gates document what remains untested."
+    }
+  ],
+  "remainingExternalGates": "release-gates.json",
+  "validation": "verification.json"
+}

@@ -1,0 +1,57 @@
+{
+  "release": "audit-improvements-2026-10-04",
+  "recordedAt": "2026-10-03T22:35:41.829553+00:00",
+  "checks": {
+    "typecheck": "passed as part of production build",
+    "lint": {
+      "result": "passed for release files",
+      "command": "npm run lint -- --ignore-pattern 'video-demo/**'",
+      "exclusion": "Unrelated, untracked video-demo work was left out of this release; its own script currently produces lint errors."
+    },
+    "unitTests": {
+      "passed": 59,
+      "files": 6
+    },
+    "browserTests": {
+      "passed": 59,
+      "engines": {
+        "chromium": 43,
+        "firefox": 8,
+        "webkit": 8
+      },
+      "coverage": "Complete beginner journeys plus existing companion, Polish, walkthrough, review, accessibility and privacy regression tests"
+    },
+    "finalClearUndoRetest": {
+      "passed": 6,
+      "engines": [
+        "chromium",
+        "firefox",
+        "webkit"
+      ]
+    },
+    "translationCoverage": "all literal UI messages and app labels pass; dynamic guide/story text is covered by unit tests",
+    "guideRegister": 13,
+    "sourceLinks": {
+      "checked": 17,
+      "http200": 17,
+      "note": "Reachability is not a practitioner content review."
+    },
+    "productionDependencyAdvisories": 0,
+    "build": "passed"
+  },
+  "bundle": {
+    "initialJavaScriptAsset": "index-9FilJGCC.js",
+    "bytes": 432323,
+    "gzipBytesLevel6": 139179,
+    "auditedInitialJavaScriptBytesApproximate": 533390,
+    "auditedInitialGzipBytesApproximate": 163870,
+    "method": "Initial entry chunk only; optional workspace now loads separately. No real-device speed claim."
+  },
+  "manualVerification": [
+    "Local phone-size English and Polish first-use flow",
+    "First instruction, visible exit and provider-language hints",
+    "Desktop and phone screenshots reviewed"
+  ],
+  "remainingValidation": "release-gates.json",
+  "deployment": "Code is published through the existing GitHub-to-Vercel integration; live deployment verification is reported in the task response."
+}
