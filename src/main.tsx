@@ -5,5 +5,6 @@ import './styles/tokens.css'
 import './styles/app.css'
 import App from './app/App'
 import { LanguageProvider } from './i18n/LanguageProvider'
+import './styles/identity.css'
 
 createRoot(document.getElementById('root')!).render(<StrictMode><LanguageProvider><App /></LanguageProvider></StrictMode>)

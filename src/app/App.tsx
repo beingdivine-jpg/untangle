@@ -28,7 +28,7 @@ export default function App() {
     if (plan) acceptPlan(plan); else selectMode('personal')
     navigate({ area: 'plan', view: start ? 'setup' : 'plan', mode: plan?.example ? 'example' : 'personal' })
   }
-  return <div key={generation}>
+  return <div className="untangle-app" key={generation}>
     <div hidden={legacy}><Experience key={session.companionGeneration} openPlan={openPlan}/></div>
     {hasOpenedPlan() && <div hidden={!legacy}><Suspense fallback={<main className="loading-page" role="status">{translate('Opening your plan…')}</main>}>
       <LegacyApp returnToIntro={() => navigate({ area: 'intro' })}/>

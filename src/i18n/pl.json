@@ -1235,5 +1235,9 @@
   "Choose the apps you use.": "Wybierz aplikacje, z których korzystasz.",
   "Guide limits and other options": "Zakres poradnika i inne możliwości",
   "Walkthrough only · Return to your plan to save": "Tylko instrukcja krok po kroku · Zapis jest dostępny w głównym planie",
-  "Return to the main plan": "Wróć do głównego planu"
+  "Return to the main plan": "Wróć do głównego planu",
+  "Pause illustration": "Wstrzymaj animację ilustracji",
+  "Play illustration": "Włącz animację ilustracji",
+  "Pause motion": "Wstrzymaj ruch",
+  "Play motion": "Włącz ruch"
 }

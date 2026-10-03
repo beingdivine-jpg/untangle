@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-04",
+  "change": "Living portrait and plum/apricot visual identity",
+  "preserved": ["Original Untangle logo", "Personal and fictional plan separation", "Guided workflows and explicit approval", "Memory-only session and encrypted file saving", "English and Polish interfaces", "Quick exit and visible session status"],
+  "implementation": {
+    "portrait": "Responsive self-hosted JPEG artwork with CSS/SVG decorative motion; no video player or external asset requests",
+    "motion": "Pauses on request, outside the viewport and in a hidden tab; starts paused under prefers-reduced-motion, with explicit opt-in playback",
+    "workspace": "Consistent plum navigation, warm reading surfaces, larger headings, rounded controls and icon-supported concern choices"
+  },
+  "validation": {
+    "unitTests": 59,
+    "browserTests": 65,
+    "browserEngines": ["Chromium", "Firefox", "WebKit"],
+    "newOpeningViewportWidths": [320, 390, 768, 1280],
+    "additionalExistingResponsiveWidths": [1440],
+    "locales": ["en", "pl"],
+    "checks": ["Production build and TypeScript", "ESLint", "Polish translation coverage", "Guide register", "Automated accessibility and contrast", "Keyboard motion control", "Reduced-motion preferences", "Starting controls fit within the viewport", "Plan, file, history and consent regression tests", "Manual desktop and mobile-size browser review"]
+  },
+  "limits": "Browser viewport and browser-engine checks are not a substitute for physical-device testing or usability studies with the target audience. No new claim about live AI availability is made.",
+  "artworkProvenance": "portrait-provenance.json"
+}
