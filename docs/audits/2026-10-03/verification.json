@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-03",
+  "auditedCommit": "fe3f4011d974af30c9c7523cab744574e354798c",
+  "checks": {
+    "lint": "passed",
+    "unitTests": {
+      "passed": 40,
+      "files": 4
+    },
+    "existingBrowserTests": {
+      "passed": 35,
+      "browser": "Chromium",
+      "duration": "approximately 2.3 minutes"
+    },
+    "productionBuild": {
+      "status": "passed",
+      "mainJavaScriptKilobytes": 533.39,
+      "mainJavaScriptGzipKilobytes": 163.87,
+      "cssKilobytes": 95.11,
+      "cssGzipKilobytes": 20.99
+    },
+    "npmAudit": {
+      "knownAdvisoriesReported": 0
+    },
+    "additionalUnicodeRoundTripProbe": {
+      "status": "failed",
+      "fileBytes": 838863,
+      "ciphertextBase64Characters": 838688,
+      "decoderCharacterLimit": 750000,
+      "data": "synthetic"
+    }
+  },
+  "live": {
+    "origin": "https://untangle-orpin.vercel.app/",
+    "aiStatus": {
+      "available": false,
+      "provider": "OpenAI",
+      "model": null
+    },
+    "observedHeaders": {
+      "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+      "referrer-policy": "no-referrer",
+      "x-content-type-options": "nosniff",
+      "x-frame-options": "DENY"
+    },
+    "notReturnedHeaders": [
+      "content-security-policy",
+      "permissions-policy"
+    ],
+    "statusEndpointCacheControl": "no-store",
+    "phoneMeasurements": {
+      "viewportWidth": 390,
+      "viewportHeight": 844,
+      "personalWorkspaceLocalDraftActionTopCssPixels": 1065,
+      "planNavigationTextCssPixels": 10,
+      "diagramHelperTextCssPixels": 9,
+      "landingTryMeTopCssPixels": 514,
+      "landingTryMeBottomCssPixels": 568
+    }
+  },
+  "scopeLimits": [
+    "Simulated beginner walkthrough, not a representative user study",
+    "No real accounts or personal data used",
+    "No actual provider AI request",
+    "No infrastructure penetration test",
+    "No actual Safari, Firefox, iOS or Android device testing",
+    "No full WCAG 2.2 conformance certification",
+    "No native Polish linguistic sign-off",
+    "External guidance reviewed selectively; no complete link/content revalidation",
+    "No production feature changes"
+  ]
+}

@@ -1,0 +1,390 @@
+{
+  "auditedCommit": "fe3f4011d974af30c9c7523cab744574e354798c",
+  "date": "2026-10-03",
+  "site": "https://untangle-orpin.vercel.app/",
+  "findings": [
+    {
+      "id": "F01",
+      "priority": "P1",
+      "type": "Reproduced live",
+      "effort": "Medium",
+      "title": "Returning to the introduction silently destroys the full plan",
+      "evidence": "Created a plan, recorded a fictional uncertain outcome and note, selected Back to introduction, then Already have a plan? Open the tools. The workspace reopened empty. Reproduced again with a four-check plan; before/after screenshots are included. App.tsx conditionally unmounts LegacyApp and clears its seed on this navigation.",
+      "reproduce": "Start with my own situation → Build a draft on this device → Keep these steps → Open my full plan → optionally record an update → Back to introduction → Already have a plan? Open the tools.",
+      "impact": "A beginner reasonably treats introduction/home as navigation. Losing work after explicitly keeping an update damages trust and requires repeating emotionally difficult work.",
+      "fix": "Keep the current plan in one application-level, memory-only store across ordinary internal navigation. Offer Resume this plan from the introduction. Reserve clearing for explicit clear/exit and the documented document-lifecycle privacy boundary. Preserve a separate fictional demo state.",
+      "acceptance": "Checks, outcomes, notes and history survive introduction → resume in both languages. Quick exit, explicit clear and refresh still clear according to the chosen privacy policy. Add this complete journey to regression coverage.",
+      "sources": [
+        "src/app/App.tsx:9",
+        "src/app/LegacyApp.tsx:75"
+      ]
+    },
+    {
+      "id": "F02",
+      "priority": "P1",
+      "type": "Reproduced live",
+      "effort": "Medium",
+      "title": "Keeping another draft replaces previously kept checks without explaining it",
+      "evidence": "Kept the default six accounts checks. Deselected Accounts & messages, selected Location sharing, built a new draft and kept it. The result became two checks: Maps and iPhone. The earlier Google and WhatsApp checks disappeared. While changing topics, the old kept list and the new topic picture also disagreed.",
+      "reproduce": "Keep an accounts draft → change the selected topic to location → build and keep the new draft → inspect the kept count and full plan.",
+      "impact": "A person working through several concerns can unknowingly erase earlier decisions. The label Keep these steps suggests retaining work, without indicating replacement.",
+      "fix": "Make adding the default: merge new checks with kept checks and retain their notes/status. If replacement is useful, provide a separate Replace plan action with a preview of removed items. Keep a clear Undo for this reversible operation.",
+      "acceptance": "Adding a location draft to the accounts plan keeps the union of checks without duplicates or lost notes. Replacement names what will be removed and requires an explicit choice.",
+      "sources": [
+        "src/features/companion/Experience.tsx:94",
+        "src/features/companion/Experience.tsx:115"
+      ]
+    },
+    {
+      "id": "F03",
+      "priority": "P1",
+      "type": "Reproduced live",
+      "effort": "Small",
+      "title": "A valid onboarding choice can return an unexplained empty result",
+      "evidence": "In the full-plan setup, selected Can someone see where I am?, then only WhatsApp, then Make my plan. The app returned to the welcome screen with Make my own plan, without explaining that there was no matching guide. buildPlan removes both location guides for that service selection; hasPlan then evaluates false.",
+      "reproduce": "Open the tools → Make my own plan → location concern → Continue → WhatsApp only → Make my plan.",
+      "impact": "The user has done what the website asked and appears to be sent back to the start. She cannot distinguish unsupported coverage from her own mistake or a broken submission.",
+      "fix": "Treat no matching guide as a real outcome. Keep the concern, explain the coverage gap in plain language, and offer relevant reviewed external help or a question to take to a trusted person. Let the user change the app choice without restarting.",
+      "acceptance": "Exercise every concern/service combination. None silently becomes the generic welcome screen. Unsupported combinations retain the user's concern and present a useful next action.",
+      "sources": [
+        "src/features/plan/model.ts:15",
+        "src/features/plan/Platform.tsx:40"
+      ]
+    },
+    {
+      "id": "F04",
+      "priority": "P2",
+      "type": "Reproduced live",
+      "effort": "Medium",
+      "title": "Uncommitted notes and outcome selections disappear during ordinary navigation",
+      "evidence": "Typed a fictional reminder and selected I'm not sure what I found in a Maps guide. Clicked My plan before Keep this update. Reopening the guide's My update section showed an empty note, no selected outcome and a disabled submit button. There was no pending-change indication or warning.",
+      "reproduce": "Open a check → My update → type a note and choose an outcome → My plan → reopen the same check → My update.",
+      "impact": "The difference between typing, choosing and keeping is easy to miss. A distracted visitor may think the app has kept the note because the rest of the interface updates instantly.",
+      "fix": "Retain draft notes in the memory-only plan store across internal navigation. Clearly distinguish a draft update from a recorded update. If discarding, offer Keep editing or Discard, without obstructing quick exit.",
+      "acceptance": "A draft survives navigation to guides, support and the plan. Explicit discard clears it. Quick exit remains immediate. Editing a previously recorded note makes its current outcome understandable.",
+      "sources": [
+        "src/features/plan/Platform.tsx:29",
+        "src/features/plan/Platform.tsx:88",
+        "src/features/plan/Platform.tsx:96"
+      ]
+    },
+    {
+      "id": "F05",
+      "priority": "P2",
+      "type": "Reproduced in an isolated code probe",
+      "effort": "Small",
+      "title": "An allowed large Unicode plan can be exported but cannot be reopened",
+      "evidence": "A valid plan containing all 13 checks, 30 history entries each and 500-character three-byte Unicode notes exports successfully to 838,863 bytes. Its ciphertext is 838,688 base64 characters, above decode's 750,000-character cap. Reopening with the correct passphrase fails with the generic passphrase/file error, despite being below the 1 MB file limit. This is an edge case, not a claim that typical English or Polish plans fail.",
+      "reproduce": "Use the included maximum-plan.test.ts.txt probe with the project's Vitest runner. It calls the actual validators and encryption/decryption functions; its round-trip assertion fails.",
+      "impact": "A user can be told her private copy was downloaded, close the tab, and later discover that her only saved copy is unusable. The error incorrectly points her toward the passphrase or file corruption.",
+      "fix": "Define one byte budget shared by validation, export and import. Ensure every successfully exported plan is importable. Account for UTF-8, JSON escaping and base64 expansion, or reject the export clearly before generating a file.",
+      "acceptance": "Round-trip maximum supported histories containing ASCII, Polish letters, three-byte characters, emoji and escaped characters. Every accepted export reopens; any unsupported size fails before download with an accurate message.",
+      "sources": [
+        "src/features/plan/crypto.ts:6",
+        "src/features/plan/crypto.ts:15",
+        "src/features/plan/crypto.ts:23",
+        "src/features/plan/model.ts:59"
+      ]
+    },
+    {
+      "id": "F06",
+      "priority": "P2",
+      "type": "Live behavior and product assessment",
+      "effort": "Small for honest fallback; Large for production AI",
+      "title": "The main AI promise leads to a disabled primary action on production",
+      "evidence": "The introduction promotes AI-assisted drafts. The live status endpoint returns available:false. The personal workspace displays a disabled Ask AI for a draft as its primary button; the working local planner is secondary. AI rewriting is also unavailable for personal notes; manual note editing still works. Try Me is correctly labelled as scripted, and the local planner works.",
+      "reproduce": "Open the introduction → Start with my own situation → inspect Ask AI for a draft and Help me put it into words. Compare with /api/agent/status.",
+      "impact": "A visitor attracted by the headline benefit encounters a feature she cannot use. Installation/configuration language makes a deployment condition feel like something the user must solve.",
+      "fix": "While AI is off, make Show my first steps the primary working action and label the companion as guided planning. Keep the AI demonstration clearly separate. Before enabling real AI, build a production server route, server-side secret management, abuse/cost controls and failure handling; the current adapter is loopback-only.",
+      "acceptance": "Production always has a usable primary action. Claims match the actual mode. No dead-end editor is presented as available. A real AI release proves consent, cancellation, timeout, malformed-output handling and spending controls end to end.",
+      "sources": [
+        "src/features/companion/Experience.tsx:109",
+        "src/features/companion/Experience.tsx:119",
+        "public/agent-status.json:1",
+        "server/agent.ts:13",
+        "vercel.json:6"
+      ]
+    },
+    {
+      "id": "F07",
+      "priority": "P2",
+      "type": "Source-confirmed behavior; novice-usability judgment",
+      "effort": "Small",
+      "title": "Account and saving state are accurate in help, but insufficiently visible in the journey",
+      "evidence": "There is no Untangle login, identity session, cloud account or automatic saving. Work exists in React memory; a downloaded encrypted file is the only durable plan. Yet Your workspace, Your personal plan, Keep these steps and Keep my place can sound persistent. The explicit No account to create sidebar note is hidden on mobile, and the detailed lifecycle explanation sits in help/disclosures or Save & resume.",
+      "reproduce": "Arrive on a phone and try to answer: Am I signed in? Who can see this? Will it be here tomorrow? Where would I sign back in? The product's answers are distributed across multiple screens.",
+      "impact": "This is especially important for a person who equates a personal-looking page with an account. Absence of login is a useful privacy choice; ambiguity about it is the problem.",
+      "fix": "Use a persistent plain state label such as This tab only · Not saved to a file. Explain before the first personal input: You don't need an Untangle account. Refreshing or closing this page clears this session. Change the badge after download and after subsequent edits. Keep Google/Apple sign-in explicitly separate from Untangle.",
+      "acceptance": "In an unprompted comprehension test, participants can explain no account, no automatic cloud saving and how to return later. This information remains available on mobile and in Polish without opening a long privacy panel.",
+      "sources": [
+        "src/features/plan/Platform.tsx:36",
+        "src/features/plan/Platform.tsx:79",
+        "src/features/plan/SavePlan.tsx:39",
+        "src/features/plan/platform.css:4"
+      ]
+    },
+    {
+      "id": "F08",
+      "priority": "P2",
+      "type": "Observed journey; novice-usability judgment",
+      "effort": "Large",
+      "title": "The product asks a novice to learn several workspaces before receiving help",
+      "evidence": "A direct personal journey uses Start with my own situation → Build a draft → Keep these steps → Open my full plan → Take this step before reaching practical instructions: five activations without optional topic choices. The studio has three tools; the full plan has five different navigation items; the slower device walkthrough introduces another interaction model. Open the tools also presents a second onboarding path.",
+      "reproduce": "Follow the shortest personal route, then the tools route, then the slower device walkthrough. Compare navigation labels, headings, state and the meaning of Back.",
+      "impact": "The visitor's job is to understand one concern. Draft, proposal, kept checks, full plan and walkthrough become extra concepts to learn while under stress.",
+      "fix": "Use one journey: choose a concern → identify the relevant app/device → see one suggested check → read where to look → record what happened. Put the rest of the plan and optional assistant tools behind clear secondary actions. Keep the visual identity and logo.",
+      "acceptance": "A novice can reach one relevant practical instruction in at most three deliberate choices after starting, with one stable navigation system. This is a proposed product target, not an observed completion rate.",
+      "sources": [
+        "src/app/App.tsx:9",
+        "src/features/companion/Experience.tsx:116",
+        "src/features/plan/Platform.tsx:15",
+        "src/features/plan/Platform.tsx:95"
+      ]
+    },
+    {
+      "id": "F09",
+      "priority": "P2",
+      "type": "Reproduced live; source-confirmed scope",
+      "effort": "Medium",
+      "title": "The companion assumes apps the person has never selected",
+      "evidence": "Accounts & messages is selected by default. Its local draft includes Google, Gmail forwarding, WhatsApp and iPhone guidance. The companion never asks which services are used, while the other onboarding path does. The library contains 13 checks and no dedicated Instagram, Snapchat, TikTok or WhatsApp location-sharing guide.",
+      "reproduce": "Start a personal companion session and build its default draft. Contrast it with the full-plan Which of these do you use? question.",
+      "impact": "Irrelevant iPhone or computer-only steps make the product feel generic and can make a beginner think unfamiliar services were detected on her device. Common concerns may fall outside actual coverage.",
+      "fix": "Reuse one app/device selector across both entry points, include I don't know and Another app, and state the coverage honestly. Prioritize additional guides using user research; route unsupported situations to curated help while retaining the person's question.",
+      "acceptance": "Selecting only the services used removes irrelevant checks. Uncertainty does not imply the app scanned anything. Unsupported apps always get an explicit useful outcome rather than an empty plan.",
+      "sources": [
+        "src/features/companion/Experience.tsx:24",
+        "src/features/companion/agentCore.ts:19",
+        "src/features/plan/content.ts:15",
+        "src/features/plan/Platform.tsx:41"
+      ]
+    },
+    {
+      "id": "F10",
+      "priority": "P2",
+      "type": "Reproduced live",
+      "effort": "Small",
+      "title": "The picture labelled Your selected checks does not match the kept selection",
+      "evidence": "Deselected WhatsApp and iPhone in a six-check draft and kept four checks. The list correctly said four; the visual index still displayed all six, including WhatsApp and iPhone. After keeping, ids falls back to all checks allowed for the selected topics rather than the kept set. ThreadScene also truncates to six items without a count of omitted checks.",
+      "reproduce": "Build an accounts draft → deselect WhatsApp and iPhone → Keep these steps → compare the kept count with the diagram.",
+      "impact": "The distinctive visual element contradicts the person's choices. Check marks and connection lines can also be mistaken for verified account connections despite the explanatory disclaimer.",
+      "fix": "Drive the diagram from the same canonical selection as the list. Label states Suggested, Kept, and Reported by you distinctly. Add an explicit remaining-item count or expandable list when more than six checks exist.",
+      "acceptance": "List and visual index agree after deselection, topic changes, keep/discard and handoff. No mark is described as a verified account status. Keyboard users have the same information as visual users.",
+      "sources": [
+        "src/features/companion/Experience.tsx:33",
+        "src/features/companion/Experience.tsx:94",
+        "src/features/companion/ThreadScene.tsx:10"
+      ]
+    },
+    {
+      "id": "F11",
+      "priority": "P2",
+      "type": "Source-confirmed; usability judgment",
+      "effort": "Medium",
+      "title": "A general companion note is attached to an arbitrary first check",
+      "evidence": "handoff records the companion note on kept[0]. The UI discloses this, but the first check is often account recovery, even when the note describes photographs, location or the overall situation. The plan model has no plan-level note.",
+      "reproduce": "Write a general note in Help me put it into words, keep several checks, open the full plan and inspect which check received the note.",
+      "impact": "Someone returning to the plan may not know where her words went. A helper reading one check may misunderstand a general concern as evidence about that account setting.",
+      "fix": "Store a clearly named note about the overall situation, separate from per-check observations. Optionally let the person choose a related check. Preserve original text; AI edits must remain an explicit, reversible action.",
+      "acceptance": "A general note is discoverable from the plan summary and never silently categorized as an observation about recovery or another unrelated check. Save/restore preserves its location and exact text.",
+      "sources": [
+        "src/features/companion/Experience.tsx:95",
+        "src/features/plan/model.ts:6"
+      ]
+    },
+    {
+      "id": "F12",
+      "priority": "P2",
+      "type": "Source-confirmed UI gap",
+      "effort": "Medium",
+      "title": "People can add checks but cannot easily correct the plan's scope",
+      "evidence": "The full plan supports Add a check, review outcomes and Clear plan. It has no per-check Remove / Doesn't apply action, no editable service selection after setup and no way to correct a mistaken scope without rebuilding or tolerating irrelevant rows. For later is a different meaning from Doesn't apply.",
+      "reproduce": "Create a broad plan, discover an irrelevant service, and look for a way to remove just that check or edit the apps used.",
+      "impact": "A novice who makes a wrong initial choice gets a permanently cluttered plan. The progress denominator can encourage reviewing irrelevant checks simply to finish.",
+      "fix": "Add Doesn't apply / Remove from my plan with Undo, and Edit my apps/concerns that preserves relevant notes and history. Explain dependencies before removing a preparation check.",
+      "acceptance": "A single incorrect check can be removed without clearing the plan. Dependency handling is explicit. The suggested next step and activity count stay consistent.",
+      "sources": [
+        "src/features/plan/Platform.tsx:37",
+        "src/features/plan/Platform.tsx:52",
+        "src/features/plan/model.ts:7"
+      ]
+    },
+    {
+      "id": "F13",
+      "priority": "P2",
+      "type": "Observed guide content; usability judgment",
+      "effort": "Large",
+      "title": "Most guides stop short of helping someone who cannot find the setting",
+      "evidence": "Most of the 13 guides have two text instructions plus an external help link. The Maps guide says to find Location sharing in a profile menu. Gmail forwarding and Google Photos instructions require a computer. A slower, contextual walkthrough with I'm stuck exists for Google devices, but the other guides do not provide equivalent help. Google's linked Maps page begins with how to share location before its stop-sharing section.",
+      "reproduce": "Try the Maps, forwarding, Photos and WhatsApp guides from a phone without prior knowledge of profile menus, settings or switching between tabs. Compare them with the slower device walkthrough.",
+      "impact": "A person can reach the correct guide and still have no idea what to tap, which account is open, or how to return. Sending her into long provider documentation moves the complexity elsewhere.",
+      "fix": "Ask phone/computer only when it matters. Show one small instruction at a time with a maintained, clearly illustrative example, I can't find this, My screen looks different and I'll ask someone options. Label external account pages and explain returning to Untangle. Include supervised-account and age/region limitations where relevant, without collecting unnecessary birth-date data.",
+      "acceptance": "First-time users can locate a setting or reach an appropriate help path without guessing. Phone users are never led into a computer-only instruction without explanation. Provider sign-in is never presented as an Untangle login.",
+      "sources": [
+        "src/features/plan/content.ts:16",
+        "src/features/plan/content.ts:19",
+        "src/features/plan/content.ts:20",
+        "src/features/guide/Guide.tsx:56",
+        "https://support.google.com/maps/answer/15437054?hl=en"
+      ]
+    },
+    {
+      "id": "F14",
+      "priority": "P2",
+      "type": "Observed UI; return-use hypothesis",
+      "effort": "Medium",
+      "title": "Returning another day depends on a file workflow that may exceed the audience's skills",
+      "evidence": "Save & resume requires a new file passphrase of at least 12 characters, entered twice, a download, later finding a .untangle file, entering its passphrase and explicitly applying the import. There is no passphrase reveal control, download-location tutorial or restore rehearsal. The app cannot verify that the browser actually saved the file; it announces download after invoking the link.",
+      "reproduce": "Read the Save & resume flow as someone unfamiliar with Downloads, file extensions or the difference between an account password and a file passphrase. Existing tests verify encryption and import mechanics, not novice success.",
+      "impact": "The product's repeat-use promise is fragile for this audience. A successful click does not demonstrate that the person can recover the plan later.",
+      "fix": "Keep the optional encrypted file, but guide the user through Save for later, what file to look for, a reveal/hide control, and an optional reopen check. Use Started download unless completion is knowable. Offer Keep using this tab with a clear temporary-state reminder. Do not introduce silent storage or cloud accounts just to solve this UX problem.",
+      "acceptance": "At least four of five representative pilot participants can reopen a fictional plan on their own device in a later session. This is a proposed release target, not current adoption evidence.",
+      "sources": [
+        "src/features/plan/SavePlan.tsx:14",
+        "src/features/plan/SavePlan.tsx:23",
+        "src/features/plan/SavePlan.tsx:42"
+      ]
+    },
+    {
+      "id": "F15",
+      "priority": "P2",
+      "type": "Measured live; visual review",
+      "effort": "Medium",
+      "title": "The mobile page fits, but small text and action depth undermine simplicity",
+      "evidence": "At 390×844, the personal workspace's working Build a draft on this device action began at approximately y=1,065 CSS pixels, below the first viewport. The disabled AI button was above it. Full-plan mobile navigation text measured 10px; diagram helper labels were 9px; some important explanations were 12px. The first landing-page Try Me button was visible at y=514–568, and horizontal overflow was not observed.",
+      "reproduce": "Use a 390×844 viewport, enter the personal workspace and inspect the first screen and computed text sizes. Compare with Polish navigation wrapping.",
+      "impact": "The visitor must scroll through topic controls, tool tabs and introductory text before finding a working next step. Large visual headings coexist with tiny practical navigation.",
+      "fix": "Move the next action directly below the relevant choice; progressively reveal optional tools. Aim for 16px reading text and comfortably readable navigation, with approximately 44px touch controls as a design target. Preserve the noticed English/Polski switch. Test text enlargement and actual phone keyboards.",
+      "acceptance": "At 320–390px widths, the primary action is easy to discover without scanning multiple tool sections. Enlarged text does not hide controls or force horizontal reading. Small font sizes alone are not being labelled a WCAG violation; target spacing and exceptions need separate assessment.",
+      "sources": [
+        "src/features/companion/experience.css:1",
+        "src/features/plan/platform.css:4",
+        "https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html"
+      ]
+    },
+    {
+      "id": "F16",
+      "priority": "P2",
+      "type": "Observed information architecture; usability judgment",
+      "effort": "Medium",
+      "title": "Human and age-appropriate support is useful but too far from the first decision",
+      "evidence": "The companion's human-support link is at the bottom and opens Lila.help. The full plan has richer support, including a Poland selector, youth support and private-image guidance. The introduction exposes help through an icon, while the default Photos topic selects preservation and partner-sharing checks rather than an obvious urgent-image-support branch. The UI correctly states that Untangle is not a live or emergency service.",
+      "reproduce": "From the first mobile screen, try to find help for being unable to continue, concerns about changing access, or private images. Compare the effort with opening the full support page.",
+      "impact": "Someone overwhelmed or dealing with threats should not need to learn the planning workspace to reach appropriate human help. A youth-oriented support option also should not be the only clearly regional route for an adult visitor.",
+      "fix": "Add a consistently placed Find someone to help link and a clearly optional I don't feel comfortable checking route. Ask region only when support is requested; do not infer it from language. Present youth and adult options clearly and surface private-image support by concern.",
+      "acceptance": "Relevant human support can be reached in one or two clear actions from each main screen. The destination and whether it is a live service are explicit. The existing under-18 image guidance and no-upload boundary remain intact.",
+      "sources": [
+        "src/features/companion/Experience.tsx:124",
+        "src/features/plan/Platform.tsx:68",
+        "src/features/plan/content.ts:27",
+        "https://116111.pl/",
+        "https://www.techsafety.org/resources-survivors/technology-safety-plan"
+      ]
+    },
+    {
+      "id": "F17",
+      "priority": "P2",
+      "type": "Observed Polish UI; source-confirmed gaps",
+      "effort": "Medium",
+      "title": "Polish UI coverage is strong, but the whole help journey is not consistently localized",
+      "evidence": "The language switch remains visible and preserves personal notes in existing tests. Google support links change hl=en to hl=pl. Apple en-euro and most other external support URLs remain unchanged; there is no consistent language notice before leaving. The fallback translator silently returns English when a key is missing. The initial meta description and no-JavaScript message are English. No native-speaker or low-literacy Polish review was performed in this audit.",
+      "reproduce": "Switch to Polish, open Apple and non-Google guidance, and inspect localizedUrl. Compare page metadata and the translated UI. Treat naturalness/comprehension as a validation task, not a proven mistranslation.",
+      "impact": "A Polish-speaking beginner can make progress and then unexpectedly enter English documentation. A future English copy edit may also silently break the corresponding translation key.",
+      "fix": "Use verified Polish provider links where available; otherwise label Opens an English-language guide and offer a Polish explanation. Use stable translation keys, development missing-key diagnostics and coverage checks. Commission a native Polish review of safety-sensitive and beginner-facing language.",
+      "acceptance": "The top user journeys work end to end in Polish. Personal notes remain unchanged. Missing translations fail a build/test or are reported during development. External-language changes are communicated before the click.",
+      "sources": [
+        "src/i18n/translate.ts:32",
+        "src/i18n/translate.ts:36",
+        "src/i18n/LanguageProvider.tsx:17",
+        "index.html:8"
+      ]
+    },
+    {
+      "id": "F18",
+      "priority": "P2",
+      "type": "Browser Back reproduced live; focus observed",
+      "effort": "Medium",
+      "title": "Browser navigation does not follow the app's internal journey",
+      "evidence": "Opened the app from the research page, entered the personal workspace, then used browser Back. It returned to research rather than the introduction. Internal screens are React state; only locale uses replaceState. On the companion → full-plan handoff, the main heading was not the active element, unlike within-plan transitions that call focusHeading.",
+      "reproduce": "Research → Open Untangle → Start with my own situation → browser Back. Separately navigate by keyboard through the companion-to-plan handoff and inspect focus.",
+      "impact": "A familiar browser control takes a novice out of the flow and triggers the documented clearing-on-leave policy. Keyboard and assistive-technology users may have to rediscover their position when entering a new workspace.",
+      "fix": "Represent non-sensitive screen location in routing/history while keeping notes and answers out of URLs. Preserve in-memory work for internal Back. Centralize page heading focus and meaningful screen announcements; keep quick exit and true document-leave clearing behavior explicit.",
+      "acceptance": "Back returns to the preceding app screen where a preceding app screen exists. URLs contain no personal content. Keyboard handoffs focus an appropriate heading and preserve a logical order. Refresh behavior remains clearly explained.",
+      "sources": [
+        "src/app/App.tsx:6",
+        "src/i18n/LanguageProvider.tsx:14",
+        "src/features/plan/Platform.tsx:21",
+        "https://www.w3.org/WAI/WCAG22/Understanding/focus-order.html"
+      ]
+    },
+    {
+      "id": "F19",
+      "priority": "P2",
+      "type": "Source review; future release gate",
+      "effort": "Large",
+      "title": "AI output checks validate structure, not preservation of the person's meaning",
+      "evidence": "validateDraft restricts task IDs, length, URLs and a small set of unsafe certainty phrases. Those checks cannot establish whether a rewrite invents a fact, drops uncertainty or changes a negation. The server prompt asks for meaning preservation, and the interface correctly requires review/acceptance and supports undo. Production AI is disabled, so this was not tested with a live model.",
+      "reproduce": "Review validateDraft and its tests against examples involving uncertainty, negation, mixed English/Polish, coercive wording and prompt injection. Existing mocked-path tests demonstrate consent and rejection mechanics, not model quality.",
+      "impact": "For this audience, a more confident rewrite can be mistaken for the app knowing something about an account or another person. Enabling the endpoint alone would not establish a safe, useful AI feature.",
+      "fix": "Create a bilingual evaluation set with human-reviewed expected meaning. Show original and changed wording clearly, retain uncertainty and offer Keep original. Keep guide selection restricted to reviewed content and distinguish local rules from model output. Measure usefulness against the deterministic planner before making AI the central dependency.",
+      "acceptance": "A documented evaluation covers negation, uncertainty, unsupported claims and adversarial text in both languages. No unsupported account actions are performed. Failed or uncertain output leaves the original intact. Release criteria are met with the actual production model.",
+      "sources": [
+        "src/features/companion/agentCore.ts:36",
+        "server/agent.ts:38",
+        "tests/e2e/companion.spec.ts:79"
+      ]
+    },
+    {
+      "id": "F20",
+      "priority": "P3",
+      "type": "Measured build; source review",
+      "effort": "Medium",
+      "title": "A large initial bundle and limited page metadata create avoidable delivery work",
+      "evidence": "The production build emits one main JavaScript asset of 533.39 kB, 163.87 kB gzip, and CSS of 95.11 kB, 20.99 kB gzip. Vite warns about the JavaScript chunk size. App.tsx eagerly imports both major experiences. The HTML has basic title/description but no tailored social preview or language alternatives. No field Core Web Vitals, throttled phone benchmark or search-indexing study was run.",
+      "reproduce": "Run npm run build; inspect dist assets and index.html. Do not interpret bundle size as a measured load-time score.",
+      "impact": "Older phones and constrained networks may pay for the full guide library and legacy experience before they need them. Shared links give little explanatory context.",
+      "fix": "Split the intro, plan and slower walkthrough at sensible boundaries; load needed language/font subsets without disrupting Polish characters. Add clear localized metadata and a restrained preview image. Establish a low-end-device performance budget and measure before/after with the same conditions.",
+      "acceptance": "Demonstrate a smaller initial transfer and a useful first screen on a throttled representative device. Loading states are understandable. Metadata matches language and current product claims.",
+      "sources": [
+        "src/app/App.tsx:2",
+        "src/main.tsx:1",
+        "index.html:8"
+      ]
+    },
+    {
+      "id": "F21",
+      "priority": "P3",
+      "type": "Live headers and source review",
+      "effort": "Medium",
+      "title": "Security hardening and content maintenance need an explicit production baseline",
+      "evidence": "Live HTTPS responses include HSTS, no-referrer, nosniff and frame denial. The AI status response is no-store. No Content-Security-Policy or Permissions-Policy header was returned. npm audit reported zero known advisories at audit time; this does not prove absence of vulnerabilities. The static deployment has no live AI endpoint. Guidance dates are embedded in the UI rather than backed by a visible per-guide review record.",
+      "reproduce": "Inspect public response headers, vercel.json, npm audit output and the Where this guidance comes from disclosure. No exploit attempt or infrastructure penetration test was performed.",
+      "impact": "The current small, static attack surface is a strength. As the application grows, missing defense-in-depth policy and an unclear guide-refresh process can become reliability and trust risks.",
+      "fix": "Introduce a tested CSP, first in reporting mode where appropriate, and a restrictive permissions policy for unused capabilities. Document hosting/logging boundaries without claiming zero infrastructure logs. Assign per-guide reviewers and review dates, and add link/content-drift checks as development checks. Keep secrets server-side if AI is deployed.",
+      "acceptance": "Policies do not break fonts, encrypted downloads or the intended API. Sensitive notes are excluded from diagnostics. Each guide has a source, owner and review record. No automated future monitoring was scheduled by this audit.",
+      "sources": [
+        "vercel.json:1",
+        "src/features/plan/Platform.tsx:98",
+        "server/agent.ts:57"
+      ]
+    },
+    {
+      "id": "F22",
+      "priority": "P2",
+      "type": "Test inventory and evidence gap",
+      "effort": "Medium, then ongoing research",
+      "title": "Passing feature tests do not yet demonstrate success for the intended user",
+      "evidence": "Lint, build, 40 unit tests and all 35 existing Chromium browser tests passed. The tests include encrypted restore, privacy boundaries, language switching, responsiveness and axe checks. They did not catch F01–F04 or the additional failing Unicode export/import probe. Automated accessibility checks use WCAG 2.0/2.1 tags; they do not constitute a full WCAG 2.2 or cognitive-accessibility evaluation. There are no measured novice completion or return-use results in this audit.",
+      "reproduce": "Compare the existing suite with the reproduced cross-screen journeys in this report. Existing coverage is predominantly Chromium with viewport emulation, not real iOS/Safari/Firefox or a screen-reader usability study.",
+      "impact": "A technically stable prototype can still be confusing or impossible to resume. Adding features before observing the audience risks amplifying the current complexity.",
+      "fix": "Add journey tests for each confirmed bug, then run moderated sessions with representative low-digital-confidence English and Polish users using fictional situations. Include a second visit, mobile downloads, text enlargement and assistive technology. Use consented research and aggregate task outcomes rather than recording sensitive sessions by default.",
+      "acceptance": "Publish observed task completion, first-step comprehension, errors, help requests and later restore success with sample sizes. Keep targets distinct from actual results. No usability score or adoption percentage should be invented from this audit.",
+      "sources": [
+        "playwright.config.ts:1",
+        "tests/e2e/companion.spec.ts:119",
+        "tests/e2e/language.spec.ts:96",
+        "https://www.w3.org/TR/coga-usable/"
+      ]
+    }
+  ]
+}

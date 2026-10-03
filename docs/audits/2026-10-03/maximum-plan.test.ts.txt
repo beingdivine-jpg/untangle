@@ -1,0 +1,15 @@
+import { test, expect } from 'vitest'
+import { tasks } from '../src/features/plan/content'
+import { addTask, emptyPlan, record } from '../src/features/plan/model'
+import { encryptPlan, decryptPlan } from '../src/features/plan/crypto'
+
+test('audit probe: largest valid Unicode plan can be exported and restored', async () => {
+  let plan = emptyPlan()
+  for (const task of tasks) {
+    plan = addTask(plan, task.id)
+    for (let i = 0; i < 30; i++) plan = record(plan, task.id, 'later', '界'.repeat(500), '2026-10-03T12:00:00.000Z')
+  }
+  const file = await encryptPlan(plan, 'fictional audit passphrase')
+  console.log(JSON.stringify({ fileBytes: new TextEncoder().encode(file).length, base64Characters: JSON.parse(file).data.length, checks: tasks.length }))
+  expect(await decryptPlan(file, 'fictional audit passphrase')).toEqual(plan)
+})
