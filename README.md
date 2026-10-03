@@ -2,7 +2,7 @@
 
 A planning companion for digital life after a breakup, built for the ImpactHer hackathon with React, TypeScript and Vite. It helps someone with little digital experience organise checks across services, understand consequences before making changes, keep unanswered questions, and return later.
 
-Open **http://127.0.0.1:5173/**. The [product research report](public/research.html) is also served at **/research.html**. Vercel deployment configuration is included; see the hosting section below.
+Live: **https://untangle-orpin.vercel.app/**. Local: **http://127.0.0.1:5173/**. The [product research report](public/research.html) is also served at **/research.html**. Vercel deployment configuration is included; see the hosting section below.
 
 ## Run locally
 
@@ -21,7 +21,7 @@ The Vite production bundle is configured by `vercel.json`: `npm ci`, `npm run bu
 
 `.vercelignore` excludes local environment files, Git metadata, build/test artifacts and archived source snapshots from CLI uploads. `.vercel/` stays local and ignored. Deployment headers disable referrers, prevent MIME sniffing and prohibit iframe embedding.
 
-Connect the `beingdivine-jpg/untangle` GitHub repository in the Vercel project, using `main` as the production branch. With the Git integration connected, successful pushes trigger new deployments. CLI sign-in and linking are local to the developer's Vercel account; no token belongs in this repository.
+Vercel project **divin-josephs-projects/untangle** is connected to **beingdivine-jpg/untangle** on GitHub. Production URL: **https://untangle-orpin.vercel.app/**. The Git integration deploys updates from `main` to production; successful deployments update the same live link. CLI sign-in and linking are local to the developer's Vercel account; no token belongs in this repository.
 
 ```sh
 npx vercel login
