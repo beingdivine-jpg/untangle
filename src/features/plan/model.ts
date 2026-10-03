@@ -36,12 +36,12 @@ export function nextTask(plan: Plan): TaskId | undefined {
   const pending = tasks.filter(t => plan.entries[t.id]?.status === 'todo')
   return pending.find(t => !prerequisites(plan, t.id).length)?.id ?? pending[0]?.id
 }
-export function examplePlan(): Plan {
+export function examplePlan(localize: (text: string) => string = text => text): Plan {
   let plan = buildPlan(['accounts', 'location', 'photos'])
   plan = { ...plan, example: true }
-  plan = record(plan, 'recovery', 'reviewed', 'I can receive messages at my own recovery email.', '2026-10-03T10:00:00.000Z')
-  plan = record(plan, 'devices', 'uncertain', 'There are two laptop entries. I cannot tell which one we shared.', '2026-10-03T10:05:00.000Z')
-  plan = record(plan, 'maps', 'later', 'I want to talk to someone before changing location sharing.', '2026-10-03T10:10:00.000Z')
+  plan = record(plan, 'recovery', 'reviewed', localize('I can receive messages at my own recovery email.'), '2026-10-03T10:00:00.000Z')
+  plan = record(plan, 'devices', 'uncertain', localize('There are two laptop entries. I cannot tell which one we shared.'), '2026-10-03T10:05:00.000Z')
+  plan = record(plan, 'maps', 'later', localize('I want to talk to someone before changing location sharing.'), '2026-10-03T10:10:00.000Z')
   return plan
 }
 export function validatePlan(value: unknown): Plan {

@@ -5,5 +5,6 @@ import '@fontsource-variable/manrope'
 import './styles/tokens.css'
 import './styles/app.css'
 import App from './app/App'
+import { LanguageProvider } from './i18n/LanguageProvider'
 
-createRoot(document.getElementById('root')!).render(<StrictMode><App /></StrictMode>)
+createRoot(document.getElementById('root')!).render(<StrictMode><LanguageProvider><App /></LanguageProvider></StrictMode>)

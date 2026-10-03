@@ -57,6 +57,16 @@ Untangle’s proposed value is coordination and continuity: a cross-service plan
 
 Provider-specific coverage is limited; this is not an exhaustive security review. The workspace cannot read an account, detect spyware or hidden devices, identify who used a session, change settings, or verify the success of a reported change.
 
+## English and Polish
+
+The visible **English / Polski** control is available in both app headers and on the research pages, including narrow phone layouts. It switches presentation in place: selected topics, drafts, progress and personal notes stay intact. Personal notes and imported records are never automatically translated. The fictional examples have authored Polish text.
+
+Open `/?lang=pl` for Polish, or `/?view=plan&lang=pl` for the plan. The non-sensitive language choice stays in the URL across refreshes and research links; no cookie or browser storage is introduced. A fresh URL without `lang=pl` defaults to English. Leaving or refreshing still clears unsaved work as before.
+
+`src/i18n/pl.json` is the authored Polish catalog, keyed by the English presentation text. Translate UI text at the React rendering boundary with `useTranslation()`; keep stable task/status IDs and user content out of translation. Dynamic messages use numbered placeholders, with more specific patterns taking precedence. Guide search matches localized and English titles; dates use the selected locale. The report has a separate static Polish edition at `public/research-pl.html` with the same evidence and limitations.
+
+Optional AI requests explicitly include the chosen response language in the consent preview and in the validated request. The local server instructs the model to draft in that language. This was tested with fixtures, not real provider inference. UI translation is bundled locally and does not use a translation service. Official Polish terminology was checked against [Apple’s Safety Check guide](https://support.apple.com/pl-pl/guide/personal-safety/-ips2aad835e1/web) , [Google’s recovery guide](https://support.google.com/accounts/answer/183723?hl=pl) and [Google Photos partner-sharing help](https://support.google.com/photos/answer/7378858?hl=pl). No independent human translation review is claimed.
+
 ## A two-minute demo
 
 1. Open **Try Me**. Choose “We shared a laptop.” and **Connect the dots**. Show the labelled local activity record and proposed checks.
@@ -105,7 +115,7 @@ The original domain rules still distinguish a recovery route from proof of acces
 | `server/agent.ts`, `vite.config.ts` | Optional loopback OpenAI adapter; server-only configuration |
 | `src/app/App.tsx`, `LegacyApp.tsx` | Companion-to-plan integration, retained workflows, exit and lifecycle clearing |
 | `src/domain/`, `src/features/guide/` | Retained detailed rules and slower device guide |
-| `public/research.html` | Evidence, competitor comparison, design rationale, boundaries and validation agenda |
+| `public/research.html`, `public/research-pl.html` | Evidence, competitor comparison, design rationale, boundaries and validation agenda |
 
 ## Privacy and file handling
 

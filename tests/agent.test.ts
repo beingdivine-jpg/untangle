@@ -68,6 +68,15 @@ describe('server-only agent adapter',()=>{
     expect(events.at(-1).draft.taskIds).toEqual(['recovery','password'])
     expect(res.output).not.toContain('test-key-not-real');expect(res.headers['Cache-Control']).toBe('no-store')
   })
+  it('uses the validated Polish locale as a server instruction', async () => {
+    const fetcher = vi.fn<typeof fetch>().mockResolvedValue(response({ taskIds: ['password'], editedText: 'Nie wiem, który laptop jest mój.' }))
+    const { res, done } = invoke(agentHandler({ apiKey: 'test', model: 'test', fetcher }), { body: { ...request, operation: 'edit', text: 'Nie wiem co z tym laptopem.', locale: 'pl' } })
+    await done
+    const sent = JSON.parse(fetcher.mock.calls[0][1]!.body as string)
+    expect(sent.instructions).toContain('natural, plain Polish')
+    expect(JSON.parse(sent.input).locale).toBe('pl')
+    expect(res.output).toContain('Nie wiem, który laptop jest mój.')
+  })
   it('rejects malformed inputs and oversized requests before inference',async()=>{
     const fetcher=vi.fn<typeof fetch>(),handler=agentHandler({apiKey:'test',model:'test',fetcher})
     for(const raw of ['{broken','x'.repeat(12001),JSON.stringify({...request,consent:false})]){const {res,done}=invoke(handler,{raw});await done;expect([400,413]).toContain(res.status)}

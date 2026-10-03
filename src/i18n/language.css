@@ -1,0 +1,20 @@
+.language-switch { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 2px; padding: 3px; border: 1px solid #b9a69c; border-radius: 999px; background: #fff9f3; }
+.language-switch button { min-height: 36px; padding: 7px 12px; border: 0; border-radius: 999px; background: transparent; color: #493b35; font: 600 12px/1.2 'Manrope Variable', sans-serif; cursor: pointer; }
+.language-switch button[aria-pressed="true"] { background: #743b32; color: #fff; }
+.language-switch button:focus-visible { outline: 3px solid #743b32; outline-offset: 3px; }
+html[lang="pl"] .u-intro h1 { font-size: clamp(3.4rem, 5.9vw, 6.6rem); }
+html[lang="pl"] .u-studio-tabs button { white-space: normal; }
+@media (max-width: 760px) {
+  .u-header, .site-header { flex-wrap: wrap; }
+  .language-switch { margin-left: auto; }
+  .language-switch button { min-height: 40px; padding-inline: 10px; }
+  .u-header .u-exit, .site-header .exit-link { margin-left: auto; }
+}
+@media (max-width: 420px) {
+  .u-header .language-switch, .site-header .language-switch { order: 1; }
+  .u-header nav, .site-header .platform-help { order: 2; }
+  .u-header .u-exit, .site-header .exit-link { order: 3; }
+}
+@media (max-width: 600px) {
+  html[lang="pl"] .u-intro-art .u-handwritten { bottom: 160px; }
+}
