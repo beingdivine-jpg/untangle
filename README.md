@@ -2,7 +2,7 @@
 
 A planning companion for digital life after a breakup, built for the ImpactHer hackathon with React, TypeScript and Vite. It helps someone with little digital experience organise checks across services, understand consequences before making changes, keep unanswered questions, and return later.
 
-Open **http://127.0.0.1:5173/**. The [product research report](public/research.html) is also served at **/research.html**. Nothing has been deployed.
+Open **http://127.0.0.1:5173/**. The [product research report](public/research.html) is also served at **/research.html**. Vercel deployment configuration is included; see the hosting section below.
 
 ## Run locally
 
@@ -14,6 +14,21 @@ npm run dev
 ```
 
 For a production bundle, use `npm run build`, then `npm run preview` (port 4173).
+
+## Hosting on Vercel
+
+The Vite production bundle is configured by `vercel.json`: `npm ci`, `npm run build`, output `dist`, and Node 24.x. The introduction, scripted Try Me, guides, local planner and private file workflow work on static hosting. `/api/agent/status` explicitly reports live AI unavailable; the development-only OpenAI middleware is not exposed as a public function. Adding an API key to Vercel alone does not enable that middleware.
+
+`.vercelignore` excludes local environment files, Git metadata, build/test artifacts and archived source snapshots from CLI uploads. `.vercel/` stays local and ignored. Deployment headers disable referrers, prevent MIME sniffing and prohibit iframe embedding.
+
+Connect the `beingdivine-jpg/untangle` GitHub repository in the Vercel project, using `main` as the production branch. With the Git integration connected, successful pushes trigger new deployments. CLI sign-in and linking are local to the developer's Vercel account; no token belongs in this repository.
+
+```sh
+npx vercel login
+npx vercel link
+npx vercel git connect
+npx vercel --prod
+```
 
 ## Product direction
 
