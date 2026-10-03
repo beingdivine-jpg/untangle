@@ -67,7 +67,11 @@ test('distinct password and incomplete scenarios reset prior state', async ({ pa
   await page.getByLabel('Choose fictional scenario').selectOption('incomplete')
   await expect(page.locator('#step-heading')).toHaveText('Which Google account do you want to check?')
   await page.getByRole('button', { name: 'Continue', exact: true }).click()
-  for (let i = 0; i < 4; i++) await page.getByRole('button', { name: 'Skip for now' }).click()
+  for (let i = 0; i < 4; i++) {
+    await expect(page.locator('.question-progress')).toContainText(`Question ${i + 2} of 5`)
+    await expect(page.locator('#step-heading')).toBeFocused()
+    await page.getByRole('button', { name: 'Skip for now' }).click()
+  }
   await expect(page.getByText('The recovery-email relationship is not confirmed.')).toBeVisible()
   await page.getByRole('button', { name: 'See my options', exact: true }).click()
   await expect(page.getByText('We need more information', { exact: true })).toBeVisible()

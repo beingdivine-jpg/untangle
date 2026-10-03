@@ -27,6 +27,9 @@ test('Try Me shows the work, keeps approval separate, and transfers a fictional 
   await page.getByRole('button',{name:/My update/}).click()
   await expect(page.getByLabel('A reminder for yourself')).toHaveValue(/I changed my password/)
   expect(requests).toEqual([])
+  await page.evaluate(()=>{window.dispatchEvent(new PageTransitionEvent('pagehide'));window.dispatchEvent(new PageTransitionEvent('pageshow',{persisted:true}))})
+  await expect(page.locator('.p-example-banner')).toHaveCount(0)
+  await expect(page.getByRole('button',{name:'Make my own plan',exact:true})).toBeVisible()
 })
 
 test('what-if exploration is source based and never marks a check done',async({page})=>{

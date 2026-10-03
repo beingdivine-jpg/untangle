@@ -583,3 +583,6 @@ html[data-exiting='true'], html[data-exiting='true'] body { background: #fff; }
   .simple-home-bottom .privacy summary { justify-content: flex-start; }
   .advanced-start > summary { justify-content: flex-start; }
 }
+/* Keep both footer routes usable on narrow screens. */
+.site-footer > div:last-child { flex-wrap: wrap; }
+@media (max-width: 600px) { .site-footer > div:last-child { gap: 6px 20px; padding-left: 36px; } .site-footer > div:last-child .text-button { margin-left: 0; } }
