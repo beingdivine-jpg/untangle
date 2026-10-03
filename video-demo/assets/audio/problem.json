@@ -1,0 +1,51 @@
+{
+  "text": "After a breakup, your digital life can stay tangled.",
+  "voice": "en-GB-SoniaNeural",
+  "words": [
+    {
+      "offset": 1144160,
+      "duration": 3479580,
+      "text": "After"
+    },
+    {
+      "offset": 4752500,
+      "duration": 773330,
+      "text": "a"
+    },
+    {
+      "offset": 5654580,
+      "duration": 6056660,
+      "text": "breakup"
+    },
+    {
+      "offset": 14804160,
+      "duration": 1288750,
+      "text": "your"
+    },
+    {
+      "offset": 16221660,
+      "duration": 4897080,
+      "text": "digital"
+    },
+    {
+      "offset": 21247500,
+      "duration": 3737080,
+      "text": "life"
+    },
+    {
+      "offset": 25113330,
+      "duration": 1932910,
+      "text": "can"
+    },
+    {
+      "offset": 27175410,
+      "duration": 2835000,
+      "text": "stay"
+    },
+    {
+      "offset": 30139160,
+      "duration": 6700830,
+      "text": "tangled"
+    }
+  ]
+}

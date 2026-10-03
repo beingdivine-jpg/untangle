@@ -1,0 +1,44 @@
+{
+  "file": "untangle-60s.mp4",
+  "sha256": "04997fb9cac4907a420a5589fe3f6de9eba721abf698ae5711b122917bbfad06",
+  "bytes": 6228107,
+  "movieDurationSeconds": 60,
+  "video": {
+    "width": 1920,
+    "height": 1080,
+    "frames": 1800,
+    "fps": 30,
+    "durationSeconds": 60,
+    "codec": "H.264",
+    "pixelFormat": "yuv420p"
+  },
+  "audio": {
+    "codec": "AAC",
+    "sampleRate": 48000,
+    "channels": 2,
+    "integratedLUFS": -16.01,
+    "truePeakDBTP": -4.03
+  },
+  "fullDecodePassed": true,
+  "blackFramesDetected": false,
+  "captionCues": 19,
+  "captionTranscriptMatches": true,
+  "fictionalWorkflowVerified": true,
+  "encryptedDownloadVerified": true,
+  "tracks": [
+    {
+      "kind": "vide",
+      "timescale": 15360,
+      "ticks": 921600,
+      "seconds": 60,
+      "samples": 1800
+    },
+    {
+      "kind": "soun",
+      "timescale": 48000,
+      "ticks": 2881024,
+      "seconds": 60.02133333333333,
+      "samples": 2814
+    }
+  ]
+}

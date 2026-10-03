@@ -1,0 +1,68 @@
+{
+  "voice": "en-GB-SoniaNeural",
+  "duration": 60,
+  "sampleRate": 48000,
+  "score": "Original procedural composition; no third-party samples",
+  "segments": [
+    {
+      "scene": "problem",
+      "start": 0.5,
+      "duration": 4.056,
+      "tempo": 1.0
+    },
+    {
+      "scene": "intro",
+      "start": 7.35,
+      "duration": 3.216,
+      "tempo": 1.0
+    },
+    {
+      "scene": "input",
+      "start": 12.35,
+      "duration": 6.96,
+      "tempo": 1.0
+    },
+    {
+      "scene": "draft",
+      "start": 20.35,
+      "duration": 6.816,
+      "tempo": 1.0
+    },
+    {
+      "scene": "preview",
+      "start": 28.4,
+      "duration": 6.072,
+      "tempo": 1.0
+    },
+    {
+      "scene": "plan",
+      "start": 37.4,
+      "duration": 6.168,
+      "tempo": 1.0
+    },
+    {
+      "scene": "save",
+      "start": 46.35,
+      "duration": 5.832,
+      "tempo": 1.0
+    },
+    {
+      "scene": "end",
+      "start": 53.3,
+      "duration": 5.928,
+      "tempo": 1.0
+    }
+  ],
+  "premixLoudness": {
+    "input_i": "-17.32",
+    "input_tp": "-5.37",
+    "input_lra": "5.60",
+    "input_thresh": "-29.13",
+    "output_i": "-16.01",
+    "output_tp": "-2.84",
+    "output_lra": "5.60",
+    "output_thresh": "-27.79",
+    "normalization_type": "dynamic",
+    "target_offset": "0.01"
+  }
+}

@@ -6,3 +6,4 @@ docs
 test-results
 playwright-report
 .env*
+video-demo

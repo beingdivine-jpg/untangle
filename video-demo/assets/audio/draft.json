@@ -1,0 +1,76 @@
+{
+  "text": "Her story becomes six checks, with preparation steps included. She chooses what to keep.",
+  "voice": "en-GB-SoniaNeural",
+  "words": [
+    {
+      "offset": 1402080,
+      "duration": 1932910,
+      "text": "Her"
+    },
+    {
+      "offset": 3463750,
+      "duration": 5025830,
+      "text": "story"
+    },
+    {
+      "offset": 8618750,
+      "duration": 4639160,
+      "text": "becomes"
+    },
+    {
+      "offset": 13386660,
+      "duration": 3221660,
+      "text": "six"
+    },
+    {
+      "offset": 16737080,
+      "duration": 4897080,
+      "text": "checks"
+    },
+    {
+      "offset": 24211250,
+      "duration": 1675410,
+      "text": "with"
+    },
+    {
+      "offset": 26015410,
+      "duration": 6572080,
+      "text": "preparation"
+    },
+    {
+      "offset": 32716660,
+      "duration": 3608330,
+      "text": "steps"
+    },
+    {
+      "offset": 36453750,
+      "duration": 7087500,
+      "text": "included"
+    },
+    {
+      "offset": 47422500,
+      "duration": 2319580,
+      "text": "She"
+    },
+    {
+      "offset": 49871250,
+      "duration": 5670000,
+      "text": "chooses"
+    },
+    {
+      "offset": 55670000,
+      "duration": 2319580,
+      "text": "what"
+    },
+    {
+      "offset": 58118750,
+      "duration": 902080,
+      "text": "to"
+    },
+    {
+      "offset": 59149580,
+      "duration": 5154580,
+      "text": "keep"
+    }
+  ]
+}

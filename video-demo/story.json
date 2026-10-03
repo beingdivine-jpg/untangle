@@ -1,0 +1,18 @@
+{
+  "title": "Untangle — A little less tangled",
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "duration": 60,
+  "voice": "en-GB-SoniaNeural",
+  "scenes": [
+    { "id": "problem", "start": 0, "end": 7, "voiceStart": 0.5, "text": "After a breakup, your digital life can stay tangled." },
+    { "id": "intro", "start": 7, "end": 12, "voiceStart": 7.35, "text": "Untangle helps you find a starting point." },
+    { "id": "input", "start": 12, "end": 20, "voiceStart": 12.35, "text": "Meet Maya. She changed her password, but still has questions about the laptop and shared photos." },
+    { "id": "draft", "start": 20, "end": 28, "voiceStart": 20.35, "text": "Her story becomes six checks, with preparation steps included. She chooses what to keep." },
+    { "id": "preview", "start": 28, "end": 37, "voiceStart": 28.4, "text": "Before deciding, she explores what a password change affects, and what it leaves outside." },
+    { "id": "plan", "start": 37, "end": 46, "voiceStart": 37.4, "text": "The checks become her plan. She can keep an unanswered question without marking it reviewed." },
+    { "id": "save", "start": 46, "end": 53, "voiceStart": 46.35, "text": "Save an encrypted file to pick up later, or review those questions with someone you trust." },
+    { "id": "end", "start": 53, "end": 60, "voiceStart": 53.3, "text": "Your pace. Your permission. Untangle. A little less tangled." }
+  ]
+}

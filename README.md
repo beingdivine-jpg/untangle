@@ -1,5 +1,7 @@
 # Untangle
 
+The [60-second product demo film](video-demo/README.md) includes a finished MP4, narration, captions and an isolated, reproducible video composition. Render it with `npm --prefix video-demo run render` after the video setup steps; the application commands below are unchanged.
+
 A planning companion for digital life after a breakup, built for the ImpactHer hackathon with React, TypeScript and Vite. It helps someone with little digital experience organise checks across services, understand consequences before making changes, keep unanswered questions, and return later.
 
 Live: **https://untangle-orpin.vercel.app/**. Local: **http://127.0.0.1:5173/**. The [product research report](public/research.html) is also served at **/research.html**. Vercel deployment configuration is included; see the hosting section below.

@@ -1,0 +1,51 @@
+{
+  "text": "Your pace. Your permission. Untangle. A little less tangled.",
+  "voice": "en-GB-SoniaNeural",
+  "words": [
+    {
+      "offset": 1144160,
+      "duration": 2190830,
+      "text": "Your"
+    },
+    {
+      "offset": 3463750,
+      "duration": 6185410,
+      "text": "pace"
+    },
+    {
+      "offset": 13788750,
+      "duration": 2190830,
+      "text": "Your"
+    },
+    {
+      "offset": 16108330,
+      "duration": 7474160,
+      "text": "permission"
+    },
+    {
+      "offset": 27448330,
+      "duration": 8762910,
+      "text": "Untangle"
+    },
+    {
+      "offset": 40206250,
+      "duration": 773330,
+      "text": "A"
+    },
+    {
+      "offset": 41108330,
+      "duration": 3865830,
+      "text": "little"
+    },
+    {
+      "offset": 45102910,
+      "duration": 3092910,
+      "text": "less"
+    },
+    {
+      "offset": 48324580,
+      "duration": 7087500,
+      "text": "tangled"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "untangle-video-demo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "capture": "node scripts/capture.mjs",
+    "audio": ".venv/bin/python scripts/audio.py",
+    "render": "node scripts/render.mjs",
+    "verify": "node scripts/verify.mjs",
+    "stills": "node scripts/render.mjs --stills",
+    "storyboard": ".venv/bin/python scripts/storyboard.py",
+    "preview": "node scripts/preview.mjs"
+  }
+}

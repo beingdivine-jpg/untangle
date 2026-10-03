@@ -1,0 +1,86 @@
+{
+  "text": "Meet Maya. She changed her password, but still has questions about the laptop and shared photos.",
+  "voice": "en-GB-SoniaNeural",
+  "words": [
+    {
+      "offset": 1144160,
+      "duration": 3608330,
+      "text": "Meet"
+    },
+    {
+      "offset": 4881250,
+      "duration": 5412500,
+      "text": "Maya"
+    },
+    {
+      "offset": 14304160,
+      "duration": 1932910,
+      "text": "She"
+    },
+    {
+      "offset": 16365830,
+      "duration": 3995000,
+      "text": "changed"
+    },
+    {
+      "offset": 20489580,
+      "duration": 1288750,
+      "text": "her"
+    },
+    {
+      "offset": 21907080,
+      "duration": 6700830,
+      "text": "password"
+    },
+    {
+      "offset": 31572080,
+      "duration": 1675410,
+      "text": "but"
+    },
+    {
+      "offset": 33376250,
+      "duration": 2963750,
+      "text": "still"
+    },
+    {
+      "offset": 36469160,
+      "duration": 1675410,
+      "text": "has"
+    },
+    {
+      "offset": 38273330,
+      "duration": 5670000,
+      "text": "questions"
+    },
+    {
+      "offset": 44072080,
+      "duration": 2448330,
+      "text": "about"
+    },
+    {
+      "offset": 46649580,
+      "duration": 902080,
+      "text": "the"
+    },
+    {
+      "offset": 47680410,
+      "duration": 5799160,
+      "text": "laptop"
+    },
+    {
+      "offset": 53608330,
+      "duration": 1288750,
+      "text": "and"
+    },
+    {
+      "offset": 55025830,
+      "duration": 3479580,
+      "text": "shared"
+    },
+    {
+      "offset": 58634160,
+      "duration": 7087500,
+      "text": "photos"
+    }
+  ]
+}

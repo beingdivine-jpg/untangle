@@ -1,0 +1,439 @@
+{
+  "viewport": {
+    "width": 1440,
+    "height": 1100,
+    "scale": 2
+  },
+  "fictional": true,
+  "workflowVerified": true,
+  "liveProviderCalls": 0,
+  "reviewedChecksAfterQuestion": 0,
+  "encryptedDownloadVerified": true,
+  "errors": [],
+  "shots": {
+    "home": {
+      "selector": ".u-intro",
+      "width": 1400,
+      "height": 731.375,
+      "controls": [
+        {
+          "label": "Try Me",
+          "x": 90.265625,
+          "y": 594.25
+        },
+        {
+          "label": "Start with my own situation",
+          "x": 286.265625,
+          "y": 594.25
+        },
+        {
+          "label": "Your way back in\nKeep access",
+          "x": 822.265625,
+          "y": 196.99217224121094
+        },
+        {
+          "label": "A shared laptop\nCheck connections",
+          "x": 1271,
+          "y": 245.9921875
+        },
+        {
+          "label": "Your photos\nKeep what matters",
+          "x": 895.546875,
+          "y": 454.4140625
+        }
+      ],
+      "text": "FOR THE DIGITAL TIES THAT LINGER\nA breakup is\nenough to\nuntangle.\n\nStill sharing accounts, photos or your location after a breakup? Choose what worries you. We’ll help you find one thing to check, at your pace.\n\nTry Me\nStart with my own situation\nNo sign-up. No account passwords. Your choices stay in this tab.\nA LITTLE CLARITY, TAKING SHAPE\nYour next chapter\nStill yours to shape.\nYour way back in\nKeep access\nA shared laptop\nCheck connections\nYour photos\nKeep what matters\nOne thread at a time.\nyou hold the thread.\nMeet your planning companion.\n\nGuided steps. Visible reasoning. Your choice.\n\nTry Me demonstrates the workflow with a scripted example."
+    },
+    "story-picker": {
+      "selector": ".u-story-picker",
+      "width": 1304,
+      "height": 68,
+      "controls": [
+        {
+          "label": "We shared a laptop.",
+          "x": 69.1171875,
+          "y": 21
+        },
+        {
+          "label": "Who can see where I am?",
+          "x": 230.6640625,
+          "y": 21
+        },
+        {
+          "label": "I want to keep what matters.",
+          "x": 414.5625,
+          "y": 21
+        }
+      ],
+      "text": "We shared a laptop.\nWho can see where I am?\nI want to keep what matters."
+    },
+    "facts": {
+      "selector": ".u-fact-note",
+      "width": 623,
+      "height": 146.078125,
+      "controls": [],
+      "text": "WHAT MAYA HAS TOLD US\nMaya used her Google account on a shared laptop.\nShe used Google Photos partner sharing.\nShe wants to understand what a password change would leave behind."
+    },
+    "start": {
+      "selector": ".u-working-panel",
+      "width": 623,
+      "height": 364.0625,
+      "controls": [
+        {
+          "label": "Connect the dots",
+          "x": 121.890625,
+          "y": 210.78125
+        }
+      ],
+      "text": "01 / MAKE SENSE OF IT\nLet’s find a starting point.\n\nAccounts, photos, and a password that used to be shared.\n\nConnect the dots\n\nOnly a proposal. Nothing is added to your plan until you choose to keep it. Account settings cannot change here."
+    },
+    "draft": {
+      "selector": ".u-draft-list",
+      "width": 557,
+      "height": 481,
+      "controls": [],
+      "text": "Keep a way back into your account\nGoogle · Gmail · needed for another selected check\nLook at devices using your Google account\nGoogle · Gmail · has a preparation check\nUnderstand what changing a password does\nGoogle · Gmail · has a preparation check\nCheck whether your emails go somewhere else\nGmail · computer · has a preparation check\nDecide what you want to keep\nPhotos · messages · files · needed for another selected check\nReview Google Photos partner sharing\nGoogle Photos · has a preparation check"
+    },
+    "keep-button": {
+      "selector": ".u-working-panel .u-panel-actions",
+      "width": 557,
+      "height": 49,
+      "controls": [
+        {
+          "label": "Keep these steps",
+          "x": 88.28125,
+          "y": 24.5
+        },
+        {
+          "label": "Discard draft",
+          "x": 228.703125,
+          "y": 24.5
+        }
+      ],
+      "text": "Keep these steps\nDiscard draft"
+    },
+    "graph": {
+      "selector": ".u-canvas .thread-scene",
+      "width": 623,
+      "height": 500,
+      "controls": [
+        {
+          "label": "Your way back in\nReady to explore",
+          "x": 88.453125,
+          "y": 111.9921875
+        },
+        {
+          "label": "A shared laptop\nReady to explore",
+          "x": 540.78125,
+          "y": 101.99218368530273
+        },
+        {
+          "label": "A new password\nReady to explore",
+          "x": 113.37500381469727,
+          "y": 403.0078125
+        },
+        {
+          "label": "Gmail · computer\nReady to explore",
+          "x": 546.9999694824219,
+          "y": 398.0078125
+        },
+        {
+          "label": "What to keep\nReady to explore",
+          "x": 76,
+          "y": 266.9921875
+        },
+        {
+          "label": "Your photos\nReady to explore",
+          "x": 547,
+          "y": 266.9921875
+        }
+      ],
+      "text": "YOUR SELECTED CHECKS\nYour choices\nNothing changes without you.\nYour way back in\nReady to explore\nA shared laptop\nReady to explore\nA new password\nReady to explore\nGmail · computer\nReady to explore\nWhat to keep\nReady to explore\nYour photos\nReady to explore\nA visual index, not a scan of your accounts."
+    },
+    "trace": {
+      "selector": ".u-trace",
+      "width": 623,
+      "height": 245.640625,
+      "controls": [],
+      "text": "The companion, step by step\nDemo trace · local rules, no live AI\n\nRead 3 made-up details from Maya’s story.\n\nMatched 6 checks from the reviewed guide library.\n\nIncluded preparation checks before related changes.\n\nDraft ready. Waiting for you to choose what to keep."
+    },
+    "kept": {
+      "selector": ".u-kept",
+      "width": 557,
+      "height": 278.921875,
+      "controls": [
+        {
+          "label": "Open my full plan",
+          "x": 110.671875,
+          "y": 232.421875
+        }
+      ],
+      "text": "6 checks kept by you\nKeep a way back into your account\nLook at devices using your Google account\nUnderstand what changing a password does\nPlus 3 more in your plan.\n\nYour note belongs to the whole plan, not an individual check.\n\nOpen my full plan"
+    },
+    "change-select": {
+      "selector": "#what-if",
+      "width": 557,
+      "height": 46,
+      "controls": [],
+      "text": "Change a Google password\nSign out a Google device\nStop Google Maps sharing\nStop partner photo sharing\nLeave an Apple family group"
+    },
+    "effect": {
+      "selector": ".u-effect:not(.unchanged)",
+      "width": 557,
+      "height": 76.09375,
+      "controls": [],
+      "text": "01\nWhat may change\n\nA Google password change signs you out in many places, with exceptions including some identity-verification devices and some connected apps or home devices."
+    },
+    "boundary": {
+      "selector": ".u-effect.unchanged",
+      "width": 557,
+      "height": 76.09375,
+      "controls": [],
+      "text": "02\nWhat stays outside this change\n\nA password change alone does not review your location sharing, email forwarding or saved photo copies. Keep those checks in your plan if they apply."
+    },
+    "preparation": {
+      "selector": ".u-before",
+      "width": 557,
+      "height": 74.59375,
+      "controls": [],
+      "text": "Before deciding\n\nKeep a way back into your account."
+    },
+    "source": {
+      "selector": ".u-source",
+      "width": 203.34375,
+      "height": 44,
+      "controls": [],
+      "text": "Google: change or reset a password\n(opens in a new tab)"
+    },
+    "plan": {
+      "selector": ".p-plan-overview",
+      "width": 980,
+      "height": 263.265625,
+      "controls": [
+        {
+          "label": "Take this step",
+          "x": 109.3828125,
+          "y": 204.40625
+        },
+        {
+          "label": "Keep my place",
+          "x": 865,
+          "y": 216.265625
+        }
+      ],
+      "text": "SUGGESTED NEXT SMALL STEP\nKeep a way back into your account\n\nA recovery email or phone helps you get back in if you forget your password. Start by finding out whether you can use yours.\n\nTake this step\n0 / 6\nchecks reviewed by Maya\n\nThis is your activity, not a safety score.\n\nKeep my place"
+    },
+    "plan-list": {
+      "selector": ".p-task-list",
+      "width": 980,
+      "height": 536,
+      "controls": [
+        {
+          "label": "Keep a way back into your account\nGoogle · Gmail\nNot checked yet",
+          "x": 435.375,
+          "y": 45
+        },
+        {
+          "label": "Doesn’t apply",
+          "x": 924.375,
+          "y": 45
+        },
+        {
+          "label": "Look at devices using your Google account\nGoogle · Gmail\nNot checked yet",
+          "x": 435.375,
+          "y": 134
+        },
+        {
+          "label": "Doesn’t apply",
+          "x": 924.375,
+          "y": 134
+        },
+        {
+          "label": "Understand what changing a password does\nGoogle · Gmail\nNot checked yet",
+          "x": 435.375,
+          "y": 223
+        },
+        {
+          "label": "Doesn’t apply",
+          "x": 924.375,
+          "y": 223
+        },
+        {
+          "label": "Check whether your emails go somewhere else\nGmail · computer\nNot checked yet",
+          "x": 435.375,
+          "y": 312
+        },
+        {
+          "label": "Doesn’t apply",
+          "x": 924.375,
+          "y": 312
+        },
+        {
+          "label": "Decide what you want to keep\nPhotos · messages · files\nNot checked yet",
+          "x": 435.375,
+          "y": 401
+        },
+        {
+          "label": "Doesn’t apply",
+          "x": 924.375,
+          "y": 401
+        },
+        {
+          "label": "Review Google Photos partner sharing\nGoogle Photos\nNot checked yet",
+          "x": 435.375,
+          "y": 490
+        },
+        {
+          "label": "Doesn’t apply",
+          "x": 924.375,
+          "y": 490
+        }
+      ],
+      "text": "Keep a way back into your account\nGoogle · Gmail\nNot checked yet\nDoesn’t apply\nLook at devices using your Google account\nGoogle · Gmail\nNot checked yet\nDoesn’t apply\nUnderstand what changing a password does\nGoogle · Gmail\nNot checked yet\nDoesn’t apply\nCheck whether your emails go somewhere else\nGmail · computer\nNot checked yet\nDoesn’t apply\nDecide what you want to keep\nPhotos · messages · files\nNot checked yet\nDoesn’t apply\nReview Google Photos partner sharing\nGoogle Photos\nNot checked yet\nDoesn’t apply"
+    },
+    "outcomes-unselected": {
+      "selector": ".p-outcomes",
+      "width": 718,
+      "height": 243.75,
+      "controls": [
+        {
+          "label": "I checked the entries I wanted to review",
+          "x": 359,
+          "y": 26.71875
+        },
+        {
+          "label": "I’m not sure what I found",
+          "x": 359,
+          "y": 90.15625
+        },
+        {
+          "label": "I want to leave this for later",
+          "x": 359,
+          "y": 153.59375
+        },
+        {
+          "label": "I want to do this with someone’s help",
+          "x": 359,
+          "y": 217.03125
+        }
+      ],
+      "text": "I checked the entries I wanted to review\nI’m not sure what I found\nI want to leave this for later\nI want to do this with someone’s help"
+    },
+    "outcomes": {
+      "selector": ".p-outcomes",
+      "width": 718,
+      "height": 243.75,
+      "controls": [
+        {
+          "label": "I checked the entries I wanted to review",
+          "x": 359,
+          "y": 26.71875
+        },
+        {
+          "label": "I’m not sure what I found",
+          "x": 359,
+          "y": 90.15625
+        },
+        {
+          "label": "I want to leave this for later",
+          "x": 359,
+          "y": 153.59375
+        },
+        {
+          "label": "I want to do this with someone’s help",
+          "x": 359,
+          "y": 217.03125
+        }
+      ],
+      "text": "I checked the entries I wanted to review\nI’m not sure what I found\nI want to leave this for later\nI want to do this with someone’s help"
+    },
+    "note": {
+      "selector": "#task-note",
+      "width": 718,
+      "height": 104,
+      "controls": [],
+      "text": ""
+    },
+    "question-row": {
+      "selector": ".p-row-group:has-text(\"Look at devices using your Google account\")",
+      "width": 978,
+      "height": 89,
+      "controls": [
+        {
+          "label": "Look at devices using your Google account\nGoogle · Gmail\nStill a question",
+          "x": 434.375,
+          "y": 44
+        },
+        {
+          "label": "Doesn’t apply",
+          "x": 923.375,
+          "y": 44
+        }
+      ],
+      "text": "Look at devices using your Google account\nGoogle · Gmail\nStill a question\nDoesn’t apply"
+    },
+    "together": {
+      "selector": ".p-handoff-list",
+      "width": 980,
+      "height": 1256.46875,
+      "controls": [
+        {
+          "label": "Look at this together",
+          "x": 99.578125,
+          "y": 149.078125
+        },
+        {
+          "label": "Look at this together",
+          "x": 99.578125,
+          "y": 361.15625
+        },
+        {
+          "label": "Look at this together",
+          "x": 99.578125,
+          "y": 573.234375
+        },
+        {
+          "label": "Look at this together",
+          "x": 99.578125,
+          "y": 785.3125
+        },
+        {
+          "label": "Look at this together",
+          "x": 99.578125,
+          "y": 997.390625
+        },
+        {
+          "label": "Look at this together",
+          "x": 99.578125,
+          "y": 1209.46875
+        }
+      ],
+      "text": "Not checked yet\nKeep a way back into your account\n\nGoogle may still offer the previous recovery details for 7 days after a change. This check does not prove that only you can access the account.\n\nLook at this together\nStill a question\nLook at devices using your Google account\n\nA device name or recent time does not tell you who used it. Signing out does not remove copies of files already saved.\n\nLook at this together\nNot checked yet\nUnderstand what changing a password does\n\nA password change alone does not review your location sharing, email forwarding or saved photo copies. Keep those checks in your plan if they apply.\n\nLook at this together\nNot checked yet\nCheck whether your emails go somewhere else\n\nMessages already delivered elsewhere are not recalled. A password change does not replace checking forwarding.\n\nLook at this together\nNot checked yet\nDecide what you want to keep\n\nUntangle is not an evidence store. It cannot check a device for monitoring or establish whether a record meets legal requirements.\n\nLook at this together\nNot checked yet\nReview Google Photos partner sharing\n\nThis does not remove screenshots, downloads or other shared albums. It cannot make another person delete a copy.\n\nLook at this together"
+    },
+    "save": {
+      "selector": ".p-save-grid .p-form",
+      "width": 480,
+      "height": 537.171875,
+      "controls": [
+        {
+          "label": "Show file passphrase",
+          "x": 109.0859375,
+          "y": 431.171875
+        },
+        {
+          "label": "Download private plan",
+          "x": 114.671875,
+          "y": 488.671875
+        }
+      ],
+      "text": "Save a private copy\n\nIncludes your selected checks, plan note, unfinished draft updates and previous updates from this fictional example.\n\nCreate a file passphrase\nAt least 12 characters. A few unrelated words work well. Don’t use your account password.\nRepeat the file passphrase\nShow file passphrase\nDownload private plan"
+    },
+    "download-confirmation": {
+      "selector": ".save-rehearsal",
+      "width": 980,
+      "height": 216.171875,
+      "controls": [],
+      "text": "Check your copy before leaving\nFind my-plan.untangle in your browser downloads or device Files app.\nUse “Open a saved plan” on this page to select that file and enter its passphrase.\nIf the preview opens, your file and passphrase work. You can keep your current plan instead of replacing it.\n\nWe cannot see whether your device kept the file. A download is not a cloud backup."
+    }
+  }
+}

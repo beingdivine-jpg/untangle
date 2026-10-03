@@ -1,0 +1,76 @@
+{
+  "text": "Before deciding, she explores what a password change affects, and what it leaves outside.",
+  "voice": "en-GB-SoniaNeural",
+  "words": [
+    {
+      "offset": 1144160,
+      "duration": 3350410,
+      "text": "Before"
+    },
+    {
+      "offset": 4623750,
+      "duration": 7087500,
+      "text": "deciding"
+    },
+    {
+      "offset": 14417500,
+      "duration": 1546250,
+      "text": "she"
+    },
+    {
+      "offset": 16092910,
+      "duration": 6056660,
+      "text": "explores"
+    },
+    {
+      "offset": 22278330,
+      "duration": 1546250,
+      "text": "what"
+    },
+    {
+      "offset": 23953750,
+      "duration": 773330,
+      "text": "a"
+    },
+    {
+      "offset": 24855830,
+      "duration": 5541250,
+      "text": "password"
+    },
+    {
+      "offset": 30525830,
+      "duration": 2963750,
+      "text": "change"
+    },
+    {
+      "offset": 33618750,
+      "duration": 5412500,
+      "text": "affects"
+    },
+    {
+      "offset": 41350410,
+      "duration": 1030830,
+      "text": "and"
+    },
+    {
+      "offset": 42510410,
+      "duration": 1804160,
+      "text": "what"
+    },
+    {
+      "offset": 44443330,
+      "duration": 1288750,
+      "text": "it"
+    },
+    {
+      "offset": 45860830,
+      "duration": 3608330,
+      "text": "leaves"
+    },
+    {
+      "offset": 49597910,
+      "duration": 7216660,
+      "text": "outside"
+    }
+  ]
+}

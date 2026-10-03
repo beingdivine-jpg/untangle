@@ -1,0 +1,86 @@
+{
+  "text": "Save an encrypted file to pick up later, or review those questions with someone you trust.",
+  "voice": "en-GB-SoniaNeural",
+  "words": [
+    {
+      "offset": 1273330,
+      "duration": 3608330,
+      "text": "Save"
+    },
+    {
+      "offset": 5010410,
+      "duration": 902080,
+      "text": "an"
+    },
+    {
+      "offset": 6041250,
+      "duration": 5283330,
+      "text": "encrypted"
+    },
+    {
+      "offset": 11453750,
+      "duration": 4381250,
+      "text": "file"
+    },
+    {
+      "offset": 15963750,
+      "duration": 1030830,
+      "text": "to"
+    },
+    {
+      "offset": 17123750,
+      "duration": 2061660,
+      "text": "pick"
+    },
+    {
+      "offset": 19314580,
+      "duration": 1546250,
+      "text": "up"
+    },
+    {
+      "offset": 20989580,
+      "duration": 4767910,
+      "text": "later"
+    },
+    {
+      "offset": 28979580,
+      "duration": 773330,
+      "text": "or"
+    },
+    {
+      "offset": 29881250,
+      "duration": 4123750,
+      "text": "review"
+    },
+    {
+      "offset": 34134160,
+      "duration": 2190830,
+      "text": "those"
+    },
+    {
+      "offset": 36453750,
+      "duration": 5541250,
+      "text": "questions"
+    },
+    {
+      "offset": 42123750,
+      "duration": 1546250,
+      "text": "with"
+    },
+    {
+      "offset": 43799160,
+      "duration": 3221660,
+      "text": "someone"
+    },
+    {
+      "offset": 47149580,
+      "duration": 1160000,
+      "text": "you"
+    },
+    {
+      "offset": 48438330,
+      "duration": 5927910,
+      "text": "trust"
+    }
+  ]
+}

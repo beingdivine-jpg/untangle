@@ -1,0 +1,15 @@
+{
+  "productCommit": "b17188a883648de637d78bfcc83f7a12269e140d",
+  "fingerprints": {
+    "src/features/companion/Experience.tsx": "cf954e8e67b2ed51c64fb28f25963180d29b9cb5bee04f0a046cd906a0e495ba",
+    "src/features/companion/agentCore.ts": "0668f8c60d1d0d473ec49ee926a88b244f649edcfe3c08ea5e1a51faa39cd1b9",
+    "src/features/companion/ThreadScene.tsx": "3c6fa26d3b5d8823cb3d935064264a0328447f8d6ed0bb63567d94c4d836adc6",
+    "src/features/plan/content.ts": "6c80cb6e7aada9735920ced9952415cd99a88f80fddea90cf0d14adcc7c35bd1",
+    "src/features/plan/Platform.tsx": "ebc7962f41d9cc034edbb3782a8b3170aa7462c53f694f158c37fc4afe9298bc",
+    "src/features/plan/SavePlan.tsx": "09cefd520397c6874a9dbd962471b8ebe65d7f9bf17bb25b40836fbfcfa3a67c",
+    "src/features/plan/crypto.ts": "0f0878e0366fdf1d6b68f4b7d73fe9cb326ea4e24b47c0275d7de03546587c59",
+    "src/components/Thread.tsx": "ae8f68d5186086d73fdf556902d0443db36e0c808bc248c1865af0bd1ea22e72",
+    "src/styles/tokens.css": "0d4f6597b407dd7cd8c0694065825d5816dd8aee2f18daf4fc6ce48b9cdb6871",
+    "src/features/companion/experience.css": "4ab7533145a7de514ddac187a7ef7a48a825ac253e7b04fb3a610cf1af59b338"
+  }
+}

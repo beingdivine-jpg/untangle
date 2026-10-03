@@ -1,0 +1,41 @@
+{
+  "text": "Untangle helps you find a starting point.",
+  "voice": "en-GB-SoniaNeural",
+  "words": [
+    {
+      "offset": 1273330,
+      "duration": 7474160,
+      "text": "Untangle"
+    },
+    {
+      "offset": 8876250,
+      "duration": 3350410,
+      "text": "helps"
+    },
+    {
+      "offset": 12355830,
+      "duration": 1030830,
+      "text": "you"
+    },
+    {
+      "offset": 13515410,
+      "duration": 3221660,
+      "text": "find"
+    },
+    {
+      "offset": 16865830,
+      "duration": 515409,
+      "text": "a"
+    },
+    {
+      "offset": 17510410,
+      "duration": 5025830,
+      "text": "starting"
+    },
+    {
+      "offset": 22665000,
+      "duration": 5541250,
+      "text": "point"
+    }
+  ]
+}
