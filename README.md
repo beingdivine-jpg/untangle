@@ -71,6 +71,12 @@ Optional AI requests explicitly include the chosen response language in the cons
 
 ## A two-minute demo
 
+For judges, use the visible **Demo walkthrough** button in the introduction or plan header, or open [the guided demo](https://untangle-orpin.vercel.app/?view=demo&lang=en) directly. Six short stages cover Maya’s story, suggested checks, a sourced change preview, editable wording, explicit approval, and the finished plan. The walkthrough is also available in Polish with `lang=pl`.
+
+Each stage explains the next action and its purpose. Back, restart and exit controls keep the pace in the judge’s hands. The examples are labelled as scripted; the actual local planner builds the draft and its preparation dependencies. No live AI call or account scan occurs. Tour choices stay separate from existing work. **Open example plan** explicitly replaces only the practice plan, with every check still “Not checked yet”; personal notes, unfinished updates and setup choices remain intact.
+
+For free exploration beyond the guided tour:
+
 1. Open **Try Me**. Choose “We shared a laptop.” and **Connect the dots**. Show the labelled local activity record and proposed checks.
 2. Try **What if I change…**. Choose a password or photo-sharing change and compare its effect with what remains outside it.
 3. Open **Help me put it into words**. Preview Maya’s prepared edit, change the draft, keep it, then undo. Explain that this demonstration is scripted.

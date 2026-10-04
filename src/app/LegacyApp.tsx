@@ -1,4 +1,5 @@
 import { LanguageSwitch } from '../i18n/LanguageProvider'
+import { DemoWalkthroughButton } from '../features/walkthrough/DemoWalkthroughButton'
 import { useTranslation } from '../i18n/context'
 import { useCallback, useEffect, useReducer, useRef, useState } from 'react'
 import { flushSync } from 'react-dom'
@@ -80,7 +81,7 @@ export default function LegacyApp({ initialPlan, returnToIntro, clearSeed }: { i
       <button className="wordmark" aria-label={translate("Untangle home")} onClick={() => workspace ? (setInfo(null), planRef.current?.home()) : state.active ? setConfirmReset(true) : closeInfo()}><Thread small /><span>{translate("untangle")}<span className="wordmark-period">.</span></span></button>
       <span className="brand-description">{translate(returnToIntro ? <button className="text-button" onClick={returnToIntro}>{translate("Back to introduction")}</button> : 'One step at a time.')}</span>
       {workspace && <button className="platform-help" aria-label={translate("Help & words")} onClick={() => setInfo(info === 'help' ? null : 'help')}><CircleHelp size={18} aria-hidden="true"/><span>{translate("Help & words")}</span></button>}
-      <LanguageSwitch/><a className="exit-link" href={localizeLink(EXIT_DESTINATION)} onClick={exit} rel="noreferrer">{translate("Leave this page")}<MoveUpRight size={16} aria-hidden="true" /></a>
+      <DemoWalkthroughButton/><LanguageSwitch/><a className="exit-link" href={localizeLink(EXIT_DESTINATION)} onClick={exit} rel="noreferrer">{translate("Leave this page")}<MoveUpRight size={16} aria-hidden="true" /></a>
     </header></div>
     <SessionStatus/>
     {!workspace && <nav className="app-tabs" aria-label={translate("Main navigation")}>

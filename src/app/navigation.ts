@@ -2,10 +2,10 @@ import { useSyncExternalStore } from 'react'
 import type { TaskId } from '../features/plan/content'
 
 export type PlanView = 'plan' | 'explore' | 'together' | 'save' | 'support' | 'setup'
-export type Route = { area: 'intro' | 'plan' | 'assistant' | 'demo' | 'walkthrough'; view?: PlanView; task?: TaskId; stage?: number; mode?: 'personal' | 'example' }
+export type Route = { area: 'intro' | 'plan' | 'assistant' | 'demo' | 'walkthrough' | 'tour'; view?: PlanView; task?: TaskId; stage?: number; mode?: 'personal' | 'example'; returnRoute?: Route }
 const initial = (): Route => {
   const view = new URLSearchParams(window.location.search).get('view')
-  return view === 'walkthrough' ? { area: 'walkthrough' } : view === 'plan' ? { area: 'plan', view: 'plan' } : view === 'assistant' ? { area: 'assistant' } : { area: 'intro' }
+  return view === 'demo' ? { area: 'tour' } : view === 'walkthrough' ? { area: 'walkthrough' } : view === 'plan' ? { area: 'plan', view: 'plan' } : view === 'assistant' ? { area: 'assistant' } : { area: 'intro' }
 }
 let current = initial()
 let openedPlan = current.area === 'plan' || current.area === 'walkthrough'
@@ -20,7 +20,7 @@ export function navigate(route: Route, replace = false) {
   routes.set(id, route)
   const url = new URL(window.location.href)
   if (route.area === 'intro' || route.area === 'demo') url.searchParams.delete('view')
-  else url.searchParams.set('view', route.area === 'assistant' ? 'assistant' : route.area === 'walkthrough' ? 'walkthrough' : 'plan')
+  else url.searchParams.set('view', route.area === 'tour' ? 'demo' : route.area === 'assistant' ? 'assistant' : route.area === 'walkthrough' ? 'walkthrough' : 'plan')
   url.hash = ''
   window.history[replace ? 'replaceState' : 'pushState']({ untangleRoute: id }, '', url)
   publish(route)
