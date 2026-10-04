@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight, ArrowUpRight, Check, CheckCheck, FilePenLine, Ro
 import { Thread } from '../../components/Thread'
 import { useHeaderOffset } from '../../components/useHeaderOffset'
 import { LanguageSwitch } from '../../i18n/LanguageProvider'
+import { useWords } from '../resolve/words'
 import { useTranslation } from '../../i18n/context'
 import { navigate, useNavigation } from '../../app/navigation'
 import { resetSession, selectMode, setUndoPlan, updatePlan, updateSetup } from '../../app/session'
@@ -17,7 +18,7 @@ import './walkthrough.css'
 const story = stories[0]
 
 export function JudgeWalkthrough() {
-  const { translate, href } = useTranslation(), route = useNavigation()
+  const { translate, href } = useTranslation(), route = useNavigation(), t = useWords()
   const headerRef = useHeaderOffset<HTMLElement>()
   const [step, setStep] = useState(0)
   const [choices, setChoices] = useState<TaskId[]>([])
@@ -52,10 +53,10 @@ export function JudgeWalkthrough() {
     for (const id of selected) plan = addTask(plan, id)
     setResult(plan); setStep(5)
   }
-  const openExample = () => {
+  const openExample = (resolve = false) => {
     if (!result) return
     selectMode('example'); updatePlan({ ...result, note }); setUndoPlan(null); updateSetup(null, 'example')
-    navigate({ area: 'plan', view: 'plan', mode: 'example' })
+    navigate(resolve ? { area: 'resolve', task: first ?? undefined, mode: 'example' } : { area: 'plan', view: 'plan', mode: 'example' })
   }
   const chosenChecks = <ul className="jt-summary-list">{selected.map(id => <li key={id}><Check size={16} aria-hidden="true"/>{translate(taskById[id].title)}</li>)}</ul>
   return <div className="judge-tour">
@@ -129,8 +130,8 @@ export function JudgeWalkthrough() {
             <p className="jt-result-intro">{translate(taskById[first].intro)}</p>
             <div className="jt-pending"><span aria-hidden="true"/>{translate('Not checked yet')}</div>
             <details className="jt-result-details"><summary>{translate('See the full example plan')}</summary>{chosenChecks}<p className="jt-result-note">{note}</p></details>
-            <div className="jt-actions"><button className="jt-primary" onClick={openExample}>{translate('Open example plan')}<ArrowRight size={18} aria-hidden="true"/></button><button className="jt-secondary" onClick={exit}>{translate('Finish tour')}</button></div>
-            <p className="jt-action-hint">{translate('Opening this result replaces only the practice plan. Your personal plan stays as it is.')}</p>
+            <div className="jt-actions"><button className="jt-primary" onClick={() => openExample()}>{translate('Open example plan')}<ArrowRight size={18} aria-hidden="true"/></button><button className="jt-secondary" onClick={exit}>{translate('Finish tour')}</button></div>
+            <p className="jt-action-hint">{t("The plan is a starting point. Continue with a guided action, a short lesson, and a human-support option.", "Plan to początek. Dalej czekają krok z podpowiedzią, krótka lekcja i możliwość poproszenia człowieka o pomoc.")}</p><button className="jt-secondary" onClick={() => openExample(true)}>{t("Continue into guided help", "Przejdź do pomocy krok po kroku")}<ArrowRight size={18} aria-hidden="true"/></button><p className="jt-action-hint">{translate('Opening this result replaces only the practice plan. Your personal plan stays as it is.')}</p>
           </>}
         </section>
       </div>

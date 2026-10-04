@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, useSyncExternalStore } from 'react'
 import { ArrowRight, ArrowDown, LockKeyhole, Pause, Play, Plus, Minus, RotateCcw, KeyRound, Image, MapPin } from 'lucide-react'
 import { useTranslation } from '../../i18n/context'
 import type { ConcernId } from '../plan/content'
+import { ProductPaths } from '../resolve/EntryPoints'
 import { InkPortrait } from './InkPortrait'
 
 const chapters = [
@@ -44,7 +45,7 @@ export function ThreadWelcome({ begin, resume, hasPlan }: { begin: (mode: 'demo'
         <h1 id="experience-heading" tabIndex={-1}><span>{translate('Your life.')}</span><em>{translate('Your terms.')}</em></h1>
         <p className="editorial-lead">{translate('A breakup can leave your digital lives connected. Find a way through shared accounts, photos and location—one clear step at a time.')}</p>
         <div className="u-intro-actions"><button className="u-primary" onClick={() => begin('personal', chapter ?? undefined)}>{translate('Start with my own situation')}<ArrowRight size={20} aria-hidden="true"/></button><button className="u-quiet" aria-label={translate('Try Me')} onClick={() => begin('demo')}><Play size={14} fill="currentColor" aria-hidden="true"/>{translate('Try Me')}<span>{translate('A guided example')}</span></button></div>
-        <small className="editorial-reassurance"><LockKeyhole size={13} aria-hidden="true"/>{translate('No sign-up. No account passwords. Your choices stay in this tab.')}</small>
+        <small className="editorial-reassurance"><LockKeyhole size={13} aria-hidden="true"/>{translate('Start without an account. Your plan stays in this tab.')}</small>
         {hasPlan && <button className="editorial-resume" onClick={resume}>{translate('Continue my plan')}<ArrowRight size={16} aria-hidden="true"/></button>}
       </div>
       <div className="editorial-art">
@@ -54,6 +55,7 @@ export function ThreadWelcome({ begin, resume, hasPlan }: { begin: (mode: 'demo'
       </div>
     </div>
 
+    <ProductPaths/>
     <div className="editorial-chapters">
       <div className="chapter-intro"><span>{translate('WHAT STILL CONNECTS YOU?')}</span><p>{translate('Choose a thread.')}<ArrowDown size={19} aria-hidden="true"/></p></div>
       <div className="chapter-options" role="group" aria-label={translate('Explore a starting point')}>
@@ -63,10 +65,10 @@ export function ThreadWelcome({ begin, resume, hasPlan }: { begin: (mode: 'demo'
     </div>
 
     <div className="editorial-companion">
-      <div className="companion-introduction"><span className="editorial-kicker">{translate('THE PLANNING COMPANION')}</span><h2>{translate('A little help with the next step.')}</h2><p>{translate('Understand the connections. See what a change could affect. Keep only the steps you choose.')}</p><button className="companion-demo" onClick={() => begin('demo')}>{translate('Meet the companion')}<ArrowRight size={18} aria-hidden="true"/></button></div>
+      <div className="companion-introduction"><span className="editorial-kicker">{translate('UNDERSTAND. WORK THROUGH. FIND SUPPORT.')}</span><h2>{translate('A little help with the next step.')}</h2><p>{translate('An assistant for the whole journey: explain the problem, work through a step, learn from it, and bring in a person when you need one.')}</p><button className="companion-demo" onClick={() => begin('demo')}>{translate('Meet the companion')}<ArrowRight size={18} aria-hidden="true"/></button></div>
       <div className="companion-process"><div><span>01</span><p><strong>{translate('You tell us what matters.')}</strong><small>{translate('Choose a topic and the apps you recognise.')}</small></p></div><div><span>02</span><p><strong>{translate('We make the next step clearer.')}</strong><small>{translate('Guides, possible effects, and help with words.')}</small></p></div><div><span>03</span><p><strong>{translate('You have the final say.')}</strong><small>{translate('Every suggestion is yours to review or leave.')}</small></p></div></div>
       <button className="companion-reveal" aria-expanded={expanded} aria-controls="welcome-companion-details" onClick={() => setExpanded(!expanded)}>{translate('How it works')}{expanded ? <Minus size={18} aria-hidden="true"/> : <Plus size={18} aria-hidden="true"/>}</button>
-      <div id="welcome-companion-details" hidden={!expanded} className="companion-details"><p>{translate('The planning companion matches guides, explains what a change could affect, and helps put questions into words. You review every suggestion before keeping it.')}</p><p>{translate('Try Me demonstrates the workflow with a scripted example.')} {translate('Untangle does not connect to or change your accounts.')}</p></div>
+      <div id="welcome-companion-details" hidden={!expanded} className="companion-details"><p>{translate('The assistant retrieves relevant guidance and offers a next step you can review. You act in your own apps and report what happened. Human support has its own account and approval process; you preview every request before sharing.')}</p><p>{translate('Try Me demonstrates the workflow with a scripted example.')} {translate('Untangle does not connect to or change your accounts.')}</p></div>
     </div>
   </section>
 }

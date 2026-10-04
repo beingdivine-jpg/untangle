@@ -150,7 +150,7 @@ test('phone beginner controls, setup and contextual help work in English and Pol
     const disclosure = page.locator('.guided-steps summary')
     await disclosure.click()
     await page.locator('.guide-help-options button').nth(1).click()
-    await expect(page.locator('.guided-steps')).toContainText(lang === 'en' ? 'Untangle has no login' : 'Untangle nie wymaga logowania')
+    await expect(page.locator('.guided-steps')).toContainText(lang === 'en' ? 'Untangle’s optional support account is separate' : 'Opcjonalne konto wsparcia Untangle jest osobne')
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
     expect((await new AxeBuilder({ page }).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze()).violations).toEqual([])
   }

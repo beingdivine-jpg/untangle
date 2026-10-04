@@ -45,5 +45,14 @@
         }
       ]
     }
-  ]
+  ],
+  "functions": {
+    "api/coach.ts": {
+      "maxDuration": 60,
+      "supportsCancellation": true
+    },
+    "api/community.ts": {
+      "maxDuration": 30
+    }
+  }
 }

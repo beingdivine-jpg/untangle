@@ -28,5 +28,10 @@
     "Live-model tests use fixtures; no production AI key connected.",
     "Independent Polish, practitioner, participant and physical-device reviews remain external gates."
   ],
-  "publication": "Remote CI and production verification follow commit."
+  "publication": {
+    "commit": "9bc4fac574c06849cfe54812b57e49404e1f5c92",
+    "remote": "origin/main",
+    "githubChecks": "passed",
+    "ciUrl": "https://github.com/beingdivine-jpg/untangle/actions/runs/37185688379"
+  }
 }

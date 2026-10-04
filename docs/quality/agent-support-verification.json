@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-04",
+  "scope": "Resolution workspace, guide-agent service and verified volunteer workflow",
+  "unitAndDatabaseTests": 75,
+  "postgresqlPermissionTests": 8,
+  "browserSuiteCases": 149,
+  "newBrowserCases": 24,
+  "newBrowserCasesResult": "24 passed: Chromium 8, Firefox 8, WebKit 8",
+  "localRegressionEvidence": "140 cases passed in the expanded full run; its three failures were assertions for the now-obsolete no-login wording. Updated sign-in wording passed in all three engines. Subsequent targeted runs verified new contrast, focus, cancellation and private-reminder fixes. The complete latest suite is also run by GitHub CI on push.",
+  "build": "passed",
+  "lint": "passed",
+  "translationCoverage": "passed",
+  "guideRegister": "13 records passed",
+  "dependencyAdvisories": 0,
+  "deploymentConfiguration": "Vercel had no environment variables at inspection; COMMUNITY_ENABLED and LIVE_COACH_ENABLED default off.",
+  "liveInference": "not performed; transport and tool-loop tests use fixtures",
+  "hostedDatabase": "not provisioned; migration and access rules tested in PostgreSQL via PGlite",
+  "remainingActivation": [
+    "Supabase project and migration",
+    "Production email code delivery",
+    "Verified admin and volunteer accounts",
+    "OpenAI project key, evaluated model and operating budget",
+    "Independent language, practitioner and participant reviews"
+  ]
+}

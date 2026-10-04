@@ -1,11 +1,77 @@
 {
   "updated": "2026-10-04",
-  "productionMode": "Guided planner and scripted demonstration; live model disabled",
+  "productionMode": "Guided resolution and learning available; hosted AI and volunteer accounts prepared but disabled pending configuration and review",
   "gates": [
-    {"id":"live-ai","requiredBefore":"Enabling live AI for visitors","status":"pending external configuration and evaluation","checks":["Run all bilingual evaluation cases against the exact pinned model and prompt","Have bilingual reviewers score meaning, uncertainty, negation and added advice; no severe failures","Re-run cancellation, consent, malformed output and scope tests on the deployed endpoint","Configure a server-only provider key, cost cap, distributed rate limiting and operational owner","Verify provider/hosting retention, logging and data handling with the actual project settings","Keep the working local planner available on timeout or service failure"]},
-    {"id":"user-research","requiredBefore":"Claiming validated beginner usability or adoption","status":"pending participant sessions","checks":["Run the fictional beginner tasks in research-kit.html with informed consent","Recruit people with low digital confidence; include Polish speakers","Use safeguarding and appropriate consent if minors participate; do not recruit vulnerable minors informally","Measure unprompted completion, recovery, comprehension and confusion; do not request personal account access","Fix critical misunderstandings and retest before making adoption or safety claims"]},
-    {"id":"language","requiredBefore":"Claiming independent Polish language validation","status":"pending native Polish reviewer","checks":["Review every new message in context on phone and desktop","Review intimate-image, uncertainty, account ownership, family restrictions and file-password wording","Check destination languages and terminology against actual provider interfaces"]},
-    {"id":"practitioner","requiredBefore":"Claiming practitioner-reviewed safety guidance","status":"pending qualified reviewer and named content owner","checks":["Assign a named content-maintenance owner","Review guidance and boundaries with a technology-safety practitioner","Confirm referral destinations, age eligibility and region-specific support","Treat successful link checks as reachability only, never validation of the advice"]},
-    {"id":"real-devices","requiredBefore":"Claiming validated performance and usability on low-end phones","status":"pending real-device sessions","checks":["Test iOS Safari and Android Chrome on physical devices","Try file download, Files picker, passphrase reveal, reopen and quick exit","Test slow connections, interrupted downloads, screen readers and 200% text scaling","Record load and first-action timings; desktop WebKit is not a physical iPhone test"]}
+    {
+      "id": "live-ai",
+      "requiredBefore": "Enabling live AI for visitors",
+      "status": "pending external configuration and evaluation",
+      "checks": [
+        "Run all bilingual evaluation cases against the exact pinned model and prompt",
+        "Have bilingual reviewers score meaning, uncertainty, negation and added advice; no severe failures",
+        "Re-run cancellation, consent, malformed output and scope tests on the deployed endpoint",
+        "Configure a server-only provider key, cost cap, distributed rate limiting and operational owner",
+        "Verify provider/hosting retention, logging and data handling with the actual project settings",
+        "Keep the working local planner available on timeout or service failure"
+      ]
+    },
+    {
+      "id": "user-research",
+      "requiredBefore": "Claiming validated beginner usability or adoption",
+      "status": "pending participant sessions",
+      "checks": [
+        "Run the fictional beginner tasks in research-kit.html with informed consent",
+        "Recruit people with low digital confidence; include Polish speakers",
+        "Use safeguarding and appropriate consent if minors participate; do not recruit vulnerable minors informally",
+        "Measure unprompted completion, recovery, comprehension and confusion; do not request personal account access",
+        "Fix critical misunderstandings and retest before making adoption or safety claims"
+      ]
+    },
+    {
+      "id": "language",
+      "requiredBefore": "Claiming independent Polish language validation",
+      "status": "pending native Polish reviewer",
+      "checks": [
+        "Review every new message in context on phone and desktop",
+        "Review intimate-image, uncertainty, account ownership, family restrictions and file-password wording",
+        "Check destination languages and terminology against actual provider interfaces"
+      ]
+    },
+    {
+      "id": "practitioner",
+      "requiredBefore": "Claiming practitioner-reviewed safety guidance",
+      "status": "pending qualified reviewer and named content owner",
+      "checks": [
+        "Assign a named content-maintenance owner",
+        "Review guidance and boundaries with a technology-safety practitioner",
+        "Confirm referral destinations, age eligibility and region-specific support",
+        "Treat successful link checks as reachability only, never validation of the advice"
+      ]
+    },
+    {
+      "id": "real-devices",
+      "requiredBefore": "Claiming validated performance and usability on low-end phones",
+      "status": "pending real-device sessions",
+      "checks": [
+        "Test iOS Safari and Android Chrome on physical devices",
+        "Try file download, Files picker, passphrase reveal, reopen and quick exit",
+        "Test slow connections, interrupted downloads, screen readers and 200% text scaling",
+        "Record load and first-action timings; desktop WebKit is not a physical iPhone test"
+      ]
+    },
+    {
+      "id": "volunteer-service",
+      "requiredBefore": "Opening real volunteer conversations",
+      "status": "implementation tested; hosted activation and operational verification pending",
+      "checks": [
+        "Apply migration and verify permissions in the actual Supabase project",
+        "Configure and test email-code delivery with production SMTP",
+        "Bootstrap verified team reviewer accounts through database operator access",
+        "Define verification, conduct, reporting, retention and moderation responsibilities",
+        "Approve actual volunteers through independent human verification",
+        "Keep under-18 volunteer contact disabled until a reviewed safeguarding process exists",
+        "Test the complete deployed two-account conversation, revocation, reporting and deletion lifecycle"
+      ]
+    }
   ]
 }

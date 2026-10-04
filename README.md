@@ -2,13 +2,13 @@
 
 The [product demo films](video-demo/README.md) include a new **78-second director’s cut** with a cinematic opening, the AI workflow, reversible wording and encrypted save-and-restore, plus the original exact 60-second edition. Finished MP4s, narration, captions, a judging-criteria review and reproducible compositions are included. Render the new cut with `npm --prefix video-demo run render:director` after the video setup steps; the application commands below are unchanged.
 
-A planning companion for digital life after a breakup, built for the ImpactHer hackathon with React, TypeScript and Vite. It helps someone with little digital experience organise checks across services, understand consequences before making changes, keep unanswered questions, and return later.
+An assistant for digital life after a breakup, built for the ImpactHer hackathon with React, TypeScript and Vite. It helps someone understand a problem, work through a step, learn what it means and ask a verified person for support. Plans preserve continuity; they are not the end of the journey.
 
 Live: **https://untangle-orpin.vercel.app/**. Local: **http://127.0.0.1:5173/**. The [product research report](public/research.html) is also served at **/research.html**. Vercel deployment configuration is included; see the hosting section below.
 
 ## Run locally
 
-Tested with Node 24.12 and npm 11.6. The scripted Try Me experience, local planner and retained guide workspace work without an API key, paid service or account connection. Optional live AI uses the local server adapter described below.
+Tested with Node 24.12 and npm 11.6. The scripted Try Me experience, local planner and retained guide workspace work without an API key, paid service or account connection. The resolution workspace also includes an authenticated hosted AI coach and volunteer account service, prepared for activation using [the service setup guide](docs/services.html). These services are currently disconnected; no real AI or volunteers are simulated.
 
 ```sh
 npm ci
@@ -19,7 +19,7 @@ For a production bundle, use `npm run build`, then `npm run preview` (port 4173)
 
 ## Hosting on Vercel
 
-The Vite production bundle is configured by `vercel.json`: `npm ci`, `npm run build`, output `dist`, and Node 24.x. The introduction, scripted Try Me, guides, local planner and private file workflow work on static hosting. `/api/agent/status` explicitly reports live AI unavailable; the development-only OpenAI middleware is not exposed as a public function. Adding an API key to Vercel alone does not enable that middleware.
+The Vite production bundle is configured by `vercel.json`: `npm ci`, `npm run build`, output `dist`, and Node 24.x. The introduction, scripted Try Me, guides, local planner and private file workflow work on static hosting. `/api/agent/status` explicitly reports live AI unavailable; the development-only OpenAI middleware is not exposed as a public function. Adding an API key to Vercel alone does not enable that middleware. New server functions `/api/community` and `/api/coach` support the account service and guide agent; they require the database migration, server configuration and explicit activation flags described in [services.html](docs/services.html).
 
 `.vercelignore` excludes local environment files, Git metadata, build/test artifacts and archived source snapshots from CLI uploads. `.vercel/` stays local and ignored. Deployment headers disable referrers, prevent MIME sniffing and prohibit iframe embedding.
 
@@ -37,6 +37,14 @@ npx vercel --prod
 The research compared Refuge Digital Break-Up, Chayn, myPlan, Apple Safety Check, Google Security Checkup, Bright Sky, eSafety and specialist image-abuse tools. The report distinguishes published user counts, downloads, organisation reach, historical guide usage and research participation; it does not invent comparable active-user metrics. Existing services already provide broad checklists, accessible guidance, native controls and support. A longer checklist alone is not a useful differentiator.
 
 Untangle’s proposed value is coordination and continuity: a cross-service plan with preparation dependencies, consequences, user-reported outcomes, open questions and opt-in local save/resume. This is a product hypothesis, not a claim of global uniqueness or proven safety impact. The report identifies which competitor flows were inspected and the limits of public-documentation comparisons.
+
+## Work through, learn, ask a person
+
+- **Work through it** (`/?view=resolve`) puts a guide, concrete next step, outcomes and a contextual assistant together. Each guide includes a specific comprehension question with source-based feedback.
+- The hosted coach uses real read-only tool calls to retrieve the selected guide and prerequisites, then proposes an explanation and next step. It cannot operate an external account. The UI shows actual retrieval events and exact request approval.
+- **Human support** (`/?view=people`) includes email-code sign-in, volunteer applications, team verification, an approved directory, previewed support requests and two-sided private messaging. The user can close, report or delete a request. Reviewers cannot approve themselves; revoked volunteers lose access immediately.
+- The account token lasts only in memory; private plans are not automatically uploaded. Explicitly shared support messages are stored in the configured database. The interface distinguishes these storage models.
+- Real accounts, email delivery and AI are not activated in production yet. See [the activation checklist and operating boundaries](docs/services.html). No real volunteer availability or model quality is claimed from fixture tests.
 
 ## Working features
 
@@ -65,7 +73,7 @@ The visible **English / Polski** control is available in both app headers and on
 
 Open `/?lang=pl` for Polish, or `/?view=plan&lang=pl` for the plan. The non-sensitive language choice stays in the URL across refreshes and research links; no cookie or browser storage is introduced. A fresh URL without `lang=pl` defaults to English. Leaving or refreshing still clears unsaved work as before.
 
-`src/i18n/pl.json` is the authored Polish catalog, keyed by the English presentation text. Translate UI text at the React rendering boundary with `useTranslation()`; keep stable task/status IDs and user content out of translation. Dynamic messages use numbered placeholders, with more specific patterns taking precedence. Guide search matches localized and English titles; dates use the selected locale. The report has a separate static Polish edition at `public/research-pl.html` with the same evidence and limitations.
+`src/i18n/pl.json` is the authored Polish catalog, keyed by the English presentation text. The new resolution and community components use explicitly paired English/Polish messages via `useWords`; user-authored messages are never translated automatically. Translate UI text at the React rendering boundary with `useTranslation()`; keep stable task/status IDs and user content out of translation. Dynamic messages use numbered placeholders, with more specific patterns taking precedence. Guide search matches localized and English titles; dates use the selected locale. The report has a separate static Polish edition at `public/research-pl.html` with the same evidence and limitations.
 
 Optional AI requests explicitly include the chosen response language in the consent preview and in the validated request. The local server instructs the model to draft in that language. This was tested with fixtures, not real provider inference. UI translation is bundled locally and does not use a translation service. Official Polish terminology was checked against [Apple’s Safety Check guide](https://support.apple.com/pl-pl/guide/personal-safety/-ips2aad835e1/web) , [Google’s recovery guide](https://support.google.com/accounts/answer/183723?hl=pl) and [Google Photos partner-sharing help](https://support.google.com/photos/answer/7378858?hl=pl). No independent human translation review is claimed.
 
@@ -85,9 +93,11 @@ For free exploration beyond the guided tour:
 
 ## Optional live AI
 
+The new authenticated **guide coach** is documented in [services.html](docs/services.html), with its Supabase migration and operational gates. The section below describes the preserved local planning and wording adapter.
+
 No API key is configured in this installation and no real provider inference was exercised during this implementation. Live-path tests use explicit fixtures; they verify controls, not model quality. The UI reports this honestly and keeps the local planner available.
 
-To enable locally, copy `.env.example` to `.env.local`, set `OPENAI_API_KEY` and `OPENAI_MODEL` in that local file, and restart Vite. Never put a secret in a `VITE_` variable, client code, source control, screenshots or chat. The supplied example model is configurable; check its availability for your project. Requests may incur provider charges.
+To enable locally, copy `.env.example` to `.env.local`, set `OPENAI_API_KEY` and `OPENAI_MODEL` in that local file, and restart Vite. Never put a secret in a `VITE_` variable, client code, source control, screenshots or chat. Choose a model available to your OpenAI project; the example deliberately leaves the model unset. Requests may incur provider charges.
 
 `server/agent.ts` supplies middleware to Vite development and preview servers. It uses the OpenAI Responses API with `store: false`, strict structured JSON output and no provider tools. A browser config check does not call OpenAI. Inference requires same-origin POST, affirmative consent, bounded known topics/task IDs and at most 500 characters of text. Plan requests reject free text. Editing rejects common contact/credential patterns; this is not a complete PII detector. Only reconstructed request fields plus public guide metadata go to the provider; no file, other notes, history or account data is included.
 
@@ -152,11 +162,13 @@ The comparison is desk research plus a bounded browser walkthrough of Refuge’s
 ```sh
 npm run build       # Typecheck and production build
 npm run lint
-npm test            # 59 unit tests
+npm test            # 75 unit and database tests
 npm run test:e2e    # Chromium, Firefox and WebKit journeys
 ```
 
 Install the test browsers with `npx playwright install chromium firefox webkit` first if needed.
+
+The [agent and support verification record](docs/quality/agent-support-verification.json) records the new tool-loop, real PostgreSQL access-rule and three-browser journey checks. Hosted service activation remains separate from those fixture-based transport tests.
 
 The [final audit report](docs/quality/final-audit.html) and [verification record](docs/quality/final-audit.json) document the 4 October 2026 fixes, regression coverage and remaining external validation gates.
 
