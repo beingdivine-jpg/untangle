@@ -1,29 +1,31 @@
 import { test, expect } from '@playwright/test'
 import AxeBuilder from '@axe-core/playwright'
 
-test('illustration follows motion preferences, can be paused, and stops outside the viewport', async ({ page }) => {
+test('ink motion changes real pixels, pauses, replays, and respects reduced motion', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' })
   await page.goto('/')
-  const sculpture = page.locator('.editorial-hero')
-  const current = page.locator('.editorial-image')
-  await expect(sculpture).toHaveAttribute('data-motion', 'paused')
-  await expect(current).toHaveCSS('animation-name', 'none')
+  const hero = page.locator('.editorial-hero')
+  const portrait = page.locator('.ink-portrait')
+  const canvas = page.locator('.ink-canvas')
+  const pixels = () => canvas.evaluate((element: HTMLCanvasElement) => element.toDataURL())
+  await expect(portrait).toHaveAttribute('data-ready', 'true')
+  await expect(hero).toHaveAttribute('data-motion', 'paused')
+  const still = await pixels()
   await page.getByRole('button', { name: 'Play illustration', exact: true }).click()
-  await expect(sculpture).toHaveAttribute('data-motion', 'playing')
-  await expect(current).toHaveCSS('animation-name', 'editorial-drift')
-  await page.getByRole('button', { name: 'Pause illustration', exact: true }).click()
-  await expect(sculpture).toHaveAttribute('data-motion', 'paused')
-  await page.emulateMedia({ reducedMotion: 'no-preference' })
-  await page.reload()
-  await expect(sculpture).toHaveAttribute('data-motion', 'playing')
-  // Keyboard users can stop the decorative movement without changing any plan.
+  await expect.poll(pixels).not.toBe(still)
   await page.getByRole('button', { name: 'Pause illustration', exact: true }).focus()
   await page.keyboard.press('Enter')
-  await expect(current).toHaveCSS('animation-play-state', 'paused')
-  await page.getByRole('button', { name: 'Play illustration', exact: true }).click()
+  await expect(hero).toHaveAttribute('data-motion', 'paused')
+  const paused = await pixels()
+  // A timed sample is intentional: verify that a paused drawing really stops changing.
+  await page.waitForTimeout(250)
+  expect(await pixels()).toBe(paused)
+  await page.getByRole('button', { name: 'Replay the illustration', exact: true }).click()
+  await expect(hero).toHaveAttribute('data-motion', 'playing')
+  await expect.poll(pixels).not.toBe(paused)
   await page.getByRole('button', { name: 'Start with my own situation', exact: true }).click()
   await expect(page.getByRole('heading', { name: 'What is on your mind?' })).toBeVisible()
-  await expect(sculpture).toHaveAttribute('data-motion', 'paused')
+  await expect(hero).toHaveAttribute('data-motion', 'paused')
 })
 
 test('English and Polish opening choices fit on small screens, with an accessible static view', async ({ page }) => {
@@ -35,7 +37,7 @@ test('English and Polish opening choices fit on small screens, with an accessibl
       await page.setViewportSize({ width, height })
       await page.goto(`/?lang=${locale}`)
       await page.evaluate(() => document.fonts.ready)
-      await expect(page.locator('.editorial-image')).toBeVisible()
+      await expect(page.locator('.ink-portrait')).toHaveAttribute('data-ready', 'true')
       for (const control of ['.u-intro-actions .u-primary', '.u-intro-actions .u-quiet', '.u-header .language-switch', '.u-exit']) {
         const box = await page.locator(control).boundingBox()
         expect(box, `${locale} ${width} ${control}`).not.toBeNull()
@@ -70,14 +72,26 @@ test('a chosen thread opens the matching setup without changing accounts or savi
   await expect(page.getByRole('button', { name: 'Who can get into my accounts?', exact: true })).toHaveAttribute('aria-pressed', 'true')
 })
 
-test('starting choices and topic selection work if the photograph cannot load', async ({ page }) => {
-  await page.route('**/art/untangle-editorial.jpg', route => route.abort())
+test('starting choices and topic selection work if the artwork cannot load', async ({ page }) => {
+  await page.route('**/art/untangle-ink.webp', route => route.abort())
   await page.goto('/')
   await expect(page.getByRole('heading', { name: 'Your life. Your terms.' })).toBeVisible()
   await page.getByRole('button', { name: /Your photos Shared albums/ }).click()
   await expect(page.locator('.chapter-preview')).toContainText('specialist help')
   await page.getByRole('button', { name: 'How it works', exact: true }).click()
   await expect(page.locator('#welcome-companion-details')).toContainText('scripted example')
+  await page.getByRole('button', { name: 'Try Me', exact: true }).click()
+  await expect(page.getByRole('heading', { name: /Let.s follow the thread/ })).toBeVisible()
+})
+
+
+test('original artwork stays visible when canvas is unavailable', async ({ page }) => {
+  await page.addInitScript(() => {
+    HTMLCanvasElement.prototype.getContext = (() => null) as typeof HTMLCanvasElement.prototype.getContext
+  })
+  await page.goto('/')
+  await expect(page.locator('.ink-fallback')).toBeVisible()
+  await expect.poll(() => page.locator('.ink-fallback').evaluate((image: HTMLImageElement) => image.complete && image.naturalWidth > 0)).toBe(true)
   await page.getByRole('button', { name: 'Try Me', exact: true }).click()
   await expect(page.getByRole('heading', { name: /Let.s follow the thread/ })).toBeVisible()
 })

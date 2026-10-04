@@ -12,7 +12,11 @@ async function openNote(page: Page) {
   if (await page.locator('.optional-context').getAttribute('open') === null) await page.locator('.optional-context > summary').click()
 }
 async function toConnections(page: Page) {
-  for (let i = 0; i < 4; i++) await page.getByRole('button', { name: 'Continue', exact: true }).click()
+  for (let question = 1; question < 5; question++) {
+    await expect(page.locator('.question-progress')).toContainText(`Question ${question} of 5`)
+    await page.getByRole('button', { name: 'Continue', exact: true }).click()
+    await expect(page.locator('.question-progress')).toContainText(`Question ${question + 1} of 5`)
+  }
   await page.getByRole('button', { name: 'Show my summary' }).click()
 }
 async function shot(page: Page, name: string) {

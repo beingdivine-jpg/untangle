@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState, useSyncExternalStore } from 'react'
-import { ArrowRight, ArrowDown, LockKeyhole, Pause, Play, Plus, Minus } from 'lucide-react'
+import { ArrowRight, ArrowDown, LockKeyhole, Pause, Play, Plus, Minus, RotateCcw, KeyRound, Image, MapPin } from 'lucide-react'
 import { useTranslation } from '../../i18n/context'
 import type { ConcernId } from '../plan/content'
+import { InkPortrait } from './InkPortrait'
 
 const chapters = [
   { id: 'accounts', title: 'Your accounts', detail: 'Old passwords. Shared devices. A way back into your account.', next: 'We can help you find where an account is still signed in, and understand what a password change does.' },
@@ -19,6 +20,7 @@ export function ThreadWelcome({ begin, resume, hasPlan }: { begin: (mode: 'demo'
   const { translate } = useTranslation()
   const [chapter, setChapter] = useState<ConcernId | null>(null)
   const [expanded, setExpanded] = useState(false)
+  const [replay, setReplay] = useState(0)
   const reduced = useSyncExternalStore(subscribe, () => window.matchMedia(motionQuery).matches, () => true)
   const [paused, setPaused] = useState<boolean | null>(null)
   const [visible, setVisible] = useState(!document.hidden)
@@ -37,17 +39,19 @@ export function ThreadWelcome({ begin, resume, hasPlan }: { begin: (mode: 'demo'
 
   return <section className="editorial-welcome">
     <div className="editorial-hero" ref={hero} data-motion={playing && visible && inView ? 'playing' : 'paused'}>
-      <div className="editorial-image-wrap" aria-hidden="true"><img className="editorial-image" src="/art/untangle-editorial.jpg" width="1536" height="1024" alt="" fetchPriority="high"/><div className="editorial-image-shade"/></div>
       <div className="editorial-copy">
         <p className="editorial-kicker"><span/>{translate('A PRIVATE GUIDE FOR LIFE AFTER A BREAKUP')}</p>
-        <h1 id="experience-heading" tabIndex={-1}><span>{translate('Your life.')}</span><span>{translate('Your terms.')}</span></h1>
+        <h1 id="experience-heading" tabIndex={-1}><span>{translate('Your life.')}</span><em>{translate('Your terms.')}</em></h1>
         <p className="editorial-lead">{translate('A breakup can leave your digital lives connected. Find a way through shared accounts, photos and location—one clear step at a time.')}</p>
         <div className="u-intro-actions"><button className="u-primary" onClick={() => begin('personal', chapter ?? undefined)}>{translate('Start with my own situation')}<ArrowRight size={20} aria-hidden="true"/></button><button className="u-quiet" aria-label={translate('Try Me')} onClick={() => begin('demo')}><Play size={14} fill="currentColor" aria-hidden="true"/>{translate('Try Me')}<span>{translate('A guided example')}</span></button></div>
         <small className="editorial-reassurance"><LockKeyhole size={13} aria-hidden="true"/>{translate('No sign-up. No account passwords. Your choices stay in this tab.')}</small>
         {hasPlan && <button className="editorial-resume" onClick={resume}>{translate('Continue my plan')}<ArrowRight size={16} aria-hidden="true"/></button>}
       </div>
-      <div className="editorial-film-note" aria-hidden="true"><span>01 — UNTANGLE</span><span>{translate('A little clarity. A little more you.')}</span></div>
-      <button className="editorial-motion" onClick={() => setPaused(playing)} aria-label={translate(playing ? 'Pause illustration' : 'Play illustration')}>{playing ? <Pause size={14} aria-hidden="true"/> : <Play size={14} aria-hidden="true"/>}</button>
+      <div className="editorial-art">
+        <div className="ink-orbit" aria-hidden="true"><span className="orbit-account"><KeyRound size={22}/></span><span className="orbit-photo"><Image size={24}/></span><span className="orbit-location"><MapPin size={22}/></span></div>
+        <InkPortrait playing={playing && visible && inView} replay={replay}/>
+        <div className="ink-caption"><span>{translate('A little room to begin again.')}</span><div><button onClick={() => { setPaused(false); setReplay(value => value + 1) }} aria-label={translate('Replay the illustration')}><RotateCcw size={15} aria-hidden="true"/></button><button className="editorial-motion" onClick={() => setPaused(playing)} aria-label={translate(playing ? 'Pause illustration' : 'Play illustration')}>{playing ? <Pause size={14} aria-hidden="true"/> : <Play size={14} aria-hidden="true"/>}<span>{translate(playing ? 'Pause motion' : 'Play motion')}</span></button></div></div>
+      </div>
     </div>
 
     <div className="editorial-chapters">
@@ -59,7 +63,9 @@ export function ThreadWelcome({ begin, resume, hasPlan }: { begin: (mode: 'demo'
     </div>
 
     <div className="editorial-companion">
-      <div className="companion-heading"><span className="companion-mark" aria-hidden="true">u.</span><h2>{translate('A little help with the next step.')}</h2><button className="companion-reveal" aria-expanded={expanded} aria-controls="welcome-companion-details" onClick={() => setExpanded(!expanded)}>{translate('How it works')}{expanded ? <Minus size={18} aria-hidden="true"/> : <Plus size={18} aria-hidden="true"/>}</button></div>
+      <div className="companion-introduction"><span className="editorial-kicker">{translate('THE PLANNING COMPANION')}</span><h2>{translate('A little help with the next step.')}</h2><p>{translate('Understand the connections. See what a change could affect. Keep only the steps you choose.')}</p><button className="companion-demo" onClick={() => begin('demo')}>{translate('Meet the companion')}<ArrowRight size={18} aria-hidden="true"/></button></div>
+      <div className="companion-process"><div><span>01</span><p><strong>{translate('You tell us what matters.')}</strong><small>{translate('Choose a topic and the apps you recognise.')}</small></p></div><div><span>02</span><p><strong>{translate('We make the next step clearer.')}</strong><small>{translate('Guides, possible effects, and help with words.')}</small></p></div><div><span>03</span><p><strong>{translate('You have the final say.')}</strong><small>{translate('Every suggestion is yours to review or leave.')}</small></p></div></div>
+      <button className="companion-reveal" aria-expanded={expanded} aria-controls="welcome-companion-details" onClick={() => setExpanded(!expanded)}>{translate('How it works')}{expanded ? <Minus size={18} aria-hidden="true"/> : <Plus size={18} aria-hidden="true"/>}</button>
       <div id="welcome-companion-details" hidden={!expanded} className="companion-details"><p>{translate('The planning companion matches guides, explains what a change could affect, and helps put questions into words. You review every suggestion before keeping it.')}</p><p>{translate('Try Me demonstrates the workflow with a scripted example.')} {translate('Untangle does not connect to or change your accounts.')}</p></div>
     </div>
   </section>

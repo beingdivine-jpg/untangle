@@ -1,6 +1,6 @@
 {
   "date": "2026-10-04",
-  "change": "Photographic opening, Archivo typography and topic-led entry into a personal plan",
+  "change": "Living ink portrait, paper-and-charcoal identity, clearer companion introduction and responsive working screens",
   "preserved": [
     "Original Untangle logo",
     "Personal and fictional plan separation",
@@ -10,16 +10,16 @@
     "Quick exit and visible session status"
   ],
   "implementation": {
-    "artwork": "Original generated photograph of a fictional adult, served locally as a 302 KB JPEG. Exact prompt and provenance are in editorial-artwork.json. No external image requests.",
-    "interaction": "Three opening topics explain the available help. Starting from a topic preselects that concern and retains existing plan concerns and services. No account is connected or changed.",
-    "motion": "Slow CSS camera drift, with an explicit pause/play control. Pauses outside the viewport and in a hidden tab. Reduced-motion preference defaults to a static image with explicit opt-in playback. This is not a video of a person.",
-    "workspace": "Dark olive header, pale chartreuse controls, locally hosted Archivo display type, clear light working surfaces and flatter navigation. The previous Three.js renderer and dependency were removed.",
-    "disclosure": "The introduction states that Try Me is a scripted example and that the companion cannot change accounts. The functional interface works even if the photograph cannot load."
+    "artwork": "Original generated ink portrait of a fictional adult, served locally as a transparent 546 KB WebP. Exact prompt and provenance are in ink-artwork.json. No external image requests.",
+    "interaction": "Moving points react to the pointer or a tap. Three opening topics explain the available help and preselect a concern while retaining an existing plan. No account is connected or changed.",
+    "motion": "Canvas 2D point drawing with flowing strands and a settling/replay animation. Explicit pause/play and replay controls. Rendering stops offscreen and in a hidden tab. Reduced-motion preference defaults to a still drawing with explicit opt-in playback. Frame rate is capped at 30 fps and pixel density at 2; no WebGL dependency.",
+    "workspace": "Warm paper, charcoal controls, muted clay accents and locally hosted Fraunces display type. Clear working surfaces, larger headings, compact mobile story choices and visible companion steps.",
+    "disclosure": "Try Me remains a scripted example. The companion cannot change accounts. The original transparent artwork is the canvas-failure fallback; the product remains usable when artwork cannot load."
   },
   "validation": {
     "unitTests": 59,
-    "browserTests": 71,
-    "localBrowserRun": "70 passed in the full run; one WebKit save/restore failure did not reproduce in the targeted three-engine run or three additional WebKit repetitions. The final topic-selection change, including retention of existing concerns, passed in all three engines. Source edits occurred during the first full run; the failed check was not weakened.",
+    "browserTests": 74,
+    "localBrowserRun": "72 of 74 passed in the full run. Two timeouts (Chromium walkthrough transition and Firefox accessibility evaluation) passed on targeted rerun. The walkthrough helper now asserts each question transition explicitly. All three final responsive workflow checks passed after that change; no expectations or timeouts were weakened.",
     "browserEngines": [
       "Chromium",
       "Firefox",
@@ -44,16 +44,19 @@
       "ESLint",
       "Polish translation coverage",
       "Guide register",
+      "59 unit tests",
       "Automated accessibility and contrast",
-      "Keyboard and motion controls",
-      "Reduced-motion preferences",
-      "Image-load failure fallback",
+      "Actual canvas-pixel changes during playback",
+      "Paused drawing stays unchanged and replay restarts motion",
+      "Keyboard controls and reduced-motion preferences",
+      "Artwork-load and canvas-unavailable fallback",
       "Starting controls fit within the viewport",
       "Topic selection and existing concern retention",
       "Plan, file, history and consent regression tests",
       "Manual desktop and mobile-size browser review"
-    ]
+    ],
+    "nativeSafari": "Reference site and previous live design inspected in native Safari. Subsequent review of the new design was interrupted by concurrent foreground use; automated WebKit checks passed, including actual animation-pixel checks."
   },
-  "limits": "Browser checks do not replace physical-device testing or usability studies with the target audience. No new claim about live AI availability is made.",
-  "historicalArtwork": "The earlier portrait assets and portrait-provenance.json are retained but are no longer used by the opening."
+  "limits": "Browser-engine checks do not replace physical-device testing or usability studies with the target audience. Native Safari review of the final version is not yet confirmed. No new claim about live AI availability is made.",
+  "historicalArtwork": "Earlier portrait and photograph assets and their provenance files are retained but are no longer used by the opening."
 }
