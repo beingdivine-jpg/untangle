@@ -10,6 +10,12 @@
     "verify": "node scripts/verify.mjs",
     "stills": "node scripts/render.mjs --stills",
     "storyboard": ".venv/bin/python scripts/storyboard.py",
-    "preview": "node scripts/preview.mjs"
+    "preview": "node scripts/preview.mjs",
+    "capture:director": "node scripts/capture.mjs --cut=directors-cut",
+    "audio:director": ".venv/bin/python scripts/audio.py --cut=directors-cut",
+    "render:director": "node scripts/render.mjs --cut=directors-cut",
+    "verify:director": "node scripts/verify.mjs --cut=directors-cut",
+    "stills:director": "node scripts/render.mjs --cut=directors-cut --stills",
+    "storyboard:director": ".venv/bin/python scripts/storyboard.py --cut=directors-cut"
   }
 }

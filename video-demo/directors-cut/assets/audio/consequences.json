@@ -1,0 +1,106 @@
+{
+  "text": "Before changing anything, see what a password change affects, and what it leaves outside. The explanation links to its source.",
+  "voice": "en-GB-SoniaNeural",
+  "words": [
+    {
+      "offset": 1125000,
+      "duration": 3500000,
+      "text": "Before"
+    },
+    {
+      "offset": 4750000,
+      "duration": 4625000,
+      "text": "changing"
+    },
+    {
+      "offset": 9500000,
+      "duration": 5250000,
+      "text": "anything"
+    },
+    {
+      "offset": 17625000,
+      "duration": 1875000,
+      "text": "see"
+    },
+    {
+      "offset": 19625000,
+      "duration": 1625000,
+      "text": "what"
+    },
+    {
+      "offset": 21375000,
+      "duration": 750000,
+      "text": "a"
+    },
+    {
+      "offset": 22250000,
+      "duration": 5375000,
+      "text": "password"
+    },
+    {
+      "offset": 27750000,
+      "duration": 2875000,
+      "text": "change"
+    },
+    {
+      "offset": 30750000,
+      "duration": 5250000,
+      "text": "affects"
+    },
+    {
+      "offset": 38250000,
+      "duration": 1000000,
+      "text": "and"
+    },
+    {
+      "offset": 39375000,
+      "duration": 1750000,
+      "text": "what"
+    },
+    {
+      "offset": 41250000,
+      "duration": 1250000,
+      "text": "it"
+    },
+    {
+      "offset": 42625000,
+      "duration": 3375000,
+      "text": "leaves"
+    },
+    {
+      "offset": 46125000,
+      "duration": 7000000,
+      "text": "outside"
+    },
+    {
+      "offset": 57000000,
+      "duration": 1500000,
+      "text": "The"
+    },
+    {
+      "offset": 58625000,
+      "duration": 8500000,
+      "text": "explanation"
+    },
+    {
+      "offset": 67250000,
+      "duration": 3750000,
+      "text": "links"
+    },
+    {
+      "offset": 71125000,
+      "duration": 1375000,
+      "text": "to"
+    },
+    {
+      "offset": 72625000,
+      "duration": 1750000,
+      "text": "its"
+    },
+    {
+      "offset": 74500000,
+      "duration": 5375000,
+      "text": "source"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "text": "Less guesswork. A clearer next step. And the choice stays yours.",
+  "voice": "en-GB-SoniaNeural",
+  "words": [
+    {
+      "offset": 1000000,
+      "duration": 3625000,
+      "text": "Less"
+    },
+    {
+      "offset": 4750000,
+      "duration": 8000000,
+      "text": "guesswork"
+    },
+    {
+      "offset": 16750000,
+      "duration": 875000,
+      "text": "A"
+    },
+    {
+      "offset": 17750000,
+      "duration": 4750000,
+      "text": "clearer"
+    },
+    {
+      "offset": 22625000,
+      "duration": 3625000,
+      "text": "next"
+    },
+    {
+      "offset": 26375000,
+      "duration": 4875000,
+      "text": "step"
+    },
+    {
+      "offset": 35000000,
+      "duration": 1375000,
+      "text": "And"
+    },
+    {
+      "offset": 36500000,
+      "duration": 1000000,
+      "text": "the"
+    },
+    {
+      "offset": 37625000,
+      "duration": 3625000,
+      "text": "choice"
+    },
+    {
+      "offset": 41375000,
+      "duration": 3500000,
+      "text": "stays"
+    },
+    {
+      "offset": 45000000,
+      "duration": 5375000,
+      "text": "yours"
+    }
+  ]
+}

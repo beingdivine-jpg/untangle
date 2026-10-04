@@ -1,0 +1,80 @@
+{
+  "voice": "en-GB-SoniaNeural",
+  "duration": 78,
+  "sampleRate": 48000,
+  "score": "Original procedural composition; no third-party samples",
+  "segments": [
+    {
+      "scene": "hook",
+      "start": 0.4,
+      "duration": 4.776,
+      "tempo": 1.0
+    },
+    {
+      "scene": "reveal",
+      "start": 6.3,
+      "duration": 4.224,
+      "tempo": 1.0
+    },
+    {
+      "scene": "situation",
+      "start": 11.25,
+      "duration": 6.411,
+      "tempo": 1.0862
+    },
+    {
+      "scene": "processing",
+      "start": 18.3,
+      "duration": 8.361,
+      "tempo": 1.0482
+    },
+    {
+      "scene": "assistant",
+      "start": 27.3,
+      "duration": 10.656,
+      "tempo": 1.0
+    },
+    {
+      "scene": "consequences",
+      "start": 39.3,
+      "duration": 8.352,
+      "tempo": 1.0
+    },
+    {
+      "scene": "choice",
+      "start": 48.3,
+      "duration": 7.584,
+      "tempo": 1.0
+    },
+    {
+      "scene": "continuity",
+      "start": 57.3,
+      "duration": 8.64,
+      "tempo": 1.0
+    },
+    {
+      "scene": "benefit",
+      "start": 67.3,
+      "duration": 5.359,
+      "tempo": 1.0037
+    },
+    {
+      "scene": "close",
+      "start": 73.35,
+      "duration": 3.72,
+      "tempo": 1.0
+    }
+  ],
+  "premixLoudness": {
+    "input_i": "-17.22",
+    "input_tp": "-5.49",
+    "input_lra": "3.40",
+    "input_thresh": "-28.37",
+    "output_i": "-16.10",
+    "output_tp": "-3.58",
+    "output_lra": "3.30",
+    "output_thresh": "-27.21",
+    "normalization_type": "dynamic",
+    "target_offset": "0.10"
+  }
+}

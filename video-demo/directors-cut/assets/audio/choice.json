@@ -1,0 +1,96 @@
+{
+  "text": "Keep the steps you choose. An unanswered question stays a question. Reading a guide never marks it reviewed.",
+  "voice": "en-GB-SoniaNeural",
+  "words": [
+    {
+      "offset": 1000000,
+      "duration": 3000000,
+      "text": "Keep"
+    },
+    {
+      "offset": 4125000,
+      "duration": 1125000,
+      "text": "the"
+    },
+    {
+      "offset": 5375000,
+      "duration": 3750000,
+      "text": "steps"
+    },
+    {
+      "offset": 9250000,
+      "duration": 1250000,
+      "text": "you"
+    },
+    {
+      "offset": 10625000,
+      "duration": 5875000,
+      "text": "choose"
+    },
+    {
+      "offset": 20250000,
+      "duration": 1500000,
+      "text": "An"
+    },
+    {
+      "offset": 21875000,
+      "duration": 5500000,
+      "text": "unanswered"
+    },
+    {
+      "offset": 27500000,
+      "duration": 5750000,
+      "text": "question"
+    },
+    {
+      "offset": 33375000,
+      "duration": 3375000,
+      "text": "stays"
+    },
+    {
+      "offset": 36875000,
+      "duration": 500000,
+      "text": "a"
+    },
+    {
+      "offset": 37500000,
+      "duration": 6500000,
+      "text": "question"
+    },
+    {
+      "offset": 47875000,
+      "duration": 4000000,
+      "text": "Reading"
+    },
+    {
+      "offset": 52000000,
+      "duration": 625000,
+      "text": "a"
+    },
+    {
+      "offset": 52750000,
+      "duration": 4625000,
+      "text": "guide"
+    },
+    {
+      "offset": 57500000,
+      "duration": 3125000,
+      "text": "never"
+    },
+    {
+      "offset": 60750000,
+      "duration": 4000000,
+      "text": "marks"
+    },
+    {
+      "offset": 64875000,
+      "duration": 1250000,
+      "text": "it"
+    },
+    {
+      "offset": 66250000,
+      "duration": 5750000,
+      "text": "reviewed"
+    }
+  ]
+}

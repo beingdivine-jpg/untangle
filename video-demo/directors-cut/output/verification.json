@@ -1,0 +1,46 @@
+{
+  "file": "untangle-directors-cut-78s.mp4",
+  "sha256": "d9ba0c683b4aeb6d72b71da59eab0280cb9fedae19c8a2940bbe4c6f7612bc51",
+  "bytes": 17292664,
+  "movieDurationSeconds": 78,
+  "video": {
+    "width": 1920,
+    "height": 1080,
+    "frames": 2340,
+    "fps": 30,
+    "durationSeconds": 78,
+    "codec": "H.264",
+    "pixelFormat": "yuv420p"
+  },
+  "audio": {
+    "codec": "AAC",
+    "sampleRate": 48000,
+    "channels": 2,
+    "integratedLUFS": -16.01,
+    "truePeakDBTP": -4.26
+  },
+  "fullDecodePassed": true,
+  "blackFramesDetected": false,
+  "captionCues": 29,
+  "captionTranscriptMatches": true,
+  "fictionalWorkflowVerified": true,
+  "encryptedDownloadVerified": true,
+  "wordingPreviewAcceptanceUndoVerified": true,
+  "encryptedRestoreVerified": true,
+  "tracks": [
+    {
+      "kind": "vide",
+      "timescale": 15360,
+      "ticks": 1198080,
+      "seconds": 78,
+      "samples": 2340
+    },
+    {
+      "kind": "soun",
+      "timescale": 48000,
+      "ticks": 3745024,
+      "seconds": 78.02133333333333,
+      "samples": 3658
+    }
+  ]
+}

@@ -1,4 +1,10 @@
-# Untangle · A little less tangled
+# Untangle · Product demo films
+
+**Featured: [Your life. Your terms. — the 78-second director’s cut](directors-cut/README.md).** This expanded edition follows the revised 80-second maximum: a cinematic opening, visible processing, the optional AI workflow, before/after wording with undo, consequence checks and an actual encrypted save-and-restore. [Watch the MP4](directors-cut/output/untangle-directors-cut-78s.mp4), or review the [script and judging-criteria mapping](directors-cut/creative-brief.md).
+
+Use `npm --prefix video-demo run render:director` and `verify:director` after the setup below. `npm --prefix video-demo run preview` features the new cut. Both editions remain isolated from normal application commands.
+
+## Original edition · A little less tangled
 
 A complete **60.000-second** product film, rendered at **1920 × 1080, 30 fps**: exactly **1,800 frames**, H.264 video and stereo AAC audio. English narration, an original ambient score, gentle interaction cues and burned-in captions are included.
 
@@ -9,7 +15,7 @@ A complete **60.000-second** product film, rendered at **1920 × 1080, 30 fps**:
 - [SRT captions](output/untangle-60s.srt) and [WebVTT captions](output/untangle-60s.vtt)
 - [Machine-readable verification](output/verification.json)
 
-From the repository root, `npm --prefix video-demo run preview` opens a local server at `http://127.0.0.1:5188`. Visit that URL for a player, chapter navigation and download links. The viewer uses the MP4’s burned-in captions; sidecar subtitles are provided for reuse. To inspect the editable composition, visit `/film.html?frame=690` on the same server.
+From the repository root, `npm --prefix video-demo run preview` opens a local server at `http://127.0.0.1:5188`. The root page features the new director’s cut; visit `/original.html` for this original edition’s player, chapters and downloads. The viewer uses the MP4’s burned-in captions; sidecar subtitles are provided for reuse. To inspect this edition’s editable composition, visit `/film.html?frame=690` on the same server.
 
 ## Story and creative direction
 

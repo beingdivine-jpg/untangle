@@ -1,0 +1,21 @@
+{
+  "productCommit": "b05b445fcec87203020a61d28e89fa84ce0bf37b",
+  "note": "Captured from the local product including its ink portrait update. Reproduction uses committed captures; hashes identify the source snapshot.",
+  "fingerprints": {
+    "src/features/companion/Experience.tsx": "662fc942cedb6992021f064d636ccef39752c4e11cc6bb18723a58915bb04819",
+    "src/features/companion/agentCore.ts": "0668f8c60d1d0d473ec49ee926a88b244f649edcfe3c08ea5e1a51faa39cd1b9",
+    "src/features/companion/ThreadScene.tsx": "3c6fa26d3b5d8823cb3d935064264a0328447f8d6ed0bb63567d94c4d836adc6",
+    "src/features/companion/ThreadWelcome.tsx": "19c6f3bdc3376b2e9dd41c9375fc785c4e86a840d71a0cc7d4761a93eb0da41c",
+    "src/features/companion/InkPortrait.tsx": "c71693eee29c3ab7a710aea5436ab7c3bacfd061c3750637382436fedfa55ded",
+    "src/features/plan/content.ts": "6c80cb6e7aada9735920ced9952415cd99a88f80fddea90cf0d14adcc7c35bd1",
+    "src/features/plan/Platform.tsx": "ebc7962f41d9cc034edbb3782a8b3170aa7462c53f694f158c37fc4afe9298bc",
+    "src/features/plan/SavePlan.tsx": "09cefd520397c6874a9dbd962471b8ebe65d7f9bf17bb25b40836fbfcfa3a67c",
+    "src/features/plan/crypto.ts": "0f0878e0366fdf1d6b68f4b7d73fe9cb326ea4e24b47c0275d7de03546587c59",
+    "server/agent.ts": "b5f057af189d8ff5d5f6bf6e5134312e3351f613cb362902c1cfbea3dce0b6c4",
+    "src/components/Thread.tsx": "ae8f68d5186086d73fdf556902d0443db36e0c808bc248c1865af0bd1ea22e72",
+    "src/styles/tokens.css": "fde6f9a4e117f848b3e4b44cea9b252178fb5bbe6305f56e5162c2070d863743",
+    "src/styles/fonts.css": "71aab59eed6f6f2c9172504dd9ec1887bab296759bd4f2ef78cd4467fc59bcb4",
+    "src/styles/identity.css": "c0584d5ef6179cd227944e53540ba6f8a670e945f73ac59af1e60526cee3323e",
+    "src/features/companion/experience.css": "4ab7533145a7de514ddac187a7ef7a48a825ac253e7b04fb3a610cf1af59b338"
+  }
+}

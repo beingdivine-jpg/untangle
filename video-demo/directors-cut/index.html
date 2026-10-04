@@ -4,8 +4,8 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Untangle · Your life. Your terms.</title>
 <style>
-@font-face{font-family:Manrope;src:url(assets/fonts/manrope.woff2)}
-@font-face{font-family:Fraunces;src:url(assets/fonts/fraunces.woff2)}
+@font-face{font-family:Manrope;src:url(../assets/fonts/manrope.woff2)}
+@font-face{font-family:Fraunces;src:url(../assets/fonts/fraunces.woff2)}
 *{box-sizing:border-box}body{margin:0;background:#f7f5f1;color:#2c2b28;font-family:Manrope,sans-serif}
 main{max-width:1360px;padding:38px 30px 65px;margin:auto}header{display:flex;justify-content:space-between;align-items:center;margin-bottom:27px}
 h1{font:470 44px Fraunces;margin:0;letter-spacing:-1.8px}h1 span{color:#914c39}header p{font-size:14px;color:#686057}
@@ -18,11 +18,11 @@ p{line-height:1.75;font-size:14px;color:#686057;max-width:1040px}footer{margin-t
 </head>
 <body><main>
 <header><h1>untangle<span>.</span></h1><p>Your life. Your terms. · Director’s cut · 1:18</p></header>
-<video controls playsinline preload="metadata" poster="directors-cut/output/poster.jpg" aria-label="Untangle product demo, 78 seconds, English narration and captions"><source src="directors-cut/output/untangle-directors-cut-78s.mp4" type="video/mp4"></video>
+<video controls playsinline preload="metadata" poster="output/poster.jpg" aria-label="Untangle product demo, 78 seconds, English narration and captions"><source src="output/untangle-directors-cut-78s.mp4" type="video/mp4"></video>
 <nav aria-label="Film chapters"><button data-time="0">The digital ties</button><button data-time="11">Maya’s situation</button><button data-time="18">The process</button><button data-time="27">The AI workflow</button><button data-time="39">Before a change</button><button data-time="48">Your choice</button><button data-time="57">Save & return</button><button data-time="67">The benefit</button></nav>
 <p>One situation. A clearer next step. Follow Maya from a shared-laptop question to a plan she can save and return to. English narration, original music and captions are included.</p>
 <p>Maya is fictional. Actual interface captures demonstrate the implemented scripted workflow. The AI request flow is explained; the wording example is prepared and labelled. No live model or account scan is shown.</p>
-<div class="links"><a class="primary" href="directors-cut/output/untangle-directors-cut-78s.mp4" download>Download 78-second MP4</a><a href="directors-cut/output/untangle-directors-cut-78s.srt" download>Captions</a><a href="directors-cut/output/storyboard.jpg">Storyboard</a><a href="directors-cut/creative-brief.md">Script & judging criteria</a><a href="original.html">Original 60-second film</a></div>
+<div class="links"><a class="primary" href="output/untangle-directors-cut-78s.mp4" download>Download 78-second MP4</a><a href="output/untangle-directors-cut-78s.srt" download>Captions</a><a href="output/storyboard.jpg">Storyboard</a><a href="creative-brief.md">Script & judging criteria</a><a href="../original.html">Original 60-second film</a></div>
 <footer><a href="https://untangle-orpin.vercel.app/">Try Untangle ↗</a></footer>
 </main><script>
 document.querySelectorAll('[data-time]').forEach(button=>button.addEventListener('click',()=>{const video=document.querySelector('video');video.currentTime=Number(button.dataset.time);video.play().catch(()=>{})}));

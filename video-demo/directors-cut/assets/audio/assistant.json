@@ -1,0 +1,121 @@
+{
+  "text": "Optional AI can select guides and clarify notes. This prepared example shows the controls: preview the wording, keep your meaning, accept, or undo.",
+  "voice": "en-GB-SoniaNeural",
+  "words": [
+    {
+      "offset": 1375000,
+      "duration": 5000000,
+      "text": "Optional"
+    },
+    {
+      "offset": 6500000,
+      "duration": 4250000,
+      "text": "AI"
+    },
+    {
+      "offset": 10875000,
+      "duration": 2125000,
+      "text": "can"
+    },
+    {
+      "offset": 13125000,
+      "duration": 4250000,
+      "text": "select"
+    },
+    {
+      "offset": 17500000,
+      "duration": 5000000,
+      "text": "guides"
+    },
+    {
+      "offset": 22625000,
+      "duration": 1500000,
+      "text": "and"
+    },
+    {
+      "offset": 24250000,
+      "duration": 4875000,
+      "text": "clarify"
+    },
+    {
+      "offset": 29250000,
+      "duration": 5875000,
+      "text": "notes"
+    },
+    {
+      "offset": 39125000,
+      "duration": 2375000,
+      "text": "This"
+    },
+    {
+      "offset": 41625000,
+      "duration": 4250000,
+      "text": "prepared"
+    },
+    {
+      "offset": 46000000,
+      "duration": 5500000,
+      "text": "example"
+    },
+    {
+      "offset": 51625000,
+      "duration": 3250000,
+      "text": "shows"
+    },
+    {
+      "offset": 55000000,
+      "duration": 875000,
+      "text": "the"
+    },
+    {
+      "offset": 56000000,
+      "duration": 6625000,
+      "text": "controls"
+    },
+    {
+      "offset": 65875000,
+      "duration": 3500000,
+      "text": "preview"
+    },
+    {
+      "offset": 69500000,
+      "duration": 1000000,
+      "text": "the"
+    },
+    {
+      "offset": 70625000,
+      "duration": 5250000,
+      "text": "wording"
+    },
+    {
+      "offset": 78000000,
+      "duration": 2125000,
+      "text": "keep"
+    },
+    {
+      "offset": 80250000,
+      "duration": 1375000,
+      "text": "your"
+    },
+    {
+      "offset": 81750000,
+      "duration": 4625000,
+      "text": "meaning"
+    },
+    {
+      "offset": 88125000,
+      "duration": 5625000,
+      "text": "accept"
+    },
+    {
+      "offset": 95750000,
+      "duration": 1500000,
+      "text": "or"
+    },
+    {
+      "offset": 97375000,
+      "duration": 5375000,
+      "text": "undo"
+    }
+  ]
+}

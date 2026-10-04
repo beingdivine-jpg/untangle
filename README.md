@@ -1,6 +1,6 @@
 # Untangle
 
-The [60-second product demo film](video-demo/README.md) includes a finished MP4, narration, captions and an isolated, reproducible video composition. Render it with `npm --prefix video-demo run render` after the video setup steps; the application commands below are unchanged.
+The [product demo films](video-demo/README.md) include a new **78-second director’s cut** with a cinematic opening, the AI workflow, reversible wording and encrypted save-and-restore, plus the original exact 60-second edition. Finished MP4s, narration, captions, a judging-criteria review and reproducible compositions are included. Render the new cut with `npm --prefix video-demo run render:director` after the video setup steps; the application commands below are unchanged.
 
 A planning companion for digital life after a breakup, built for the ImpactHer hackathon with React, TypeScript and Vite. It helps someone with little digital experience organise checks across services, understand consequences before making changes, keep unanswered questions, and return later.
 

@@ -1,7 +1,7 @@
 node_modules/
 .venv/
-.cache/
-output/frames/
-output/stills/
-output/*.tmp.*
+**/.cache/
+**/output/frames/
+**/output/stills/
+**/output/*.tmp.*
 .cache-*

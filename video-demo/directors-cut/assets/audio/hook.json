@@ -1,0 +1,51 @@
+{
+  "text": "A breakup ends a relationship. Not every digital connection.",
+  "voice": "en-GB-SoniaNeural",
+  "words": [
+    {
+      "offset": 1375000,
+      "duration": 875000,
+      "text": "A"
+    },
+    {
+      "offset": 2375000,
+      "duration": 6000000,
+      "text": "breakup"
+    },
+    {
+      "offset": 8500000,
+      "duration": 2625000,
+      "text": "ends"
+    },
+    {
+      "offset": 11250000,
+      "duration": 625000,
+      "text": "a"
+    },
+    {
+      "offset": 12000000,
+      "duration": 9375000,
+      "text": "relationship"
+    },
+    {
+      "offset": 25125000,
+      "duration": 3250000,
+      "text": "Not"
+    },
+    {
+      "offset": 28500000,
+      "duration": 3625000,
+      "text": "every"
+    },
+    {
+      "offset": 32250000,
+      "duration": 4750000,
+      "text": "digital"
+    },
+    {
+      "offset": 37125000,
+      "duration": 7000000,
+      "text": "connection"
+    }
+  ]
+}

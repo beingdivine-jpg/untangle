@@ -1,0 +1,81 @@
+{
+  "text": "Maya changed her password. But the shared laptop, and their photos? She still has questions.",
+  "voice": "en-GB-SoniaNeural",
+  "words": [
+    {
+      "offset": 1250000,
+      "duration": 3250000,
+      "text": "Maya"
+    },
+    {
+      "offset": 4625000,
+      "duration": 4625000,
+      "text": "changed"
+    },
+    {
+      "offset": 9375000,
+      "duration": 1250000,
+      "text": "her"
+    },
+    {
+      "offset": 10750000,
+      "duration": 7500000,
+      "text": "password"
+    },
+    {
+      "offset": 21875000,
+      "duration": 1875000,
+      "text": "But"
+    },
+    {
+      "offset": 23875000,
+      "duration": 875000,
+      "text": "the"
+    },
+    {
+      "offset": 24875000,
+      "duration": 3625000,
+      "text": "shared"
+    },
+    {
+      "offset": 28625000,
+      "duration": 6125000,
+      "text": "laptop"
+    },
+    {
+      "offset": 36750000,
+      "duration": 875000,
+      "text": "and"
+    },
+    {
+      "offset": 37750000,
+      "duration": 1375000,
+      "text": "their"
+    },
+    {
+      "offset": 39250000,
+      "duration": 7500000,
+      "text": "photos"
+    },
+    {
+      "offset": 50625000,
+      "duration": 2000000,
+      "text": "She"
+    },
+    {
+      "offset": 52750000,
+      "duration": 3125000,
+      "text": "still"
+    },
+    {
+      "offset": 56000000,
+      "duration": 2000000,
+      "text": "has"
+    },
+    {
+      "offset": 58125000,
+      "duration": 8000000,
+      "text": "questions"
+    }
+  ]
+}

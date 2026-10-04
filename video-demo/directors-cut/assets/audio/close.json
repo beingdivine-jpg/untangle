@@ -1,0 +1,31 @@
+{
+  "text": "Your life. Your terms. Untangle.",
+  "voice": "en-GB-SoniaNeural",
+  "words": [
+    {
+      "offset": 1125000,
+      "duration": 1750000,
+      "text": "Your"
+    },
+    {
+      "offset": 3000000,
+      "duration": 5750000,
+      "text": "life"
+    },
+    {
+      "offset": 12750000,
+      "duration": 1750000,
+      "text": "Your"
+    },
+    {
+      "offset": 14625000,
+      "duration": 6750000,
+      "text": "terms"
+    },
+    {
+      "offset": 25125000,
+      "duration": 8375000,
+      "text": "Untangle"
+    }
+  ]
+}

@@ -6,19 +6,23 @@ import { resolve, extname, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
 
-export const root = resolve(fileURLToPath(new URL('..', import.meta.url)));
+export const baseRoot = resolve(fileURLToPath(new URL('..', import.meta.url)));
+export const cut = process.argv.find(arg=>arg.startsWith('--cut='))?.slice(6) || '';
+if(cut && !/^[a-z0-9-]+$/.test(cut))throw new Error('Use a named video cut directory.');
+export const root = resolve(baseRoot,cut);
 export function ffmpegPath() {
   if (process.env.FFMPEG) return process.env.FFMPEG;
-  const python = process.env.VIDEO_PYTHON || resolve(root, process.platform === 'win32' ? '.venv/Scripts/python.exe' : '.venv/bin/python');
+  const python = process.env.VIDEO_PYTHON || resolve(baseRoot, process.platform === 'win32' ? '.venv/Scripts/python.exe' : '.venv/bin/python');
   return execFileSync(python, ['-c', 'import imageio_ffmpeg; print(imageio_ffmpeg.get_ffmpeg_exe())'], { encoding: 'utf8' }).trim();
 }
 export async function serve(port=0) {
-  const types = { '.html':'text/html', '.css':'text/css', '.mjs':'text/javascript', '.json':'application/json', '.png':'image/png', '.jpg':'image/jpeg', '.woff2':'font/woff2', '.mp4':'video/mp4', '.vtt':'text/vtt', '.flac':'audio/flac' };
+  const types = { '.html':'text/html', '.css':'text/css', '.mjs':'text/javascript', '.json':'application/json', '.md':'text/plain; charset=utf-8', '.png':'image/png', '.jpg':'image/jpeg', '.webp':'image/webp', '.woff2':'font/woff2', '.mp4':'video/mp4', '.vtt':'text/vtt', '.flac':'audio/flac' };
   const server = createServer(async (req,res) => {
     try {
       const pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
-      const path = resolve(root, '.' + (pathname === '/' ? '/index.html' : pathname));
-      if (!path.startsWith(root + sep) || pathname.split('/').some(p=>p.startsWith('.'))) { res.writeHead(403).end(); return; }
+      const target = pathname === '/' && cut ? `/${cut}/` : pathname;
+      const path = resolve(baseRoot, '.' + target + (target.endsWith('/') ? 'index.html' : ''));
+      if (!path.startsWith(baseRoot + sep) || pathname.split('/').some(p=>p.startsWith('.'))) { res.writeHead(403).end(); return; }
       const info = await stat(path);
       const type = types[extname(path)] || 'application/octet-stream';
       const match = /^bytes=(\d+)-(\d*)$/.exec(req.headers.range || '');

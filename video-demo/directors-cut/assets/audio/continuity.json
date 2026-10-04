@@ -1,0 +1,101 @@
+{
+  "text": "Save an encrypted file. Open it later, and your checks, notes, and questions come back. No account to create.",
+  "voice": "en-GB-SoniaNeural",
+  "words": [
+    {
+      "offset": 1250000,
+      "duration": 3875000,
+      "text": "Save"
+    },
+    {
+      "offset": 5250000,
+      "duration": 875000,
+      "text": "an"
+    },
+    {
+      "offset": 6250000,
+      "duration": 5625000,
+      "text": "encrypted"
+    },
+    {
+      "offset": 12000000,
+      "duration": 5250000,
+      "text": "file"
+    },
+    {
+      "offset": 20875000,
+      "duration": 3250000,
+      "text": "Open"
+    },
+    {
+      "offset": 24250000,
+      "duration": 1375000,
+      "text": "it"
+    },
+    {
+      "offset": 25750000,
+      "duration": 4750000,
+      "text": "later"
+    },
+    {
+      "offset": 33000000,
+      "duration": 1375000,
+      "text": "and"
+    },
+    {
+      "offset": 34500000,
+      "duration": 1375000,
+      "text": "your"
+    },
+    {
+      "offset": 36000000,
+      "duration": 5750000,
+      "text": "checks"
+    },
+    {
+      "offset": 43875000,
+      "duration": 4750000,
+      "text": "notes"
+    },
+    {
+      "offset": 50500000,
+      "duration": 1125000,
+      "text": "and"
+    },
+    {
+      "offset": 51750000,
+      "duration": 5125000,
+      "text": "questions"
+    },
+    {
+      "offset": 57000000,
+      "duration": 2125000,
+      "text": "come"
+    },
+    {
+      "offset": 59250000,
+      "duration": 4500000,
+      "text": "back"
+    },
+    {
+      "offset": 67375000,
+      "duration": 2750000,
+      "text": "No"
+    },
+    {
+      "offset": 70250000,
+      "duration": 4875000,
+      "text": "account"
+    },
+    {
+      "offset": 75250000,
+      "duration": 875000,
+      "text": "to"
+    },
+    {
+      "offset": 76250000,
+      "duration": 6500000,
+      "text": "create"
+    }
+  ]
+}
