@@ -83,9 +83,9 @@ test('distinct password and incomplete scenarios reset prior state', async ({ pa
   await expect(page.getByText('0 of 4 checks reviewed')).toBeVisible()
 })
 
-test('manual review preserves answers on back; privacy network and memory boundaries', async ({ page }) => {
-  const requests: string[] = []
-  await page.route('**/*', async route => { requests.push(`${route.request().method()} ${route.request().url()} ${route.request().postData() || ''}`); await route.continue() })
+test('manual review preserves answers on back; privacy network and memory boundaries', async ({ page, baseURL }) => {
+  const requests: { url: string; body: string }[] = []
+  await page.route('**/*', async route => { requests.push({ url: route.request().url(), body: route.request().postData() || '' }); await route.continue() })
   await page.goto('/?view=walkthrough')
   await openNote(page)
   await page.getByLabel('What would you like to review?').fill('PRIVATE-CONTEXT-458 location sharing and finances')
@@ -101,8 +101,8 @@ test('manual review preserves answers on back; privacy network and memory bounda
   await page.getByRole('button', { name: 'Continue', exact: true }).click()
   await page.getByRole('button', { name: 'Back', exact: true }).click()
   await expect(page.getByRole('button', { name: 'Listed as signed in The selected entry says it is signed in', exact: true })).toHaveAttribute('aria-pressed', 'true')
-  expect(requests.filter(request => /PRIVATE-CONTEXT|private-reference|iVBORw0KGgo/.test(request))).toEqual([])
-  expect(requests.filter(request => !request.includes('http://127.0.0.1:5173/'))).toEqual([])
+  expect(requests.filter(request => /PRIVATE-CONTEXT|private-reference|iVBORw0KGgo/.test(`${request.url} ${request.body}`))).toEqual([])
+  expect(requests.filter(request => new URL(request.url).origin !== new URL(baseURL!).origin)).toEqual([])
   expect(await page.evaluate(() => [localStorage.length, sessionStorage.length])).toEqual([0, 0])
   expect(await page.evaluate(async () => (await indexedDB.databases()).length)).toBe(0)
   expect(await page.evaluate(async () => (await navigator.serviceWorker.getRegistrations()).length)).toBe(0)

@@ -1,6 +1,50 @@
 import { test, expect } from '@playwright/test'
 import AxeBuilder from '@axe-core/playwright'
 
+test('personal setup fills the page and keeps every choice clear of the action button', async ({ page }) => {
+  test.setTimeout(90000)
+  await page.emulateMedia({ reducedMotion: 'reduce' })
+  for (const locale of ['en', 'pl']) {
+    for (const width of [1440, 768, 390, 320]) {
+      await page.setViewportSize({ width, height: 900 })
+      await page.goto(`/?lang=${locale}`)
+      await page.locator('.u-intro-actions .u-primary').click()
+      const setup = page.locator('.plan-setup')
+      await expect(setup).toBeVisible()
+      await page.evaluate(() => document.fonts.ready)
+      const box = (await setup.boundingBox())!
+      expect(box.width, `${locale} ${width}: setup must not occupy the hidden sidebar`).toBeGreaterThanOrEqual(Math.min(width - 64, 760))
+      const concerns = setup.locator('.setup-choices').first().getByRole('button')
+      await expect(concerns).toHaveCount(6)
+      const assertBounds = async () => {
+        const fieldsets = await setup.locator('fieldset').all()
+        const action = (await setup.locator('.setup-action').boundingBox())!
+        for (const fieldset of fieldsets) {
+          const field = (await fieldset.boundingBox())!
+          expect(field.y + field.height).toBeLessThanOrEqual(action.y)
+        }
+        for (const choice of await setup.locator('.setup-choices button').all()) {
+          const bounds = (await choice.boundingBox())!
+          expect(bounds.x).toBeGreaterThanOrEqual(box.x)
+          expect(bounds.x + bounds.width).toBeLessThanOrEqual(box.x + box.width + 1)
+          expect(bounds.width).toBeGreaterThan(200)
+        }
+        expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(width)
+      }
+      await assertBounds()
+      if (width === 1440 || width === 390) await page.screenshot({ path: `docs/screenshots/setup-${locale}-${width}.png`, fullPage: true, animations: 'disabled' })
+      await concerns.first().click()
+      await expect(concerns.first()).toHaveAttribute('aria-pressed', 'true')
+      await expect(setup.locator('.setup-services')).toBeVisible()
+      await assertBounds()
+      await setup.locator('.setup-services button').first().click()
+      await setup.locator('.setup-action button').click()
+      await expect(page.locator('.p-task-heading')).toBeVisible()
+      await expect(page.getByRole('navigation', { name: locale === 'en' ? 'Plan navigation' : 'Nawigacja po planie' })).toBeVisible()
+    }
+  }
+})
+
 test('ink motion changes real pixels, pauses, replays, and respects reduced motion', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' })
   await page.goto('/')

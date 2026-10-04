@@ -18,8 +18,8 @@
   },
   "validation": {
     "unitTests": 59,
-    "browserTests": 74,
-    "localBrowserRun": "72 of 74 passed in the full run. Two timeouts (Chromium walkthrough transition and Firefox accessibility evaluation) passed on targeted rerun. The walkthrough helper now asserts each question transition explicitly. All three final responsive workflow checks passed after that change; no expectations or timeouts were weakened.",
+    "browserTests": 77,
+    "localBrowserRun": "All 77 production-build browser tests passed across the full run and one targeted rerun. The full run passed 76; one privacy test still expected the old development port. After replacing that hardcoded string with an exact-origin check against the configured preview URL, the targeted rerun passed. All setup geometry checks passed in Chromium, Firefox and WebKit.",
     "browserEngines": [
       "Chromium",
       "Firefox",
@@ -53,10 +53,25 @@
       "Starting controls fit within the viewport",
       "Topic selection and existing concern retention",
       "Plan, file, history and consent regression tests",
-      "Manual desktop and mobile-size browser review"
+      "Manual desktop and mobile-size browser review",
+      "Setup geometry at 320, 390, 768 and 1440 px in English and Polish",
+      "Form controls stay within their container and above the action row",
+      "Browser suite builds and serves production output instead of reusing the development server"
     ],
-    "nativeSafari": "Reference site and previous live design inspected in native Safari. Subsequent review of the new design was interrupted by concurrent foreground use; automated WebKit checks passed, including actual animation-pixel checks."
+    "nativeSafari": "Reproduced the 185 px setup column and overlapping action on the live site in native Safari. Verified the corrected production preview: full-width setup, concern and app selection, no overlapping action, and successful continuation into the first guide."
   },
-  "limits": "Browser-engine checks do not replace physical-device testing or usability studies with the target audience. Native Safari review of the final version is not yet confirmed. No new claim about live AI availability is made.",
-  "historicalArtwork": "Earlier portrait and photograph assets and their provenance files are retained but are no longer used by the opening."
+  "limits": "Browser checks do not replace physical-device testing or usability studies with the target audience. Native Safari setup and first-guide navigation were inspected. No new claim about live AI availability is made.",
+  "historicalArtwork": "Earlier portrait and photograph assets and their provenance files are retained but are no longer used by the opening.",
+  "setupLayoutFix": {
+    "date": "2026-10-04",
+    "cause": "The identity stylesheet overrode the setup single-column rule with the normal two-column workspace grid. With the sidebar hidden, the form occupied the 185 px sidebar track. Its bottom-sticky action overlapped the wrapped content.",
+    "correction": "An explicit setup modifier owns a single flexible grid column independently of stylesheet load order. The action remains in normal document flow after the questions. Choice columns and controls can shrink without horizontal overflow.",
+    "regressionProof": "The new WebKit regression failed before the fix with actual setup width 185 px versus a minimum readable desktop width of 760 px.",
+    "evidence": [
+      "docs/screenshots/setup-en-1440.png",
+      "docs/screenshots/setup-en-390.png",
+      "docs/screenshots/setup-pl-1440.png",
+      "docs/screenshots/setup-pl-390.png"
+    ]
+  }
 }

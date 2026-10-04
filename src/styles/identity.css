@@ -100,6 +100,10 @@
 
 
 .untangle-app .p-workspace { max-width:1328px; padding:0 32px; grid-template-columns:185px minmax(0,1fr); gap:34px; }
+/* Setup has no sidebar: keep it out of the navigation column in every CSS load order. */
+.untangle-app .p-workspace.p-workspace--setup { max-width:984px; grid-template-columns:minmax(0,1fr); gap:0; }
+.p-workspace--setup > .p-sidebar { display:none; }
+.p-workspace--setup > .p-main { width:100%; min-width:0; }
 .untangle-app .p-sidebar { border-right:1px solid #d8d0c5; padding-top:32px; padding-right:20px; }
 .untangle-app .p-sidebar-label { color:#62594e; padding-left:0; font-size:11px; letter-spacing:1.8px; }
 .untangle-app .p-sidebar nav { gap:0; }
@@ -160,7 +164,7 @@
 .untangle-app .plan-setup fieldset { margin:27px 0; }
 .untangle-app .plan-setup legend { font-family:var(--font-display); font-size:25px; font-weight:600; margin-bottom:14px; }
 .untangle-app .setup-choices { gap:0 25px; }
-.untangle-app .setup-choices button { border:0; border-bottom:1px solid #d8d0c5; border-radius:0; background:transparent; min-height:85px; padding:18px 4px; gap:14px; }
+.untangle-app .setup-choices button { border:0; border-bottom:1px solid #d8d0c5; border-radius:0; background:transparent; min-width:0; min-height:85px; padding:18px 4px; gap:14px; }
 .untangle-app .setup-choices button:hover { background:#f0ece6; }
 .untangle-app .setup-choices button[aria-pressed=true] { background:#eee6dc; box-shadow:none; border-color:#829257; padding-inline:12px; }
 .untangle-app .setup-choice-label { flex:1; font-size:15px; line-height:1.7; }
