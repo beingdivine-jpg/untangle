@@ -109,8 +109,11 @@ test('save, check, return, edit and restore maintain honest file status', async 
   await nav(page, 'Save & resume').click()
   await page.getByLabel('Create a file passphrase').fill('test phrase for an offline file')
   await page.getByLabel('Repeat the file passphrase').fill('test phrase for an offline file')
+  await expect(page.getByLabel('Repeat the file passphrase')).toHaveValue('test phrase for an offline file')
   await page.getByRole('button', { name: 'Show file passphrase', exact: true }).first().click()
   await expect(page.getByLabel('Create a file passphrase')).toHaveAttribute('type', 'text')
+  await expect(page.getByLabel('Create a file passphrase')).toHaveValue('test phrase for an offline file')
+  await expect(page.getByLabel('Repeat the file passphrase')).toHaveValue('test phrase for an offline file')
   const promise = page.waitForEvent('download')
   await page.getByRole('button', { name: 'Download private plan' }).click()
   const download = await promise

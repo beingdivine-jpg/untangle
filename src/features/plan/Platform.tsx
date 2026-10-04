@@ -1,5 +1,5 @@
 import { useTranslation } from '../../i18n/context'
-import { useEffect, useImperativeHandle, useState } from 'react'
+import { useLayoutEffect, useImperativeHandle, useState } from 'react'
 import { ArrowLeft, ArrowRight, ArrowUpRight, BookOpen, Check, ChevronRight, CircleHelp, Clock3, Download, HeartHandshake, Home, Image, KeyRound, LayoutGrid, ListChecks, MapPin, MessageCircle, Plus, Search, ShieldCheck, Sparkles, Users, X } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { Button } from '../../components/Primitives'
@@ -24,7 +24,7 @@ const External = GuidanceLink
 function Badge({ status }: { status: Status }) {
   const { translate } = useTranslation()
  return <span className={`p-badge ${status}`}>{status === 'reviewed' ? <Check size={13} aria-hidden="true"/> : status === 'later' ? <Clock3 size={13} aria-hidden="true"/> : null}{translate(statusLabels[status])}</span> }
-function focusHeading(inGuide = false) { requestAnimationFrame(() => { const heading = document.getElementById('platform-heading'); heading?.focus({ preventScroll: true }); if (inGuide) heading?.scrollIntoView({ block: 'start', behavior: 'instant' }); else window.scrollTo({ top: 0, behavior: 'instant' }) }) }
+function focusHeading(inGuide = false) { const heading = document.getElementById('platform-heading'); heading?.focus({ preventScroll: true }); if (inGuide) heading?.scrollIntoView({ block: 'start', behavior: 'instant' }); else window.scrollTo({ top: 0, behavior: 'instant' }) }
 
 export function Platform({ onWalkthrough, homeRef }: { initialPlan?: Plan; onWalkthrough: () => void; homeRef: React.Ref<{ home: () => void }> }) {
   const { translate, href: localizeLink } = useTranslation(), t = useWords()
@@ -39,7 +39,9 @@ export function Platform({ onWalkthrough, homeRef }: { initialPlan?: Plan; onWal
   const reviewed = ids.filter(id => plan.entries[id]?.status === 'reviewed').length
   const go = (destination: View) => { navigate({ area: 'plan', view: destination, mode: plan.example ? 'example' : 'personal' }); setNotice('') }
   useImperativeHandle(homeRef, () => ({ home: () => go('plan') }))
-  useEffect(() => { if (route.area === 'plan') focusHeading(!!route.task) }, [route])
+  // Finish route focus before the new screen becomes interactive. A deferred
+  // animation-frame focus can interrupt typing into the newly opened form.
+  useLayoutEffect(() => { if (route.area === 'plan') focusHeading(!!route.task) }, [route])
   const openTask = (id: TaskId) => { navigate({ area: 'plan', view: view === 'setup' ? 'plan' : view, task: id, mode: plan.example ? 'example' : 'personal' }); setNotice('') }
   const start = () => { if (!session.setup[session.mode]) updateSetup({ concerns: plan.concerns, services: plan.services }); navigate({ area: 'plan', view: 'setup', mode: plan.example ? 'example' : 'personal' }) }
   const demo = () => { selectMode('example'); setPlan(examplePlan(translate)); updateSetup(null, 'example'); navigate({ area: 'plan', view: 'plan', mode: 'example' }) }

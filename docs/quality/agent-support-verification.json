@@ -3,10 +3,10 @@
   "scope": "Resolution workspace, guide-agent service and verified volunteer workflow",
   "unitAndDatabaseTests": 76,
   "postgresqlPermissionTests": 8,
-  "browserSuiteCases": 149,
-  "newBrowserCases": 24,
-  "newBrowserCasesResult": "24 passed: Chromium 8, Firefox 8, WebKit 8",
-  "localRegressionEvidence": "140 cases passed in the expanded full run; its three failures were assertions for the now-obsolete no-login wording. Updated sign-in wording passed in all three engines. Subsequent targeted runs verified new contrast, focus, cancellation and private-reminder fixes. The complete latest suite is also run by GitHub CI on push.",
+  "browserSuiteCases": 152,
+  "newBrowserCases": 27,
+  "newBrowserCasesResult": "27 passed: Chromium 9, Firefox 9, WebKit 9; the same local run also passed 15 judge-walkthrough cases.",
+  "localRegressionEvidence": "The first expanded CI runs each passed 147 of 149 browser cases. They exposed one obsolete help-copy assertion and intermittent WebKit form input interrupted by deferred route focus. Follow-up fixes update the assertion, complete focus before interaction and add explicit input-retention checks. The latest complete suite runs in GitHub CI on push.",
   "build": "passed",
   "lint": "passed",
   "translationCoverage": "passed",
@@ -22,5 +22,7 @@
     "OpenAI project key, evaluated model and operating budget",
     "Independent language, practitioner and participant reviews"
   ],
-  "deploymentRegression": "Reproduced and fixed Node ESM imports pointing at TypeScript source paths after deployment. A test emits the function dependency graph and starts both endpoints in plain Node without a TypeScript loader."
+  "deploymentRegression": "Reproduced and fixed Node ESM imports pointing at TypeScript source paths after deployment. A test emits the function dependency graph and starts both endpoints in plain Node without a TypeScript loader. Production GET /api/community returns 200 and POST /api/coach returns the expected unconfigured 503 after the fix.",
+  "inPageNavigationRegression": "Production testing found that native fragment links could discard a guide's opaque in-memory route. In-page links now scroll and move keyboard focus without adding a history entry. A regression checks assistant and skip links, guide progress and browser Back in all three engines.",
+  "focusRegression": "CI WebKit traces showed text absent immediately after an automated fill while delayed route focus scrolled the page. Route focus now completes in a layout effect before interaction. File and walkthrough tests check entered values before continuing, in addition to their round-trip assertions."
 }

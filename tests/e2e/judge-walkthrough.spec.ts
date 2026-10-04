@@ -58,6 +58,7 @@ test('exit, restart, finish and opening a result preserve personal notes and unf
   await expect(page.getByLabel('A reminder for yourself')).toHaveValue('Personal unfinished reminder')
   await page.getByRole('navigation', { name: 'Plan navigation' }).getByRole('button', { name: /^My plan/ }).click()
   await page.getByLabel('My note about the whole situation').fill('Keep my personal plan intact')
+  await expect(page.getByLabel('My note about the whole situation')).toHaveValue('Keep my personal plan intact')
   await launch(page).click()
   await toWording(page)
   await page.getByLabel('Suggested wording · Edit if you like').fill('Discard this fictional draft on restart')

@@ -103,6 +103,25 @@ async function login(page: Page) {
   await b(page, "Verify and sign in").click();
 }
 
+test("assistant and skip shortcuts preserve the selected guide and its progress", async ({ page }) => {
+  await page.goto("/?view=resolve");
+  await page.getByLabel("What are we working on?").selectOption("maps");
+  await b(page, "I’m ready for the next step").click();
+  await expect(page.getByText("STEP 2 / 2", { exact: true })).toBeVisible();
+  await page.getByRole("link", { name: "Ask the assistant about this step", exact: true }).click();
+  await expect(page.locator("#step-assistant")).toBeFocused();
+  await expect(page.getByLabel("What are we working on?")).toHaveValue("maps");
+  await expect(page.getByText("STEP 2 / 2", { exact: true })).toBeVisible();
+  const skip = page.getByRole("link", { name: "Skip to content", exact: true });
+  await skip.focus();
+  await skip.press("Enter");
+  await expect(page.locator("#working-main")).toBeFocused();
+  await expect(page.getByLabel("What are we working on?")).toHaveValue("maps");
+  expect(new URL(page.url()).hash).toBe("");
+  await page.goBack();
+  await expect(page.getByRole("heading", { name: "Choose one thread to begin.", exact: true })).toBeVisible();
+});
+
 test("resolution teaches, records only approved observations, and preserves the plan", async ({
   page,
 }) => {
