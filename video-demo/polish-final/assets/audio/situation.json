@@ -1,0 +1,71 @@
+{
+  "text": "Maja zmieni\u0142a has\u0142o. Co z laptopem i zdj\u0119ciami? Sprawdza demo krok po kroku.",
+  "voice": "pl-PL-ZofiaNeural",
+  "words": [
+    {
+      "offset": 1000000,
+      "duration": 2875000,
+      "text": "Maja"
+    },
+    {
+      "offset": 4375000,
+      "duration": 5000000,
+      "text": "zmieni\u0142a"
+    },
+    {
+      "offset": 9500000,
+      "duration": 5375000,
+      "text": "has\u0142o"
+    },
+    {
+      "offset": 23875000,
+      "duration": 1250000,
+      "text": "Co"
+    },
+    {
+      "offset": 25375000,
+      "duration": 750000,
+      "text": "z"
+    },
+    {
+      "offset": 26125000,
+      "duration": 6125000,
+      "text": "laptopem"
+    },
+    {
+      "offset": 32500000,
+      "duration": 500000,
+      "text": "i"
+    },
+    {
+      "offset": 33250000,
+      "duration": 6500000,
+      "text": "zdj\u0119ciami"
+    },
+    {
+      "offset": 49500000,
+      "duration": 4750000,
+      "text": "Sprawdza"
+    },
+    {
+      "offset": 54375000,
+      "duration": 2875000,
+      "text": "demo"
+    },
+    {
+      "offset": 57250000,
+      "duration": 2625000,
+      "text": "krok"
+    },
+    {
+      "offset": 59875000,
+      "duration": 1375000,
+      "text": "po"
+    },
+    {
+      "offset": 61375000,
+      "duration": 4125000,
+      "text": "kroku"
+    }
+  ]
+}

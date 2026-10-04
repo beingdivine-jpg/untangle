@@ -1,0 +1,31 @@
+{
+  "text": "Twoje \u017cycie. Twoje zasady. Untangle.",
+  "voice": "pl-PL-ZofiaNeural",
+  "words": [
+    {
+      "offset": 1000000,
+      "duration": 3000000,
+      "text": "Twoje"
+    },
+    {
+      "offset": 4000000,
+      "duration": 4000000,
+      "text": "\u017cycie"
+    },
+    {
+      "offset": 17625000,
+      "duration": 2875000,
+      "text": "Twoje"
+    },
+    {
+      "offset": 20500000,
+      "duration": 6125000,
+      "text": "zasady"
+    },
+    {
+      "offset": 35875000,
+      "duration": 7375000,
+      "text": "Untangle"
+    }
+  ]
+}

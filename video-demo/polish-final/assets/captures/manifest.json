@@ -1,0 +1,372 @@
+{
+  "locale": "pl",
+  "fictional": true,
+  "workflowVerified": true,
+  "liveProviderCalls": 0,
+  "polishDemoVerified": true,
+  "approvalVerified": true,
+  "guidedStepVerified": true,
+  "lessonVerified": true,
+  "uncertaintyVerified": true,
+  "supportRouteVerified": true,
+  "errors": [],
+  "shots": {
+    "home": {
+      "selector": ".editorial-hero",
+      "width": 1432,
+      "height": 582,
+      "controls": [
+        {
+          "label": "Zacznij od mojej sytuacji",
+          "x": 170.828125,
+          "y": 461.5
+        },
+        {
+          "label": "Wypróbuj\nPrzykład krok po kroku",
+          "x": 391.703125,
+          "y": 461.5
+        },
+        {
+          "label": "",
+          "x": 1256.421875,
+          "y": 548
+        },
+        {
+          "label": "Włącz ruch",
+          "x": 1332.7109375,
+          "y": 548
+        }
+      ],
+      "text": "PRYWATNY PORADNIK NA CZAS PO ROZSTANIU\n\nTwoje życie.\nTwoje zasady.\n\nPo rozstaniu Wasze cyfrowe życia mogą nadal być połączone. Uporządkuj wspólne konta, zdjęcia i lokalizację — krok po kroku.\n\nZacznij od mojej sytuacji\nWypróbuj\nPrzykład krok po kroku\nZacznij bez konta. Twój plan pozostaje w tej karcie.\nTrochę przestrzeni na nowy początek.\nWłącz ruch"
+    },
+    "launch": {
+      "selector": ".demo-tour-launch",
+      "width": 169.078125,
+      "height": 44,
+      "controls": [],
+      "text": "Demo krok po kroku"
+    },
+    "tour-intro": {
+      "selector": ".jt-stage",
+      "width": 1128,
+      "height": 486.84375,
+      "controls": [
+        {
+          "label": "Przygotuj propozycję dla Mai",
+          "x": 647.4921875,
+          "y": 433.9453125
+        }
+      ],
+      "text": "KROK 1 / 6\n\nJedna historia. Jasna droga.\n\nMaja dzieliła laptop i zdjęcia z byłym partnerem. Na jej fikcyjnym przykładzie zobaczysz, jak pomaga Untangle.\n\nCO TO POKAZUJE\n\nPunkt wyjścia bez rejestracji i wiedzy technicznej.\n\nGotowe przykłady działania asystenta. Rzeczywisty planer. Bez wywołań AI i skanowania kont.\n\nPOZNAJ MAJĘ · FIKCYJNY PRZYKŁAD\nKorzystaliśmy ze wspólnego laptopa.\n01\nMaja korzystała ze swojego konta Google na wspólnym laptopie.\n02\nUdostępniała zdjęcia partnerowi w Zdjęciach Google.\n03\nChce zrozumieć, czego zmiana hasła nie rozwiąże.\nJEJ SŁOWAMI\n\n“Zmieniłam hasło, ale nie wiem, co z tym laptopem i naszymi zdjęciami.”\n\nPrzygotuj propozycję dla Mai"
+    },
+    "story": {
+      "selector": ".jt-work",
+      "width": 634.8125,
+      "height": 486.84375,
+      "controls": [
+        {
+          "label": "Przygotuj propozycję dla Mai",
+          "x": 154.3046875,
+          "y": 433.9453125
+        }
+      ],
+      "text": "POZNAJ MAJĘ · FIKCYJNY PRZYKŁAD\nKorzystaliśmy ze wspólnego laptopa.\n01\nMaja korzystała ze swojego konta Google na wspólnym laptopie.\n02\nUdostępniała zdjęcia partnerowi w Zdjęciach Google.\n03\nChce zrozumieć, czego zmiana hasła nie rozwiąże.\nJEJ SŁOWAMI\n\n“Zmieniłam hasło, ale nie wiem, co z tym laptopem i naszymi zdjęciami.”\n\nPrzygotuj propozycję dla Mai"
+    },
+    "checks": {
+      "selector": ".jt-work",
+      "width": 634.8125,
+      "height": 567.046875,
+      "controls": [
+        {
+          "label": "Zobacz skutki zmiany",
+          "x": 133.8203125,
+          "y": 514.1484375
+        }
+      ],
+      "text": "Propozycja gotowa do sprawdzenia\n\n3 informacje z historii → 6 proponowanych kroków. Niczego nie zastosowano.\n\nWybierz kroki do planu\nZachowaj sposób odzyskania dostępu do konta\nPrzygotowanie do wybranych kroków\nSprawdź urządzenia korzystające z Twojego konta Google\nZrozum, co daje zmiana hasła\nSprawdź, czy Twoje e-maile trafiają też gdzie indziej\nZdecyduj, co chcesz zachować\nPrzygotowanie do wybranych kroków\nSprawdź udostępnianie zdjęć partnerowi w Zdjęciach Google\nZobacz skutki zmiany\nWybrane kroki: 6"
+    },
+    "effects": {
+      "selector": ".jt-work",
+      "width": 634.8125,
+      "height": 460.96875,
+      "controls": [
+        {
+          "label": "Wypróbuj pomoc w pisaniu",
+          "x": 149.078125,
+          "y": 408.0703125
+        }
+      ],
+      "text": "PRZYKŁAD: ZMIANA HASŁA GOOGLE\nNa co może wpłynąć\n\nZmiana hasła Google wylogowuje konto w wielu miejscach. Są wyjątki, m.in. niektóre urządzenia do potwierdzania tożsamości oraz niektóre połączone aplikacje i urządzenia domowe.\n\nCo jeszcze wymaga uwagi\n\nSama zmiana hasła nie sprawdza udostępniania lokalizacji, przekazywania e-maili ani zapisanych kopii zdjęć. Zachowaj te kroki w planie, jeśli Cię dotyczą.\n\nGoogle: zmiana lub resetowanie hasła\nOtwiera się w nowej karcie\nWypróbuj pomoc w pisaniu"
+    },
+    "wording": {
+      "selector": ".jt-work",
+      "width": 634.8125,
+      "height": 430.171875,
+      "controls": [
+        {
+          "label": "Użyj tej treści",
+          "x": 111.28125,
+          "y": 377.2734375
+        },
+        {
+          "label": "Zachowaj oryginał",
+          "x": 260.2265625,
+          "y": 377.265625
+        }
+      ],
+      "text": "ORYGINALNA NOTATKA\n\nZmieniłam hasło, ale nie wiem, co z tym laptopem i naszymi zdjęciami.\n\nProponowana treść · Możesz ją poprawić\n\nGotowy przykład działania asystenta pisania. Nic nie jest wysyłane.\n\nUżyj tej treści\nZachowaj oryginał"
+    },
+    "approval": {
+      "selector": ".jt-work",
+      "width": 634.8125,
+      "height": 502.96875,
+      "controls": [
+        {
+          "label": "Zachowaj ten plan demo",
+          "x": 141.6796875,
+          "y": 450.0703125
+        }
+      ],
+      "text": "ZATWIERDŹ, KIEDY ZECHCESZ\nZachowaj sposób odzyskania dostępu do konta\nSprawdź urządzenia korzystające z Twojego konta Google\nZrozum, co daje zmiana hasła\nSprawdź, czy Twoje e-maile trafiają też gdzie indziej\nZdecyduj, co chcesz zachować\nSprawdź udostępnianie zdjęć partnerowi w Zdjęciach Google\nWYBRANA PRZEZ CIEBIE TREŚĆ\n\nZmieniłam hasło. Muszę jeszcze sprawdzić wspólny laptop i udostępnianie zdjęć.\n\nZachowaj ten plan demo"
+    },
+    "result": {
+      "selector": ".jt-work",
+      "width": 634.8125,
+      "height": 614.078125,
+      "controls": [
+        {
+          "label": "Otwórz przykładowy plan",
+          "x": 144.578125,
+          "y": 453.5859375
+        },
+        {
+          "label": "Zakończ prezentację",
+          "x": 334.0625,
+          "y": 453.578125
+        },
+        {
+          "label": "Przejdź do pomocy krok po kroku",
+          "x": 137.5390625,
+          "y": 531.28125
+        }
+      ],
+      "text": "Prezentacja zakończona\n\nKroki w planie: 6 · Zmiany na kontach: 0\n\nJEJ PIERWSZY KROK\nZachowaj sposób odzyskania dostępu do konta\n\nPomocniczy adres e-mail lub numer telefonu pomaga odzyskać dostęp, gdy zapomnisz hasła. Zacznij od sprawdzenia, czy możesz z nich korzystać.\n\nJeszcze niesprawdzone\nZobacz cały przykładowy plan\nOtwórz przykładowy plan\nZakończ prezentację\n\nPlan to początek. Dalej czekają krok z podpowiedzią, krótka lekcja i możliwość poproszenia człowieka o pomoc.\n\nPrzejdź do pomocy krok po kroku\n\nOtwarcie tego wyniku zastępuje tylko plan do ćwiczeń. Twój osobisty plan pozostaje bez zmian."
+    },
+    "resolve-header": {
+      "selector": ".work-title",
+      "width": 860,
+      "height": 182.34375,
+      "controls": [],
+      "text": "TWÓJ KOLEJNY KROK, Z POMOCĄ\nPrzejdźmy przez to razem.\n\nZrozum jedną rzecz. Spróbuj jednego kroku. Powiedz, co się stało. Poproś człowieka o pomoc, gdy jej potrzebujesz."
+    },
+    "step": {
+      "selector": ".resolution-main .work-panel",
+      "width": 752.21875,
+      "height": 810.484375,
+      "controls": [
+        {
+          "label": "Jestem gotowa lub gotowy na kolejny krok",
+          "x": 210.046875,
+          "y": 309.015625
+        },
+        {
+          "label": "Sprawdziłam, jak odzyskałabym dostęp",
+          "x": 376.109375,
+          "y": 562.484375
+        },
+        {
+          "label": "Nie wiem, co dalej",
+          "x": 376.109375,
+          "y": 620.484375
+        },
+        {
+          "label": "Chcę zrobić przerwę",
+          "x": 376.109375,
+          "y": 678.484375
+        },
+        {
+          "label": "Potrzebuję pomocy człowieka",
+          "x": 376.109375,
+          "y": 736.484375
+        }
+      ],
+      "text": "KROK 1 / 2\nZachowaj sposób odzyskania dostępu do konta\n\nOtwórz poradnik Google dotyczący odzyskiwania dostępu. Znajdź pomocniczy numer telefonu i adres e-mail w ustawieniach konta.\n\nTen krok wykonujesz w ustawieniach danej aplikacji. Untangle nie widzi Twojego ekranu ani nie obsługuje tego konta.\n\nJestem gotowa lub gotowy na kolejny krok\nZanim cokolwiek zmienisz\nCo udało Ci się zrobić?\n\nZapisz to, co rzeczywiście się wydarzyło. Niepewność i „nie teraz” też są wartościowymi odpowiedziami.\n\nSprawdziłam, jak odzyskałabym dostęp\nNie wiem, co dalej\nChcę zrobić przerwę\nPotrzebuję pomocy człowieka"
+    },
+    "coach": {
+      "selector": ".coach-panel",
+      "width": 445.765625,
+      "height": 283.5,
+      "controls": [],
+      "text": "ASYSTENT UNTANGLE\nZrozum ten krok lepiej.\n\nZapytaj własnymi słowami. AI może zajrzeć do tego poradnika, wyjaśnić go prostym językiem i pomóc Ci sformułować kolejne pytanie.\n\nĆwiczenie korzysta z opracowanego poradnika. Fikcyjne dane nie są wysyłane do AI."
+    },
+    "human": {
+      "selector": ".human-bridge",
+      "width": 445.765625,
+      "height": 220.265625,
+      "controls": [
+        {
+          "label": "Znajdź pomoc człowieka",
+          "x": 112.2109375,
+          "y": 170.265625
+        }
+      ],
+      "text": "Człowiek też może pomóc.\n\nMożesz się tu zatrzymać i poprosić kogoś, aby pomógł Ci przejść przez ten problem.\n\nZnajdź pomoc człowieka"
+    },
+    "lesson": {
+      "selector": ".lesson",
+      "width": 752.21875,
+      "height": 673.65625,
+      "controls": [
+        {
+          "label": "Tak",
+          "x": 57.6328125,
+          "y": 527.65625
+        },
+        {
+          "label": "Nie",
+          "x": 126.2890625,
+          "y": 527.65625
+        },
+        {
+          "label": "Spróbuję kroku, gdy będę gotowa lub gotowy",
+          "x": 218.9453125,
+          "y": 619.65625
+        }
+      ],
+      "text": "JEDNA RZECZ DO ZROZUMIENIA\nZachowaj sposób odzyskania dostępu do konta\n\nPomocniczy adres e-mail lub numer telefonu pomaga odzyskać dostęp, gdy zapomnisz hasła. Zacznij od sprawdzenia, czy możesz z nich korzystać.\n\nDlaczego to ważne\n\nZanim zmienisz hasło lub usuniesz dostęp, zastanów się, jak zalogujesz się ponownie. Jeśli ktoś inny kontroluje ten telefon lub e-mail, poproś o pomoc w ułożeniu planu.\n\nCzego to nie wyjaśnia\n\nPrzez 7 dni po zmianie Google może nadal proponować poprzednie dane odzyskiwania. To sprawdzenie nie dowodzi, że tylko Ty masz dostęp do konta.\n\nCzy Google może jeszcze przez pewien czas proponować poprzednie dane odzyskiwania po ich zmianie?\nTak\nNie\nSpróbuję kroku, gdy będę gotowa lub gotowy"
+    },
+    "quiz": {
+      "selector": ".learning-check",
+      "width": 694.21875,
+      "height": 185.78125,
+      "controls": [
+        {
+          "label": "Tak",
+          "x": 28.6328125,
+          "y": 118.78125
+        },
+        {
+          "label": "Nie",
+          "x": 97.2890625,
+          "y": 118.78125
+        }
+      ],
+      "text": "Czy Google może jeszcze przez pewien czas proponować poprzednie dane odzyskiwania po ich zmianie?\nTak\nNie"
+    },
+    "quiz-answer": {
+      "selector": ".learning-check",
+      "width": 694.21875,
+      "height": 240.15625,
+      "controls": [
+        {
+          "label": "Tak",
+          "x": 28.6328125,
+          "y": 118.78125
+        },
+        {
+          "label": "Nie",
+          "x": 97.2890625,
+          "y": 118.78125
+        }
+      ],
+      "text": "Czy Google może jeszcze przez pewien czas proponować poprzednie dane odzyskiwania po ich zmianie?\nTak\nNie\n\nZgadza się. Przez 7 dni po zmianie Google może nadal proponować poprzednie dane odzyskiwania. To sprawdzenie nie dowodzi, że tylko Ty masz dostęp do konta."
+    },
+    "outcome-pending": {
+      "selector": ".outcome-check",
+      "width": 694.21875,
+      "height": 407.46875,
+      "controls": [
+        {
+          "label": "Sprawdziłam, jak odzyskałabym dostęp",
+          "x": 347.109375,
+          "y": 138.46875
+        },
+        {
+          "label": "Nie wiem, co dalej",
+          "x": 347.109375,
+          "y": 196.46875
+        },
+        {
+          "label": "Chcę zrobić przerwę",
+          "x": 347.109375,
+          "y": 254.46875
+        },
+        {
+          "label": "Potrzebuję pomocy człowieka",
+          "x": 347.109375,
+          "y": 312.46875
+        },
+        {
+          "label": "Zapisz tę informację w moim planie",
+          "x": 141.4375,
+          "y": 382.46875
+        }
+      ],
+      "text": "Co udało Ci się zrobić?\n\nZapisz to, co rzeczywiście się wydarzyło. Niepewność i „nie teraz” też są wartościowymi odpowiedziami.\n\nSprawdziłam, jak odzyskałabym dostęp\nNie wiem, co dalej\nChcę zrobić przerwę\nPotrzebuję pomocy człowieka\nZapisz tę informację w moim planie"
+    },
+    "outcome": {
+      "selector": ".outcome-check",
+      "width": 694.21875,
+      "height": 518.234375,
+      "controls": [
+        {
+          "label": "Sprawdziłam, jak odzyskałabym dostęp",
+          "x": 347.109375,
+          "y": 138.46875
+        },
+        {
+          "label": "Nie wiem, co dalej",
+          "x": 347.109375,
+          "y": 196.46875
+        },
+        {
+          "label": "Chcę zrobić przerwę",
+          "x": 347.109375,
+          "y": 254.46875
+        },
+        {
+          "label": "Potrzebuję pomocy człowieka",
+          "x": 347.109375,
+          "y": 312.46875
+        },
+        {
+          "label": "Zapisz prywatną kopię",
+          "x": 102.3125,
+          "y": 478.234375
+        }
+      ],
+      "text": "Co udało Ci się zrobić?\n\nZapisz to, co rzeczywiście się wydarzyło. Niepewność i „nie teraz” też są wartościowymi odpowiedziami.\n\nSprawdziłam, jak odzyskałabym dostęp\nNie wiem, co dalej\nChcę zrobić przerwę\nPotrzebuję pomocy człowieka\nTwoja informacja jest zapisana w tej karcie.\n\nTo zapis Twojej odpowiedzi. Nie jest potwierdzeniem bezpieczeństwa konta ani zmiany ustawienia.\n\nZapisz prywatną kopię"
+    },
+    "plan": {
+      "selector": ".p-plan-overview",
+      "width": 1045,
+      "height": 261.625,
+      "controls": [
+        {
+          "label": "Przejdź do tego kroku",
+          "x": 141.375,
+          "y": 210.625
+        },
+        {
+          "label": "Zachowaj mój postęp",
+          "x": 930.5,
+          "y": 215.4375
+        }
+      ],
+      "text": "PROPOZYCJA MAŁEGO KROKU\nZdecyduj, co chcesz zachować\n\nZanim usuniesz wiadomości lub opuścisz wspólną przestrzeń, pomyśl, co może się przydać później. Możesz podjąć tę decyzję z zaufaną osobą.\n\nPrzejdź do tego kroku\n0 / 6\nkroki przejrzane przez Maję\n\nTo zapis Twoich działań, a nie ocena bezpieczeństwa.\n\nZachowaj mój postęp"
+    },
+    "support": {
+      "selector": ".support-alternative",
+      "width": 1228,
+      "height": 147.875,
+      "controls": [
+        {
+          "label": "Zobacz wsparcie specjalistyczne",
+          "x": 1093.3125,
+          "y": 74.4375
+        }
+      ],
+      "text": "Potrzebujesz teraz wsparcia specjalisty?\n\nWolontariusze nie świadczą pomocy alarmowej. Znajdź lokalne organizacje, wsparcie dla osób poniżej 18 lat lub pomoc dotyczącą prywatnych zdjęć.\n\nZobacz wsparcie specjalistyczne"
+    }
+  }
+}

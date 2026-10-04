@@ -1,0 +1,13 @@
+{
+  "duration": 78,
+  "width": 1920,
+  "height": 1080,
+  "locale": "pl",
+  "chapterSeekingPassed": true,
+  "mobile390Passed": true,
+  "englishScriptDownloadPassed": true,
+  "mp4DownloadHashMatches": true,
+  "byteRangeStreamingPassed": true,
+  "nestedPlayerPassed": true,
+  "errors": []
+}

@@ -1,0 +1,49 @@
+{
+  "file": "untangle-final-pl-78s.mp4",
+  "sha256": "a1b48017d96d3a2a2e74bcf4bee6ade92ed2882b93f55167bdfe29a68b7327d7",
+  "bytes": 14573757,
+  "movieDurationSeconds": 78,
+  "video": {
+    "width": 1920,
+    "height": 1080,
+    "frames": 2340,
+    "fps": 30,
+    "durationSeconds": 78,
+    "codec": "H.264",
+    "pixelFormat": "yuv420p"
+  },
+  "audio": {
+    "codec": "AAC",
+    "sampleRate": 48000,
+    "channels": 2,
+    "integratedLUFS": -16.02,
+    "truePeakDBTP": -1.49
+  },
+  "fullDecodePassed": true,
+  "blackFramesDetected": false,
+  "captionCues": 33,
+  "captionTranscriptMatches": true,
+  "fictionalWorkflowVerified": true,
+  "polishDemoVerified": true,
+  "approvalVerified": true,
+  "guidedStepVerified": true,
+  "lessonVerified": true,
+  "uncertaintyVerified": true,
+  "supportRouteVerified": true,
+  "tracks": [
+    {
+      "kind": "vide",
+      "timescale": 15360,
+      "ticks": 1198080,
+      "seconds": 78,
+      "samples": 2340
+    },
+    {
+      "kind": "soun",
+      "timescale": 48000,
+      "ticks": 3745024,
+      "seconds": 78.02133333333333,
+      "samples": 3658
+    }
+  ]
+}

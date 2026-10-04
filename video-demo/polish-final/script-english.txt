@@ -1,0 +1,41 @@
+UNTANGLE — FINAL POLISH FILM
+English meaning of the spoken script · 78 seconds
+
+This is the English reading copy for your understanding. The final video has Polish narration, Polish captions and Polish product screens.
+
+00:00–00:06 — THE CONNECTIONS THAT REMAIN
+A breakup. Digital connections can remain. So can the risk.
+On screen: “A breakup ends a relationship. Not every digital connection.” Then: “Hidden connections. Real risk.”
+
+00:06–00:11 — INTRODUCING UNTANGLE
+Untangle. Your private guide after a breakup.
+
+00:11–00:18 — MAYA'S SITUATION
+Maya changed her password. What about the laptop and the photos? She tries the step-by-step demo.
+
+00:18–00:27 — THE PLAN
+Six steps from one story. First, recovery access. Then devices and photos. Maya chooses.
+
+00:27–00:39 — HOW THE AI AGENT HELPS
+Once AI is connected, the agent consults the guide. It explains the step, says why it matters and suggests what to do next. You review every suggestion.
+
+00:39–00:48 — EFFECTS, LIMITS AND WORDING
+A password is not everything. The preview shows effects, limitations and a source. The assistant helps put the question into words, too.
+
+00:48–00:57 — YOUR APPROVAL
+Edit the note. Approve the plan. The steps are waiting to be checked. Only your own observation changes their status.
+
+00:57–01:07 — THE LATEST GUIDED HELP AND LEARNING FLOW
+The plan is a starting point. Work through an instruction, check whether you understand it, and record your own result. At your pace.
+
+01:07–01:13 — THE BENEFIT
+A clearer next step. More understanding. A route to human support.
+
+01:13–01:18 — CLOSE
+Your life. Your terms. Untangle.
+On screen: “Demo krok po kroku” — the Polish Demo Walkthrough button.
+
+PRODUCTION CONTEXT
+Maya is fictional. The captured walkthrough, approval, guided instruction, learning feedback and recorded uncertain result are working local product interactions. The AI architecture reflects the implemented optional guide-retrieval agent in server/coach.ts. No live model answer or real volunteer conversation is presented as recorded evidence. The film shows the human-support entry point, not a promise of an available volunteer.
+
+The opening uses the requested idea of lingering digital connections and risk. It deliberately does not claim that this is everyone's single greatest risk.

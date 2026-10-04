@@ -1,0 +1,76 @@
+{
+  "text": "Sze\u015b\u0107 krok\u00f3w z jednej historii. Najpierw odzyskiwanie dost\u0119pu, potem urz\u0105dzenia i zdj\u0119cia. Maja wybiera.",
+  "voice": "pl-PL-ZofiaNeural",
+  "words": [
+    {
+      "offset": 1000000,
+      "duration": 3000000,
+      "text": "Sze\u015b\u0107"
+    },
+    {
+      "offset": 4375000,
+      "duration": 4375000,
+      "text": "krok\u00f3w"
+    },
+    {
+      "offset": 8875000,
+      "duration": 1000000,
+      "text": "z"
+    },
+    {
+      "offset": 9875000,
+      "duration": 3500000,
+      "text": "jednej"
+    },
+    {
+      "offset": 13375000,
+      "duration": 5500000,
+      "text": "historii"
+    },
+    {
+      "offset": 28625000,
+      "duration": 4250000,
+      "text": "Najpierw"
+    },
+    {
+      "offset": 33000000,
+      "duration": 6875000,
+      "text": "odzyskiwanie"
+    },
+    {
+      "offset": 39875000,
+      "duration": 6250000,
+      "text": "dost\u0119pu"
+    },
+    {
+      "offset": 46375000,
+      "duration": 3875000,
+      "text": "potem"
+    },
+    {
+      "offset": 50375000,
+      "duration": 5750000,
+      "text": "urz\u0105dzenia"
+    },
+    {
+      "offset": 57625000,
+      "duration": 125000,
+      "text": "i"
+    },
+    {
+      "offset": 58125000,
+      "duration": 5125000,
+      "text": "zdj\u0119cia"
+    },
+    {
+      "offset": 73125000,
+      "duration": 2375000,
+      "text": "Maja"
+    },
+    {
+      "offset": 76125000,
+      "duration": 4625000,
+      "text": "wybiera"
+    }
+  ]
+}

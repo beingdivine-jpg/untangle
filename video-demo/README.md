@@ -1,5 +1,8 @@
 # Untangle · Product demo films
 
+The latest deliverable is the [78-second final Polish film](polish-final/output/untangle-final-pl-78s.mp4), with [English script](polish-final/script-english.txt) and [reproduction instructions](polish-final/README.md). The default player opens this edition.
+
+
 **Featured: [Your life. Your terms. — the 78-second director’s cut](directors-cut/README.md).** This expanded edition follows the revised 80-second maximum: a cinematic opening, visible processing, the optional AI workflow, before/after wording with undo, consequence checks and an actual encrypted save-and-restore. [Watch the MP4](directors-cut/output/untangle-directors-cut-78s.mp4), or review the [script and judging-criteria mapping](directors-cut/creative-brief.md).
 
 Use `npm --prefix video-demo run render:director` and `verify:director` after the setup below. `npm --prefix video-demo run preview` features the new cut. Both editions remain isolated from normal application commands.

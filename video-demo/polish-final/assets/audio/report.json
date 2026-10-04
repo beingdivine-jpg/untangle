@@ -1,0 +1,80 @@
+{
+  "voice": "pl-PL-ZofiaNeural",
+  "duration": 78,
+  "sampleRate": 48000,
+  "score": "Original procedural composition; no third-party samples",
+  "segments": [
+    {
+      "scene": "hook",
+      "start": 0.25,
+      "duration": 5.413,
+      "tempo": 1.1448
+    },
+    {
+      "scene": "reveal",
+      "start": 6.25,
+      "duration": 4.41,
+      "tempo": 1.051
+    },
+    {
+      "scene": "situation",
+      "start": 11.2,
+      "duration": 6.461,
+      "tempo": 1.1519
+    },
+    {
+      "scene": "processing",
+      "start": 18.2,
+      "duration": 8.461,
+      "tempo": 1.067
+    },
+    {
+      "scene": "assistant",
+      "start": 27.2,
+      "duration": 10.392,
+      "tempo": 1.0
+    },
+    {
+      "scene": "consequences",
+      "start": 39.2,
+      "duration": 8.46,
+      "tempo": 1.0557
+    },
+    {
+      "scene": "choice",
+      "start": 48.2,
+      "duration": 8.464,
+      "tempo": 1.1519
+    },
+    {
+      "scene": "continuity",
+      "start": 57.2,
+      "duration": 8.976,
+      "tempo": 1.0
+    },
+    {
+      "scene": "benefit",
+      "start": 67.2,
+      "duration": 5.462,
+      "tempo": 1.1693
+    },
+    {
+      "scene": "close",
+      "start": 73.25,
+      "duration": 4.415,
+      "tempo": 1.181
+    }
+  ],
+  "premixLoudness": {
+    "input_i": "-19.61",
+    "input_tp": "-4.50",
+    "input_lra": "3.70",
+    "input_thresh": "-31.16",
+    "output_i": "-15.98",
+    "output_tp": "-1.50",
+    "output_lra": "3.50",
+    "output_thresh": "-27.50",
+    "normalization_type": "dynamic",
+    "target_offset": "-0.02"
+  }
+}

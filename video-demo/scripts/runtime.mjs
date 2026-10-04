@@ -20,7 +20,9 @@ export async function serve(port=0) {
   const server = createServer(async (req,res) => {
     try {
       const pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
-      const target = pathname === '/' && cut ? `/${cut}/` : pathname;
+      // Preserve the cut prefix in the browser URL so relative media links resolve.
+      if (pathname === '/' && cut) { res.writeHead(302, { Location: `/${cut}/` }).end(); return; }
+      const target = pathname;
       const path = resolve(baseRoot, '.' + target + (target.endsWith('/') ? 'index.html' : ''));
       if (!path.startsWith(baseRoot + sep) || pathname.split('/').some(p=>p.startsWith('.'))) { res.writeHead(403).end(); return; }
       const info = await stat(path);

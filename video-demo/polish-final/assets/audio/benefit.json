@@ -1,0 +1,46 @@
+{
+  "text": "Ja\u015bniejszy krok. Wi\u0119cej zrozumienia. Droga do pomocy cz\u0142owieka.",
+  "voice": "pl-PL-ZofiaNeural",
+  "words": [
+    {
+      "offset": 1000000,
+      "duration": 5375000,
+      "text": "Ja\u015bniejszy"
+    },
+    {
+      "offset": 6375000,
+      "duration": 3250000,
+      "text": "krok"
+    },
+    {
+      "offset": 19250000,
+      "duration": 3625000,
+      "text": "Wi\u0119cej"
+    },
+    {
+      "offset": 22875000,
+      "duration": 7000000,
+      "text": "zrozumienia"
+    },
+    {
+      "offset": 39750000,
+      "duration": 3250000,
+      "text": "Droga"
+    },
+    {
+      "offset": 43250000,
+      "duration": 1000000,
+      "text": "do"
+    },
+    {
+      "offset": 44250000,
+      "duration": 4125000,
+      "text": "pomocy"
+    },
+    {
+      "offset": 48375000,
+      "duration": 5875000,
+      "text": "cz\u0142owieka"
+    }
+  ]
+}

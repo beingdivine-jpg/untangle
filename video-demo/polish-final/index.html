@@ -1,8 +1,8 @@
 <!doctype html><html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Untangle · Finałowy film po polsku</title><style>
-@font-face{font-family:Manrope;src:url(assets/fonts/manrope.woff2)}
-@font-face{font-family:Fraunces;src:url(assets/fonts/fraunces.woff2)}
-@font-face{font-family:Manrope;src:url(assets/fonts/manrope-latin-ext.woff2);unicode-range:U+0100-02FF,U+1E00-1EFF}
-@font-face{font-family:Fraunces;src:url(assets/fonts/fraunces-latin-ext.woff2);unicode-range:U+0100-02FF,U+1E00-1EFF}
+@font-face{font-family:Manrope;src:url(../assets/fonts/manrope.woff2)}
+@font-face{font-family:Fraunces;src:url(../assets/fonts/fraunces.woff2)}
+@font-face{font-family:Manrope;src:url(../assets/fonts/manrope-latin-ext.woff2);unicode-range:U+0100-02FF,U+1E00-1EFF}
+@font-face{font-family:Fraunces;src:url(../assets/fonts/fraunces-latin-ext.woff2);unicode-range:U+0100-02FF,U+1E00-1EFF}
 *{box-sizing:border-box}body{margin:0;background:#f7f5f1;color:#2c2b28;font-family:Manrope,sans-serif}
 main{max-width:1360px;padding:38px 30px 65px;margin:auto}header{display:flex;justify-content:space-between;align-items:center;margin-bottom:27px}
 h1{font:470 44px Fraunces;margin:0;letter-spacing:-1.8px}h1 span{color:#914c39}header p{font-size:14px;color:#686057}
@@ -13,10 +13,10 @@ p{line-height:1.75;font-size:14px;color:#686057;max-width:1040px}footer{margin-t
 @media(max-width:650px){header{display:block}main{padding:25px 16px}h1{font-size:36px}nav{gap:8px}button,a{padding:10px 12px}}
 </style></head><body><main>
 <header><h1>untangle<span>.</span></h1><p>Twoje życie. Twoje zasady. · Wersja polska · 1:18</p></header>
-<video controls playsinline preload="metadata" poster="polish-final/output/poster.jpg" aria-label="Finałowy film Untangle: 78 sekund, polski lektor i napisy"><source src="polish-final/output/untangle-final-pl-78s.mp4" type="video/mp4"></video>
+<video controls playsinline preload="metadata" poster="output/poster.jpg" aria-label="Finałowy film Untangle: 78 sekund, polski lektor i napisy"><source src="output/untangle-final-pl-78s.mp4" type="video/mp4"></video>
 <nav aria-label="Rozdziały filmu"><button data-time="0">Cyfrowe połączenia</button><button data-time="11">Historia Mai</button><button data-time="18">Plan</button><button data-time="27">Jak pomaga agent AI</button><button data-time="39">Skutki i słowa</button><button data-time="48">Twoja zgoda</button><button data-time="57">Krok i nauka</button><button data-time="67">Pomoc człowieka</button></nav>
-<div class="links"><a class="primary" href="polish-final/output/untangle-final-pl-78s.mp4" download>Pobierz film MP4</a><a href="polish-final/script-english.txt" download>English script · TXT</a><a href="polish-final/output/untangle-final-pl-78s.srt" download>Polskie napisy · SRT</a><a href="polish-final/output/storyboard.jpg">Kadry filmu</a></div>
+<div class="links"><a class="primary" href="output/untangle-final-pl-78s.mp4" download>Pobierz film MP4</a><a href="script-english.txt" download>English script · TXT</a><a href="output/untangle-final-pl-78s.srt" download>Polskie napisy · SRT</a><a href="output/storyboard.jpg">Kadry filmu</a></div>
 <p>Od demo krok po kroku do własnego planu, instrukcji, krótkiej lekcji i drogi do pomocy człowieka. Polski lektor, polskie ekrany produktu i oryginalna muzyka.</p>
 <p>Maja jest fikcyjna. Film pokazuje rzeczywisty, przygotowany przykład. Agent AI jest opcjonalną funkcją po podłączeniu usług; nie pokazujemy odpowiedzi modelu na żywo ani rozmowy z rzeczywistym wolontariuszem.</p>
-<footer><a href="https://untangle-orpin.vercel.app/?view=demo&amp;lang=pl">Otwórz demo po polsku ↗</a><a href="directors-cut/index.html">Poprzednia wersja angielska</a><a href="original.html">Pierwszy film · 60 sekund</a></footer>
+<footer><a href="https://untangle-orpin.vercel.app/?view=demo&amp;lang=pl">Otwórz demo po polsku ↗</a><a href="../directors-cut/index.html">Poprzednia wersja angielska</a><a href="../original.html">Pierwszy film · 60 sekund</a></footer>
 </main><script>document.querySelectorAll('[data-time]').forEach(button=>button.addEventListener('click',()=>{const video=document.querySelector('video');video.currentTime=Number(button.dataset.time);video.play().catch(()=>{})}));</script></body></html>

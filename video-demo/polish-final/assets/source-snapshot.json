@@ -1,0 +1,30 @@
+{
+  "capturedAt": "2026-10-04T08:25:48.399Z",
+  "note": "Latest local implementation, including uncommitted product work. No live AI response or volunteer conversation recorded.",
+  "sources": [
+    {
+      "file": "src/features/walkthrough/JudgeWalkthrough.tsx",
+      "sha256": "7ef92b69c139ce635462a294ba459e78fe6c0e05380e65e7cd69a77dceb51893"
+    },
+    {
+      "file": "src/features/resolve/Resolve.tsx",
+      "sha256": "4be142ac5f263825e8a44bf66ec8db51e90c7a1c10595c39f01e51e1ca512fc5"
+    },
+    {
+      "file": "src/features/resolve/lessons.ts",
+      "sha256": "9ad10a42f490c35fcc3506ee474d73c587fb855379e40f072fe853b8ddcc3526"
+    },
+    {
+      "file": "src/features/community/Community.tsx",
+      "sha256": "4562e7edf78f034c1fc897a0bea8dcd5b9bc880fcb77a5a94654a09f206f0dfc"
+    },
+    {
+      "file": "src/i18n/pl.json",
+      "sha256": "39f43d7ca7a19f71ac6b1256c3e4da0570da21a902bf27b77886309cc5a1316e"
+    },
+    {
+      "file": "server/coach.ts",
+      "sha256": "d48fb51b15f4a29fea2eed826ad48d06e4bf84e3bc1dbeacb888818f771ab763"
+    }
+  ]
+}

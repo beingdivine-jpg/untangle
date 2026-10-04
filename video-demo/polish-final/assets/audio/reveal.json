@@ -1,0 +1,36 @@
+{
+  "text": "Untangle. Tw\u00f3j prywatny przewodnik po rozstaniu.",
+  "voice": "pl-PL-ZofiaNeural",
+  "words": [
+    {
+      "offset": 1000000,
+      "duration": 7375000,
+      "text": "Untangle"
+    },
+    {
+      "offset": 17250000,
+      "duration": 2125000,
+      "text": "Tw\u00f3j"
+    },
+    {
+      "offset": 19375000,
+      "duration": 4875000,
+      "text": "prywatny"
+    },
+    {
+      "offset": 24250000,
+      "duration": 5250000,
+      "text": "przewodnik"
+    },
+    {
+      "offset": 29625000,
+      "duration": 1375000,
+      "text": "po"
+    },
+    {
+      "offset": 31125000,
+      "duration": 6000000,
+      "text": "rozstaniu"
+    }
+  ]
+}

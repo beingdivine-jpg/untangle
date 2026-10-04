@@ -16,6 +16,14 @@
     "render:director": "node scripts/render.mjs --cut=directors-cut",
     "verify:director": "node scripts/verify.mjs --cut=directors-cut",
     "stills:director": "node scripts/render.mjs --cut=directors-cut --stills",
-    "storyboard:director": ".venv/bin/python scripts/storyboard.py --cut=directors-cut"
+    "storyboard:director": ".venv/bin/python scripts/storyboard.py --cut=directors-cut",
+    "capture:polish": "node scripts/capture-polish.mjs",
+    "audio:polish": ".venv/bin/python scripts/audio.py --cut=polish-final",
+    "render:polish": "node scripts/render.mjs --cut=polish-final",
+    "verify:polish": "node scripts/verify.mjs --cut=polish-final",
+    "stills:polish": "node scripts/render.mjs --cut=polish-final --stills",
+    "storyboard:polish": ".venv/bin/python scripts/storyboard.py --cut=polish-final",
+    "preview:polish": "node scripts/preview.mjs --cut=polish-final",
+    "check:polish-player": "node scripts/check-polish-player.mjs"
   }
 }

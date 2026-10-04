@@ -49,8 +49,11 @@ const captions=JSON.parse(await readFile(resolve(root,'captions.json'),'utf8'));
 assert.equal(captions.map(c=>c.text).join(' '),story.scenes.map(s=>s.text).join(' '));
 for(let i=0;i<captions.length;i++) {const c=captions[i];assert(c.start>=0&&c.end<=story.duration&&c.end>c.start);if(i)assert(c.start>=captions[i-1].end,'Captions overlap');}
 const workflow=JSON.parse(await readFile(resolve(root,'assets/captures/manifest.json'),'utf8'));
-assert(workflow.workflowVerified && workflow.encryptedDownloadVerified && workflow.liveProviderCalls===0);
-if(story.outputBase)assert(workflow.wordingPreviewAcceptanceUndoVerified&&workflow.encryptedRestoreVerified);
-const report={file:`${outputBase}.mp4`,sha256:createHash('sha256').update(mp4).digest('hex'),bytes:mp4.length,movieDurationSeconds:movie.seconds,video:{width:1920,height:1080,frames:video.samples,fps:story.fps,durationSeconds:video.seconds,codec:'H.264',pixelFormat:'yuv420p'},audio:{codec:'AAC',sampleRate:48000,channels:2,integratedLUFS:Number(levels.input_i),truePeakDBTP:Number(levels.input_tp)},fullDecodePassed:true,blackFramesDetected:false,captionCues:captions.length,captionTranscriptMatches:true,fictionalWorkflowVerified:true,encryptedDownloadVerified:true,...(story.outputBase?{wordingPreviewAcceptanceUndoVerified:true,encryptedRestoreVerified:true}:{}),tracks};
+assert(workflow.workflowVerified && workflow.liveProviderCalls===0);
+const requiredChecks=story.workflowAssertions || ['encryptedDownloadVerified',...(story.outputBase?['wordingPreviewAcceptanceUndoVerified','encryptedRestoreVerified']:[])];
+assert(Array.isArray(requiredChecks)&&requiredChecks.length>0);
+for(const key of requiredChecks)assert.equal(workflow[key],true,`Workflow check missing: ${key}`);
+const verifiedWorkflow=Object.fromEntries(requiredChecks.map(key=>[key,true]));
+const report={file:`${outputBase}.mp4`,sha256:createHash('sha256').update(mp4).digest('hex'),bytes:mp4.length,movieDurationSeconds:movie.seconds,video:{width:1920,height:1080,frames:video.samples,fps:story.fps,durationSeconds:video.seconds,codec:'H.264',pixelFormat:'yuv420p'},audio:{codec:'AAC',sampleRate:48000,channels:2,integratedLUFS:Number(levels.input_i),truePeakDBTP:Number(levels.input_tp)},fullDecodePassed:true,blackFramesDetected:false,captionCues:captions.length,captionTranscriptMatches:true,fictionalWorkflowVerified:true,...verifiedWorkflow,tracks};
 await writeFile(resolve(root,'output/verification.json'),JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify(report,null,2));

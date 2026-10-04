@@ -1,0 +1,121 @@
+{
+  "title": "Untangle — Twoje życie. Twoje zasady.",
+  "outputBase": "untangle-final-pl-78s",
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "duration": 78,
+  "voice": "pl-PL-ZofiaNeural",
+  "voiceRate": "+0%",
+  "score": "cinematic",
+  "workflowAssertions": [
+    "polishDemoVerified",
+    "approvalVerified",
+    "guidedStepVerified",
+    "lessonVerified",
+    "uncertaintyVerified",
+    "supportRouteVerified"
+  ],
+  "reviewTimes": [
+    0.8,
+    3.8,
+    5.4,
+    6.8,
+    9.5,
+    13.5,
+    16.8,
+    20,
+    23,
+    26,
+    29,
+    32,
+    35,
+    38,
+    41,
+    44,
+    46.5,
+    50,
+    53,
+    55.5,
+    59,
+    62,
+    64.5,
+    66,
+    69,
+    72,
+    75.5,
+    77.9667
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "start": 0,
+      "end": 6,
+      "voiceStart": 0.25,
+      "text": "Rozstanie. Cyfrowe połączenia zostają. Razem z ryzykiem."
+    },
+    {
+      "id": "reveal",
+      "start": 6,
+      "end": 11,
+      "voiceStart": 6.25,
+      "text": "Untangle. Twój prywatny przewodnik po rozstaniu."
+    },
+    {
+      "id": "situation",
+      "start": 11,
+      "end": 18,
+      "voiceStart": 11.2,
+      "text": "Maja zmieniła hasło. Co z laptopem i zdjęciami? Sprawdza demo krok po kroku."
+    },
+    {
+      "id": "processing",
+      "start": 18,
+      "end": 27,
+      "voiceStart": 18.2,
+      "text": "Sześć kroków z jednej historii. Najpierw odzyskiwanie dostępu, potem urządzenia i zdjęcia. Maja wybiera."
+    },
+    {
+      "id": "assistant",
+      "start": 27,
+      "end": 39,
+      "voiceStart": 27.2,
+      "text": "Po podłączeniu AI agent sięga do poradnika. Wyjaśnia krok, mówi dlaczego i proponuje dalsze działanie. Ty oceniasz każdą sugestię."
+    },
+    {
+      "id": "consequences",
+      "start": 39,
+      "end": 48,
+      "voiceStart": 39.2,
+      "text": "Hasło to nie wszystko. Podgląd pokazuje skutki, ograniczenia i źródło. Asystent pomaga zapisać pytanie."
+    },
+    {
+      "id": "choice",
+      "start": 48,
+      "end": 57,
+      "voiceStart": 48.2,
+      "text": "Popraw notatkę. Zatwierdź plan. Kroki czekają na sprawdzenie. Dopiero Twoja obserwacja zmieni ich status."
+    },
+    {
+      "id": "continuity",
+      "start": 57,
+      "end": 67,
+      "voiceStart": 57.2,
+      "text": "Plan to początek. Przejdź przez instrukcję, sprawdź, czy ją rozumiesz, i zapisz własny wynik. W swoim tempie."
+    },
+    {
+      "id": "benefit",
+      "start": 67,
+      "end": 73,
+      "voiceStart": 67.2,
+      "text": "Jaśniejszy krok. Więcej zrozumienia. Droga do pomocy człowieka."
+    },
+    {
+      "id": "close",
+      "start": 73,
+      "end": 78,
+      "voiceStart": 73.25,
+      "text": "Twoje życie. Twoje zasady. Untangle."
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "text": "Popraw notatk\u0119. Zatwierd\u017a plan. Kroki czekaj\u0105 na sprawdzenie. Dopiero Twoja obserwacja zmieni ich status.",
+  "voice": "pl-PL-ZofiaNeural",
+  "words": [
+    {
+      "offset": 1000000,
+      "duration": 3250000,
+      "text": "Popraw"
+    },
+    {
+      "offset": 4500000,
+      "duration": 5375000,
+      "text": "notatk\u0119"
+    },
+    {
+      "offset": 19375000,
+      "duration": 5375000,
+      "text": "Zatwierd\u017a"
+    },
+    {
+      "offset": 25125000,
+      "duration": 3750000,
+      "text": "plan"
+    },
+    {
+      "offset": 37750000,
+      "duration": 3125000,
+      "text": "Kroki"
+    },
+    {
+      "offset": 40875000,
+      "duration": 4625000,
+      "text": "czekaj\u0105"
+    },
+    {
+      "offset": 45875000,
+      "duration": 1250000,
+      "text": "na"
+    },
+    {
+      "offset": 47125000,
+      "duration": 6500000,
+      "text": "sprawdzenie"
+    },
+    {
+      "offset": 63250000,
+      "duration": 3500000,
+      "text": "Dopiero"
+    },
+    {
+      "offset": 67125000,
+      "duration": 3000000,
+      "text": "Twoja"
+    },
+    {
+      "offset": 70250000,
+      "duration": 6875000,
+      "text": "obserwacja"
+    },
+    {
+      "offset": 77125000,
+      "duration": 3625000,
+      "text": "zmieni"
+    },
+    {
+      "offset": 81000000,
+      "duration": 1875000,
+      "text": "ich"
+    },
+    {
+      "offset": 82875000,
+      "duration": 5750000,
+      "text": "status"
+    }
+  ]
+}

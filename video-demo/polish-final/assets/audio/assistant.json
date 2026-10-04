@@ -1,0 +1,101 @@
+{
+  "text": "Po pod\u0142\u0105czeniu AI agent si\u0119ga do poradnika. Wyja\u015bnia krok, m\u00f3wi dlaczego i proponuje dalsze dzia\u0142anie. Ty oceniasz ka\u017cd\u0105 sugesti\u0119.",
+  "voice": "pl-PL-ZofiaNeural",
+  "words": [
+    {
+      "offset": 1000000,
+      "duration": 625000,
+      "text": "Po"
+    },
+    {
+      "offset": 1625000,
+      "duration": 6750000,
+      "text": "pod\u0142\u0105czeniu"
+    },
+    {
+      "offset": 8375000,
+      "duration": 4125000,
+      "text": "AI"
+    },
+    {
+      "offset": 12875000,
+      "duration": 3625000,
+      "text": "agent"
+    },
+    {
+      "offset": 16750000,
+      "duration": 3125000,
+      "text": "si\u0119ga"
+    },
+    {
+      "offset": 20000000,
+      "duration": 1000000,
+      "text": "do"
+    },
+    {
+      "offset": 21000000,
+      "duration": 6000000,
+      "text": "poradnika"
+    },
+    {
+      "offset": 36750000,
+      "duration": 4250000,
+      "text": "Wyja\u015bnia"
+    },
+    {
+      "offset": 41375000,
+      "duration": 3250000,
+      "text": "krok"
+    },
+    {
+      "offset": 45750000,
+      "duration": 2500000,
+      "text": "m\u00f3wi"
+    },
+    {
+      "offset": 48375000,
+      "duration": 4500000,
+      "text": "dlaczego"
+    },
+    {
+      "offset": 52875000,
+      "duration": 1125000,
+      "text": "i"
+    },
+    {
+      "offset": 54125000,
+      "duration": 5375000,
+      "text": "proponuje"
+    },
+    {
+      "offset": 59625000,
+      "duration": 3625000,
+      "text": "dalsze"
+    },
+    {
+      "offset": 63250000,
+      "duration": 5125000,
+      "text": "dzia\u0142anie"
+    },
+    {
+      "offset": 78000000,
+      "duration": 750000,
+      "text": "Ty"
+    },
+    {
+      "offset": 78875000,
+      "duration": 5250000,
+      "text": "oceniasz"
+    },
+    {
+      "offset": 84250000,
+      "duration": 3875000,
+      "text": "ka\u017cd\u0105"
+    },
+    {
+      "offset": 88625000,
+      "duration": 5500000,
+      "text": "sugesti\u0119"
+    }
+  ]
+}

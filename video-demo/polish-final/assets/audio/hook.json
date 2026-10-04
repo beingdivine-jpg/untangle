@@ -1,0 +1,41 @@
+{
+  "text": "Rozstanie. Cyfrowe po\u0142\u0105czenia zostaj\u0105. Razem z ryzykiem.",
+  "voice": "pl-PL-ZofiaNeural",
+  "words": [
+    {
+      "offset": 1000000,
+      "duration": 6125000,
+      "text": "Rozstanie"
+    },
+    {
+      "offset": 16750000,
+      "duration": 4125000,
+      "text": "Cyfrowe"
+    },
+    {
+      "offset": 20875000,
+      "duration": 5625000,
+      "text": "po\u0142\u0105czenia"
+    },
+    {
+      "offset": 26625000,
+      "duration": 5625000,
+      "text": "zostaj\u0105"
+    },
+    {
+      "offset": 42000000,
+      "duration": 4000000,
+      "text": "Razem"
+    },
+    {
+      "offset": 46125000,
+      "duration": 1125000,
+      "text": "z"
+    },
+    {
+      "offset": 47250000,
+      "duration": 6000000,
+      "text": "ryzykiem"
+    }
+  ]
+}
