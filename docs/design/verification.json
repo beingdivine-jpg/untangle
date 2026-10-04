@@ -1,6 +1,6 @@
 {
   "date": "2026-10-04",
-  "change": "Interactive thread sculpture, editorial opening and paper notebook workspace",
+  "change": "Photographic opening, Archivo typography and topic-led entry into a personal plan",
   "preserved": [
     "Original Untangle logo",
     "Personal and fictional plan separation",
@@ -10,16 +10,16 @@
     "Quick exit and visible session status"
   ],
   "implementation": {
-    "artwork": "Original procedural geometry: three cords morph from a tangle into loose waves. Self-hosted Three.js loads separately from the functional interface. No external image or model requests.",
-    "interaction": "A native range input works with keyboard, touch and pointer. The vector fallback shares the curve calculations and remains interactive when WebGL is unavailable.",
-    "motion": "Low-power renderer, capped pixel density and 30fps idle drawing. Pauses on request, outside the viewport and in a hidden tab. Reduced-motion preference defaults to a static drawing with explicit opt-in playback.",
-    "workspace": "Warm paper, green ink, coral and sage threads, large display type, ruled lists, margin lines and flat tabs. Clear starting choices remain separate from the optional illustration.",
-    "disclosure": "The opening explains that the threads are an illustration and that Untangle cannot connect to or change accounts."
+    "artwork": "Original generated photograph of a fictional adult, served locally as a 302 KB JPEG. Exact prompt and provenance are in editorial-artwork.json. No external image requests.",
+    "interaction": "Three opening topics explain the available help. Starting from a topic preselects that concern and retains existing plan concerns and services. No account is connected or changed.",
+    "motion": "Slow CSS camera drift, with an explicit pause/play control. Pauses outside the viewport and in a hidden tab. Reduced-motion preference defaults to a static image with explicit opt-in playback. This is not a video of a person.",
+    "workspace": "Dark olive header, pale chartreuse controls, locally hosted Archivo display type, clear light working surfaces and flatter navigation. The previous Three.js renderer and dependency were removed.",
+    "disclosure": "The introduction states that Try Me is a scripted example and that the companion cannot change accounts. The functional interface works even if the photograph cannot load."
   },
   "validation": {
     "unitTests": 59,
-    "browserTests": 68,
-    "localBrowserRun": "65 passed in the full run; three accessibility scenarios passed on rerun after contrast corrections.",
+    "browserTests": 71,
+    "localBrowserRun": "70 passed in the full run; one WebKit save/restore failure did not reproduce in the targeted three-engine run or three additional WebKit repetitions. The final topic-selection change, including retention of existing concerns, passed in all three engines. Source edits occurred during the first full run; the failed check was not weakened.",
     "browserEngines": [
       "Chromium",
       "Firefox",
@@ -45,12 +45,13 @@
       "Polish translation coverage",
       "Guide register",
       "Automated accessibility and contrast",
-      "Keyboard range and motion controls",
+      "Keyboard and motion controls",
       "Reduced-motion preferences",
-      "WebGL failure fallback",
+      "Image-load failure fallback",
       "Starting controls fit within the viewport",
+      "Topic selection and existing concern retention",
       "Plan, file, history and consent regression tests",
-      "Manual WebGL, desktop and mobile-size browser review"
+      "Manual desktop and mobile-size browser review"
     ]
   },
   "limits": "Browser checks do not replace physical-device testing or usability studies with the target audience. No new claim about live AI availability is made.",

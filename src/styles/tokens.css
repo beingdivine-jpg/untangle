@@ -1,14 +1,14 @@
 :root {
-  --canvas: #F3F1E8;
-  --surface: #FCFAF3;
+  --canvas: #F1F1EC;
+  --surface: #FAFBF5;
   --peach: #F6D5BF;
   --peach-wash: #FBE7D8;
   --lavender-wash: #F0EBF3;
   --lavender-line: #D5CBDC;
-  --ink: #203D35;
-  --muted: #52665C;
-  --accent: #285345;
-  --accent-hover: #173D30;
+  --ink: #24271F;
+  --muted: #5D6256;
+  --accent: #3E502A;
+  --accent-hover: #283719;
   --line: #CECFC0;
   --control-line: #8A9B8C;
   --lavender: #E7E0EC;
@@ -19,7 +19,7 @@
   --radius-control: 14px;
   --radius-panel: 24px;
   --shadow-panel: 0 14px 45px rgb(48 33 46 / 5%);
-  --font-display: 'Fraunces Variable', Georgia, serif;
+  --font-display: 'Archivo Variable', 'Manrope Variable', sans-serif;
   --font-body: 'Manrope Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --space-1: 4px;
   --space-2: 8px;

@@ -81,9 +81,9 @@ export function Experience({ openPlan }: { openPlan: (plan?: Plan, start?: boole
     document.addEventListener('keydown',key)
     return () => { document.removeEventListener('keydown',key); before?.focus() }
   }, [pending])
-  function begin(mode: 'demo'|'personal') {
+  function begin(mode: 'demo'|'personal', concern?: ConcernId) {
     stop(); setHelp(false); setError(''); setMessage(''); setEvents([]); setEditDraft(null); setPreviousNote(null); setTab('connect')
-    if (mode === 'personal') { updateSetup({ concerns: session.personal.concerns, services: session.personal.services }); openPlan(undefined, true); return }
+    if (mode === 'personal') { updateSetup({ concerns: concern ? [...new Set([...session.personal.concerns, concern])] : session.personal.concerns, services: session.personal.services }); openPlan(undefined, true); return }
     selectMode('example'); if (!session.example.note) updatePlan(p => ({ ...p, note: stories[0].note })); setScreen('demo')
   }
   function changeStory(id: StoryId) { stop(); const next=stories.find(s=>s.id===id)!; setStoryId(id); setDraft(null); selectMode('example'); updatePlan({ ...emptyPlan(), example: true, note: next.note }); setSelection([]); setEvents([]);  setScriptedNote(true); setPreviousNote(null); setEditDraft(null); setPreview(next.prediction); setError(''); setMessage(''); setTab('connect') }
