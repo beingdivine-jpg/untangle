@@ -1,7 +1,7 @@
 {
   "date": "2026-10-04",
   "scope": "Resolution workspace, guide-agent service and verified volunteer workflow",
-  "unitAndDatabaseTests": 75,
+  "unitAndDatabaseTests": 76,
   "postgresqlPermissionTests": 8,
   "browserSuiteCases": 149,
   "newBrowserCases": 24,
@@ -21,5 +21,6 @@
     "Verified admin and volunteer accounts",
     "OpenAI project key, evaluated model and operating budget",
     "Independent language, practitioner and participant reviews"
-  ]
+  ],
+  "deploymentRegression": "Reproduced and fixed Node ESM imports pointing at TypeScript source paths after deployment. A test emits the function dependency graph and starts both endpoints in plain Node without a TypeScript loader."
 }

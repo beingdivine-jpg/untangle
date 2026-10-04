@@ -1,5 +1,5 @@
-import { taskById } from "../plan/content.ts";
-import type { TaskId } from "../plan/content.ts";
+import { taskById } from "../plan/content.js";
+import type { TaskId } from "../plan/content.js";
 export type CoachInput = {
   taskId: TaskId;
   question: string;

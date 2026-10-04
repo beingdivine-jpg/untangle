@@ -162,7 +162,7 @@ The comparison is desk research plus a bounded browser walkthrough of Refuge’s
 ```sh
 npm run build       # Typecheck and production build
 npm run lint
-npm test            # 75 unit and database tests
+npm test            # 76 unit, database and deployment tests
 npm run test:e2e    # Chromium, Firefox and WebKit journeys
 ```
 

@@ -6,12 +6,12 @@ import {
   readBody,
   sameOrigin,
   sendJSON,
-} from "./community.ts";
-import type { ServicesConfig } from "./community.ts";
-import { coachInput, coachAnswer } from "../src/features/resolve/coachCore.ts";
-import type { CoachEvent } from "../src/features/resolve/coachCore.ts";
-import { taskById } from "../src/features/plan/content.ts";
-import type { TaskId } from "../src/features/plan/content.ts";
+} from "./community.js";
+import type { ServicesConfig } from "./community.js";
+import { coachInput, coachAnswer } from "../src/features/resolve/coachCore.js";
+import type { CoachEvent } from "../src/features/resolve/coachCore.js";
+import { taskById } from "../src/features/plan/content.js";
+import type { TaskId } from "../src/features/plan/content.js";
 type ModelItem = {
   type: string;
   name?: string;

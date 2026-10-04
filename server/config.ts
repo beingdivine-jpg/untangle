@@ -1,4 +1,4 @@
-import type { ServicesConfig } from "./community.ts";
+import type { ServicesConfig } from "./community.js";
 export const servicesConfig = (): ServicesConfig => ({
   enabled: process.env.COMMUNITY_ENABLED === "true",
   aiEnabled: process.env.LIVE_COACH_ENABLED === "true",
