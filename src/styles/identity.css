@@ -1,337 +1,334 @@
-/* Untangle's visual identity: an expressive opening, then a quiet place to work.
-   Scoped selectors keep the theme stable when the plan's CSS is lazy-loaded. */
-.untangle-app {
-  --plum: #251b2b;
-  --plum-raised: #34263c;
-  --apricot: #f8c6a3;
-  --petal: #ede0e8;
-}
-.untangle-app ::selection { background: #f8c6a3; color: #2c2131; }
-.untangle-app button, .untangle-app a { transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease; }
-.untangle-app button:focus-visible, .untangle-app a:focus-visible { outline: 3px solid #a26493; outline-offset: 4px; }
-.untangle-app .u-experience { --u-paper: #f2ebec; --u-ink: #2c2131; --u-muted: #65586b; --u-red: #713d67; --u-line: #dcd0d9; background: var(--u-paper); }
-.untangle-app .u-header, .untangle-app .header-wrap { background: var(--plum); color: #fff2e6; border: 0; }
-.untangle-app .u-header { max-width: none; padding: 20px max(32px, calc((100vw - 1312px) / 2)); gap: 24px; min-height: 88px; }
-.untangle-app .u-header .wordmark, .untangle-app .site-header .wordmark { color: #fff2e6; font-size: 34px; font-weight: 460; }
-.untangle-app .u-header .thread-mark, .untangle-app .site-header .thread-mark, .untangle-app .wordmark-period { color: var(--apricot); }
-.untangle-app .u-brand-note, .untangle-app .brand-description { color: #d5c1d3; border-color: #655168; font-size: 12px; }
-.untangle-app .u-header nav a, .untangle-app .u-header nav button, .untangle-app .platform-help { color: #ecdeeb; font-size: 12px; }
-.untangle-app .language-switch { background: #392c40; border-color: #796680; padding: 3px; }
-.untangle-app .language-switch button { color: #f7e9f4; min-height: 38px; padding-inline: 13px; }
-.untangle-app .language-switch button[aria-pressed=true] { background: var(--apricot); color: #332134; }
-.untangle-app .u-exit, .untangle-app .exit-link { color: #f9ece3; border: 1px solid #938098; border-radius: 999px; background: transparent; min-height: 44px; padding: 9px 16px; font-size: 12px; }
-.untangle-app .u-exit:hover, .untangle-app .exit-link:hover { background: #493450; }
-.untangle-app .u-header :focus-visible, .untangle-app .header-wrap :focus-visible { outline-color: #f8c6a3; }
-.untangle-app .session-status { background: #e9dee8; color: #4c3754; border: 0; font-size: 12px; padding: 8px max(32px, calc((100vw - 1312px) / 2)); gap: 10px; }
-.untangle-app .session-status button { min-height: 36px; }
-.untangle-app .u-landing { background: var(--plum); color: #fff2e6; }
-.untangle-app .u-landing > .session-status { background: #302337; color: #e4d0e1; border-block: 1px solid #46344e; }
-.untangle-app .u-intro { max-width: 1408px; padding: 42px 48px 30px; margin: auto; gap: 0; grid-template-columns: 1fr 1.08fr; align-items: center; position: relative; isolation: isolate; }
-.untangle-app .u-intro-copy { position: relative; z-index: 1; padding-bottom: 15px; }
-.untangle-app .u-intro-copy .u-eyebrow { color: #e0bdd8; font-size: 11px; font-weight: 650; letter-spacing: 2.2px; }
-.untangle-app .u-intro-copy .tiny-dot { background: #f8c6a3; box-shadow: 0 0 0 4px #f8c6a31a; width: 5px; height: 5px; }
-.untangle-app .u-intro h1 { color: #fff0e3; font-size: clamp(64px, 6.55vw, 96px); line-height: 1.035; font-weight: 420; letter-spacing: -4.5px; margin: 24px 0 24px; }
-.untangle-app .u-intro h1 em { color: #f6bd98; letter-spacing: -4.5px; font-weight: 430; }
-.untangle-app .u-intro h1 br { display: initial; }
-.untangle-app .u-intro h1 em::before { content: none; }
-.untangle-app .u-intro-copy > p { font-size: 15px; color: #ddcddd; line-height: 1.85; max-width: 465px; }
-.untangle-app .u-intro-actions { display: flex; flex-direction: row; align-items: center; gap: 12px; margin: 27px 0 16px; }
-.untangle-app .u-primary, .untangle-app .button { border-radius: 999px; background: #713d67; border-color: #713d67; color: #fff9f3; min-height: 50px; padding: 13px 23px; font-size: 14px; font-weight: 650; }
-.untangle-app .u-primary:hover, .untangle-app .button:hover { background: #54294d; border-color: #54294d; }
-.untangle-app .button.secondary { background: transparent; color: #53324f; border-color: #9c7f97; }
-.untangle-app .button.secondary:hover { background: #ecdee7; }
-.untangle-app .u-quiet { font-size: 13px; color: #68365e; }
-.untangle-app .u-intro-actions .u-primary { background: var(--apricot); color: #302134; font-size: 13px; min-height: 54px; gap: 14px; order: 0; }
-.untangle-app .u-intro-actions .u-primary:hover { background: #ffe0c8; }
-.untangle-app .u-intro-actions .u-quiet { border: 1px solid #947788; border-radius: 999px; color: #ffecdf; min-height: 54px; padding: 12px 18px; gap: 10px; font-size: 13px; }
-.untangle-app .u-intro-actions .u-quiet:hover { background: #45304a; }
-.untangle-app .u-intro-actions button:focus-visible, .untangle-app .u-landing .u-resume button:focus-visible { outline-color: var(--apricot); }
-.untangle-app .u-intro-copy > small { display: block; color: #c8b2ca; max-width: 450px; font-size: 11px; line-height: 1.8; margin: 0; }
-.untangle-app .u-resume .u-quiet { color: var(--apricot); text-decoration: underline; }
-.untangle-app .u-intro-art { width: 100%; min-width: 0; align-self: stretch; display: flex; align-items: center; margin: 0; }
-.living-portrait { position: relative; width: 100%; aspect-ratio: 1; margin: 0; isolation: isolate; }
-.portrait-stage { position: absolute; inset: 0; overflow: hidden; mask-image: linear-gradient(to bottom, #000 80%, transparent 100%); }
-.portrait-image { display: block; width: 100%; height: 100%; object-fit: contain; mask-image: linear-gradient(to right, transparent, #000 12%, #000 90%, transparent); animation: portrait-breathe 11s ease-in-out infinite alternate; transform-origin: 50% 75%; }
-.portrait-threads { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
-.portrait-strands { transform-origin: 20% 43%; animation: strand-sway 9s ease-in-out infinite alternate; }
-.portrait-strand { stroke: #f7c59e; stroke-width: 1.5; opacity: .65; }
-.strand-two { stroke: #c7a4c8; opacity: .55; stroke-width: 1; }
-.strand-three { stroke: #f7c59e; opacity: .45; }
-.portrait-current { stroke: #fff0df; stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 5 95; animation: strand-current 16s linear infinite; }
-.portrait-caption { position: absolute; bottom: 36px; left: 15%; display: flex; gap: 13px; align-items: center; color: #f2c8ae; font-family: var(--font-display); font-size: 24px; font-style: italic; transform: rotate(-5deg); }
-.portrait-caption-line { width: 44px; height: 1px; background: #d6a993; }
-.portrait-motion { position: absolute; right: 6px; bottom: 12px; color: #e8d2e3; background: #302237; border: 1px solid #72596f; border-radius: 999px; min-height: 44px; display: flex; align-items: center; gap: 8px; padding: 10px 13px; font-size: 11px; }
-.portrait-motion:hover { background: #4b3450; }
-.untangle-app .portrait-motion:focus-visible { outline-color: #f8c6a3; }
-.living-portrait[data-motion=paused] * { animation-play-state: paused !important; }
-@keyframes portrait-breathe { from { transform: scale(1) rotate(-.3deg); } to { transform: scale(1.018) rotate(.3deg); } }
-@keyframes strand-sway { from { transform: rotate(-1.5deg) scaleY(.985); } to { transform: rotate(1deg) scaleY(1.01); } }
-@keyframes strand-current { to { stroke-dashoffset: -100; } }
+/* The thread room: an interactive sculpture and a working notebook. */
+.untangle-app { --paper:#f3f1e8; --ink-green:#203d35; --thread:#c45f43; --rule:#c9cdbd; --highlight:#e5e99f; }
+.untangle-app ::selection { background:#e4e99e; color:#203d35; }
+.untangle-app .loading-page { min-height:70svh; display:grid; place-content:center; padding:32px; color:#203d35; font-family:var(--font-display); font-size:28px; text-align:center; }
+.untangle-app :is(button,a) { transition:background-color .18s ease,border-color .18s ease,color .18s ease; }
+.untangle-app :is(button,a,input,select,textarea):focus-visible { outline:3px solid #8b492e; outline-offset:4px; }
+.untangle-app .u-experience { --u-paper:var(--paper); --u-ink:#203d35; --u-muted:#52665c; --u-red:#285345; --u-line:var(--rule); color:var(--u-ink); background:var(--paper); }
+.untangle-app .u-header,.untangle-app .header-wrap { background:var(--paper); color:var(--ink-green); border:0; }
+.untangle-app .u-header { max-width:1440px; padding:21px 44px 13px; gap:24px; min-height:86px; }
+.untangle-app .u-header .wordmark,.untangle-app .site-header .wordmark { font-size:31px; font-weight:480; color:var(--ink-green); }
+.untangle-app .thread-mark,.untangle-app .wordmark-period { color:var(--thread); }
+.untangle-app .u-brand-note { color:#607164; font-size:11px; letter-spacing:.1px; }
+.untangle-app .u-header nav { margin-left:auto; gap:22px; }
+.untangle-app .u-header nav a,.untangle-app .u-header nav button { font-size:12px; color:#3c5549; }
+.untangle-app .u-header nav a { display:none; }
+.untangle-app .language-switch { border:0; background:transparent; padding:0; gap:2px; border-radius:0; }
+.untangle-app .language-switch button { background:transparent; color:#455d4f; border-radius:0; min-height:42px; padding:9px 10px; font-size:12px; border-bottom:2px solid transparent; }
+.untangle-app .language-switch button[aria-pressed=true] { color:#203d35; border-color:#203d35; background:transparent; }
+.untangle-app .u-exit,.untangle-app .exit-link { border-radius:0; background:transparent; border:0; border-bottom:1px solid #879280; color:#203d35; min-height:44px; padding:10px 0 10px 10px; font-size:12px; }
+.untangle-app .u-exit:hover,.untangle-app .exit-link:hover { background:#e7e9d8; }
+.untangle-app .session-status { background:#e5e8d9; border:0; padding:8px max(32px,calc((100vw - 1312px) / 2)); color:#40543e; font-size:12px; gap:10px; }
+.untangle-app .session-status button { min-height:36px; }
+.untangle-app .u-landing { display:flex; flex-direction:column; background:var(--paper); }
+.untangle-app .u-landing > .u-header { order:0; width:100%; }
+.untangle-app .u-landing > main { order:1; }
+.untangle-app .u-landing > .session-status { order:2; margin:0 44px; padding:15px 0; background:transparent; border-top:1px solid var(--rule); }
+.untangle-app .u-landing > .u-footer { order:3; }
+.untangle-app .u-help { order:1; color:#203d35; background:#edf0cd; border:1px solid #b6c19a; border-radius:0; }
 
-/* The second act explains the companion without competing with the first choice. */
-.untangle-app .u-companion-intro { max-width: 1312px; margin: 16px auto 0; display: flex; gap: 20px; align-items: center; background: #eadce5; color: #342339; padding: 30px 36px 25px; border-radius: 30px 30px 0 0; }
-.untangle-app .u-companion-intro .u-agent-symbol { width: 50px; height: 50px; background: #4e3153; border: 0; color: #f6c9aa; border-radius: 50%; }
-.untangle-app .u-companion-intro h2 { font-family: var(--font-display); font-size: 28px; font-weight: 480; letter-spacing: -.5px; }
-.untangle-app .u-companion-intro p { color: #625167; font-size: 13px; margin-top: 5px; }
-.untangle-app .u-companion-caption { max-width: 270px; margin-left: auto; color: #69556e; font-size: 12px; line-height: 1.8; }
-.untangle-app .u-how { max-width: 1312px; margin: 0 auto; padding: 26px 36px 35px; border: 0; gap: 42px; background: #eadce5; color: #342339; border-radius: 0 0 30px 30px; }
-.untangle-app .u-how > div { padding: 19px 0 0; border-top: 1px solid #c9b7c7; }
-.untangle-app .u-how > div > span { position: static; color: #714c6e; font-size: 12px; display: block; margin-bottom: 13px; }
-.untangle-app .u-how h2 { font-size: 23px; font-weight: 450; }
-.untangle-app .u-how p { color: #645169; font-size: 13px; margin-top: 8px; }
-.untangle-app .u-intro-bottom { max-width: 1312px; margin: auto; color: #d9bed5; padding: 25px 0; font-size: 12px; }
-.untangle-app .u-intro-bottom button { color: #f6c7a9; font-size: 13px; }
-.untangle-app .u-footer { background: #e9e0e7; border-top: 1px solid #d6c8d3; color: #5c4663; font-size: 12px; padding: 24px max(32px, calc((100vw - 1312px) / 2)); }
-.untangle-app .u-footer button { color: inherit; font-size: 12px; }
-.untangle-app .u-landing .u-footer { background: #251b2b; color: #cbb4c8; border-top-color: #4b354f; }
-.untangle-app .u-landing .u-footer .thread-mark { color: #f6c7a9; }
-.untangle-app .u-help { background: #fff8f1; color: #332338; border-radius: 20px; }
+/* One composition. Type, sculpture and gesture share the same stage. */
+.thread-welcome { max-width:1440px; margin:auto; padding:8px 44px 0; }
+.welcome-caption { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:13px 0 0; color:#586949; font-size:10px; letter-spacing:1.7px; }
+.welcome-edition { display:flex; align-items:center; gap:13px; font-family:var(--font-display); font-size:15px; letter-spacing:0; font-style:italic; color:#526046; }
+.welcome-stage { position:relative; height:clamp(330px,30vw,440px); isolation:isolate; margin-top:16px; }
+.welcome-stage h1 { position:absolute; inset:0; margin:0; z-index:2; pointer-events:none; font-family:var(--font-display); font-size:clamp(76px,8.6vw,126px); line-height:1; font-weight:390; letter-spacing:-6px; color:#203d35; }
+.welcome-stage h1 > span { position:absolute; left:0; top:0; }
+.welcome-stage h1 > em { position:absolute; right:2%; bottom:7px; font-weight:390; font-size:1.05em; letter-spacing:-6px; }
+.welcome-margin-note { position:absolute; right:0; top:50px; font-family:var(--font-display); font-size:18px; font-style:italic; color:#80553c; writing-mode:vertical-rl; transform:rotate(3deg); }
+.thread-sculpture { position:absolute; inset:-12px 0 0; }
+.sculpture-canvas,.sculpture-fallback { width:100%; height:100%; position:absolute; inset:0; display:block; pointer-events:none; transition:opacity .3s; }
+.sculpture-fallback { padding:0 12%; }
+.sculpture-shadow { position:absolute; left:32%; bottom:20%; width:36%; height:15%; background:radial-gradient(ellipse,#606b4a35,transparent 70%); filter:blur(12px); transform:rotate(-12deg); opacity:.5; }
+.sculpture-controls { position:absolute; bottom:12px; left:25px; z-index:3; display:flex; align-items:center; gap:14px; }
+.thread-pull { display:grid; width:200px; gap:5px; }
+.thread-pull > span { font-family:var(--font-display); font-style:italic; color:#76523e; font-size:17px; }
+.thread-pull small { font-size:10px; color:#596a57; line-height:1.5; }
+.thread-pull input { appearance:none; -webkit-appearance:none; width:100%; height:28px; margin:0; cursor:ew-resize; background:transparent; accent-color:#285345; }
+.thread-pull input::-webkit-slider-runnable-track { height:2px; background:#8e9a73; }
+.thread-pull input::-moz-range-track { height:2px; background:#8e9a73; }
+.thread-pull input::-webkit-slider-thumb { appearance:none; width:22px; height:22px; border-radius:50%; border:5px solid #f3f1e8; background:#bd6546; box-shadow:0 0 0 1px #a87154; margin-top:-10px; }
+.thread-pull input::-moz-range-thumb { width:12px; height:12px; border-radius:50%; border:5px solid #f3f1e8; background:#bd6546; box-shadow:0 0 0 1px #a87154; }
+.sculpture-motion { width:44px; height:44px; display:grid; place-items:center; border:1px solid #bcc5aa; background:transparent; color:#4e654b; border-radius:50%; }
+.sculpture-motion:hover { background:#e7e9d6; }
+.fallback-cords { transform-origin:center; animation:thread-float 12s ease-in-out infinite alternate; }
+.thread-sculpture[data-motion=paused] .fallback-cords { animation-play-state:paused; }
+@keyframes thread-float { from { transform:rotate(-3deg) translateY(0); } to { transform:rotate(3deg) translateY(-7px); } }
+.welcome-bottom { display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:center; gap:40px; margin-top:24px; padding:24px 0 30px; border-top:1px solid var(--rule); }
+.welcome-context { max-width:440px; }
+.welcome-context p { font-size:16px; line-height:1.8; color:#294336; }
+.welcome-context > span { display:block; font-size:12px; line-height:1.7; color:#61705c; margin-top:8px; }
+.welcome-start .u-intro-actions { display:flex; align-items:center; gap:24px; margin:0 0 13px; flex-wrap:wrap; }
+.untangle-app .u-primary,.untangle-app .button { border-radius:3px; color:#f9faeb; background:#285345; border:1px solid #285345; min-height:50px; padding:13px 20px; font-size:14px; font-weight:600; box-shadow:none; }
+.untangle-app .u-primary:hover,.untangle-app .button:hover { background:#173d30; border-color:#173d30; }
+.untangle-app .button.secondary { background:transparent; color:#285345; border-color:#8c9c82; }
+.untangle-app .button.secondary:hover { background:#e5e9d8; }
+.untangle-app .u-quiet { color:#2e4f3d; font-size:13px; }
+.untangle-app .welcome-start .u-primary { min-height:58px; padding:15px 22px; gap:30px; font-size:13px; }
+.untangle-app .welcome-start .u-primary > svg { color:#e3e998; }
+.untangle-app .welcome-start .u-quiet { min-height:54px; font-size:14px; gap:10px; padding:0; }
+.welcome-play { width:38px; height:38px; border:1px solid #839374; border-radius:50%; display:grid; place-items:center; }
+.welcome-start > small { display:flex; align-items:center; gap:8px; color:#5d6a56; font-size:11px; line-height:1.7; }
+.welcome-resume { display:flex; align-items:center; gap:12px; min-height:44px; background:transparent; padding:8px 0; text-decoration:underline; font-size:13px; color:#294b37; }
+.welcome-explanation { border-top:1px solid var(--rule); font-size:13px; color:#3f5747; }
+.welcome-explanation summary { display:flex; gap:12px; align-items:center; min-height:65px; list-style:none; cursor:pointer; }
+.welcome-explanation summary::-webkit-details-marker { display:none; }
+.welcome-explanation summary > span { display:flex; align-items:center; gap:10px; margin-left:auto; font-size:11px; }
+.welcome-explanation[open] summary > span > svg { transform:rotate(180deg); }
+.welcome-explanation > div { display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:32px; padding:0 0 25px; line-height:1.9; }
+.welcome-explanation p + p { margin:0; }
+.untangle-app .u-footer { padding:20px 44px; color:#54664e; background:transparent; border-top:1px solid var(--rule); font-size:11px; }
+.untangle-app .u-footer button { color:inherit; font-size:11px; }
 
-/* Companion workspace: plum structure, paper for reading, visible approval. */
-.untangle-app .u-studio { max-width: 1264px; padding-bottom: 30px; }
-.untangle-app .u-studio-top { border-color: #d7c9d4; }
-.untangle-app .u-mode { background: #e5d8e3; border-color: #c1a6bd; color: #593853; font-size: 11px; border-radius: 999px; padding: 8px 13px; }
-.untangle-app .u-mode.demo { background: #f5dfcc; border-color: #d0ae90; color: #78452a; }
-.untangle-app .u-studio-heading { padding: 35px 0 30px; }
-.untangle-app .u-studio-heading h1 { font-size: clamp(36px, 4.2vw, 58px); line-height: 1.15; font-weight: 440; letter-spacing: -1.8px; }
-.untangle-app .u-studio-heading p { font-size: 14px; max-width: 690px; }
-.untangle-app .u-eyebrow, .untangle-app .u-panel-label { color: #7b5073; }
-.untangle-app .u-studio-seal { border-color: #b894ad; background: #ead5e3; color: #704765; transform: rotate(7deg); }
-.untangle-app .u-story-picker button { border-color: #b9a4b4; font-size: 13px; background: #f8f0f3; padding: 12px 18px; }
-.untangle-app .u-story-picker button[aria-pressed=true], .untangle-app .u-service-picker button[aria-pressed=true] { background: #513453; border-color: #513453; color: #fff1e9; }
-.untangle-app .u-service-picker button { border-color: #b9a4b4; }
-.untangle-app .u-studio-tabs { border-color: #d2c1ce; gap: 12px; margin-bottom: 30px; }
-.untangle-app .u-studio-tabs button { border-radius: 16px 16px 0 0; padding: 17px 22px; font-size: 13px; }
-.untangle-app .u-studio-tabs button[aria-current=page] { background: #eadbe6; border-bottom-color: #75446b; color: #65365e; }
-.untangle-app .u-studio-grid { gap: 36px; align-items: start; }
-.untangle-app .u-working-panel { border-radius: 24px; background: #fff9f3; border: 1px solid #d7c5d0; box-shadow: 0 12px 40px #43233b07; padding: 34px; overflow: hidden; }
-.untangle-app .u-working-panel::before { background: linear-gradient(90deg, #be87ab, #f0bda0); height: 5px; }
-.untangle-app .u-working-panel h2 { font-size: 34px; font-weight: 460; }
-.untangle-app .u-panel-lead { font-size: 14px; }
-.untangle-app .u-panel-label { font-size: 11px; }
-.untangle-app .u-draft-list strong { font-size: 14px; }
-.untangle-app .u-draft-list small { font-size: 12px; }
-.untangle-app .u-input-label { font-size: 13px; }
-.untangle-app .u-working-panel textarea, .untangle-app .u-working-panel select { border-color: #ac8fa4; background: #fffdf9; border-radius: 12px; font-size: 15px; }
-.untangle-app .u-agent-boundary { font-size: 12px; border-color: #ded0d8; }
-.untangle-app .u-agent-boundary > svg { color: #8a5079; }
-.untangle-app .u-trace { background: #e9dfe8; border: 1px solid #d2c0d0; border-radius: 20px; padding: 23px; }
-.untangle-app .u-trace-heading strong { font-size: 14px; }
-.untangle-app .u-trace-heading small { font-size: 11px; }
-.untangle-app .u-trace-heading .u-agent-symbol { background: #563558; color: #ffd4b9; border: 0; }
-.untangle-app .u-trace ol { padding-left: 0; }
-.untangle-app .u-trace li, .untangle-app .u-idle { font-size: 13px; }
-.untangle-app .u-idle { margin-left: 0; }
-.untangle-app .u-fact-note { border-radius: 20px; background: #f4dfd1; border-color: #d9bda7; }
-.untangle-app .u-fact-note ul { font-size: 13px; }
-.untangle-app .u-canvas .thread-scene { border-radius: 28px; background: radial-gradient(ellipse at center, #e9d7e5, transparent 70%); }
-.untangle-app .scene-node { border-radius: 16px; border-color: #baa0b2; background: #fff8ef; box-shadow: 0 6px 20px #5c32420c; }
-.untangle-app .scene-node:hover, .untangle-app .scene-node.selected { border-color: #7a4269; }
-.untangle-app .scene-knot { background: #ecd3df; border-color: #bd93ae; color: #734669; box-shadow: 0 0 0 10px #f2ebec99; }
-.untangle-app .u-consent { border-radius: 24px; }
-.untangle-app .u-request-preview { border-radius: 12px; background: #eee3ec; }
-.untangle-app .u-studio-bottom { font-size: 12px; }
+/* The working notebook uses margins, ruled rows and tabs instead of nested cards. */
+.untangle-app .site-header { max-width:1328px; padding:13px 28px; margin:auto; min-height:83px; gap:24px; }
+.untangle-app .brand-description { color:#52654f; border-color:#bcc5ae; font-size:12px; }
+.untangle-app .platform-help { color:#385440; font-size:12px; }
+.untangle-app .p-workspace { max-width:1328px; padding:0 32px; grid-template-columns:185px minmax(0,1fr); gap:34px; }
+.untangle-app .p-sidebar { border-right:1px solid #bcc5b3; padding-top:32px; padding-right:20px; }
+.untangle-app .p-sidebar-label { color:#526039; padding-left:0; font-size:11px; letter-spacing:1.8px; }
+.untangle-app .p-sidebar nav { gap:0; }
+.untangle-app .p-sidebar nav button { background:transparent; color:#51654e; border-radius:0; border-bottom:1px solid #d4d8c9; padding:14px 3px; min-height:55px; }
+.untangle-app .p-sidebar nav button:hover { background:#e8ecda; }
+.untangle-app .p-sidebar nav button.selected { background:#e6eaa9; color:#29482e; padding-left:9px; border-left:3px solid #718345; }
+.untangle-app .p-sidebar nav button.selected svg { color:#436032; }
+.untangle-app .p-side-note { margin:50px 0 0; font-size:12px; }
+.untangle-app .p-topline { min-height:65px; font-size:11px; }
+.untangle-app .p-main h1 { font-family:var(--font-display); font-size:44px; font-weight:420; line-height:1.2; letter-spacing:-1.5px; }
+.untangle-app .p-page-heading { max-width:760px; padding:17px 0 28px; }
+.untangle-app .p-page-heading p { font-size:15px; line-height:1.85; }
+.untangle-app .p-eyebrow { color:#526039; font-size:11px; }
+.untangle-app .p-panel,.untangle-app .p-guide-card,.untangle-app .p-task-list { border-radius:2px; border-color:#c6cebb; box-shadow:none; background:#fcfaf3; }
+.untangle-app .p-guide-card { border-width:0 0 1px; background:transparent; padding:24px 12px 24px 0; }
+.untangle-app .p-guide-card:hover { background:#eaeddd; transform:none; }
+.untangle-app .p-guide-grid { gap:14px 30px; }
+.untangle-app .p-guide-card h2 { font-family:var(--font-display); font-size:25px; font-weight:430; }
+.untangle-app .p-guide-card p,.untangle-app .p-topic p { font-size:14px; }
+.untangle-app .p-guide-foot,.untangle-app .p-guide-card .p-eyebrow { font-size:12px; }
+.untangle-app .p-next { border:0; border-left:3px solid #80924c; border-radius:0; background:#e7ebc8; padding:26px; }
+.untangle-app .p-next h2 { font-size:31px; font-weight:430; }
+.untangle-app .p-next p { font-size:14px; }
+.untangle-app .p-progress { background:transparent; border:0; border-left:1px solid #bac6a6; border-radius:0; }
+.untangle-app .p-task-list { border:0; border-top:1px solid #acba9c; }
+.untangle-app .p-task-row,.untangle-app .p-row-group { background:transparent; }
+.untangle-app .p-task-row:hover { background:#eaedda; }
+.untangle-app .p-task-text strong { font-size:14px; }
+.untangle-app .p-task-row { padding:22px 8px; border-color:#cbd1bf; }
+.untangle-app .p-remove-check { color:#775343; }
+.untangle-app .p-task-dot { border-color:#889c76; }
+.untangle-app .p-task-stages { gap:6px; border-color:#b7c5a5; }
+.untangle-app .p-task-stages button { border-radius:3px 3px 0 0; padding:13px 18px; }
+.untangle-app .p-task-stages button:first-child { padding-left:18px; }
+.untangle-app .p-task-stages button[aria-current=step] { background:#e5eaa9; color:#365330; border-color:#718744; }
+.untangle-app .p-task-body { padding:30px 32px; border-left:3px solid #e2b497; background:#fcfaf3; }
+.untangle-app .p-task-body > h2 { font-size:22px; }
+.untangle-app .p-task-body > p { font-size:15px; }
+.untangle-app .p-soft-note { background:#eef0df; border-radius:2px; }
+.untangle-app .p-filters button { min-height:44px; border-radius:2px; border-color:#b8c2a9; font-size:12px; }
+.untangle-app .p-filters button[aria-pressed=true] { background:#36573b; border-color:#36573b; color:#fafbec; }
+.untangle-app .p-search { border-radius:2px; border-color:#9fac8f; background:#fcfaf3; }
+.untangle-app .p-topic { border:0; border-bottom:1px solid #bfcaad; background:transparent; border-radius:0; }
+.untangle-app .p-topic:hover { background:#e8edda; transform:none; }
+.untangle-app .p-topic-icon { border-radius:50%; background:#e7ead3; color:#587045; }
+.untangle-app .p-outcomes button { border-radius:3px; border-color:#a4b394; background:#fcfaf3; }
+.untangle-app .p-outcomes button.selected { border-color:#72824b; background:#e9edb7; }
+.untangle-app .p-example-banner { background:#e7eccc; border-color:#bcc798; border-radius:2px; color:#435936; }
+.untangle-app .p-conversation { background:#e7ebd7; border-color:#bcc7ac; border-radius:2px; }
+.untangle-app .p-support-intro { background:#efe2d5; }
+.untangle-app .p-support-card { border-width:1px 0 0; background:transparent; border-radius:0; }
+.untangle-app .p-form>input { border-radius:2px; border-color:#9dac8f; }
+.untangle-app .p-main textarea,.untangle-app .plan-note textarea { background:#fcfaf3; border-color:#a6b598; border-radius:2px; }
+.untangle-app .guide-device button,.untangle-app .guide-help-options button { border-radius:2px; background:transparent; border-color:#acb89c; color:#3d5638; }
+.untangle-app .guide-device button[aria-pressed=true],.untangle-app .guide-help-options button[aria-pressed=true] { background:#e7ecb4; border-color:#7d8f55; }
+.untangle-app .plan-setup { max-width:860px; margin:0 auto 25px; padding-left:25px; border-left:1px solid #d4a690; }
+.untangle-app .plan-setup .p-page-heading { padding-top:14px; }
+.untangle-app .plan-setup fieldset { margin:27px 0; }
+.untangle-app .plan-setup legend { font-family:var(--font-display); font-size:25px; font-weight:450; margin-bottom:14px; }
+.untangle-app .setup-choices { gap:0 25px; }
+.untangle-app .setup-choices button { border:0; border-bottom:1px solid #bcc7ad; border-radius:0; background:transparent; min-height:85px; padding:18px 4px; gap:14px; }
+.untangle-app .setup-choices button:hover { background:#e9eddb; }
+.untangle-app .setup-choices button[aria-pressed=true] { background:#e8ecb3; box-shadow:none; border-color:#829257; padding-inline:12px; }
+.untangle-app .setup-choice-label { flex:1; font-size:15px; line-height:1.7; }
+.untangle-app .setup-concern-icon { display:grid; place-items:center; width:34px; height:34px; color:#557046; flex-shrink:0; }
+.untangle-app .setup-action { background:#f3f1e8f5; border-color:#b5c2a5; padding:19px 0; }
+.untangle-app .site-footer { font-size:12px; }
 
-/* Your plan remains a simple reading space, with an illustrated journal identity. */
-.untangle-app .site-header { padding: 10px 28px; max-width: 1330px; gap: 22px; min-height: 86px; }
-.untangle-app .p-workspace { padding: 0 32px; gap: 38px; max-width: 1328px; }
-.untangle-app .p-sidebar { border: 0; padding-top: 32px; }
-.untangle-app .p-sidebar-label { color: #734c6b; padding-left: 15px; }
-.untangle-app .p-sidebar nav { gap: 8px; }
-.untangle-app .p-sidebar nav button { padding: 13px 15px; border-radius: 16px; min-height: 52px; }
-.untangle-app .p-sidebar nav button:hover { background: #e4d7e1; }
-.untangle-app .p-sidebar nav button.selected { background: #503252; color: #fff3e9; }
-.untangle-app .p-sidebar nav button.selected svg { color: #f9c8a9; }
-.untangle-app .p-sidebar nav button.selected small { background: #6d4c6d; color: #fff3e9; }
-.untangle-app .p-side-note { margin-top: 55px; border-top: 1px solid #d7c5d2; padding-top: 22px; }
-.untangle-app .p-main h1 { font-family: var(--font-display); font-weight: 460; font-size: 43px; line-height: 1.2; letter-spacing: -1.4px; }
-.untangle-app .p-eyebrow { color: #6f4666; }
-.untangle-app .p-topline { min-height: 72px; }
-.untangle-app .p-page-heading { padding-bottom: 28px; }
-.untangle-app .p-page-heading p { font-size: 15px; }
-.untangle-app .p-panel, .untangle-app .p-task-list, .untangle-app .p-guide-card { border-radius: 20px; border-color: #d7c5d0; background: #fff9f3; }
-.untangle-app .p-task-body { padding: 32px; border-top: 4px solid #c190af; }
-.untangle-app .p-task-body > h2 { font-size: 23px; }
-.untangle-app .p-task-body > p { font-size: 15px; }
-.untangle-app .p-task-stages { gap: 8px; }
-.untangle-app .p-task-stages button { padding: 14px 18px; border-radius: 14px 14px 0 0; }
-.untangle-app .p-task-stages button[aria-current=step] { background: #eadbe6; border-color: #76416c; }
-.untangle-app .p-task-stages button:first-child { padding-left: 18px; }
-.untangle-app .p-next { background: #e9d7e3; border: 1px solid #c7a9bf; border-radius: 22px; }
-.untangle-app .p-next h2 { font-size: 30px; }
-.untangle-app .p-next p { font-size: 14px; }
-.untangle-app .p-progress { background: #eaded7; border-color: #d5bdb0; }
-.untangle-app .p-task-row, .untangle-app .p-row-group { background: #fff9f3; }
-.untangle-app .p-task-row:hover { background: #f7e8ed; }
-.untangle-app .p-task-text strong { font-size: 15px; }
-.untangle-app .p-remove-check { color: #734866; }
-.untangle-app .p-topic, .untangle-app .p-guide-card { border-radius: 20px; padding: 23px; }
-.untangle-app .p-topic-icon { border-radius: 50%; background: #f4d8c6; }
-.untangle-app .p-guide-card h2 { font-family: var(--font-display); font-size: 23px; font-weight: 480; }
-.untangle-app .p-guide-card p, .untangle-app .p-topic p { font-size: 14px; }
-.untangle-app .p-guide-card .p-eyebrow, .untangle-app .p-guide-foot { font-size: 12px; }
-.untangle-app .p-filters button { border-radius: 999px; min-height: 44px; font-size: 12px; border-color: #bfa9ba; }
-.untangle-app .p-filters button[aria-pressed=true] { background: #503252; border-color: #503252; color: #fff2e8; }
-.untangle-app .p-search { border-radius: 999px; }
-.untangle-app .p-support-intro { background: #f3ddcf; }
-.untangle-app .p-conversation { background: #e9d8e4; border-radius: 22px; }
-.untangle-app .p-soft-note { background: #efe3eb; border-radius: 14px; }
-.untangle-app .p-form > input { border-radius: 12px; }
-.untangle-app .p-example-banner { background: #eadbea; border-radius: 12px; border-color: #c8afc8; }
-.untangle-app .p-outcomes button { border-radius: 13px; }
-.untangle-app .p-outcomes button.selected { background: #ecdce7; border-color: #794d70; box-shadow: inset 0 0 0 1px #794d70; }
-.untangle-app .guide-device button, .untangle-app .guide-help-options button { border-radius: 999px; background: #f4edf3; border-color: #c4b1c1; color: #583a56; }
-.untangle-app .guide-device button[aria-pressed=true], .untangle-app .guide-help-options button[aria-pressed=true] { background: #ead5e3; border-color: #805773; }
-.untangle-app .plan-note textarea { background: #fff9f3; border-color: #bfa8b8; }
-.untangle-app .plan-setup { max-width: 860px; margin: 12px auto 30px; }
-.untangle-app .plan-setup .p-page-heading { max-width: 710px; }
-.untangle-app .plan-setup fieldset { margin: 32px 0; }
-.untangle-app .plan-setup legend { display: flex; align-items: center; gap: 12px; font-size: 20px; }
-.untangle-app .setup-choices { gap: 12px; }
-.untangle-app .setup-choices button { background: #fff9f3; border-color: #cdb8c6; border-radius: 18px; padding: 20px; min-height: 80px; transition: border-color 180ms ease, background-color 180ms ease; }
-.untangle-app .setup-choices button:hover { background: #f8e8ee; border-color: #9d6d90; }
-.untangle-app .setup-choices button[aria-pressed=true] { background: #edd5e3; border-color: #805170; box-shadow: inset 0 0 0 1px #805170; }
-.untangle-app .setup-choices button > svg { color: #8b5b7b; }
-.untangle-app .setup-concern-icon { width: 44px; height: 44px; display: grid; place-items: center; flex-shrink: 0; border-radius: 50%; background: #efdcdf; color: #854b69; }
-.untangle-app .setup-concern-icon.location, .untangle-app .setup-concern-icon.messages { background: #e4ddeb; color: #715382; }
-.untangle-app .setup-concern-icon.photos, .untangle-app .setup-concern-icon.shared { background: #f4ddc8; color: #8d5939; }
-.untangle-app .setup-concern-icon.support { background: #e1e6d8; color: #506545; }
-.untangle-app .setup-choice-label { flex: 1; font-size: 15px; line-height: 1.65; }
-.untangle-app .setup-action { background: #f2ebecf5; border-color: #cdb7c7; padding: 20px 0; }
-.untangle-app .site-footer { font-size: 12px; }
+/* Companion: a working sheet and a visible thread of reasoning. */
+.untangle-app .u-studio { max-width:1270px; padding-bottom:26px; }
+.untangle-app .u-mode { background:#e8eccc; color:#435935; border:1px solid #bac69c; border-radius:2px; font-size:11px; padding:7px 12px; }
+.untangle-app .u-mode.demo { background:#f0dfd0; color:#805337; border-color:#cda88b; }
+.untangle-app .u-studio-heading { padding:30px 0; }
+.untangle-app .u-studio-heading h1 { font-size:54px; font-weight:410; letter-spacing:-1.8px; }
+.untangle-app .u-studio-heading p { font-size:14px; }
+.untangle-app .u-studio-seal { border:1px dashed #99aa7a; color:#5f7143; background:transparent; transform:rotate(9deg); }
+.untangle-app .u-eyebrow,.untangle-app .u-panel-label { color:#526039; font-size:11px; }
+.untangle-app .u-story-picker { gap:0 20px; border-bottom:1px solid #c3ccb5; }
+.untangle-app .u-story-picker button { background:transparent; border:0; border-bottom:2px solid transparent; border-radius:0; padding:13px 3px; font-size:13px; color:#526547; }
+.untangle-app .u-story-picker button[aria-pressed=true] { background:transparent; border-color:#3a5d3e; color:#264b2d; }
+.untangle-app .u-service-picker button { border-radius:2px; border-color:#adbba0; }
+.untangle-app .u-service-picker button[aria-pressed=true] { background:#e6eab2; border-color:#819154; }
+.untangle-app .u-studio-tabs { gap:8px; border-color:#bec8ae; margin-bottom:28px; }
+.untangle-app .u-studio-tabs button { font-size:13px; padding:16px 22px; border-radius:2px 2px 0 0; }
+.untangle-app .u-studio-tabs button[aria-current=page] { background:#e4eaa7; color:#36512e; border-color:#7d8c47; }
+.untangle-app .u-studio-grid { gap:36px; }
+.untangle-app .u-working-panel { border:0; border-left:1px solid #cc9f87; border-radius:0; background:#fcfaf3; padding:32px; box-shadow:7px 7px 0 #e9ebdc; }
+.untangle-app .u-working-panel::before { display:none; }
+.untangle-app .u-working-panel h2 { font-size:34px; font-weight:420; }
+.untangle-app .u-panel-label { font-size:11px; }
+.untangle-app .u-panel-lead { font-size:14px; }
+.untangle-app .u-draft-list strong { font-size:14px; }
+.untangle-app .u-draft-list small { font-size:12px; }
+.untangle-app .u-draft-list label { border-color:#d3d6c6; }
+.untangle-app .u-input-label { font-size:13px; }
+.untangle-app .u-working-panel textarea,.untangle-app .u-working-panel select { border-radius:2px; border-color:#a4b193; background:#fffcf6; font-size:15px; }
+.untangle-app .u-agent-boundary { border-color:#ccd4bd; font-size:12px; }
+.untangle-app .u-effect.unchanged .u-effect-number { color:#785323; }
+.untangle-app .u-trace { border:0; border-top:1px solid #a8b894; border-radius:0; background:transparent; padding:25px 0; }
+.untangle-app .u-trace-heading strong { font-size:14px; }
+.untangle-app .u-trace-heading small { font-size:11px; }
+.untangle-app .u-trace-heading .u-agent-symbol { border-radius:50%; background:#e5e9b4; color:#627243; border-color:#a9b483; }
+.untangle-app .u-idle,.untangle-app .u-trace li { font-size:13px; }
+.untangle-app .u-idle { margin-left:0; }
+.untangle-app .u-trace ol { padding-left:0; }
+.untangle-app .u-fact-note { background:#eee6d2; border:0; border-left:2px solid #b9a270; border-radius:0; }
+.untangle-app .u-fact-note ul { font-size:13px; }
+.untangle-app .u-canvas .thread-scene { background:radial-gradient(ellipse,#e4e7c966,transparent 65%); }
+.untangle-app .scene-node { border-radius:3px; background:#faf8eb; border-color:#afba9a; box-shadow:3px 4px 0 #b9c4a926; }
+.untangle-app .scene-node.selected { border-color:#5a743e; background:#eff0cb; }
+.untangle-app .scene-knot { background:#e5eaa8; border-color:#9bab73; color:#5d7341; box-shadow:0 0 0 10px #f3f1e8b0; }
+.untangle-app .u-consent { border-radius:3px; border-color:#98aa84; }
+.untangle-app .u-request-preview { border-radius:2px; background:#e9edda; }
+.untangle-app .u-studio-bottom { font-size:12px; }
 
-@media (max-width: 1400px) {
-  .untangle-app .u-companion-intro, .untangle-app .u-how, .untangle-app .u-intro-bottom { margin-left: 40px; margin-right: 40px; }
+@media (min-width:1441px) { .untangle-app .u-landing > .session-status { margin-inline:max(44px,calc((100vw - 1352px) / 2)); } }
+@media (max-width:1150px) {
+  .untangle-app .u-brand-note,.untangle-app .brand-description { display:none; }
+  .untangle-app .u-header { gap:20px; padding-inline:30px; }
+  .thread-welcome { padding-inline:30px; }
+  .welcome-bottom { gap:28px; }
+  .welcome-start .u-intro-actions { gap:16px; }
+  .untangle-app .welcome-start .u-primary { gap:12px; padding-inline:16px; }
+  .welcome-context { max-width:360px; }
+  .welcome-context p { font-size:15px; }
+  .untangle-app .u-studio-grid { gap:24px; }
+  .untangle-app .u-working-panel { padding:26px; }
 }
-@media (max-width: 1150px) {
-  .untangle-app .u-header { padding-inline: 28px; gap: 16px; }
-  .untangle-app .u-intro { padding: 34px 36px 25px; }
-  .untangle-app .u-intro h1 { font-size: 74px; }
-  .untangle-app .u-intro-actions { flex-wrap: wrap; }
-  .untangle-app .u-brand-note { display: none; }
-  .untangle-app .u-header nav a { display: none; }
-  .untangle-app .u-studio-grid { gap: 24px; }
-  .untangle-app .u-working-panel { padding: 27px; }
-  .untangle-app .portrait-caption { font-size: 20px; left: 9%; bottom: 52px; }
-  .untangle-app .brand-description { display: none; }
+@media (max-width:900px) {
+  .welcome-stage { height:390px; }
+  .welcome-stage h1 { font-size:83px; letter-spacing:-4px; }
+  .welcome-stage h1>em { font-size:1em; letter-spacing:-4px; }
+  .sculpture-controls { left:0; bottom:10px; }
+  .thread-pull { width:165px; }
+  .welcome-bottom { grid-template-columns:1fr; gap:18px; padding:20px 0; }
+  .welcome-context { max-width:620px; }
+  .welcome-context p { font-size:16px; }
+  .welcome-start .u-intro-actions { display:flex; flex-wrap:nowrap; }
+  .welcome-explanation > div { grid-template-columns:1fr; gap:12px; }
+  .untangle-app .u-studio-heading h1 { font-size:44px; }
 }
-@media (max-width: 900px) {
-  .untangle-app .u-intro { max-width: none; grid-template-columns: 1.08fr .92fr; padding-inline: 28px; }
-  .untangle-app .u-intro h1 { font-size: 65px; letter-spacing: -3px; }
-  .untangle-app .u-intro h1 em { letter-spacing: -3px; }
-  .untangle-app .u-intro-copy > p { font-size: 14px; }
-  .untangle-app .u-intro-art { max-width: none; align-self: start; padding-top: 40px; }
-  .untangle-app .u-companion-intro, .untangle-app .u-how, .untangle-app .u-intro-bottom { margin-left: 24px; margin-right: 24px; }
-  .untangle-app .u-companion-intro { flex-wrap: wrap; padding: 25px; }
-  .untangle-app .u-companion-intro h2 { font-size: 25px; }
-  .untangle-app .u-companion-caption { max-width: none; margin-left: 70px; }
-  .untangle-app .u-how { padding: 15px 25px 28px; gap: 24px; }
-  .untangle-app .u-how h2 { font-size: 21px; }
-  .untangle-app .u-canvas .u-trace { margin: 0; }
+@media (max-width:760px) {
+  .untangle-app .u-header,.untangle-app .site-header { padding:10px 20px; gap:12px; flex-wrap:wrap; }
+  .untangle-app .site-header { width:100%; margin:0; }
+  .untangle-app .u-header .wordmark,.untangle-app .site-header .wordmark { font-size:28px; }
+  .untangle-app .u-header nav { gap:13px; }
+  .untangle-app .u-header .language-switch { margin-left:auto; }
+  .untangle-app .session-status { font-size:11px; padding:8px 20px; }
+  .untangle-app .u-landing > .session-status { margin:0 20px; }
+  .untangle-app .u-footer { padding-inline:20px; }
+  .thread-welcome { padding-inline:22px; }
+  .welcome-edition { display:none; }
+  .welcome-stage { height:345px; }
+  .welcome-stage h1 { font-size:71px; }
+  .welcome-stage h1 > em { right:0; bottom:16px; }
+  .welcome-margin-note { display:none; }
+  .thread-pull { width:155px; }
+  .thread-pull > span { font-size:14px; }
+  .sculpture-controls { gap:8px; }
+  .sculpture-motion { width:36px; height:36px; }
+  .untangle-app .p-workspace { display:block; padding-inline:20px; }
+  .untangle-app .p-sidebar { border:0; padding:16px 0 0; }
+  .untangle-app .p-sidebar nav { gap:4px; }
+  .untangle-app .p-sidebar nav button { border-left:0; padding:10px 4px; border-bottom:1px solid #bdc8a9; }
+  .untangle-app .p-sidebar nav button.selected { border-left:0; border-bottom:3px solid #738c4b; }
+  .untangle-app .p-main h1 { font-size:35px; }
+  .untangle-app .p-task-body { padding:22px; }
+  .untangle-app .p-task-stages { gap:3px; }
+  .untangle-app .plan-setup { border:0; padding:0; }
+  .untangle-app .plan-setup legend { font-size:22px; }
+  .untangle-app .p-guide-grid { gap:12px; }
+  .untangle-app .u-studio { margin-inline:20px; }
+  .untangle-app .u-studio-tabs { gap:4px; }
+  .untangle-app .u-studio-tabs button { padding-inline:10px; }
 }
-@media (max-width: 760px) {
-  .untangle-app .u-header, .untangle-app .site-header { padding: 12px 20px; gap: 12px; flex-wrap: wrap; }
-  .untangle-app .u-header .wordmark, .untangle-app .site-header .wordmark { font-size: 29px; }
-  .untangle-app .u-header nav { margin-left: auto; gap: 10px; }
-  .untangle-app .u-header nav button { font-size: 12px; }
-  .untangle-app .u-header .language-switch { margin-left: auto; }
-  .untangle-app .session-status { padding: 8px 20px; font-size: 11px; gap: 8px; }
-  .untangle-app .session-status button { margin-left: auto; }
-  .untangle-app .u-intro h1 { font-size: 57px; }
-  .untangle-app .u-intro-copy .u-eyebrow { font-size: 10px; letter-spacing: 1.5px; }
-  .untangle-app .u-studio { margin-inline: 20px; }
-  .untangle-app .u-studio-tabs { gap: 4px; }
-  .untangle-app .u-studio-tabs button { padding-inline: 10px; }
-  .untangle-app .u-studio-heading h1 { font-size: 38px; }
-  .untangle-app .p-workspace { padding-inline: 20px; }
-  .untangle-app .p-main h1 { font-size: 35px; }
-  .untangle-app .p-sidebar { padding-top: 18px; }
-  .untangle-app .p-sidebar nav { gap: 4px; }
-  .untangle-app .p-sidebar nav button { border-radius: 13px; }
-  .untangle-app .p-task-body { padding: 22px; }
-  .untangle-app .p-task-stages { gap: 3px; }
-  .untangle-app .p-task-stages button { border-radius: 10px 10px 0 0; }
+@media (max-width:600px) {
+  .untangle-app .u-header,.untangle-app .site-header { display:grid; grid-template-columns:1fr auto; gap:0 8px !important; }
+  .untangle-app .u-header .wordmark,.untangle-app .site-header .wordmark { grid-column:1; grid-row:1; justify-self:start; font-size:28px; }
+  .untangle-app .u-header .thread-mark,.untangle-app .site-header .thread-mark { width:27px; }
+  .untangle-app .u-header .language-switch,.untangle-app .site-header .language-switch { grid-column:2; grid-row:1; margin:0; }
+  .untangle-app .u-header nav,.untangle-app .site-header .platform-help { grid-column:1; grid-row:2; margin:0; justify-self:start; }
+  .untangle-app .u-header nav { gap:8px; }
+  .untangle-app .u-header nav button { font-size:11px; }
+  .untangle-app .u-header .u-exit,.untangle-app .site-header .exit-link { grid-column:2; grid-row:2; justify-self:end; margin:0; min-height:40px; padding:6px 0 6px 10px; font-size:11px; }
+  .untangle-app .site-header .platform-help span { display:inline; }
+  .untangle-app .language-switch button { min-height:38px; padding-inline:10px; }
+  .untangle-app .session-status { flex-wrap:wrap; gap:4px 8px; }
+  .untangle-app .session-status > span { flex:1; }
+  .untangle-app .session-status button { margin-left:25px; min-height:30px; text-align:left; }
+  .welcome-caption { font-size:9px; letter-spacing:1.3px; padding-top:8px; }
+  .welcome-stage { height:305px; margin-top:18px; }
+  .welcome-stage h1 { font-size:clamp(49px,13.6vw,75px); letter-spacing:-2.5px; }
+  .welcome-stage h1>span { left:0; }
+  .welcome-stage h1>em { bottom:70px; right:0; letter-spacing:-2.5px; }
+  .thread-sculpture { inset:-5px -16px 20px; }
+  .sculpture-fallback { padding:0; }
+  .sculpture-canvas,.sculpture-fallback { height:83%; }
+  .sculpture-shadow { bottom:30%; }
+  .sculpture-controls { bottom:0; left:20px; right:20px; justify-content:space-between; }
+  .thread-pull { width:190px; grid-template-columns:1fr; gap:1px; }
+  .thread-pull>span { display:none; }
+  .thread-pull small { font-size:10px; }
+  .sculpture-motion { width:44px; height:44px; }
+  .welcome-bottom { margin-top:0; padding:18px 0 22px; gap:17px; }
+  .welcome-context p { font-size:15px; line-height:1.75; }
+  .welcome-context>span { font-size:11px; margin-top:6px; }
+  .welcome-start .u-intro-actions { flex-direction:row; gap:15px; margin-bottom:12px; }
+  .untangle-app .welcome-start .u-primary { font-size:12px; padding:12px 15px; min-height:56px; gap:10px; flex:1; text-align:left; }
+  .untangle-app .welcome-start .u-quiet { font-size:12px; gap:8px; }
+  .untangle-app .welcome-start .u-quiet>svg { display:none; }
+  .welcome-play { width:33px; height:33px; }
+  .welcome-start>small { font-size:10px; }
+  .welcome-explanation summary { font-size:12px; gap:8px; }
+  .welcome-explanation summary>span { font-size:10px; }
+  .welcome-explanation summary>span>svg { display:none; }
+  .welcome-explanation>div { font-size:12px; }
+  .untangle-app .u-studio-heading h1 { font-size:36px; }
+  .untangle-app .u-story-picker { gap:0; }
+  .untangle-app .u-story-picker button { text-align:left; padding:13px 12px; }
+  .untangle-app .u-story-picker button[aria-pressed=true] { background:#e9edc9; }
+  .untangle-app .u-working-panel h2 { font-size:30px; }
+  .untangle-app .u-working-panel { box-shadow:4px 4px 0 #e2e6cf; }
+  .untangle-app .u-trace { margin-top:24px; }
+  .untangle-app .setup-choices button { min-height:74px; padding-block:15px; }
+  .untangle-app .p-task-stages button { padding-inline:7px; }
 }
-@media (max-width: 600px) {
-  .untangle-app .site-header { display: grid; grid-template-columns: 1fr auto; width: 100%; margin: 0; gap: 4px 10px; }
-  .untangle-app .site-header .wordmark { grid-column: 1; grid-row: 1; justify-self: start; font-size: 27px; }
-  .untangle-app .site-header .thread-mark { width: 25px; }
-  .untangle-app .site-header .language-switch { grid-column: 2; grid-row: 1; margin: 0; }
-  .untangle-app .site-header .platform-help { grid-column: 1; grid-row: 2; margin: 0; justify-self: start; }
-  .untangle-app .site-header .exit-link { grid-column: 2; grid-row: 2; justify-self: end; margin: 0; }
-  .untangle-app .site-header .platform-help span { display: inline; }
-  .untangle-app .u-header { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px !important; }
-  .untangle-app .u-header .wordmark { grid-column: 1; grid-row: 1; justify-self: start; }
-  .untangle-app .u-header .language-switch { grid-column: 2; grid-row: 1; }
-  .untangle-app .u-header nav { grid-column: 1; grid-row: 2; margin: 0; justify-self: start; }
-  .untangle-app .u-header .u-exit { grid-column: 2; grid-row: 2; margin: 0; justify-self: end; padding: 6px 12px; min-height: 40px; }
-  .untangle-app .language-switch button { min-height: 36px; padding-inline: 10px; }
-  .untangle-app .session-status { flex-wrap: wrap; gap: 3px 8px; }
-  .untangle-app .session-status > span { flex: 1; }
-  .untangle-app .session-status button { margin-left: 25px; min-height: 30px; width: auto; text-align: left; }
-  .untangle-app .u-intro { display: grid; grid-template-columns: 1.08fr 1fr; padding: 22px 22px 26px !important; gap: 0; overflow: hidden; }
-  .untangle-app .u-intro-copy { display: contents; }
-  .untangle-app .u-intro-copy .u-eyebrow { grid-column: 1 / -1; grid-row: 1; margin-bottom: 12px; }
-  .untangle-app .u-intro-copy h1 { grid-column: 1; grid-row: 2; font-size: clamp(37px, 10.2vw, 58px) !important; margin: 14px -30px 24px 0; letter-spacing: -2px; align-self: center; z-index: 1; }
-  .untangle-app .u-intro-copy h1 em { letter-spacing: -2px; }
-  .untangle-app .u-intro-art { grid-column: 2; grid-row: 2; margin: 0 -38px 0 -8px; width: calc(100% + 46px); padding: 0; align-self: center; }
-  .untangle-app .living-portrait { margin-bottom: 10px; }
-  .untangle-app .portrait-caption { display: none; }
-  .untangle-app .portrait-image { mask-image: linear-gradient(to right, transparent, #000 25%, #000 95%, transparent); }
-  .untangle-app .portrait-motion { right: 40px; bottom: 0; width: 44px; min-height: 44px; padding: 0; justify-content: center; background: #332337; }
-  .untangle-app .portrait-motion > span { display: none; }
-  .untangle-app .u-intro-copy > p { grid-column: 1 / -1; grid-row: 3; font-size: 14px; line-height: 1.8; margin-top: 6px; max-width: none; }
-  .untangle-app .u-intro-copy .u-intro-actions { grid-column: 1 / -1; grid-row: 4; display: grid; grid-template-columns: auto 1fr; gap: 10px; margin: 22px 0 15px; }
-  .untangle-app .u-intro-actions .u-primary { font-size: 12px; padding: 12px 14px; line-height: 1.5; min-height: 58px; gap: 8px; text-align: left; }
-  .untangle-app .u-intro-actions .u-quiet { font-size: 12px; padding: 12px 15px; gap: 8px; min-height: 58px; }
-  .untangle-app .u-intro-actions .u-quiet > svg:last-child { display: none; }
-  .untangle-app .u-intro-copy > small { grid-column: 1 / -1; grid-row: 5; font-size: 11px; max-width: 360px; }
-  .untangle-app .u-resume { grid-column: 1 / -1; grid-row: 6; margin: 10px 0 0; }
-  .untangle-app .u-companion-intro, .untangle-app .u-how { margin-inline: 14px; }
-  .untangle-app .u-companion-intro { margin-top: 8px; padding: 24px 22px 10px; gap: 12px; border-radius: 24px 24px 0 0; display: grid; grid-template-columns: 38px 1fr; }
-  .untangle-app .u-companion-intro .u-agent-symbol { width: 38px; height: 38px; }
-  .untangle-app .u-companion-intro h2 { font-size: 24px; line-height: 1.2; }
-  .untangle-app .u-companion-intro p { font-size: 12px; margin-top: 10px; }
-  .untangle-app .u-companion-caption { margin: 0; grid-column: 2; font-size: 11px; }
-  .untangle-app .u-how { grid-template-columns: 1fr; padding: 10px 22px 26px; gap: 12px; border-radius: 0 0 24px 24px; }
-  .untangle-app .u-how > div { position: relative; padding: 18px 0 6px 40px; }
-  .untangle-app .u-how > div > span { position: absolute; left: 0; top: 22px; }
-  .untangle-app .u-how h2 { font-size: 23px; }
-  .untangle-app .u-intro-bottom { margin-inline: 22px; padding-block: 20px; gap: 8px; }
-  .untangle-app .u-footer { padding-inline: 22px; }
-  .untangle-app .u-working-panel { border-radius: 20px; }
-  .untangle-app .u-studio-heading h1 { font-size: 36px; }
-  .untangle-app .u-studio-tabs button { border-radius: 12px 12px 0 0; }
-  .untangle-app .u-working-panel h2 { font-size: 31px; }
-  .untangle-app .u-story-picker button { padding-inline: 16px; }
-  .untangle-app .u-trace { padding: 20px; }
-  .untangle-app .u-canvas .thread-scene { margin-top: 28px; }
-  .untangle-app .plan-setup { margin-top: 0; }
-  .untangle-app .plan-setup fieldset { margin-block: 26px; }
-  .untangle-app .setup-choices button { padding: 16px; min-height: 70px; }
-  .untangle-app .setup-concern-icon { width: 38px; height: 38px; }
-  .untangle-app .setup-action { padding-block: 15px; }
+@media(max-width:370px) {
+  .untangle-app .u-header,.untangle-app .site-header { padding-inline:14px; }
+  .untangle-app .u-header .wordmark,.untangle-app .site-header .wordmark { font-size:25px; }
+  .thread-welcome { padding-inline:18px; }
+  .welcome-stage { height:275px; }
+  .untangle-app .welcome-start .u-primary { padding-inline:11px; gap:6px; }
+  .welcome-start .u-intro-actions { gap:10px; }
+  .welcome-context p { font-size:14px; }
+  .welcome-explanation summary { flex-wrap:wrap; padding-block:12px; }
 }
-@media (max-width: 370px) {
-  .untangle-app .u-header, .untangle-app .site-header { padding-inline: 14px; }
-  .untangle-app .u-header .wordmark { font-size: 27px; }
-  .untangle-app .u-header .thread-mark { width: 25px; }
-  .untangle-app .u-intro { padding-inline: 18px !important; }
-  .untangle-app .u-intro-actions .u-primary { padding-inline: 12px; }
-  .untangle-app .u-intro-actions .u-quiet { padding-inline: 12px; }
-  .untangle-app .p-workspace { padding-inline: 14px; }
+html[lang=pl] .welcome-stage h1 { font-size:clamp(66px,7.9vw,111px); }
+@media(max-width:900px) { html[lang=pl] .welcome-stage h1 { font-size:72px; } }
+@media(max-width:600px) { html[lang=pl] .welcome-stage h1 { font-size:clamp(45px,12.3vw,67px); } }
+@media(prefers-reduced-motion:reduce) {
+  .untangle-app :is(button,a),.sculpture-canvas,.sculpture-fallback { transition:none; }
+  .thread-sculpture[data-motion=playing] .fallback-cords { animation:thread-float 12s ease-in-out infinite alternate !important; }
 }
-html[lang=pl] .untangle-app .u-intro h1 { font-size: clamp(55px, 5.7vw, 82px); }
-@media (max-width: 600px) {
-  html[lang=pl] .untangle-app .u-intro-copy h1 { font-size: clamp(33px, 8.9vw, 49px) !important; margin-right: -28px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .untangle-app button, .untangle-app a, .untangle-app .setup-choices button { transition: none; }
-  /* Motion starts paused. An explicit Play choice can override the OS default. */
-  .living-portrait[data-motion=playing] .portrait-image { animation: portrait-breathe 11s ease-in-out infinite alternate !important; }
-  .living-portrait[data-motion=playing] .portrait-strands { animation: strand-sway 9s ease-in-out infinite alternate !important; }
-  .living-portrait[data-motion=playing] .portrait-current { animation: strand-current 16s linear infinite !important; }
-}
-@media (forced-colors: active) {
-  .untangle-app .u-primary, .untangle-app .u-quiet, .untangle-app .portrait-motion { border: 1px solid ButtonText; }
+@media(forced-colors:active) {
+  .untangle-app .u-primary,.untangle-app .u-quiet,.sculpture-motion { border:1px solid ButtonText; }
+  .thread-pull input { appearance:auto; }
 }

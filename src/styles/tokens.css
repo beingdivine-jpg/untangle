@@ -1,16 +1,16 @@
 :root {
-  --canvas: #F2EBEC;
-  --surface: #FFF9F3;
+  --canvas: #F3F1E8;
+  --surface: #FCFAF3;
   --peach: #F6D5BF;
   --peach-wash: #FBE7D8;
   --lavender-wash: #F0EBF3;
   --lavender-line: #D5CBDC;
-  --ink: #2C2131;
-  --muted: #65586B;
-  --accent: #713D67;
-  --accent-hover: #54294D;
-  --line: #DCD0D9;
-  --control-line: #93818F;
+  --ink: #203D35;
+  --muted: #52665C;
+  --accent: #285345;
+  --accent-hover: #173D30;
+  --line: #CECFC0;
+  --control-line: #8A9B8C;
   --lavender: #E7E0EC;
   --sage: #E6EDDC;
   --sage-ink: #38513A;
