@@ -15,8 +15,8 @@ const ctx=el('thread-field').getContext('2d');
 const chapterNames={reveal:'A PRIVATE GUIDE',situation:'01 / THE SITUATION',processing:'02 / THE PROCESS',assistant:'03 / THE AI WORKFLOW',consequences:'04 / THE CONSEQUENCES',choice:'05 / THE CHOICE',continuity:'06 / CONTINUITY'};
 const cursors=[
  {from:[1780,815],to:[1181,778],start:15.8,click:16.7,end:17.1},
- {from:[1700,820],to:[1039,825],start:34.9,click:35.8,end:36.2},
- {from:[1550,774],to:[1031,714],start:37.05,click:37.7,end:38.05},
+ {from:[1700,820],to:[1039,825],start:35.85,click:36.7,end:37.02},
+ {from:[1550,774],to:[1031,714],start:37.18,click:37.9,end:38.2},
  {from:[1700,610],to:[1271,541],start:51.35,click:52.1,end:52.5},
  {from:[1280,780],to:[866,821],start:53.35,click:54,end:54.35},
  {from:[739,808],to:[289,861],start:59.8,click:60.5,end:60.9},
@@ -62,19 +62,21 @@ window.renderFrame=frame=>{
  on('trace-highlight',range(t,20,26.5,.25)*.8);
  on('ai-architecture',1-ease((t-31.1)/.4));
  on('wording-demo',ease((t-31.35)/.5));
- on('rewrite-preview',1-ease((t-35.9)/.3));
- on('applied-state',ease((t-35.95)/.35));
- const restored=t>=37.78;
+ on('rewrite-preview',1-ease((t-36.8)/.3));
+ on('applied-state',ease((t-36.85)/.35));
+ const restored=t>=37.98;
  el('applied-image').src=`assets/captures/${restored?'edit-restored':'edit-applied'}.png`;
  el('applied-label').textContent=restored?'ORIGINAL WORDING RESTORED':'WORDING ACCEPTED';
- on('undo-control',1-ease((t-37.8)/.2));
- on('meaning-note',ease((t-33.2)/.5));
+ on('undo-control',1-ease((t-38)/.2));
+ on('preparation-note',range(t,32.45,34.35,.3));
+ on('meaning-note',ease((t-34.65)/.5));
  const whatif=el('whatif-device');
  whatif.style.transform=`perspective(2500px) rotateX(${(1-ease((t-39.4)/1.2))*4}deg) scale(${.975+.025*ease((t-39.4)/1.4)})`;
  el('whatif-device').querySelector('.second').style.opacity=.3+.7*ease((t-43.2)/.7);
  on('kept-device',range(t,48.2,49.75,.4));
  on('plan-device',range(t,49.85,51.05,.35));
  on('question-device',ease((t-51.15)/.45));
+ el('question-device').style.height=`${400+90*(1-ease((t-54.1)/.22))}px`;
  on('uncertainty-copy',ease((t-51.15)/.45));
  el('outcome-image').src=`assets/captures/${t>=52.1?'outcomes':'outcomes-unselected'}.png`;
  on('update-control',1-ease((t-54.1)/.2));

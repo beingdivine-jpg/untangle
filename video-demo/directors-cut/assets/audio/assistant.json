@@ -1,120 +1,115 @@
 {
-  "text": "Optional AI can select guides and clarify notes. This prepared example shows the controls: preview the wording, keep your meaning, accept, or undo.",
+  "text": "Agentic help, with clear roles: AI selects guides and clarifies notes. The app adds preparation. Preview this prepared wording, accept, or undo.",
   "voice": "en-GB-SoniaNeural",
   "words": [
     {
-      "offset": 1375000,
-      "duration": 5000000,
-      "text": "Optional"
+      "offset": 1250000,
+      "duration": 5125000,
+      "text": "Agentic"
     },
     {
       "offset": 6500000,
-      "duration": 4250000,
+      "duration": 3750000,
+      "text": "help"
+    },
+    {
+      "offset": 12250000,
+      "duration": 1625000,
+      "text": "with"
+    },
+    {
+      "offset": 14000000,
+      "duration": 3000000,
+      "text": "clear"
+    },
+    {
+      "offset": 17125000,
+      "duration": 4875000,
+      "text": "roles"
+    },
+    {
+      "offset": 25000000,
+      "duration": 3250000,
       "text": "AI"
     },
     {
-      "offset": 10875000,
-      "duration": 2125000,
-      "text": "can"
+      "offset": 28375000,
+      "duration": 4375000,
+      "text": "selects"
     },
     {
-      "offset": 13125000,
-      "duration": 4250000,
-      "text": "select"
-    },
-    {
-      "offset": 17500000,
-      "duration": 5000000,
+      "offset": 32875000,
+      "duration": 4750000,
       "text": "guides"
     },
     {
-      "offset": 22625000,
+      "offset": 37750000,
       "duration": 1500000,
       "text": "and"
     },
     {
-      "offset": 24250000,
-      "duration": 4875000,
-      "text": "clarify"
-    },
-    {
-      "offset": 29250000,
-      "duration": 5875000,
-      "text": "notes"
-    },
-    {
-      "offset": 39125000,
-      "duration": 2375000,
-      "text": "This"
-    },
-    {
-      "offset": 41625000,
-      "duration": 4250000,
-      "text": "prepared"
+      "offset": 39375000,
+      "duration": 6500000,
+      "text": "clarifies"
     },
     {
       "offset": 46000000,
-      "duration": 5500000,
-      "text": "example"
-    },
-    {
-      "offset": 51625000,
-      "duration": 3250000,
-      "text": "shows"
+      "duration": 5250000,
+      "text": "notes"
     },
     {
       "offset": 55000000,
-      "duration": 875000,
-      "text": "the"
+      "duration": 1875000,
+      "text": "The"
     },
     {
-      "offset": 56000000,
-      "duration": 6625000,
-      "text": "controls"
+      "offset": 57000000,
+      "duration": 2625000,
+      "text": "app"
     },
     {
-      "offset": 65875000,
-      "duration": 3500000,
-      "text": "preview"
+      "offset": 59750000,
+      "duration": 3000000,
+      "text": "adds"
     },
     {
-      "offset": 69500000,
-      "duration": 1000000,
-      "text": "the"
+      "offset": 62875000,
+      "duration": 8750000,
+      "text": "preparation"
     },
     {
-      "offset": 70625000,
+      "offset": 75250000,
+      "duration": 4875000,
+      "text": "Preview"
+    },
+    {
+      "offset": 80250000,
+      "duration": 2000000,
+      "text": "this"
+    },
+    {
+      "offset": 82375000,
+      "duration": 4375000,
+      "text": "prepared"
+    },
+    {
+      "offset": 86875000,
       "duration": 5250000,
       "text": "wording"
     },
     {
-      "offset": 78000000,
-      "duration": 2125000,
-      "text": "keep"
-    },
-    {
-      "offset": 80250000,
-      "duration": 1375000,
-      "text": "your"
-    },
-    {
-      "offset": 81750000,
-      "duration": 4625000,
-      "text": "meaning"
-    },
-    {
-      "offset": 88125000,
-      "duration": 5625000,
+      "offset": 94000000,
+      "duration": 6000000,
       "text": "accept"
     },
     {
-      "offset": 95750000,
-      "duration": 1500000,
+      "offset": 102375000,
+      "duration": 1625000,
       "text": "or"
     },
     {
-      "offset": 97375000,
-      "duration": 5375000,
+      "offset": 104125000,
+      "duration": 5625000,
       "text": "undo"
     }
   ]

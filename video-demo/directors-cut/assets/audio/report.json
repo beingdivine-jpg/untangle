@@ -13,8 +13,8 @@
     {
       "scene": "reveal",
       "start": 6.3,
-      "duration": 4.224,
-      "tempo": 1.0
+      "duration": 4.36,
+      "tempo": 1.063
     },
     {
       "scene": "situation",
@@ -25,13 +25,13 @@
     {
       "scene": "processing",
       "start": 18.3,
-      "duration": 8.361,
-      "tempo": 1.0482
+      "duration": 8.36,
+      "tempo": 1.0339
     },
     {
       "scene": "assistant",
       "start": 27.3,
-      "duration": 10.656,
+      "duration": 11.352,
       "tempo": 1.0
     },
     {
@@ -66,15 +66,15 @@
     }
   ],
   "premixLoudness": {
-    "input_i": "-17.22",
+    "input_i": "-17.30",
     "input_tp": "-5.49",
-    "input_lra": "3.40",
-    "input_thresh": "-28.37",
-    "output_i": "-16.10",
+    "input_lra": "3.30",
+    "input_thresh": "-28.40",
+    "output_i": "-16.11",
     "output_tp": "-3.58",
     "output_lra": "3.30",
-    "output_thresh": "-27.21",
+    "output_thresh": "-27.17",
     "normalization_type": "dynamic",
-    "target_offset": "0.10"
+    "target_offset": "0.11"
   }
 }

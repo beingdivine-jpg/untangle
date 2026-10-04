@@ -11,10 +11,10 @@ The concrete benefit is less guesswork and a clearer next step, with the user ch
 | Time | Narration | Visual evidence |
 | --- | --- | --- |
 | 00–06 | A breakup ends a relationship. Not every digital connection. | A short photographic opening, slow camera drift and concise typography. Accounts, photos and location appear as lingering connections. |
-| 06–11 | Meet Untangle. A private guide for your next chapter. | Brand reveal into the implemented introduction. |
+| 06–11 | Meet Untangle. Your private guide, with optional AI. | Brand reveal into the implemented introduction. |
 | 11–18 | Maya changed her password. But the shared laptop, and their photos? She still has questions. | The actual shared-laptop example, original note and Connect the dots control. |
-| 18–27 | Her story becomes six relevant checks. The companion includes preparation, connects related guides, and shows what it used. | The real, labelled local activity trace: three fictional details, six checks, preparation, awaiting the user’s choice. |
-| 27–39 | Optional AI can select guides and clarify notes. This prepared example shows the controls: preview the wording, keep your meaning, accept, or undo. | A four-step diagram of the implemented optional AI request path, followed by actual before/after wording, acceptance and undo. The prepared example is labelled throughout. |
+| 18–27 | Six checks connect accounts and photos. Recovery access comes before password changes. Every step stays visible. | The real, labelled local activity trace: three fictional details, six checks, preparation, awaiting the user’s choice. |
+| 27–39 | Agentic help, with clear roles: AI selects guides and clarifies notes. The app adds preparation. Preview this prepared wording, accept, or undo. | Four explicit roles: AI selects useful checks; app logic includes preparation; AI clarifies wording; the user reviews. Actual before/after wording, acceptance and undo follow. The prepared example is labelled throughout. |
 | 39–48 | Before changing anything, see what a password change affects, and what it leaves outside. The explanation links to its source. | The product’s effect preview, boundary explanation and Google source link. |
 | 48–57 | Keep the steps you choose. An unanswered question stays a question. Reading a guide never marks it reviewed. | Six kept checks, the plan, selection of “I’m not sure what I found,” a deliberate update and “Still a question.” |
 | 57–67 | Save an encrypted file. Open it later, and your checks, notes, and questions come back. No account to create. | Actual file creation, reopening, explicit restore confirmation and the restored question. |
@@ -23,13 +23,26 @@ The concrete benefit is less guesswork and a clearer next step, with the user ch
 
 The [machine-readable script](story.json) defines exact scene boundaries and speech starts. Scenes are shortened in the edit, not presented as an uninterrupted recording.
 
+## Where the agentic assistance fits
+
+The pitch makes the division of work visible. “Agentic help” describes a bounded, human-directed planning and editing workflow. The optional integration makes one provider request per user-triggered operation. It does not implement an autonomous tool-use loop or silently run a series of model actions. The four cards summarize responsibilities across the available capabilities, not four automatic model calls.
+
+| Role | Implemented capability | Concrete value for Maya | Source |
+| --- | --- | --- | --- |
+| AI planning | Select relevant task IDs from a constrained, reviewed guide catalogue, using approved topics and checks. | Turn selected concerns into a proposed set of relevant checks. | `server/agent.ts`, plan operation |
+| App preparation | Validate supported IDs and expand required preparation checks. | Include recovery preparation alongside password and device checks. | `agentCore.ts`, `validateDraft`; `model.ts`, `addTask` |
+| AI wording | Clarify one approved note while instructed to preserve meaning, uncertainty and first-person voice. | Make “I don’t know about that laptop” easier to revisit without presenting it as an account finding. | `server/agent.ts`, edit operation; `Experience.tsx` |
+| User review | Preview, accept or discard a draft; edit wording and undo an accepted wording change. | Assistance produces a proposal; Maya retains the decision. | `Experience.tsx` |
+
+The source-linked consequence preview uses reviewed product content. Encryption and restoration use local application logic. These valuable supporting features are not presented as model-generated work. The recorded example remains prepared and labelled; it does not demonstrate live-model performance.
+
 ## Judging criteria review
 
 Weights come from the repository’s summary of the supplied ImpactHer brief in [research section 10](../../public/research.html). The original organizer rubric was not independently supplied or reverified. This is an evidence mapping, not a claimed judge score.
 
 | Criterion | Weight | What the film demonstrates | Boundary |
 | --- | --- | --- | --- |
-| Idea / innovation | 30% | A coordinated plan across accounts and photos; prerequisite checks; consequences beyond one password; user-controlled AI assistance. 18–48s. | No claim to invent encryption or language models; no account scan. |
+| Idea / innovation | 30% | A coordinated plan across accounts and photos; prerequisite checks; consequences beyond one password; visible AI planning and wording roles with user approval. 18–48s. | No claim to invent encryption or language models; no account scan. |
 | Category relevance | 20% | A recognizable problem after a breakup, grounded in one person’s digital connections. 0–18s and 67–78s. | Maya and the portraits are fictional, not testimonials. |
 | Practical usability | 20% | Concrete input, understandable steps, reversible wording, explicit uncertainty, save and return. 11–67s. | Demonstrated functionality, not validated outcomes from user research. |
 | Design | 20% | Six-second cinematic entry; warm paper, terracotta, the existing fonts and artwork; readable UI close-ups; consistent motion; captions and a mixed soundtrack. | Visual craft is assessed by inspection, not a usability study. |

@@ -1,7 +1,7 @@
 {
   "file": "untangle-directors-cut-78s.mp4",
-  "sha256": "d9ba0c683b4aeb6d72b71da59eab0280cb9fedae19c8a2940bbe4c6f7612bc51",
-  "bytes": 17292664,
+  "sha256": "e2ed50272da614418064e7c3c8cc0e3d72b015126d67f367643454e02fc9302f",
+  "bytes": 17376013,
   "movieDurationSeconds": 78,
   "video": {
     "width": 1920,
@@ -17,11 +17,11 @@
     "sampleRate": 48000,
     "channels": 2,
     "integratedLUFS": -16.01,
-    "truePeakDBTP": -4.26
+    "truePeakDBTP": -4.19
   },
   "fullDecodePassed": true,
   "blackFramesDetected": false,
-  "captionCues": 29,
+  "captionCues": 30,
   "captionTranscriptMatches": true,
   "fictionalWorkflowVerified": true,
   "encryptedDownloadVerified": true,

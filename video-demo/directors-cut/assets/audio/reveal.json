@@ -1,51 +1,46 @@
 {
-  "text": "Meet Untangle. A private guide for your next chapter.",
+  "text": "Meet Untangle. Your private guide, with optional AI.",
   "voice": "en-GB-SoniaNeural",
   "words": [
     {
       "offset": 1250000,
-      "duration": 3250000,
+      "duration": 3125000,
       "text": "Meet"
     },
     {
-      "offset": 4625000,
+      "offset": 4500000,
       "duration": 7875000,
       "text": "Untangle"
     },
     {
-      "offset": 16500000,
-      "duration": 875000,
-      "text": "A"
+      "offset": 16375000,
+      "duration": 1625000,
+      "text": "Your"
     },
     {
-      "offset": 17500000,
-      "duration": 4625000,
+      "offset": 18125000,
+      "duration": 4875000,
       "text": "private"
     },
     {
-      "offset": 22250000,
+      "offset": 23125000,
       "duration": 4250000,
       "text": "guide"
     },
     {
-      "offset": 26625000,
-      "duration": 1125000,
-      "text": "for"
+      "offset": 29875000,
+      "duration": 1750000,
+      "text": "with"
     },
     {
-      "offset": 27875000,
-      "duration": 1250000,
-      "text": "your"
+      "offset": 31750000,
+      "duration": 5500000,
+      "text": "optional"
     },
     {
-      "offset": 29250000,
-      "duration": 3500000,
-      "text": "next"
-    },
-    {
-      "offset": 32875000,
-      "duration": 5625000,
-      "text": "chapter"
+      "offset": 37375000,
+      "duration": 5375000,
+      "text": "AI"
     }
   ]
 }

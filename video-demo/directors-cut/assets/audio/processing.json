@@ -1,96 +1,86 @@
 {
-  "text": "Her story becomes six relevant checks. The companion includes preparation, connects related guides, and shows what it used.",
+  "text": "Six checks connect accounts and photos. Recovery access comes before password changes. Every step stays visible.",
   "voice": "en-GB-SoniaNeural",
   "words": [
     {
-      "offset": 1375000,
-      "duration": 1750000,
-      "text": "Her"
+      "offset": 1125000,
+      "duration": 4000000,
+      "text": "Six"
     },
     {
-      "offset": 3250000,
-      "duration": 4875000,
-      "text": "story"
-    },
-    {
-      "offset": 8250000,
-      "duration": 4750000,
-      "text": "becomes"
-    },
-    {
-      "offset": 13125000,
-      "duration": 3250000,
-      "text": "six"
-    },
-    {
-      "offset": 16500000,
-      "duration": 4750000,
-      "text": "relevant"
-    },
-    {
-      "offset": 21375000,
-      "duration": 5875000,
+      "offset": 5250000,
+      "duration": 3875000,
       "text": "checks"
     },
     {
-      "offset": 31250000,
-      "duration": 1000000,
-      "text": "The"
+      "offset": 9250000,
+      "duration": 3750000,
+      "text": "connect"
     },
     {
-      "offset": 32375000,
-      "duration": 6250000,
-      "text": "companion"
-    },
-    {
-      "offset": 38750000,
-      "duration": 4750000,
-      "text": "includes"
-    },
-    {
-      "offset": 43625000,
-      "duration": 7750000,
-      "text": "preparation"
-    },
-    {
-      "offset": 54125000,
-      "duration": 4500000,
-      "text": "connects"
-    },
-    {
-      "offset": 58750000,
-      "duration": 4500000,
-      "text": "related"
-    },
-    {
-      "offset": 63375000,
+      "offset": 13125000,
       "duration": 5000000,
-      "text": "guides"
+      "text": "accounts"
     },
     {
-      "offset": 70375000,
+      "offset": 18250000,
       "duration": 1250000,
       "text": "and"
     },
     {
-      "offset": 71750000,
-      "duration": 3875000,
-      "text": "shows"
+      "offset": 19625000,
+      "duration": 7250000,
+      "text": "photos"
     },
     {
-      "offset": 75750000,
-      "duration": 1625000,
-      "text": "what"
+      "offset": 30625000,
+      "duration": 5750000,
+      "text": "Recovery"
     },
     {
-      "offset": 77500000,
-      "duration": 1250000,
-      "text": "it"
+      "offset": 36500000,
+      "duration": 5750000,
+      "text": "access"
     },
     {
-      "offset": 78875000,
-      "duration": 5250000,
-      "text": "used"
+      "offset": 42375000,
+      "duration": 3000000,
+      "text": "comes"
+    },
+    {
+      "offset": 45500000,
+      "duration": 3125000,
+      "text": "before"
+    },
+    {
+      "offset": 48750000,
+      "duration": 5875000,
+      "text": "password"
+    },
+    {
+      "offset": 54750000,
+      "duration": 7000000,
+      "text": "changes"
+    },
+    {
+      "offset": 65500000,
+      "duration": 3500000,
+      "text": "Every"
+    },
+    {
+      "offset": 69125000,
+      "duration": 3250000,
+      "text": "step"
+    },
+    {
+      "offset": 72500000,
+      "duration": 4500000,
+      "text": "stays"
+    },
+    {
+      "offset": 77125000,
+      "duration": 5875000,
+      "text": "visible"
     }
   ]
 }

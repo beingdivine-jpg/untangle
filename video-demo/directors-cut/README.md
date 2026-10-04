@@ -2,6 +2,8 @@
 
 The **78.000-second director’s cut**: 1920 × 1080, 30 fps, **2,340 frames**, H.264 video, stereo AAC, English narration, an original score and burned-in captions. This expanded film follows the user’s revised limit of 1 minute 20 seconds. The [original exact 60-second film](../output/untangle-60s.mp4) remains available.
 
+The agentic explanation identifies four concrete roles: **AI selects useful checks → app logic adds preparation → AI clarifies a note → the user reviews.** Revised narration connects those capabilities to Maya’s situation. The [capability map](creative-brief.md#where-the-agentic-assistance-fits) ties each role to its implementation.
+
 ## Watch
 
 - [Final MP4](output/untangle-directors-cut-78s.mp4)
@@ -42,8 +44,8 @@ The score combines original synthesized pads, bells, a restrained 90 BPM pulse a
 
 The film is an edited composition of real UI captures with animated pointers and editorial callouts. The opening uses existing fictional photographic artwork with camera motion; it is not a recording of a real user. [Artwork provenance](assets/artwork-provenance.json) and bundled font licenses are included.
 
-**No live model was configured for this recording.** The demo trace uses deterministic local rules, and the wording example is prepared in the product. Both are labelled on screen; narration calls the wording prepared. The four-step AI diagram summarizes the implemented, optional request path in `server/agent.ts` and `agentCore.ts`, not a recorded inference or private model reasoning. The film makes no claim of account scanning, automatic account changes, guaranteed safety, measured AI quality, user adoption or research outcomes.
+**No live model was configured for this recording.** The demo trace uses deterministic local rules, and the wording example is prepared in the product. Both are labelled on screen; narration calls the wording prepared. The four-role diagram summarizes capabilities in `server/agent.ts` and `agentCore.ts`. Planning and editing are separate user-triggered operations; the cards do not imply four automatic AI calls. The film makes no claim of account scanning, automatic account changes, guaranteed safety, measured AI quality, user adoption or research outcomes.
 
 Verification reads MP4 timing tables, decodes all 2,340 frames, checks dimensions and frame rate, measures the encoded audio, detects unexpected black frames, validates caption timing and confirms the exact caption transcript. The original 60-second commands continue to work independently.
 
-The delivered master passed all media checks: **78.000 seconds**, **−16.01 LUFS**, **−4.26 dBTP**, 29 matching caption cues and no unexpected black frames. Full-size composition frames and decoded MP4 frames were inspected. [Playback checks](output/playback-check.json) cover metadata, chapter seeking, a 390-pixel mobile viewport, the nested player route and the original 60-second edition. The product build, lint and all 59 unit tests passed; the filmed workflow assertions passed independently.
+The delivered master passed all media checks: **78.000 seconds**, **−16.01 LUFS**, **−4.19 dBTP**, 30 matching caption cues and no unexpected black frames. Full-size composition frames and decoded MP4 frames were inspected. [Playback checks](output/playback-check.json) cover metadata, chapter seeking, a 390-pixel mobile viewport, the nested player route and the original 60-second edition. This revision passed video lint and all 59 unit tests. The product build and filmed workflow assertions passed at the original capture checkpoint; the unchanged UI captures retain that evidence.

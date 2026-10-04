@@ -118,7 +118,7 @@ async def main():
     t = np.arange(length)/SR
     score *= (np.minimum(t/2, 1) * np.clip((STORY['duration']-t)/2.8, 0, 1))[:, None]
     # Gentle editorial click cues, well below the narrator.
-    for at in ([16.7, 25.6, 35.8, 37.7, 52.1, 60.5, 64.6] if CUT else [14.6, 25.9, 42.7, 50.1]):
+    for at in ([16.7, 25.6, 36.7, 37.9, 52.1, 60.5, 64.6] if CUT else [14.6, 25.9, 42.7, 50.1]):
         count = int(.11*SR)
         t = np.arange(count)/SR
         cue = np.sin(2*np.pi*740*t)*np.exp(-t*55)*np.minimum(t/.006, 1)*.018

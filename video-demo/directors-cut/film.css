@@ -18,5 +18,6 @@
 #example-label{bottom:auto;top:113px}#trace-device{left:405px;top:421px;width:1110px}#trace-device img{width:1110px}.process-note{top:956px}
 #start-device{left:1010px;top:448px;width:800px}#start-device>img{width:800px}
 #whatif-device{left:275px;width:1370px}.whatif-bar{height:86px;gap:32px}.whatif-bar img{width:790px}.effect-row{padding:18px 44px}.effect-row img{width:1280px}.whatif-bottom{padding:5px 42px 7px}.whatif-bottom img{width:295px}.whatif-bottom span{font-size:19px}
-#question-device{height:400px;overflow:visible}#question-device>#update-control{position:absolute;top:400px;left:0}
+#question-device{height:490px;overflow:hidden}#question-device>#update-control{position:absolute;top:400px;left:0}
 #ai-architecture>.overline,#wording-demo>.overline{position:absolute}
+#preparation-note{position:absolute;left:117px;top:757px;font:600 16px Archivo;letter-spacing:1.5px;color:var(--muted);line-height:1.6}#preparation-note span{display:block;font:430 33px Fraunces;color:var(--terra);letter-spacing:-.3px;margin-top:13px;line-height:1.25}
