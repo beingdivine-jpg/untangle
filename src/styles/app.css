@@ -1,5 +1,5 @@
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+html { scroll-behavior: auto; scroll-padding-top: calc(var(--app-header-height, 88px) + 12px); }
 body { margin: 0; color: var(--ink); background: var(--canvas); font-family: var(--font-body); font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
 button, input, select, textarea { font: inherit; color: inherit; }
 button, a, input, textarea, select, summary { -webkit-tap-highlight-color: transparent; }

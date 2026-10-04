@@ -10,7 +10,7 @@
 .untangle-app .site-header .demo-tour-launch { margin-left:auto; }
 .demo-tour-launch:focus-visible,.judge-tour :is(button,a,summary,input,textarea):focus-visible { outline:3px solid #914c39; outline-offset:4px; }
 .judge-tour { --jt-ink:#2c2b28; --jt-muted:#696158; --jt-line:#ded7cd; color:var(--jt-ink); min-height:100svh; background:#f7f5f1; }
-.jt-header { display:flex; align-items:center; gap:24px; padding:16px max(28px,calc((100vw - 1280px)/2)); border-bottom:1px solid var(--jt-line); }
+.jt-header { position:sticky; top:0; z-index:15; background:#f7f5f1; display:flex; align-items:center; gap:24px; padding:16px max(28px,calc((100vw - 1280px)/2)); border-bottom:1px solid var(--jt-line); }
 .judge-tour .wordmark { color:var(--jt-ink); font-size:31px; }
 .jt-header-label { padding-left:24px; border-left:1px solid var(--jt-line); color:var(--jt-muted); font-size:13px; }
 .jt-header .language-switch { margin-left:auto; }

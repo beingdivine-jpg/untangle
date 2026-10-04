@@ -642,7 +642,7 @@
   "Ready to open": "Gotowe do otwarcia:",
   "a fictional example": "fikcyjny przykład",
   "your saved plan": "Twój zapisany plan",
-  "checks found. Opening this file will replace the plan currently in this tab. Save your current plan first if you want to keep it.": "— tyle kroków znaleziono. Otwarcie pliku zastąpi plan w tej karcie. Jeśli chcesz zachować obecny plan, najpierw go zapisz.",
+  "checks found. This replaces the matching personal or example plan in this tab. You can undo it during this session. Save a private copy first if you want to keep both.": "— tyle kroków znaleziono. Plik zastąpi odpowiedni plan w tej karcie: osobisty lub przykładowy. Możesz cofnąć tę zmianę w trakcie tej sesji. Jeśli chcesz zachować oba plany, najpierw zapisz prywatną kopię.",
   "Use this saved plan": "Użyj tego zapisanego planu",
   "Keep current plan": "Zachowaj obecny plan",
   "Untangle has no cloud backup or automatic reminders. “Leave this page” clears this tab, but cannot delete downloaded files or browser history. Encryption cannot protect information while it is open on a monitored device.": "Untangle nie ma kopii zapasowej w chmurze ani automatycznych przypomnień. „Opuść tę stronę” czyści kartę, ale nie usuwa pobranych plików ani historii przeglądarki. Szyfrowanie nie chroni informacji, gdy są otwarte na monitorowanym urządzeniu.",
@@ -1350,5 +1350,8 @@
   "Restart tour": "Zacznij prezentację od nowa",
   "Selected checks": "Wybrane kroki",
   "Checks in the plan": "Kroki w planie",
-  "Account changes": "Zmiany na kontach"
+  "Account changes": "Zmiany na kontach",
+  "This page couldn’t open.": "Nie udało się otworzyć tej strony.",
+  "A connection problem or an update may have interrupted loading. Your plan is still in this tab. Save a private copy below before reloading.": "Problem z połączeniem lub aktualizacja mogły przerwać wczytywanie. Twój plan nadal znajduje się w tej karcie. Przed odświeżeniem zapisz prywatną kopię poniżej.",
+  "Reload and clear this tab": "Odśwież i wyczyść dane w tej karcie"
 }

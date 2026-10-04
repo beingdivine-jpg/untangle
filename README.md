@@ -44,9 +44,9 @@ Untangle’s proposed value is coordination and continuity: a cross-service plan
 - A visual thread is an index of selected checks, not an account scan. Visible activity records show inputs, catalogue matching, preparation and the approval boundary. The demo uses synchronous local rules and prepared wording, explicitly labelled; it does not simulate a live provider request.
 - “What if I change…” explains effects and limits using existing source-based guidance. This is deterministic decision support, not a predictive ML model or personal danger score.
 - The bounded live assistant can select existing guide IDs or simplify one approved note. It cannot change accounts or take external actions. A person reviews exact fields before sending, then separately accepts/rejects the draft. Wording edits have undo.
-- Kept checks transfer into the existing full plan; the displayed note transfers to the first check. Fictional examples remain labelled. The plan tools are also directly available at **/?view=plan**.
+- Kept checks transfer into the existing full plan; the displayed note becomes the overall plan note. Fictional examples remain labelled. The plan tools are also directly available at **/?view=plan**.
 
-- Two short setup screens select concerns and relevant services; an unsure route and an other-apps route are available.
+- A short setup page selects concerns and then reveals relevant services; an unsure route and an other-apps route are available.
 - A personal plan presents one next suggested check, all selected checks, status filters and reviewed activity counts (never a safety score).
 - Thirteen searchable guides cover recovery, Google devices and password changes, Gmail forwarding, Maps location sharing, Apple Safety Check, content to keep, partner photos, WhatsApp linked devices, Apple Family Sharing, home devices, intimate-image support and trusted-person help.
 - Preparation tasks are included automatically: recovery access before relevant account changes, and content preservation before selected sharing changes. The UI explains why; it does not prevent reading or claim universally safe sequencing.
@@ -131,7 +131,7 @@ By default, text, observations, follow-up notes and references exist only in Rea
 
 The optional saved file contains selected checks, current notes, bounded update history and the fictional-example flag. Web Crypto encrypts the complete payload with AES-256-GCM, a fresh 96-bit IV, and a key derived from a 12–256-character file passphrase using PBKDF2-SHA256 with 310,000 iterations and a fresh 128-bit salt. The passphrase is not included in the file. This implementation has not had an independent security audit.
 
-Imports are limited to 1 MB; format, KDF parameters, IV/salt lengths, task IDs, statuses, note lengths and history are checked. Only known fields are reconstructed. Authenticated decryption must succeed before a pending restore is shown. The user must explicitly replace the existing plan; importing cannot silently overwrite it. An asynchronous save cannot download after its component is unmounted by exit/reset. Password fields clear on successful operation or unmount.
+Encrypted plan files are limited to 2 MB; format, KDF parameters, IV/salt lengths, task IDs, statuses, note lengths and history are checked. Only known fields are reconstructed. Authenticated decryption must succeed before a pending restore is shown. The user must explicitly replace the existing plan; importing cannot silently overwrite it. An asynchronous save cannot download after its component is unmounted by exit/reset. Password fields clear on successful operation or unmount.
 
 A downloaded file can be found, lost, copied or retained. Untangle cannot recover a forgotten passphrase, remove downloaded copies, or protect an open plan on a monitored device. There is no cloud backup or automatic reminder. Restored observations may be out of date.
 
@@ -152,11 +152,13 @@ The comparison is desk research plus a bounded browser walkthrough of Refuge’s
 ```sh
 npm run build       # Typecheck and production build
 npm run lint
-npm test            # 35 unit tests
-npm run test:e2e    # 29 Chromium browser suites
+npm test            # 59 unit tests
+npm run test:e2e    # Chromium, Firefox and WebKit journeys
 ```
 
-If Chromium is not installed for Playwright, run `npx playwright install chromium` first.
+Install the test browsers with `npx playwright install chromium firefox webkit` first if needed.
+
+The [final audit report](docs/quality/final-audit.html) and [verification record](docs/quality/final-audit.json) document the 4 October 2026 fixes, regression coverage and remaining external validation gates.
 
 New unit coverage exercises preparation ordering, service selection, uncertain outcomes, immutable prior state, history limits, untrusted import validation, encrypted roundtrips, randomness, wrong passphrases, tampering and bounded KDF/file handling. Existing domain, reducer and image-preflight tests remain.
 
@@ -175,9 +177,9 @@ Responsive checks cover 320, 390, 768 and 1440 CSS-pixel widths. Axe checks home
 ## Remaining product work
 
 - Practitioner and real-user validation, particularly novice comprehension, supported use and safeguarded youth research.
-- Independent content, encryption and privacy review; production hosting/security hardening if this is deployed.
-- More provider coverage and verified localisation. Current interface language is English; regional support links do not imply translated UI.
-- Safari/Firefox, real devices, assistive technologies and broader native page-restoration testing.
+- Independent content, encryption and privacy review; operational hardening and evaluation before enabling a public live-AI backend.
+- More provider coverage and independent native-speaker review. English and Polish UI are implemented and regression-tested; no independent language validation is claimed.
+- Physical iOS/Android, assistive technologies and broader native page-restoration testing. Automated Chromium, Firefox and WebKit coverage does not replace these sessions.
 - No account integrations, scanning, automated setting changes, live adviser, emergency response, evidence hosting or universal image removal.
 
 The research report maps the supplied hackathon rubric to the demonstrable product and calls out submission-platform inconsistency between the supplied documents. Significant AI assistance, dependencies and pre-existing work must be disclosed accurately; this project does not establish hackathon eligibility or submit anything.

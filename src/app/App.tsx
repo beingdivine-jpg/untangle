@@ -6,6 +6,7 @@ import { acceptPlan, resetSession, selectMode, useSession } from './session'
 import { clearNavigation, navigate, useNavigation, hasOpenedPlan } from './navigation'
 import { useTranslation } from '../i18n/context'
 import './improvements.css'
+import { PlanLoadBoundary, PlanRecovery } from './PlanRecovery'
 import { JudgeWalkthrough } from '../features/walkthrough/JudgeWalkthrough'
 
 const LegacyApp = lazy(() => import('./LegacyApp'))
@@ -32,8 +33,8 @@ export default function App() {
   return <div className="untangle-app" key={generation}>
     <div hidden={legacy || route.area === 'tour'}><Experience key={session.companionGeneration} openPlan={openPlan}/></div>
     {route.area === 'tour' && <JudgeWalkthrough />}
-    {hasOpenedPlan() && <div hidden={!legacy}><Suspense fallback={<main className="loading-page" role="status">{translate('Opening your plan…')}</main>}>
+    {hasOpenedPlan() && <div hidden={!legacy}><PlanLoadBoundary fallback={<PlanRecovery/>}><Suspense fallback={<main className="loading-page" role="status">{translate('Opening your plan…')}</main>}>
       <LegacyApp returnToIntro={() => navigate({ area: 'intro' })}/>
-    </Suspense></div>}
+    </Suspense></PlanLoadBoundary></div>}
   </div>
 }

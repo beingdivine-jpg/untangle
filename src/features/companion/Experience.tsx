@@ -1,5 +1,6 @@
 import { LanguageSwitch } from '../../i18n/LanguageProvider'
 import { DemoWalkthroughButton } from '../walkthrough/DemoWalkthroughButton'
+import { useHeaderOffset } from '../../components/useHeaderOffset'
 import { useTranslation } from '../../i18n/context'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { flushSync } from 'react-dom'
@@ -21,6 +22,8 @@ import { SessionStatus } from '../../components/SessionStatus'
 import { services as serviceOptions } from '../plan/services'
 import type { ServiceId } from '../plan/services'
 
+type WordingState = { editDraft: string | null; previousNote: string | null; scriptedNote: boolean; previousScriptedNote: boolean; editSource: string | null; appliedNote: string | null }
+const emptyWording = (): WordingState => ({ editDraft: null, previousNote: null, scriptedNote: true, previousScriptedNote: true, editSource: null, appliedNote: null })
 const EXIT = 'https://www.wikipedia.org/'
 const focusPanel = () => requestAnimationFrame(() => document.getElementById('companion-panel-heading')?.focus({ preventScroll:true }))
 const focus = () => requestAnimationFrame(() => { document.getElementById('experience-heading')?.focus({ preventScroll:true }); window.scrollTo({ top:0, behavior:'instant' }) })
@@ -29,6 +32,7 @@ export function Experience({ openPlan }: { openPlan: (plan?: Plan, start?: boole
   const { translate, locale, href: localizeLink } = useTranslation()
 
   const route = useNavigation(), session = useSession()
+  const headerRef = useHeaderOffset<HTMLElement>(['intro', 'assistant', 'demo'].includes(route.area))
   const screen = route.area === 'demo' ? 'demo' : route.area === 'assistant' ? 'personal' : 'intro'
   const setScreen = (value: 'intro'|'demo'|'personal') => navigate({ area: value === 'personal' ? 'assistant' : value, mode: value === 'demo' ? 'example' : 'personal' })
   const [services, setServices] = useState<ServiceId[]>([])
@@ -45,8 +49,17 @@ export function Experience({ openPlan }: { openPlan: (plan?: Plan, start?: boole
   const setSelection = (value: TaskId[] | ((ids: TaskId[]) => TaskId[])) => setSelections(all => ({ ...all, [draftKey]: typeof value === 'function' ? value(all[draftKey]) : value }))
   const [storyId, setStoryId] = useState<StoryId>('laptop'), [topics, setTopics] = useState<ConcernId[]>(['accounts'])
   const [events, setEvents] = useState<RunEvent[]>([]), [running, setRunning] = useState(false), [tab, setTab] = useState<'connect'|'preview'|'edit'>('connect')
-  const [preview, setPreview] = useState<TaskId>('password'), [editDraft, setEditDraft] = useState<string | null>(null), [previousNote, setPreviousNote] = useState<string | null>(null)
-  const [scriptedNote, setScriptedNote] = useState(true), [previousScriptedNote, setPreviousScriptedNote] = useState(true)
+  const [preview, setPreview] = useState<TaskId>('password')
+  const [wording, setWording] = useState({ personal: emptyWording(), demo: emptyWording() })
+  const { scriptedNote, previousScriptedNote } = wording[draftKey]
+  // A draft or undo only applies to the exact note it was made for.
+  const editDraft = wording[draftKey].editSource === note ? wording[draftKey].editDraft : null
+  const previousNote = wording[draftKey].appliedNote === note ? wording[draftKey].previousNote : null
+  const changeWording = <K extends keyof WordingState>(key: K, value: WordingState[K]) => setWording(all => ({ ...all, [draftKey]: { ...all[draftKey], [key]: value } }))
+  const setEditDraft = (value: string | null) => setWording(all => ({ ...all, [draftKey]: { ...all[draftKey], editDraft: value, editSource: value === null ? null : note } }))
+  const setPreviousNote = (value: string | null) => setWording(all => ({ ...all, [draftKey]: { ...all[draftKey], previousNote: value, appliedNote: value === null ? null : editDraft } }))
+  const setScriptedNote = (value: boolean) => changeWording('scriptedNote', value)
+  const setPreviousScriptedNote = (value: boolean) => changeWording('previousScriptedNote', value)
   const [error, setError] = useState(''), [message, setMessage] = useState(''), [pending, setPending] = useState<AgentRequest | null>(null), [consent, setConsent] = useState(false)
   const [help, setHelp] = useState(false), [status, setStatus] = useState<{ available:boolean; model?:string|null } | null>(null)
   const controller = useRef<AbortController | null>(null), generation = useRef(0)
@@ -57,7 +70,8 @@ export function Experience({ openPlan }: { openPlan: (plan?: Plan, start?: boole
   const requiredPreparation = new Set(selection.flatMap(id => taskById[id].prerequisites))
   const stop = useCallback(() => { generation.current++; controller.current?.abort(); controller.current = null; setRunning(false); setPending(null); setConsent(false) }, [setRunning, setPending, setConsent])
   const clear = useCallback(() => { stop(); resetSession(); clearNavigation() }, [stop])
-  useEffect(() => () => stop(), [stop])
+  // Cancel pending requests and consent whenever this workspace is left.
+  useEffect(() => () => stop(), [route.area, stop])
   useEffect(() => { if (route.area === 'intro' || route.area === 'assistant' || route.area === 'demo') focus() }, [route])
   useEffect(() => {
     if (screen !== 'personal') return
@@ -83,8 +97,12 @@ export function Experience({ openPlan }: { openPlan: (plan?: Plan, start?: boole
     return () => { document.removeEventListener('keydown',key); before?.focus() }
   }, [pending])
   function begin(mode: 'demo'|'personal', concern?: ConcernId) {
-    stop(); setHelp(false); setError(''); setMessage(''); setEvents([]); setEditDraft(null); setPreviousNote(null); setTab('connect')
-    if (mode === 'personal') { updateSetup({ concerns: concern ? [...new Set([...session.personal.concerns, concern])] : session.personal.concerns, services: session.personal.services }); openPlan(undefined, true); return }
+    stop(); setHelp(false); setError(''); setMessage(''); setEvents([]); setTab('connect')
+    if (mode === 'personal') {
+      const setup = session.setup.personal ?? { concerns: session.personal.concerns, services: session.personal.services }
+      updateSetup({ ...setup, concerns: concern ? [...new Set([...setup.concerns, concern])] : setup.concerns }, 'personal')
+      openPlan(undefined, true); return
+    }
     selectMode('example'); if (!session.example.note) updatePlan(p => ({ ...p, note: stories[0].note })); setScreen('demo')
   }
   function changeStory(id: StoryId) { stop(); const next=stories.find(s=>s.id===id)!; setStoryId(id); setDraft(null); selectMode('example'); updatePlan({ ...emptyPlan(), example: true, note: next.note }); setSelection([]); setEvents([]);  setScriptedNote(true); setPreviousNote(null); setEditDraft(null); setPreview(next.prediction); setError(''); setMessage(''); setTab('connect') }
@@ -121,7 +139,7 @@ export function Experience({ openPlan }: { openPlan: (plan?: Plan, start?: boole
   const prediction = previewEffect(preview, ids)
   return <div className={`u-experience ${screen === 'intro' ? 'u-landing' : 'u-workspace'}`}>
     <a className="skip-link" href="#experience-main">{translate("Skip to content")}</a>
-    <header className="u-header"><button className="wordmark" aria-label={translate("Untangle introduction")} onClick={() => { setScreen('intro'); stop(); setHelp(false); focus() }}><Thread small/><span>{translate("untangle")}<span className="wordmark-period">.</span></span></button><span className="u-brand-note">{translate("A little clarity. A little more you.")}</span><nav aria-label={translate("Experience navigation")}><a href={localizeLink("/research.html")} target="_blank" rel="noreferrer">{translate("The thinking behind it")}<ArrowUpRight size={13} aria-hidden="true"/></a><button aria-label={translate("Help and privacy")} onClick={() => setHelp(!help)}><CircleHelp size={18} aria-hidden="true"/></button><button onClick={() => navigate({ area: 'plan', view: 'support', mode: 'personal' })}>{translate("Find support")}</button></nav><DemoWalkthroughButton/><LanguageSwitch/><a className="u-exit" href={localizeLink(EXIT)} rel="noreferrer" onClick={e=>{e.preventDefault();document.documentElement.dataset.exiting='true';flushSync(clear);window.location.replace(EXIT)}}>{translate("Leave this page")}<ArrowUpRight size={15} aria-hidden="true"/></a></header><SessionStatus/>
+    <header className="u-header" ref={headerRef}><button className="wordmark" aria-label={translate("Untangle introduction")} onClick={() => { setScreen('intro'); stop(); setHelp(false); focus() }}><Thread small/><span>{translate("untangle")}<span className="wordmark-period">.</span></span></button><span className="u-brand-note">{translate("A little clarity. A little more you.")}</span><nav aria-label={translate("Experience navigation")}><a href={localizeLink("/research.html")} target="_blank" rel="noreferrer">{translate("The thinking behind it")}<ArrowUpRight size={13} aria-hidden="true"/></a><button aria-label={translate("Help and privacy")} onClick={() => setHelp(!help)}><CircleHelp size={18} aria-hidden="true"/></button><button onClick={() => navigate({ area: 'plan', view: 'support', mode: 'personal' })}>{translate("Find support")}</button></nav><DemoWalkthroughButton/><LanguageSwitch/><a className="u-exit" href={localizeLink(EXIT)} rel="noreferrer" onClick={e=>{e.preventDefault();document.documentElement.dataset.exiting='true';flushSync(clear);window.location.replace(EXIT)}}>{translate("Leave this page")}<ArrowUpRight size={15} aria-hidden="true"/></a></header><SessionStatus/>
     {help && <section className="u-help" aria-label={translate("Help and privacy")}><div><h2>{translate("You stay in charge.")}</h2><button aria-label={translate("Close help")} onClick={()=>setHelp(false)}><X size={19} aria-hidden="true"/></button></div><p>{translate("Try Me uses a scripted, fictional example and local rules. It does not scan accounts or send anything to an AI provider. In your own workspace, live AI is optional and requires reviewing the exact content before sending it to OpenAI.")}</p><p>{translate("AI can select guides and draft wording. It cannot change accounts, verify access, predict someone’s behaviour or decide whether you are safe. Before-change explanations come from the cited guide library.")}</p><p>{translate("Your work stays in this tab unless you explicitly send a request or download a private plan file. Refreshing or leaving clears the tab. “Leave this page” opens Wikipedia, but cannot remove browser history, downloads or monitoring records.")}</p><a href={localizeLink("https://lila.help/")} target="_blank" rel="noreferrer">{translate("Find human support in your region ↗")}</a></section>}
     <main id="experience-main">
     {screen === 'intro' ? <ThreadWelcome begin={begin} resume={() => openPlan()} hasPlan={Object.keys(session.personal.entries).length > 0}/> : <section className="u-studio">

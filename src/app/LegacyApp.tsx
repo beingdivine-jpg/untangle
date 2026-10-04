@@ -1,5 +1,6 @@
 import { LanguageSwitch } from '../i18n/LanguageProvider'
 import { DemoWalkthroughButton } from '../features/walkthrough/DemoWalkthroughButton'
+import { useHeaderOffset } from '../components/useHeaderOffset'
 import { useTranslation } from '../i18n/context'
 import { useCallback, useEffect, useReducer, useRef, useState } from 'react'
 import { flushSync } from 'react-dom'
@@ -22,7 +23,7 @@ import { ImageReference } from '../features/start/ImageReference'
 import { scenarios } from '../domain/scenarios'
 import type { ScenarioId, Step } from '../domain/types'
 import { navigate, useNavigation } from './navigation'
-import { resetSession } from './session'
+import { resetSession, useSession } from './session'
 import { SessionStatus } from '../components/SessionStatus'
 
 const journey: { id: Step; label: string; description: string }[] = [
@@ -36,7 +37,8 @@ const EXIT_DESTINATION = 'https://www.wikipedia.org/'
 
 export default function LegacyApp({ initialPlan, returnToIntro, clearSeed }: { initialPlan?: Plan; returnToIntro?: () => void; clearSeed?: () => void }) {
   const { translate, href: localizeLink } = useTranslation()
-  const route = useNavigation()
+  const route = useNavigation(), session = useSession()
+  const headerRef = useHeaderOffset<HTMLDivElement>(route.area === 'plan' || route.area === 'walkthrough')
 
   const planRef = useRef<{ home: () => void }>(null)
   const workspace = route.area !== 'walkthrough'
@@ -77,7 +79,7 @@ export default function LegacyApp({ initialPlan, returnToIntro, clearSeed }: { i
   const closeInfo = () => { flushSync(() => setInfo(null)); document.getElementById(workspace ? 'platform-heading' : state.active ? 'step-heading' : 'hero-title')?.focus({ preventScroll: true }); window.scrollTo({ top: 0, behavior: 'instant' }) }
   return <>
     <a className="skip-link" href={info ? "#info-heading" : workspace ? "#platform-main" : "#main-content"}>{translate("Skip to content")}</a>
-    <div className="header-wrap"><header className="site-header">
+    <div className="header-wrap" ref={headerRef}><header className="site-header">
       <button className="wordmark" aria-label={translate("Untangle home")} onClick={() => workspace ? (setInfo(null), planRef.current?.home()) : state.active ? setConfirmReset(true) : closeInfo()}><Thread small /><span>{translate("untangle")}<span className="wordmark-period">.</span></span></button>
       <span className="brand-description">{translate(returnToIntro ? <button className="text-button" onClick={returnToIntro}>{translate("Back to introduction")}</button> : 'One step at a time.')}</span>
       {workspace && <button className="platform-help" aria-label={translate("Help & words")} onClick={() => setInfo(info === 'help' ? null : 'help')}><CircleHelp size={18} aria-hidden="true"/><span>{translate("Help & words")}</span></button>}
@@ -93,7 +95,7 @@ export default function LegacyApp({ initialPlan, returnToIntro, clearSeed }: { i
     </nav>}
     {info && <section className="info-panel app-card" role="main" aria-labelledby="info-heading"><button className="icon-button" aria-label={translate("Close information")} onClick={closeInfo}><X size={20} aria-hidden="true" /></button><span className="section-label">{translate("A LITTLE EXPLANATION")}</span><h1 id="info-heading" tabIndex={-1}>{translate(info === 'how' ? 'What does Untangle actually do?' : info === 'help' ? 'Let’s make this easier to understand.' : 'About this prototype')}</h1>{info === 'help' ? <Help /> : <><p className="step-description">{translate(info === 'how' ? 'Untangle helps you think through devices and accounts you may have shared with someone. It uses what you tell us, and explains what you might want to check next.' : 'Untangle is an ImpactHer at HackYeah prototype for women reviewing digital connections after separation. It helps you organise checks across services, understand effects before changes, and keep unanswered questions. A sourced research review informed this prototype; practitioner, security and real-user validation are still needed.')}</p><ol className="how-inline"><li><strong>{translate("Answer a few questions.")}</strong>{translate(" We explain unfamiliar words as you go.")}</li><li><strong>{translate("Read your summary.")}</strong>{translate(" See what you know and what you haven’t checked.")}</li><li><strong>{translate("Understand your options.")}</strong>{translate(" See what a change might affect. Nothing changes here.")}</li><li><strong>{translate("Keep a next-step list.")}</strong>{translate(" You can review it with someone you trust.")}</li></ol><p>{translate("You don’t need to connect an account, type a password or know all the answers.")}</p><Privacy /><a className="source-link" href={localizeLink("/research.html")} target="_blank" rel="noreferrer">{translate("Read the product research and limitations")}</a>{info === 'about' && <div className="info-sources">{(['devices', 'password', 'recovery', 'safety'] as const).map(id => <SourceLink id={id} key={id} />)}</div>}</>}<Button secondary onClick={closeInfo}>{translate(workspace ? 'Back to my plan' : state.active ? 'Back to my check' : 'Back to start')}</Button></section>}
     {confirmReset && <section className="reset-confirm" role="alert"><div><strong>{translate("Clear this review and start fresh?")}</strong><p>{translate("Your answers, image and follow-up notes will be removed from this tab.")}</p></div><div><Button secondary onClick={() => setConfirmReset(false)}>{translate("Keep reviewing")}</Button><Button onClick={resetAndFocus}>{translate("Yes, clear review")}</Button></div></section>}
-    <div hidden={!!info || !workspace}><Platform initialPlan={workspaceVersion === 0 ? initialPlan : undefined} key={workspaceVersion} homeRef={planRef} onWalkthrough={() => { setWorkspace(false); setInfo(null); window.scrollTo({ top: 0, behavior: 'instant' }) }}/></div>
+    <div hidden={!!info || !workspace}><Platform initialPlan={workspaceVersion === 0 ? initialPlan : undefined} key={`${workspaceVersion}:${session.mode}`} homeRef={planRef} onWalkthrough={() => { setWorkspace(false); setInfo(null); window.scrollTo({ top: 0, behavior: 'instant' }) }}/></div>
     {!workspace && <div hidden={!!info}>{!state.active ? <Welcome state={state} dispatch={dispatch} image={image} startExample={() => startExample()} begin={beginGuide} /> : state.guide ? <Guide guide={state.guide} dispatch={dispatch} onFinish={resetAndFocus} /> : <main id="main-content" className="review-shell">
       <div className="review-toolbar"><div className="mode-label"><span className={`status-tag ${state.mode === 'example' ? 'lavender' : 'sage'}`}>{state.mode === 'example' ? <BookOpen size={15} aria-hidden="true" /> : <Check size={15} aria-hidden="true" />}<span>{translate(state.mode === 'example' ? 'Fictional example' : 'My check')}</span></span>{state.mode === 'example' ? <label className="scenario-picker"><span>{translate("Example story")}</span><select aria-label={translate("Choose fictional scenario")} value={state.scenario} onChange={e => startExample(e.target.value as ScenarioId)}>{Object.entries(scenarios).map(([id, scenario]) => <option key={id} value={id}>{translate(scenario.title)}</option>)}</select></label> : <span className="toolbar-note">{translate("We use your answers. We can’t see your accounts.")}</span>}</div><button className="text-button clear-button" onClick={() => setConfirmReset(true)}>{translate("Clear this review")}<X size={14} aria-hidden="true" /></button></div>
       <nav className="journey" aria-label={translate("Review progress")}><p className="journey-caption">{translate("Step ")}{index + 1}{translate(" of 5 ")}<ChevronRight size={14} aria-hidden="true" /><strong>{translate(journey[index].description)}</strong></p><ol>{journey.map((item, i) => <li key={item.id} className={`${i === index ? 'current' : ''} ${i < index ? 'past' : ''}`}><button disabled={i > state.furthestStep} aria-current={i === index ? 'step' : undefined} onClick={() => dispatch({ type: 'STEP', value: item.id })}><span className="step-number">{i < index ? <Check size={13} aria-hidden="true" /> : i + 1}</span><span>{translate(item.label)}</span></button></li>)}</ol></nav>

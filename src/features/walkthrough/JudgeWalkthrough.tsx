@@ -2,10 +2,11 @@ import { useEffect, useRef, useState } from 'react'
 import { flushSync } from 'react-dom'
 import { ArrowLeft, ArrowRight, ArrowUpRight, Check, CheckCheck, FilePenLine, RotateCcw, X } from 'lucide-react'
 import { Thread } from '../../components/Thread'
+import { useHeaderOffset } from '../../components/useHeaderOffset'
 import { LanguageSwitch } from '../../i18n/LanguageProvider'
 import { useTranslation } from '../../i18n/context'
 import { navigate, useNavigation } from '../../app/navigation'
-import { resetSession, selectMode, setUndoPlan, updatePlan } from '../../app/session'
+import { resetSession, selectMode, setUndoPlan, updatePlan, updateSetup } from '../../app/session'
 import { localDraft, previewEffect, stories } from '../companion/agentCore'
 import { taskById } from '../plan/content'
 import type { TaskId } from '../plan/content'
@@ -17,6 +18,7 @@ const story = stories[0]
 
 export function JudgeWalkthrough() {
   const { translate, href } = useTranslation(), route = useNavigation()
+  const headerRef = useHeaderOffset<HTMLElement>()
   const [step, setStep] = useState(0)
   const [choices, setChoices] = useState<TaskId[]>([])
   const [edited, setEdited] = useState<string | null>(null)
@@ -52,13 +54,13 @@ export function JudgeWalkthrough() {
   }
   const openExample = () => {
     if (!result) return
-    selectMode('example'); updatePlan({ ...result, note }); setUndoPlan(null)
+    selectMode('example'); updatePlan({ ...result, note }); setUndoPlan(null); updateSetup(null, 'example')
     navigate({ area: 'plan', view: 'plan', mode: 'example' })
   }
   const chosenChecks = <ul className="jt-summary-list">{selected.map(id => <li key={id}><Check size={16} aria-hidden="true"/>{translate(taskById[id].title)}</li>)}</ul>
   return <div className="judge-tour">
     <a className="skip-link" href="#demo-content">{translate('Skip to content')}</a>
-    <header className="jt-header">
+    <header className="jt-header" ref={headerRef}>
       <button className="wordmark" aria-label={translate('Untangle home')} onClick={exit}><Thread small/><span>untangle<span className="wordmark-period">.</span></span></button>
       <span className="jt-header-label">{translate('Demo walkthrough')}</span>
       <LanguageSwitch/>
